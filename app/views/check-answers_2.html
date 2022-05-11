@@ -1,0 +1,586 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<style media="screen">
+.govuk-summary-list__key{width: 50%;}
+</style>
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Check your answers</h1>
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's details</h2></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="client-details">Change</a></p></div>
+    </div>
+    <!--<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Personal details</h2></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right;" href="employment_income">Change</a></p></div>
+    </div>-->
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Name<span class="govuk-visually-hidden"> name</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['first-name']}} {{ data['last-name']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Date of birth<span class="govuk-visually-hidden"> Date of birth</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['dob-day']}}  {{ data['dob-month']}}  {{ data['dob-year']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">National insurance number<span class="govuk-visually-hidden"> National insurance number</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['national-insurance-number']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Have a partner<span class="govuk-visually-hidden"> Have a partner</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['partner']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Employment status<span class="govuk-visually-hidden"> Employment status</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['employment-status']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Receiving benefits<span class="govuk-visually-hidden"> Receiving benefits</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['passport-benefits']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Recieving asylum support<span class="govuk-visually-hidden"> Recieving asylum support</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['asylum-support']}}</dd>
+      </div>
+    </dl>
+
+<!-- case details start -->
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's case details</h2></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="case-details">Change</a></p></div>
+    </div>
+    <!--<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Personal details</h2></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right;" href="employment_income">Change</a></p></div>
+    </div>-->
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Required representation<span class="govuk-visually-hidden"> Required representation</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['represenation']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Upper Tribunal case<span class="govuk-visually-hidden"> Upper Tribunal case</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['upper-tribunal']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Domestic Abuse case<span class="govuk-visually-hidden"> Domestic Abuse case</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['domestic-abuse']}}</dd>
+      </div>
+    </dl>
+    <!-- case details end-->
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's income</h2></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="monthly-income">Change</a></p></div>
+    </div>
+    <!--<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Personal details</h2></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right;" href="employment_income">Change</a></p></div>
+    </div>-->
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Gross monthly income<span class="govuk-visually-hidden"> Gross monthly income</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-1-value']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Benefits received<span class="govuk-visually-hidden"> Benefits received</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-2-value']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Financial help<span class="govuk-visually-hidden"> Financial help</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-3-value']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Maintenance payments<span class="govuk-visually-hidden"> Maintenance payments</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-4-value']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Income from property<span class="govuk-visually-hidden"> Rent</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-5-value']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Pension<span class="govuk-visually-hidden"> Pension</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-6-value']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Student loan/grant<span class="govuk-visually-hidden"> Student loan/grant</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-7-value']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Other sources<span class="govuk-visually-hidden"> Other sources</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-8-value']}}</dd>
+      </div>
+    </dl>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's outgoings</h2></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="monthly-outgoings">Change</a></p></div>
+    </div>
+    <!--<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Personal details</h2></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right;" href="employment_income">Change</a></p></div>
+    </div>-->
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Housing payments<span class="govuk-visually-hidden"> Gross monthly income</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-1-value']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Tax<span class="govuk-visually-hidden"> Benefits received</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-2-value']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">National insurance<span class="govuk-visually-hidden"> Financial help</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-3-value']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Childcare payments<span class="govuk-visually-hidden"> Maintenance payments</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-4-value']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Maintenance payments<span class="govuk-visually-hidden"> Rent</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-5-value']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Payments towards legal aid in a criminal or civil case<span class="govuk-visually-hidden"> Pension</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-6-value']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Dependants allowance<span class="govuk-visually-hidden"> Student loan/grant</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-7-value']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Work allowance<span class="govuk-visually-hidden"> Other sources</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-8-value']}}</dd>
+      </div>
+    </dl>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
+
+      <h2 class="govuk-heading-m">Personal details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['first-name']}} {{ data['last-name']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/client-details">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['dob-day']}}  {{ data['dob-month']}}  {{ data['dob-year']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/client-details">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            National insurance number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['national-insurance-number']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/client-details">
+              Change
+              <span class="govuk-visually-hidden"> national insurance number</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Have a partner?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['partner']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/client-details">
+              Change
+              <span class="govuk-visually-hidden"> does your client have a pertner</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Employment status?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['employment-status']}}
+            <!--<ul class="govuk-list govuk-list--bullet">
+              {% for status in data['employment-status'] %}
+                <li>{{ status }}</li>
+              {% else %}
+                <li>No employment status selected</li>
+              {% endfor %}
+            </ul>-->
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/client-details">
+              Change
+              <span class="govuk-visually-hidden"> what is your clients employment status</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Receiving benefits?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['passport-benefits']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/client-details">
+              Change
+              <span class="govuk-visually-hidden"> is your client's gross income below £12,475</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Recieving asylum support?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['asylum-support']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/client-details">
+              Change
+              <span class="govuk-visually-hidden"> is your client recieving asylum support</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Case details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Required representation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['represenation']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Required representation</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Upper Tribunal case?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['upper-tribunal']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Upper Tribunal case</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Domestic Abuse case?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['domestic-abuse']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Domestic Abuse case?</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <h2 class="govuk-heading-m">Your client's income</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Gross monthly income
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £{{ data['income-sources-1-value']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Gross monthly income</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Benefits received
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £{{ data['income-sources-2-value']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Benefits received</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Financial help
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £{{ data['income-sources-3-value']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Financial help</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Maintenance payments
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £{{ data['income-sources-4-value']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Maintenance payments</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Rent
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £{{ data['income-sources-5-value']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Rent</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Pension
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £{{ data['income-sources-6-value']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Pension</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Student loan/grant
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £{{ data['income-sources-7-value']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Student loan/grant</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other sources
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £{{ data['income-sources-8-value']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Other sources</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <h2 class="govuk-heading-m">Your client's outgoings</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Required representation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['represenation']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Required representation</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Upper Tribunal case?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['upper-tribunal']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Upper Tribunal case</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Domestic Abuse case?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['domestic-abuse']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Domestic Abuse case?</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <h2 class="govuk-heading-m">Your client's capital</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Required representation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['represenation']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Required representation</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Upper Tribunal case?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['upper-tribunal']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Upper Tribunal case</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Domestic Abuse case?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['domestic-abuse']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Domestic Abuse case?</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <h2 class="govuk-heading-m">Now send your application</h2>
+
+      <p>By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+      <form action="/confirmation" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Accept and send
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
