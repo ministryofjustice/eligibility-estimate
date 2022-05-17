@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Case details – {{ serviceName }} – GOV.UK Prototype Kit
+  Client details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 
@@ -27,41 +27,64 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <!--<h1 class="govuk-heading-xl">Your client's case details</h1>-->
-      <span class="govuk-caption-l">Question 2 of 3</span>
-      <h1 class="govuk-heading-xl">Your client's case details</h1>
+      <!--<h1 class="govuk-heading-xl">Your client's details</h1>-->
+      <span class="govuk-caption-l">Question 5 of 5</span>
+      <h1 class="govuk-heading-xl">Your client's details</h1>
 
-      <form class="form" action="/case-details-3" method="post">
+      <form class="form" action="/v2-task-list" method="post">
 
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
+          <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <label class="govuk-label govuk-label--l" for="upper-tribunal">Is your client's case an upper tribunal case?</label>
+              <label class="govuk-label govuk-label--l" for="asylum-support">Is your client receiving asylum support?</label>
             </legend>
-            <div id="employment-hint" class="govuk-hint">
+            <div id="partner-hint" class="govuk-hint">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at dolor iaculis, facilisis tortor vel, tristique mauris.
             </div>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="upper-tribunal-yes" name="upper-tribunal" type="radio" value="Yes" {{ checked("upper-tribunal", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="upper-tribunal-yes">
+                <input class="govuk-radios__input" id="asylum-support-yes" name="asylum-support" type="radio" value="Yes" {{ checked("asylum-support", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="asylum-support-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="upper-tribunal-no" name="upper-tribunal" type="radio" value="No" {{ checked("upper-tribunal", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="upper-tribunal-no">
+                <input class="govuk-radios__input" id="asylum-support-no" name="asylum-support" type="radio" value="No" {{ checked("asylum-support", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="asylum-support-no">
                   No
                 </label>
               </div>
+
           </fieldset>
         </div>
+
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
 
     </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="https://www.gov.uk/legal-aid">
+              Legal aid guidance
+            </a>
+            </li>
+
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
   </div>
 
 {% endblock %}

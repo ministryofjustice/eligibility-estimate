@@ -29,7 +29,7 @@
 
       <!--<h1 class="govuk-heading-xl">Your client's income details</h1>-->
 
-      <form class="form" action="/capital" method="post">
+      <form class="form" action="/v2-task-list" method="post">
 
         <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
@@ -127,7 +127,7 @@
 
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="outgoing-6" name="outgoing-legal-aid" type="checkbox" value="outgoing-legal-aid" data-aria-controls="outgoing-legal-aid-yes" {{ checked("outgoing-legal-aid","yes") }}>
-              <label class="govuk-label govuk-checkboxes__label" for="outgoing-6">Payments towards legal aid in a criminal or civil case</label>
+              <label class="govuk-label govuk-checkboxes__label" for="outgoing-6">Payments towards legal aid in a criminal case</label>
             </div>
             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="outgoing-legal-aid-yes">
               <div class="govuk-form-group">
@@ -141,51 +141,59 @@
               </div>
             </div>
 
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="outgoing-7" name="outgoing-dependants" type="checkbox" value="outgoing-dependants" data-aria-controls="outgoing-dependants-yes" {{ checked("outgoing-dependants","yes") }}>
-              <label class="govuk-label govuk-checkboxes__label" for="outgoing-7">Dependants allowance</label>
-              <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">Lorem ipsum dolor sit amet, consectetur.</span>
-            </div>
-            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="outgoing-dependants-yes">
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="outgoing-7">Enter amount</label>
-                <!-- wrapper starts -->
-                <div class="govuk-input__wrapper">
-                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
-                  <input class="govuk-input govuk-input--width-5" id="outgoing-7-value" name="outgoing-7-value" type="text" value="{{ data['outgoing-7-value']}}">
-                </div>
-                <!-- wrapper ends -->
-              </div>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="outgoing-8" name="outgoing-work-allowance" type="checkbox" value="outgoing-work-allowance" data-aria-controls="outgoing-work-allowance-yes" {{ checked("outgoing-work-allowance","yes") }}>
-              <label class="govuk-label govuk-checkboxes__label" for="outgoing-8">Work allowance</label>
-              <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
-            </div>
-            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="outgoing-work-allowance-yes">
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="outgoing-8">Enter amount</label>
-                <!-- wrapper starts -->
-                <div class="govuk-input__wrapper">
-                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
-                  <input class="govuk-input govuk-input--width-5" id="outgoing-8-value" name="outgoing-8-value" type="text" value="{{ data['outgoing-8-value']}}">
-                </div>
-                <!-- wrapper ends -->
-              </div>
-            </div>
-
           </div>
 
         </fieldset>
         </div>
 
+        <!-- marking task complete start -->
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Have you completed this section?</legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="completed-outgoings-details-yes" required name="completed-outgoings-details" type="radio" value="Yes" {{ checked("completed-outgoings-details", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="completed-income-details-yes">Yes, I’ve completed this section</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="completed-outgoings-details-no" required name="completed-outgoings-details" type="radio" value="No" {{ checked("completed-outgoings-details", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="completed-outgoings-details-no">No, I’ll come back to it later</label>
+              </div>
+            </div>
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+        <!-- marking task complete end -->
+
+
+      <!--  <button class="govuk-button" data-module="govuk-button">Continue</button>-->
 
       </form>
 
     </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="https://www.gov.uk/legal-aid">
+              Legal aid guidance
+            </a>
+            </li>
+
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
   </div>
 
 {% endblock %}

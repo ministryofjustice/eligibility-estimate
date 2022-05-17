@@ -31,15 +31,15 @@
       <span class="govuk-caption-l">Question 3 of 3</span>
       <h1 class="govuk-heading-xl">Your client's case details</h1>
 
-      <form class="form" action="/task-list" method="post">
+      <form class="form" action="/v2-task-list" method="post">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <label class="govuk-label govuk-label--l" for="domestic-abuse">Is your client's case a domestic abuse case?</label>
+              <label class="govuk-label govuk-label--l" for="domestic-abuse">Is it a domestic abuse matter?</label>
             </legend>
             <div id="employment-hint" class="govuk-hint">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at dolor iaculis, facilisis tortor vel, tristique mauris.
+              Different thresholds apply  specifically to these types of cases.
             </div>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
@@ -57,11 +57,57 @@
           </fieldset>
         </div>
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <!-- marking task complete start -->
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Have you completed this section?</legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="completed-case-details-yes" required name="completed-case-details" type="radio" value="Yes" {{ checked("completed-case-details", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="completed-client-details-yes">Yes, I’ve completed this section</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="completed-case-details-no" required name="completed-case-details" type="radio" value="No" {{ checked("completed-case-details", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="completed-case-details-no">No, I’ll come back to it later</label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+        <!--<div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Save and come back later</button>
+        </div>-->
+        <!-- marking task complete end -->
+
+        <!--<button class="govuk-button" data-module="govuk-button">Continue</button>-->
 
       </form>
 
     </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="https://www.gov.uk/legal-aid">
+              Legal aid guidance
+            </a>
+            </li>
+
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
   </div>
 
 {% endblock %}

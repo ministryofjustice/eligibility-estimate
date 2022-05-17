@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% set serviceName %}
+  Your eligibility estimate progress
+{% endset%}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        {% if serviceName %} {{ serviceName }} {% endif %}
+      </h1>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Eligibility estimate incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 3 of 8 sections.</p>
+
+      <ol class="app-task-list">
+       <li>
+         <h2 class="app-task-list__section">
+           <span class="app-task-list__section-number">1. </span>About the case</h2>
+         <ul class="app-task-list__items">
+           <li class="app-task-list__item">
+             <span class="app-task-list__task-name">
+               <a href="/v2-case-details-1" aria-describedby="case-details-status">Case details</a>
+             </span>
+             {% if data['completed-case-details'] == 'Yes' %}
+                  <strong class="govuk-tag govuk-tag app-task-list__tag" id="case-details-status">Completed</strong>
+              {% elseif data['completed-case-details'] == 'No' %}
+                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="case-details-status">In progress</strong>
+              {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="case-details-status">Not started</strong>
+              {% endif %}
+             <!--{% if data['domestic-abuse'] %}<strong class="govuk-tag govuk-tag app-task-list__tag" id="client-details-status">Completed</strong>
+              {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="client-details-status">Not started</strong>
+              {% endif %}-->
+           </li>
+         </ul>
+       </li>
+       <li>
+         <h2 class="app-task-list__section">
+           <span class="app-task-list__section-number">2. </span>About your client</h2>
+         <ul class="app-task-list__items">
+           <li class="app-task-list__item">
+             <span class="app-task-list__task-name">
+               <a href="/v2-client-details" aria-describedby="client-details-status">Client details</a>
+             </span>
+             {% if data['completed-client-details'] == 'Yes' %}
+                  <strong class="govuk-tag govuk-tag app-task-list__tag" id="client-details-status">Completed</strong>
+              {% elseif data['completed-client-details'] == 'No' %}
+                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="client-details-status">In progress</strong>
+              {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="client-details-status">Not started</strong>
+              {% endif %}
+              <!-- {% if data['partner'] %}<strong class="govuk-tag govuk-tag app-task-list__tag" id="client-details-status">Completed</strong>
+               {% else %}
+                   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="client-details-status">Not started</strong>
+               {% endif %} -->
+           </li>
+         </ul>
+       </li>
+       <li>
+         <h2 class="app-task-list__section">
+           <span class="app-task-list__section-number">3. </span>Financial eligibility</h2><ul class="app-task-list__items">
+           <li class="app-task-list__item">
+             <span class="app-task-list__task-name">
+               <a href="/v2-monthly-income" aria-describedby="income-assessment-status">Income details</a>
+             </span>
+             {% if data['completed-income-details'] == 'Yes' %}
+                  <strong class="govuk-tag govuk-tag app-task-list__tag" id="income-assessment-status">Completed</strong>
+              {% elseif data['completed-income-details'] == 'No' %}
+                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="income-assessment-status">In progress</strong>
+              {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="income-assessment-status">Not started</strong>
+              {% endif %}
+             <!--{% if data['income-sources-8-value'] %}<strong class="govuk-tag govuk-tag app-task-list__tag" id="income-assessment-status">Completed</strong>
+              {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="income-assessment-status">Not started</strong>
+              {% endif %}-->
+           </li>
+           <li class="app-task-list__item">
+             <span class="app-task-list__task-name">
+               <a href="/v2-monthly-outgoings" aria-describedby="outgoings-assessment-status">Outgoings details</a>
+             </span>
+             {% if data['completed-outgoings-details'] == 'Yes' %}
+                  <strong class="govuk-tag govuk-tag app-task-list__tag" id="outgoings-assessment-status">Completed</strong>
+              {% elseif data['completed-outgoings-details'] == 'No' %}
+                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="outgoings-assessment-status">In progress</strong>
+              {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="outgoings-assessment-status">Not started</strong>
+              {% endif %}
+             <!--{% if data['outgoing-6-value'] %}<strong class="govuk-tag govuk-tag app-task-list__tag" id="outgoings-assessment-status">Completed</strong>
+              {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="outgoings-assessment-status">Not started</strong>
+              {% endif %}-->
+           </li>
+           <li class="app-task-list__item">
+             <span class="app-task-list__task-name">
+               <a href="/v2-capital" aria-describedby="capital-assessment-status">Capital details</a>
+             </span>
+             {% if data['completed-capital-details'] == 'Yes' %}
+                  <strong class="govuk-tag govuk-tag app-task-list__tag" id="capital-assessment-status">Completed</strong>
+              {% elseif data['completed-capital-details'] == 'No' %}
+                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="capital-assessment-status">In progress</strong>
+              {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="capital-assessment-status">Not started</strong>
+              {% endif %}
+             <!--{% if data['capital-7-value'] %}<strong class="govuk-tag govuk-tag app-task-list__tag" id="capital-assessment-status">Completed</strong>
+              {% else %}
+                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="capital-assessment-status">In progress</strong>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="capital-assessment-status">Not started</strong>
+              {% endif %}-->
+           </li><li class="app-task-list__item">
+             <span class="app-task-list__task-name">
+               <a href="/v2-check-answers" aria-describedby="check-answers-status">Check your answers</a>
+             </span>
+             {% if data['completed-check-answers'] == 'Yes' %}
+                  <strong class="govuk-tag govuk-tag app-task-list__tag" id="check-answers-status">Completed</strong>
+              {% elseif data['completed-check-answers'] == 'No' %}
+                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="check-answers-status">In progress</strong>
+              {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag"id="check-answers-status">Not Started</strong>
+              {% endif %}
+             <!--{% if data['answers-checked'] %}<strong class="govuk-tag govuk-tag app-task-list__tag" id="check-answers-status">Completed</strong>
+              {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="check-answers-status">Not started</strong>
+              {% endif %}-->
+           </li>
+           <li class="app-task-list__item">
+             <span class="app-task-list__task-name">
+               <a href="/v2-results" aria-describedby="legal-aid-estimate-status">Check legal aid eligibility estimate</a>
+             </span>
+             {% if data['completed-check-answers'] == 'Yes' %}
+                  <strong class="govuk-tag govuk-tag app-task-list__tag govuk-tag--green" id="legal-aid-estimate-status">estimate available</strong>
+              {% elseif data['completed-check-answers'] == 'No' %}
+                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="check-answers-status">In progress</strong>
+              {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag"id="check-answers-status">Cannot yet start</strong>
+              {% endif %}
+
+             <!--{% if data['answers-checked'] %}<strong class="govuk-tag govuk-tag app-task-list__tag govuk-tag--green" id="legal-aid-estimate-status">estimate available</strong>
+              {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag"id="legal-aid-estimate-status">Cannot yet start</strong>
+              {% endif %}-->
+           </li>
+         </ul>
+       </li>
+     </ol>
+
+    </div>
+
+
+
+  </div>
+
+
+
+{% endblock %}

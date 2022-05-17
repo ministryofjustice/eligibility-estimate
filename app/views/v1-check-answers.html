@@ -29,7 +29,7 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's details</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="client-details">Change</a></p></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v1-client-details">Change</a></p></div>
     </div>
     <!--<div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Personal details</h2></div>
@@ -54,6 +54,10 @@
         <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['partner']}}</dd>
       </div>
       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Number of dependants<span class="govuk-visually-hidden"> How many dependants</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['dependants']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Employment status<span class="govuk-visually-hidden"> Employment status</span></dt>
         <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['employment-status']}}</dd>
       </div>
@@ -70,7 +74,7 @@
 <!-- case details start -->
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's case details</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="case-details">Change</a></p></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v1-case-details">Change</a></p></div>
     </div>
     <!--<div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Personal details</h2></div>
@@ -95,7 +99,7 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's income</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="monthly-income">Change</a></p></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v1-monthly-income">Change</a></p></div>
     </div>
     <!--<div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Personal details</h2></div>
@@ -139,7 +143,7 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's outgoings</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="monthly-outgoings">Change</a></p></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v1-monthly-outgoings">Change</a></p></div>
     </div>
     <!--<div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Personal details</h2></div>
@@ -185,7 +189,7 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's capital</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="capital">Change</a></p></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v1-capital">Change</a></p></div>
     </div>
     <!--<div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Personal details</h2></div>
@@ -227,7 +231,7 @@
       <!-- send start -->
       <h2 class="govuk-heading-m">What happens next</h2>
       <p>We'll use your answers to give you an estimated result on your client's financial eligibility for legal aid.</p>
-      <form action="/results" method="post" novalidate>
+      <form action="/v1-results" method="post" novalidate>
         <input type="hidden" name="answers-checked" value="true">
 
         <div class="govuk-button-group">

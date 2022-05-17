@@ -19,7 +19,22 @@
       <ol class="app-task-list">
        <li>
          <h2 class="app-task-list__section">
-           <span class="app-task-list__section-number">1. </span>About your client</h2>
+           <span class="app-task-list__section-number">1. </span>About the case</h2>
+         <ul class="app-task-list__items">
+           <li class="app-task-list__item">
+             <span class="app-task-list__task-name">
+               <a href="/case-details-1" aria-describedby="case-details-status">Case details</a>
+             </span>
+             {% if data['domestic-abuse'] %}<strong class="govuk-tag govuk-tag app-task-list__tag" id="client-details-status">Completed</strong>
+              {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="client-details-status">Not started</strong>
+              {% endif %}
+           </li>
+         </ul>
+       </li>
+       <li>
+         <h2 class="app-task-list__section">
+           <span class="app-task-list__section-number">2. </span>About your client</h2>
          <ul class="app-task-list__items">
            <li class="app-task-list__item">
              <span class="app-task-list__task-name">
@@ -34,27 +49,15 @@
        </li>
        <li>
          <h2 class="app-task-list__section">
-           <span class="app-task-list__section-number">2. </span>About the case</h2>
-         <ul class="app-task-list__items">
-           <li class="app-task-list__item">
-             <span class="app-task-list__task-name">
-               <a href="/case-details" aria-describedby="case-details-status">Case details</a>
-             </span>
-             {% if data['domestic-abuse'] %}<strong class="govuk-tag govuk-tag app-task-list__tag" id="client-details-status">Completed</strong>
-              {% else %}
-                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="client-details-status">Not started</strong>
-              {% endif %}
-           </li>
-         </ul>
-       </li>
-       <li>
-         <h2 class="app-task-list__section">
            <span class="app-task-list__section-number">3. </span>Means assessment</h2><ul class="app-task-list__items">
            <li class="app-task-list__item">
              <span class="app-task-list__task-name">
-               <a href="#" aria-describedby="income-assessment-status">Income assessment</a>
+               <a href="/monthly-income" aria-describedby="income-assessment-status">Income assessment</a>
              </span>
-             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="income-assessment-status">not started</strong>
+             {% if data['other-sources'] %}<strong class="govuk-tag govuk-tag app-task-list__tag" id="client-details-status">Completed</strong>
+              {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="client-details-status">Not started</strong>
+              {% endif %}
            </li>
            <li class="app-task-list__item">
              <span class="app-task-list__task-name">
