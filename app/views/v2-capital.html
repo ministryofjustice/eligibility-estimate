@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Capital – {{ serviceName }} – GOV.UK Prototype Kit
+  Eligibility for legal aid - Assets
 {% endblock %}
 
 
@@ -29,20 +29,20 @@
 
     <!--<h1 class="govuk-heading-xl">Your client's income details</h1>-->
 
-    <form class="form" action="/v2-task-list" method="post">
+    <form class="form" action="/v2-check-answers" method="post">
 
       <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-          <h1 class="govuk-fieldset__heading">Which of the following assets/capital does your client have?</h1>
+          <h1 class="govuk-fieldset__heading">Which of the following assets does your client have?</h1>
         </legend>
-        <div id="contact-hint" class="govuk-hint">Select all options that are relevant to your client and enter an amount.</div>
+        <div id="contact-hint" class="govuk-hint">Select all that apply.</div>
 
         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
 
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="capital-1" name="outgoing-housing-payments" type="checkbox" value="outgoing-housing-payments" data-aria-controls="outgoing-housing-payments-yes" {{ checked("outgoing-housing-payments","yes") }} >
-            <label class="govuk-label govuk-checkboxes__label" for="capital-1">Main dwelling share value</label>
+            <label class="govuk-label govuk-checkboxes__label" for="capital-1">Property they live in</label>
             <span id="outgoing-housing-payments-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, value of client share of the equity in their main property if they own or part own it.</span>
           </div>
           <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="outgoing-housing-payments-yes">
@@ -59,7 +59,7 @@
 
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="capital-2" name="outgoing-tax" type="checkbox" value="outgoing-tax" data-aria-controls="outgoing-tax-yes" {{ checked("outgoing-tax","yes") }} >
-            <label class="govuk-label govuk-checkboxes__label" for="capital-2">Other properties value</label>
+            <label class="govuk-label govuk-checkboxes__label" for="capital-2">Any other property</label>
             <span id="outgoing-tax-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, value of client share of the equity in any other property owned/part owned.</span>
           </div>
           <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="outgoing-tax-yes">
@@ -77,7 +77,7 @@
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="capital-3" name="outgoing-nat-ins" type="checkbox" value="outgoing-nat-ins" data-aria-controls="outgoing-nat-ins-yes" {{ checked("outgoing-nat-ins","yes") }}>
             <label class="govuk-label govuk-checkboxes__label" for="capital-3">Savings</label>
-            <span id="outgoing-nat-ins-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+            <span id="outgoing-nat-ins-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, money in current or savings accounts, ISAs, or child accounts your client is a signatory on.</span>
           </div>
           <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="outgoing-nat-ins-yes">
             <div class="govuk-form-group">
@@ -94,7 +94,7 @@
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="capital-4" name="outgoing-childcare" type="checkbox" value="outgoing-childcare" data-aria-controls="outgoing-childcare-yes" {{ checked("outgoing-childcare","yes") }}>
             <label class="govuk-label govuk-checkboxes__label" for="capital-4">Investments</label>
-            <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+            <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, shares in a public limited company, unit trusts or capital bonds.</span>
           </div>
           <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="outgoing-childcare-yes">
             <div class="govuk-form-group">
@@ -168,7 +168,7 @@
       </div>
 
       <!-- marking task complete start -->
-      <div class="govuk-form-group">
+      <!--<div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Have you completed this section?</legend>
           <div class="govuk-radios" data-module="govuk-radios">
@@ -183,7 +183,7 @@
           </div>
 
         </fieldset>
-      </div>
+      </div>-->
 
       <button class="govuk-button" data-module="govuk-button">Save and continue</button>
       <!-- marking task complete end -->

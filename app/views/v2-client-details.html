@@ -29,7 +29,7 @@
 
       <h1 class="govuk-heading-xl">Your client's details</h1>
 
-      <form class="form" action="/v2-task-list" method="post">
+      <form class="form" action="/v2-monthly-income" method="post">
 
 
       <div class="govuk-form-group">
@@ -38,7 +38,7 @@
             <label class="govuk-label govuk-label--m" for="partner">Does your client have a partner?</label>
           </legend>
           <div id="partner-hint" class="govuk-hint">
-            By partner we mean someone they are married to, in a civil relationship with, cohabit with or otherwise share finances and not the opponent in any legal proceedings.
+            By partner we mean someone your client is married to, in a civil relationship with, cohabits with or otherwise shares finances with. They cannot be the opponent in any legal proceedings.
           </div>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
@@ -59,7 +59,7 @@
 
       <div class="govuk-form-group">
         <label class="govuk-label govuk-label--m" for="dependants">How many dependants does your client have?</label>
-        <div id="national-insurance-number-hint" class="govuk-hint">By dependant we mean a partner, a child aged 15 or under, a child aged 16 or over.</div>
+        <div id="national-insurance-number-hint" class="govuk-hint">By dependant we mean a child or adult who lives with your client and depends on them for financial support.</div>
         <input class="govuk-input govuk-input--width-10" id="dependants" value="{{ data['dependants']}}" name="dependants" type="text" spellcheck="false" aria-describedby="dependants-hint">
       </div>
 
@@ -68,15 +68,18 @@
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <label class="govuk-label govuk-label--m" for="employment-status">What is your client's employment status?</label>
             </legend>
-            <div id="employment-hint" class="govuk-hint">
-              Employed can be self-employed and a member of the armed forces.
-            </div>
+            <!--<div id="employment-hint" class="govuk-hint">
+              This includes the self-employed and members of the armed forces.
+            </div>-->
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="employment-status-employed" name="employment-status" type="radio" value="Employed" {{ checked("employment-status", "Employed") }}>
                 <label class="govuk-label govuk-radios__label" for="employment-status-employed">
                   Employed
                 </label>
+                <div id="employment-hint" class="govuk-hint govuk-radios__hint">
+                  This includes the self-employed and members of the armed forces.
+                </div>
               </div>
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="employment-status-unemployed" name="employment-status" type="radio" value="Unemployed" {{ checked("employment-status", "Unemployed") }}>
@@ -152,7 +155,7 @@
         </div>
 
         <!-- marking task complete start -->
-        <div class="govuk-form-group">
+      <!--<div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Have you completed this section?</legend>
             <div class="govuk-radios" data-module="govuk-radios">
@@ -167,7 +170,7 @@
             </div>
 
           </fieldset>
-        </div>
+        </div>-->
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
         <!--<div class="govuk-button-group">

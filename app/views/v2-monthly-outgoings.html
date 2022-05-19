@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Monthly outgoings – {{ serviceName }} – GOV.UK Prototype Kit
+  Eligibility for legal aid - Monthly outgoings
 {% endblock %}
 
 
@@ -29,14 +29,14 @@
 
       <!--<h1 class="govuk-heading-xl">Your client's income details</h1>-->
 
-      <form class="form" action="/v2-task-list" method="post">
+      <form class="form" action="/v2-capital" method="post">
 
         <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h1 class="govuk-fieldset__heading">What regular payments does your client make?</h1>
           </legend>
-          <div id="contact-hint" class="govuk-hint">Select all options that are relevant to your client and enter an amount.</div>
+          <div id="contact-hint" class="govuk-hint">Select all that apply.</div>
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
 
@@ -94,7 +94,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="outgoing-4" name="outgoing-childcare" type="checkbox" value="outgoing-childcare" data-aria-controls="outgoing-childcare-yes" {{ checked("outgoing-childcare","yes") }}>
               <label class="govuk-label govuk-checkboxes__label" for="outgoing-4">Childcare payments</label>
-              <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+              <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, to a childminder, nanny or nursery.</span>
             </div>
             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="outgoing-childcare-yes">
               <div class="govuk-form-group">
@@ -110,8 +110,8 @@
 
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="outgoing-5" name="outgoing-maintenance" type="checkbox" value="outgoing-maintenance" data-aria-controls="outgoing-maintenance-yes" {{ checked("outgoing-maintenance","yes") }}>
-              <label class="govuk-label govuk-checkboxes__label" for="outgoing-5">Maintenance payments</label>
-              <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, payments from an ex-partner or children.</span>
+              <label class="govuk-label govuk-checkboxes__label" for="outgoing-5">Maintenance payments to a former partner</label>
+              <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">This includes child maintenance.</span>
             </div>
             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="outgoing-maintenance-yes">
               <div class="govuk-form-group">
@@ -147,7 +147,7 @@
         </div>
 
         <!-- marking task complete start -->
-        <div class="govuk-form-group">
+      <!--  <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Have you completed this section?</legend>
             <div class="govuk-radios" data-module="govuk-radios">
@@ -162,7 +162,7 @@
             </div>
 
           </fieldset>
-        </div>
+        </div>-->
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
         <!-- marking task complete end -->

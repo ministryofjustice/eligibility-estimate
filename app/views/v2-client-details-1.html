@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Client details – {{ serviceName }} – GOV.UK Prototype Kit
+  Eligibility for legal aid - Client details
 {% endblock %}
 
 
@@ -26,22 +26,19 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      <!--<h1 class="govuk-heading-xl">Your client's details</h1>-->
-      <span class="govuk-caption-l">Question 1 of 5</span>
+      <span class="govuk-caption-l">Question 1 of 2</span>
       <h1 class="govuk-heading-xl">Your client's details</h1>
 
-      <form class="form" action="/v2-client-details-1a" method="post">
-
+      <form class="form" action="/v2-client-details-2" method="post">
 
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <label class="govuk-label govuk-label--l" for="partner">Does your client have a partner?</label>
+            <label class="govuk-label govuk-label--m" for="partner">Does your client have a partner?</label>
           </legend>
           <div id="partner-hint" class="govuk-hint">
-            By partner we mean someone they are married to, in a civil relationship with, cohabit with or otherwise share finances and not the opponent in any legal proceedings.
+            By partner we mean someone your client is married to, in a civil relationship with, cohabits with or otherwise shares finances with. They cannot be the opponent in any legal proceedings.
           </div>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
@@ -60,10 +57,39 @@
         </fieldset>
       </div>
 
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="dependants">How many dependants does your client have?</label>
+        <div id="national-insurance-number-hint" class="govuk-hint">By dependant we mean a child or adult who lives with your client and depends on them for financial support.</div>
+        <input class="govuk-input govuk-input--width-10" id="dependants" value="{{ data['dependants']}}" name="dependants" type="text" spellcheck="false" aria-describedby="dependants-hint">
+      </div>
 
 
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <!-- marking task complete start -->
+      <!--<div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Have you completed this section?</legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="completed-client-details-yes" required name="completed-client-details" type="radio" value="Yes" {{ checked("completed-client-details", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="completed-client-details-yes">Yes, I’ve completed this section</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="completed-client-details-no" required name="completed-client-details" type="radio" value="No" {{ checked("completed-client-details", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="completed-client-details-no">No, I’ll come back to it later</label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>-->
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+        <!--<div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Save and come back later</button>
+        </div>-->
+        <!-- marking task complete end -->
+
 
       </form>
 
@@ -88,6 +114,8 @@
       </aside>
 
     </div>
+
+
 
   </div>
 

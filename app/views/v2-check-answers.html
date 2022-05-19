@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+  Eligibility for legal aid - Check your answers
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,12 +26,12 @@
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">Check your answers</h1>
 
-    <form action="/v2-task-list" method="post">
+    <form action="/v2-results" method="post">
       <!--<input type="hidden" name="answers-checked" value="true">-->
 
 <!-- case details start -->
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's case details</h2></div>
+      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Case details</h2></div>
       <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v2-case-details-1">Change</a></p></div>
     </div>
     <!--<div class="govuk-grid-row">
@@ -110,7 +110,7 @@
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Gross monthly income<span class="govuk-visually-hidden"> Gross monthly income</span></dt>
+        <dt class="govuk-summary-list__key">Employment income after tax<span class="govuk-visually-hidden"> Employment income after tax</span></dt>
         <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-1-value']}}</dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -122,11 +122,11 @@
         <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-3-value']}}</dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Maintenance payments<span class="govuk-visually-hidden"> Maintenance payments</span></dt>
+        <dt class="govuk-summary-list__key">Maintenance payments from a former partner<span class="govuk-visually-hidden"> Maintenance payments from a former partner</span></dt>
         <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-4-value']}}</dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Income from property<span class="govuk-visually-hidden"> Rent</span></dt>
+        <dt class="govuk-summary-list__key">Income from a property or lodger<span class="govuk-visually-hidden"> Income from a property or lodger</span></dt>
         <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-5-value']}}</dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -134,7 +134,7 @@
         <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-6-value']}}</dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Student loan/grant<span class="govuk-visually-hidden"> Student loan/grant</span></dt>
+        <dt class="govuk-summary-list__key">Student finance<span class="govuk-visually-hidden"> Student finance</span></dt>
         <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-7-value']}}</dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -170,12 +170,12 @@
         <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['outgoing-4-value']}}</dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Maintenance payments<span class="govuk-visually-hidden"> Maintenance payments</span></dt>
+        <dt class="govuk-summary-list__key">Maintenance payments to a former partner<span class="govuk-visually-hidden"> Maintenance payments to a former partner</span></dt>
         <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['outgoing-5-value']}}</dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Payments towards legal aid in a criminal or civil case
-          <span class="govuk-visually-hidden"> Payments towards legal aid in a criminal or civil case</span>
+        <dt class="govuk-summary-list__key">Payments towards legal aid in a criminal case
+          <span class="govuk-visually-hidden"> Payments towards legal aid in a criminal case</span>
         </dt>
         <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['outgoing-6-value']}}</dd>
       </div>
@@ -193,11 +193,11 @@
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Main dwelling share value<span class="govuk-visually-hidden"> Housing payments</span></dt>
+        <dt class="govuk-summary-list__key">Property they live in<span class="govuk-visually-hidden"> Property they live in</span></dt>
         <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['capital-1-value']}}</dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Other properties value<span class="govuk-visually-hidden"> Tax</span></dt>
+        <dt class="govuk-summary-list__key">Any other property<span class="govuk-visually-hidden"> Any other property</span></dt>
         <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['capital-2-value']}}</dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -226,7 +226,7 @@
 
 
         <!-- marking task complete start -->
-        <div class="govuk-form-group">
+      <!--  <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Have you completed this section?</legend>
             <div class="govuk-radios" data-module="govuk-radios">
@@ -241,7 +241,7 @@
             </div>
 
           </fieldset>
-        </div>
+        </div>-->
 
         <!-- send start -->
         <h2 class="govuk-heading-m">What happens next</h2>
@@ -253,7 +253,7 @@
 
         <div class="govuk-button-group">
         <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
-        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Save as come back later</button>
+        <!--<button class="govuk-button govuk-button--secondary" data-module="govuk-button">Save as come back later</button>-->
       </div>
       </form>
       <!-- send end -->

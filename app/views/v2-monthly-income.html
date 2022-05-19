@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Monthly income – {{ serviceName }} – GOV.UK Prototype Kit
+  Eligibility for legal aid - Monthly income
 {% endblock %}
 
 
@@ -29,20 +29,20 @@
 
       <!--<h1 class="govuk-heading-xl">Your client's income details</h1>-->
 
-      <form class="form" action="/v2-task-list" method="post">
+      <form class="form" action="/v2-monthly-outgoings" method="post">
 
         <div class="govuk-form-group">
 <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
     <h1 class="govuk-fieldset__heading">What monthly income does your client receive?</h1>
   </legend>
-  <div id="contact-hint" class="govuk-hint">Select all options that are relevant to your client and enter an amount.</div>
+  <div id="contact-hint" class="govuk-hint">Select all that apply.</div>
 
   <div class="govuk-checkboxes" data-module="govuk-checkboxes">
 
     <div class="govuk-checkboxes__item">
       <input class="govuk-checkboxes__input" id="income-sources-1" name="gross-monthly-income" type="checkbox" value="gross-monthly-income" data-aria-controls="gross-monthly-income-yes" {{ checked("gross-monthly-income","yes") }} >
-      <label class="govuk-label govuk-checkboxes__label" for="income-sources-1">Gross montly income</label>
+      <label class="govuk-label govuk-checkboxes__label" for="income-sources-1">Employment income after tax</label>
       <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, from employment.</span>
     </div>
     <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="gross-monthly-income-yes">
@@ -62,7 +62,7 @@
     <div class="govuk-checkboxes__item">
       <input class="govuk-checkboxes__input" id="income-sources-2" name="benefits" type="checkbox" value="benefits" data-aria-controls="benefits-yes" {{ checked("benefits","yes") }} >
       <label class="govuk-label govuk-checkboxes__label" for="income-sources-2">Benefits received</label>
-      <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, Child Benefit or tax credits.</span>
+      <span id="income-sources-2-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, Child Benefit or tax credits.</span>
     </div>
     <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="benefits-yes">
       <div class="govuk-form-group">
@@ -79,7 +79,7 @@
     <div class="govuk-checkboxes__item">
       <input class="govuk-checkboxes__input" id="income-sources-3" name="financial-help" type="checkbox" value="financial-help" data-aria-controls="financial-help-yes" {{ checked("financial-help","yes") }}>
       <label class="govuk-label govuk-checkboxes__label" for="income-sources-3">Financial help from friends or family</label>
-      <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, money from a family member for rent or bills.</span>
+      <span id="income-sources-3-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, money from a family member for rent or bills.</span>
     </div>
     <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="financial-help-yes">
       <div class="govuk-form-group">
@@ -95,8 +95,8 @@
 
     <div class="govuk-checkboxes__item">
       <input class="govuk-checkboxes__input" id="income-sources-4" name="maintenance" type="checkbox" value="maintenance" data-aria-controls="maintenance-yes" {{ checked("maintenance","yes") }}>
-      <label class="govuk-label govuk-checkboxes__label" for="income-sources-4">Maintenance payments</label>
-      <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, payments from an ex-partner.</span>
+      <label class="govuk-label govuk-checkboxes__label" for="income-sources-4">Maintenance payments from a former partner</label>
+      <span id="income-sources-4-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">This includes child maintenance.</span>
     </div>
     <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="maintenance-yes">
       <div class="govuk-form-group">
@@ -112,8 +112,7 @@
 
     <div class="govuk-checkboxes__item">
       <input class="govuk-checkboxes__input" id="income-sources-5" name="rent" type="checkbox" value="rent" data-aria-controls="rent-yes" {{ checked("rent","yes") }}>
-      <label class="govuk-label govuk-checkboxes__label" for="income-sources-5">Income from property</label>
-      <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">Include rent from anyone living with your client or from other properties.</span>
+      <label class="govuk-label govuk-checkboxes__label" for="income-sources-5">Income from a property or lodger</label>
     </div>
     <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="rent-yes">
       <div class="govuk-form-group">
@@ -130,7 +129,7 @@
     <div class="govuk-checkboxes__item">
       <input class="govuk-checkboxes__input" id="income-sources-6" name="pension" type="checkbox" value="rent" data-aria-controls="pension-yes" {{ checked("pension","yes") }}>
       <label class="govuk-label govuk-checkboxes__label" for="income-sources-6">Pension</label>
-      <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">Include State, workplace and personal pensions.</span>
+      <span id="income-sources-6-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">Include State, workplace and personal pensions.</span>
     </div>
     <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="pension-yes">
       <div class="govuk-form-group">
@@ -146,7 +145,8 @@
 
     <div class="govuk-checkboxes__item">
       <input class="govuk-checkboxes__input" id="income-sources-7" name="student-loan-grant" type="checkbox" value="student-loan-grant" data-aria-controls="student-loan-grant-yes" {{ checked("student-loan-grant","yes") }}>
-      <label class="govuk-label govuk-checkboxes__label" for="income-sources-7">Student loan or grant</label>
+      <label class="govuk-label govuk-checkboxes__label" for="income-sources-7">Student finance</label>
+      <span id="income-sources-7-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">This includes any type of student loan, grant or bursary.</span>
     </div>
     <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="student-loan-grant-yes">
       <div class="govuk-form-group">
@@ -186,7 +186,7 @@
 </div>
 
 <!-- marking task complete start -->
-<div class="govuk-form-group">
+<!--<div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Have you completed this section?</legend>
     <div class="govuk-radios" data-module="govuk-radios">
@@ -201,7 +201,7 @@
     </div>
 
   </fieldset>
-</div>
+</div>-->
 
 <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 <!-- marking task complete end -->

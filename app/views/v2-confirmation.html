@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Capital – {{ serviceName }} – GOV.UK Prototype Kit
+  Eligibility for legal aid - Confirmation
 {% endblock %}
 
 
@@ -28,36 +28,39 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <div class="govuk-panel govuk-panel--confirmation">
-          <h1 class="govuk-panel__title">You've provided Sam Doe's information</h1>
-          <div class="govuk-panel__body">Your reference number<br><strong>HDJ2123F</strong></div>
+          <h1 class="govuk-panel__title">You've provided your client's information</h1>
+          <div class="govuk-panel__body">Your reference number is<br><strong>HDJ2123F</strong></div>
         </div>
 
 
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <p>Use 'Apply for legal aid' to make an application for your client.</p>
 
-          <h2 class="govuk-heading-m">You may need to provide evidence</h2>
+          <h2 class="govuk-heading-m">You may need to provide evidence of your client's eligibility, including:</h2>
 
                   <ul class="govuk-list govuk-list--bullet">
-                    <li><strong>Bank statements</strong> covering the last 3 months.</li>
-                    <li><strong>Written evidence of any benefits or financial support</strong> your client is receiving from government departments, Local Authorities or 3rd parties dated within the last 6 months.</li>
-                    <li><strong>If your client is employed,</strong> wage slips covering the last 3 months.</li>
-                    <li><strong>Evidence of housing costs paid</strong> e.g. mortgage statements, rent book or receipts.</li>
-                    <li><strong>Evidence of childcare costs paid by your client</strong> e.g. recent receipts.</li>
-                    <li><strong>Recent documentation showing the value of any assets</strong> held by your client.</li>
-                    <li><strong>If your client owns a property</strong>, evidence of a property valuation e.g. using Zoopla and any mortgage/loan amounts outstanding.</li>
-                    <li><strong>Evidence of any opponent claim</strong> against your client’s assets.</li>
+                    <li>bank statements covering the last 3 months</li>
+                    <li>evidence of any benefits or financial support your client received from the government, local authorities or third parties dated in the last 6 months</li>
+                    <li>wage slips covering the last 3 months (if your client is employed)</li>
+                    <li>evidence of housing payments such as a mortgage statement, rent book or receipts</li>
+                    <li>receipts for childcare payments</li>
+                    <li>documentation showing the value of any assets held by your client</li>
+                    <li>a property valuation (if your client owns a property)</li>
+                    <li>evidence of any claims against your client's assets</li>
                   </ul>
 
+
+                  <button type="submit" class="govuk-button" data-module="govuk-button">Print confirmation</button>
         <!-- send start -->
-        <h2 class="govuk-heading-m">What happens next</h2>
-        <p>You can use this reference number to return to the answers you provided on this service. You will need to apply for legal aid separately.</p>
-        <form action="/v2-task-list" method="post" novalidate>
+
+      <!--  <form action="/v2-task-list" method="post" novalidate>
           <input type="hidden" name="results-checked" value="true">
 
           <div class="govuk-button-group">
           <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
           <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Save as come back later</button>
         </div>
-        </form>
+      </form>-->
         <!-- send end -->
 
       </div>

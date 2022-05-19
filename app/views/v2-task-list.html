@@ -18,7 +18,7 @@
       </h1>
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Eligibility estimate incomplete</h2>
-      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 3 of 8 sections.</p>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 5 sections.</p>
 
       <ol class="app-task-list">
        <li>
@@ -67,10 +67,11 @@
        </li>
        <li>
          <h2 class="app-task-list__section">
-           <span class="app-task-list__section-number">3. </span>Financial eligibility</h2><ul class="app-task-list__items">
+           <span class="app-task-list__section-number">3. </span>Financial eligibility</h2>
+           <ul class="app-task-list__items">
            <li class="app-task-list__item">
              <span class="app-task-list__task-name">
-               <a href="/v2-monthly-income" aria-describedby="income-assessment-status">Income details</a>
+               <a href="/v2-monthly-income" aria-describedby="income-assessment-status">Income</a>
              </span>
              {% if data['completed-income-details'] == 'Yes' %}
                   <strong class="govuk-tag govuk-tag app-task-list__tag" id="income-assessment-status">Completed</strong>
@@ -86,7 +87,7 @@
            </li>
            <li class="app-task-list__item">
              <span class="app-task-list__task-name">
-               <a href="/v2-monthly-outgoings" aria-describedby="outgoings-assessment-status">Outgoings details</a>
+               <a href="/v2-monthly-outgoings" aria-describedby="outgoings-assessment-status">Outgoings</a>
              </span>
              {% if data['completed-outgoings-details'] == 'Yes' %}
                   <strong class="govuk-tag govuk-tag app-task-list__tag" id="outgoings-assessment-status">Completed</strong>
@@ -102,7 +103,7 @@
            </li>
            <li class="app-task-list__item">
              <span class="app-task-list__task-name">
-               <a href="/v2-capital" aria-describedby="capital-assessment-status">Capital details</a>
+               <a href="/v2-capital" aria-describedby="capital-assessment-status">Capital</a>
              </span>
              {% if data['completed-capital-details'] == 'Yes' %}
                   <strong class="govuk-tag govuk-tag app-task-list__tag" id="capital-assessment-status">Completed</strong>
@@ -116,7 +117,9 @@
                   <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="capital-assessment-status">In progress</strong>
                   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="capital-assessment-status">Not started</strong>
               {% endif %}-->
-           </li><li class="app-task-list__item">
+           </li>
+
+           <!--<li class="app-task-list__item">
              <span class="app-task-list__task-name">
                <a href="/v2-check-answers" aria-describedby="check-answers-status">Check your answers</a>
              </span>
@@ -131,7 +134,30 @@
               {% else %}
                   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="check-answers-status">Not started</strong>
               {% endif %}-->
-           </li>
+           <!--</li>-->
+          <!--<li class="app-task-list__item">
+             <span class="app-task-list__task-name">
+               <a href="/v2-results" aria-describedby="legal-aid-estimate-status">Check legal aid eligibility estimate</a>
+             </span>
+             {% if data['completed-check-answers'] == 'Yes' %}
+                  <strong class="govuk-tag govuk-tag app-task-list__tag govuk-tag--green" id="legal-aid-estimate-status">estimate available</strong>
+              {% elseif data['completed-check-answers'] == 'No' %}
+                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="check-answers-status">In progress</strong>
+              {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag"id="check-answers-status">Cannot yet start</strong>
+              {% endif %}
+
+             <!--{% if data['answers-checked'] %}<strong class="govuk-tag govuk-tag app-task-list__tag govuk-tag--green" id="legal-aid-estimate-status">estimate available</strong>
+              {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag"id="legal-aid-estimate-status">Cannot yet start</strong>
+              {% endif %}-->
+           <!--</li>-->
+         </ul>
+       </li>
+       <!--<li>
+         <h2 class="app-task-list__section">
+           <span class="app-task-list__section-number">4. </span>Eligibility estimate</h2>
+           <ul class="app-task-list__items">
            <li class="app-task-list__item">
              <span class="app-task-list__task-name">
                <a href="/v2-results" aria-describedby="legal-aid-estimate-status">Check legal aid eligibility estimate</a>
