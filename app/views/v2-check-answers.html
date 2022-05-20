@@ -52,12 +52,15 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's details</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v2-client-details">Change</a></p></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v2-client-details-1">Change</a></p></div>
     </div>
 
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Over 60<span class="govuk-visually-hidden"> Over 60</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['o-60']}}</dd>
+      </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Have a partner<span class="govuk-visually-hidden"> Have a partner</span></dt>
         <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['partner']}}</dd>
@@ -167,7 +170,7 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's details</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v2-client-details">Change</a></p></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v2-client-details-1">Change</a></p></div>
     </div>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
