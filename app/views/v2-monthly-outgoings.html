@@ -32,7 +32,7 @@
         <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-            <h1 class="govuk-fieldset__heading">What regular payments does your client make?</h1>
+            <h1 class="govuk-fieldset__heading">What are your client's monthly outgoings and deductions?</h1>
           </legend>
           <div id="contact-hint" class="govuk-hint">Select all that apply.</div>
 
@@ -50,40 +50,6 @@
                 <div class="govuk-input__wrapper">
                   <div class="govuk-input__prefix" aria-hidden="true">£</div>
                   <input class="govuk-input govuk-input--width-5" id="outgoing-1-value" name="outgoing-1-value" type="text" value="{{ data['outgoing-1-value']}}">
-                </div>
-                <!-- wrapper ends -->
-              </div>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="outgoing-2" name="outgoing-tax" type="checkbox" value="outgoing-tax" data-aria-controls="outgoing-tax-yes" {{ checked("outgoing-tax","yes") }} >
-              <label class="govuk-label govuk-checkboxes__label" for="outgoing-2">Tax</label>
-              <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-            </div>
-            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="outgoing-tax-yes">
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="outgoing-2">Enter amount</label>
-                <!-- wrapper starts -->
-                <div class="govuk-input__wrapper">
-                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
-                  <input class="govuk-input govuk-input--width-5" id="outgoing-2-value" name="outgoing-2-value" type="text" value="{{ data['outgoing-2-value']}}">
-                </div>
-                <!-- wrapper ends -->
-              </div>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="outgoing-3" name="outgoing-nat-ins" type="checkbox" value="outgoing-nat-ins" data-aria-controls="outgoing-nat-ins-yes" {{ checked("outgoing-nat-ins","yes") }}>
-              <label class="govuk-label govuk-checkboxes__label" for="outgoing-3">National insurance</label>
-              <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-            </div>
-            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="outgoing-nat-ins-yes">
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="outgoing-3">Enter amount</label>
-                <!-- wrapper starts -->
-                <div class="govuk-input__wrapper">
-                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
-                  <input class="govuk-input govuk-input--width-5" id="outgoing-3-value" name="outgoing-3-value" type="text" value="{{ data['outgoing-3-value']}}">
                 </div>
                 <!-- wrapper ends -->
               </div>
@@ -134,6 +100,38 @@
                 <div class="govuk-input__wrapper">
                   <div class="govuk-input__prefix" aria-hidden="true">£</div>
                   <input class="govuk-input govuk-input--width-5" id="outgoing-6-value" name="outgoing-6-value" type="text" value="{{ data['outgoing-6-value']}}">
+                </div>
+                <!-- wrapper ends -->
+              </div>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="outgoing-2" name="outgoing-tax" type="checkbox" value="outgoing-tax" data-aria-controls="outgoing-tax-yes" {{ checked("outgoing-tax","yes") }} >
+              <label class="govuk-label govuk-checkboxes__label" for="outgoing-2">Income tax</label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="outgoing-tax-yes">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="outgoing-2">Enter amount</label>
+                <!-- wrapper starts -->
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-5" id="outgoing-2-value" name="outgoing-2-value" type="text" value="{{ data['outgoing-2-value']}}">
+                </div>
+                <!-- wrapper ends -->
+              </div>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="outgoing-3" name="outgoing-nat-ins" type="checkbox" value="outgoing-nat-ins" data-aria-controls="outgoing-nat-ins-yes" {{ checked("outgoing-nat-ins","yes") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="outgoing-3">National Insurance</label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="outgoing-nat-ins-yes">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="outgoing-3">Enter amount</label>
+                <!-- wrapper starts -->
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-5" id="outgoing-3-value" name="outgoing-3-value" type="text" value="{{ data['outgoing-3-value']}}">
                 </div>
                 <!-- wrapper ends -->
               </div>
