@@ -45,7 +45,7 @@
             </div>
             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="outgoing-housing-payments-yes">
               <div class="govuk-form-group">
-                <label class="govuk-label" for="outgoing-1">Enter amount</label>
+                <label class="govuk-label" for="outgoing-1">Enter monthly amount</label>
                 <!-- wrapper starts -->
                 <div class="govuk-input__wrapper">
                   <div class="govuk-input__prefix" aria-hidden="true">£</div>
@@ -62,7 +62,7 @@
             </div>
             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="outgoing-childcare-yes">
               <div class="govuk-form-group">
-                <label class="govuk-label" for="outgoing-4">Enter amount</label>
+                <label class="govuk-label" for="outgoing-4">Enter monthly amount</label>
                 <!-- wrapper starts -->
                 <div class="govuk-input__wrapper">
                   <div class="govuk-input__prefix" aria-hidden="true">£</div>
@@ -75,11 +75,11 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="outgoing-5" name="outgoing-maintenance" type="checkbox" value="outgoing-maintenance" data-aria-controls="outgoing-maintenance-yes" {{ checked("outgoing-maintenance","yes") }}>
               <label class="govuk-label govuk-checkboxes__label" for="outgoing-5">Maintenance payments to a former partner</label>
-              <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">This includes child maintenance.</span>
+              <span id="outgoing-5-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">This includes child maintenance.</span>
             </div>
             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="outgoing-maintenance-yes">
               <div class="govuk-form-group">
-                <label class="govuk-label" for="income-sources-5">Enter amount</label>
+                <label class="govuk-label" for="income-sources-5">Enter monthly amount</label>
                 <!-- wrapper starts -->
                 <div class="govuk-input__wrapper">
                   <div class="govuk-input__prefix" aria-hidden="true">£</div>
@@ -95,7 +95,7 @@
             </div>
             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="outgoing-legal-aid-yes">
               <div class="govuk-form-group">
-                <label class="govuk-label" for="income-sources-6">Enter amount</label>
+                <label class="govuk-label" for="income-sources-6">Enter monthly amount</label>
                 <!-- wrapper starts -->
                 <div class="govuk-input__wrapper">
                   <div class="govuk-input__prefix" aria-hidden="true">£</div>
@@ -108,10 +108,11 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="outgoing-2" name="outgoing-tax" type="checkbox" value="outgoing-tax" data-aria-controls="outgoing-tax-yes" {{ checked("outgoing-tax","yes") }} >
               <label class="govuk-label govuk-checkboxes__label" for="outgoing-2">Income tax</label>
+              <span id="outgoing-2-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">You can find this on your client's payslips.</span>
             </div>
             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="outgoing-tax-yes">
               <div class="govuk-form-group">
-                <label class="govuk-label" for="outgoing-2">Enter amount</label>
+                <label class="govuk-label" for="outgoing-2">Enter monthly amount</label>
                 <!-- wrapper starts -->
                 <div class="govuk-input__wrapper">
                   <div class="govuk-input__prefix" aria-hidden="true">£</div>
@@ -124,10 +125,11 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="outgoing-3" name="outgoing-nat-ins" type="checkbox" value="outgoing-nat-ins" data-aria-controls="outgoing-nat-ins-yes" {{ checked("outgoing-nat-ins","yes") }}>
               <label class="govuk-label govuk-checkboxes__label" for="outgoing-3">National Insurance</label>
+              <span id="outgoing-3-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">You can find this on your client's payslips.</span>
             </div>
             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="outgoing-nat-ins-yes">
               <div class="govuk-form-group">
-                <label class="govuk-label" for="outgoing-3">Enter amount</label>
+                <label class="govuk-label" for="outgoing-3">Enter monthly amount</label>
                 <!-- wrapper starts -->
                 <div class="govuk-input__wrapper">
                   <div class="govuk-input__prefix" aria-hidden="true">£</div>
