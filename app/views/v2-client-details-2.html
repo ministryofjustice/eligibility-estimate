@@ -28,11 +28,7 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Your client's details</h1>
 
-      <!-- -->
-
 <form class="form" action="/v2-monthly-income" method="post">
-
-
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
@@ -89,9 +85,7 @@
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <label class="govuk-label govuk-label--m" for="employment-status">What is your client's employment status?</label>
             </legend>
-            <!--<div id="employment-hint" class="govuk-hint">
-              This includes the self-employed and members of the armed forces.
-            </div>-->
+
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="employment-status-employed" name="employment-status" type="radio" value="Employed" {{ checked("employment-status", "Employed") }}>
@@ -108,48 +102,12 @@
                   Unemployed
                 </label>
               </div>
-          <!--  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="employment-status-employed" name="employment-status" type="checkbox" value="Employed" {{ checked("employment-status", "Employed") }}>
-                <label class="govuk-label govuk-checkboxes__label" for="employment-status-employed">
-                  Employed
-                </label>
-              </div>
 
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="employment-status-self-employed" name="employment-status" type="checkbox" value="Self-employed" {{ checked("employment-status", "Self-employed") }}>
-                <label class="govuk-label govuk-checkboxes__label" for="employment-status-self-employed">
-                  Unemployed
-                </label>
-              </div>-->
           </fieldset>
         </div>
 
-        <!-- marking task complete start -->
-      <!--<div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Have you completed this section?</legend>
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="completed-client-details-yes" required name="completed-client-details" type="radio" value="Yes" {{ checked("completed-client-details", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="completed-client-details-yes">Yes, I’ve completed this section</label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="completed-client-details-no" required name="completed-client-details" type="radio" value="No" {{ checked("completed-client-details", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="completed-client-details-no">No, I’ll come back to it later</label>
-              </div>
-            </div>
-
-          </fieldset>
-        </div>-->
-
-
           <button class="govuk-button" data-module="govuk-button">Save and continue</button>
         </form>
-
-
-
-
     </div>
 
     <div class="govuk-grid-column-one-third">
@@ -171,8 +129,6 @@
       </aside>
 
     </div>
-
-
 
   </div>
 

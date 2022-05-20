@@ -56,7 +56,7 @@
     <tbody>
       <tr class="govuk-table__row">
       <h2 class="govuk-heading-m">Capital</h2>
-        <th scope="row" class="govuk-table__header">Property they live in</th>
+        <th scope="row" class="govuk-table__header">Property they own and live in</th>
         <td class="govuk-table__cell govuk-table__cell--numeric">£{{ data['capital-1-value']}}</td>
       </tr>
       <tr class="govuk-table__row">
@@ -71,16 +71,13 @@
         <th scope="row" class="govuk-table__header">Investments</th>
         <td class="govuk-table__cell govuk-table__cell--numeric">£{{ data['capital-4-value']}}</td>
       </tr>
-      <!--<tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">Maintenance payments</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">£{{ data['capital-5-value']}}</td>
-      </tr>-->
+
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Vehicles</th>
         <td class="govuk-table__cell govuk-table__cell--numeric">£{{ data['capital-6-value']}}</td>
       </tr>
       <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">Other assets</th>
+        <th scope="row" class="govuk-table__header">Valuable items worth £500 or more</th>
         <td class="govuk-table__cell govuk-table__cell--numeric">£{{ data['capital-7-value']}}</td>
       </tr>
 
@@ -96,16 +93,12 @@
 </div>
 
 <!-- send start -->
-<!--
-<p>Once you save and continue, you'll receive a reference number to return to this service with.</p>
-<p>You will need to apply for legal aid separately.</p>-->
 <form action="/v2-confirmation" method="post" novalidate>
   <input type="hidden" name="answers-checked" value="true">
 
   <div class="govuk-button-group">
   <button type="submit" class="govuk-button" data-module="govuk-button">Confirm and continue</button>
   <button type="submit" class="govuk-button" data-module="govuk-button">Print calculation</button>
-  <!--<button class="govuk-button govuk-button--secondary" data-module="govuk-button">Save as come back later</button>-->
 </div>
 </form>
 <!-- send end -->
@@ -251,7 +244,7 @@
     <tbody>
       <tr class="govuk-table__row">
       <h2 class="govuk-heading-m">Capital</h2>
-        <th scope="row" class="govuk-table__header">Property they live in</th>
+        <th scope="row" class="govuk-table__header">Property they own and live in</th>
         <td class="govuk-table__cell govuk-table__cell--numeric">£{{ data['capital-1-value']}}</td>
       </tr>
       <tr class="govuk-table__row">
@@ -266,16 +259,13 @@
         <th scope="row" class="govuk-table__header">Investments</th>
         <td class="govuk-table__cell govuk-table__cell--numeric">£{{ data['capital-4-value']}}</td>
       </tr>
-      <!--<tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">Maintenance payments</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">£{{ data['capital-5-value']}}</td>
-      </tr>-->
+
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Vehicles</th>
         <td class="govuk-table__cell govuk-table__cell--numeric">£{{ data['capital-6-value']}}</td>
       </tr>
       <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">Other assets</th>
+        <th scope="row" class="govuk-table__header">Valuable items worth £500 or more</th>
         <td class="govuk-table__cell govuk-table__cell--numeric">£{{ data['capital-7-value']}}</td>
       </tr>
 
@@ -291,16 +281,12 @@
 </div>
 
 <!-- send start -->
-<!--
-<p>Once you save and continue, you'll receive a reference number to return to this service with.</p>
-<p>You will need to apply for legal aid separately.</p>-->
 <form action="/v2-confirmation" method="post" novalidate>
   <input type="hidden" name="answers-checked" value="true">
 
   <div class="govuk-button-group">
   <button type="submit" class="govuk-button" data-module="govuk-button">Confirm and continue</button>
   <button type="submit" class="govuk-button" data-module="govuk-button">Print calculation</button>
-  <!--<button class="govuk-button govuk-button--secondary" data-module="govuk-button">Save as come back later</button>-->
 </div>
 </form>
 <!-- send end -->
