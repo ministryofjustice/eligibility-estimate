@@ -171,7 +171,14 @@
     </div>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Under 16<span class="govuk-visually-hidden"> Under 16</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['u-16']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Over 60<span class="govuk-visually-hidden"> Over 60</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['o-60']}}</dd>
+      </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Have a partner<span class="govuk-visually-hidden"> Have a partner</span></dt>
         <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['partner']}}</dd>
@@ -181,16 +188,16 @@
         <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['dependants']}}</dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Employment status<span class="govuk-visually-hidden"> Employment status</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['employment-status']}}</dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Receiving benefits<span class="govuk-visually-hidden"> Receiving benefits</span></dt>
+        <dt class="govuk-summary-list__key">Receiving a passporting benefit<span class="govuk-visually-hidden"> Receiving benefits</span></dt>
         <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['passport-benefits']}}</dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Recieving asylum support<span class="govuk-visually-hidden"> Recieving asylum support</span></dt>
         <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['asylum-support']}}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Employment status<span class="govuk-visually-hidden"> Employment status</span></dt>
+        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['employment-status']}}</dd>
       </div>
     </dl>
 

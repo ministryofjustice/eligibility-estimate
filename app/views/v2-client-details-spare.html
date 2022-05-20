@@ -156,4 +156,190 @@
     </div>
   </div>
 
+  <!-- from client details -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Your client's details</h1>
+
+      <form class="form" action="/v2-monthly-income" method="post">
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <label class="govuk-label govuk-label--m" for="partner">Does your client have a partner?</label>
+          </legend>
+          <div id="partner-hint" class="govuk-hint">
+            By partner we mean someone your client is married to, in a civil relationship with, cohabits with or otherwise shares finances with. They cannot be the opponent in any legal proceedings.
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="partner-yes" name="partner" type="radio" value="Yes" {{ checked("partner", "Yes") }}>
+              <label class="govuk-label govuk-radios__label" for="partner-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="partner-no" name="partner" type="radio" value="No" {{ checked("partner", "No") }}>
+              <label class="govuk-label govuk-radios__label" for="partner-no">
+                No
+              </label>
+            </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="dependants">How many dependants does your client have?</label>
+        <div id="national-insurance-number-hint" class="govuk-hint">By dependant we mean a child or adult who lives with your client and depends on them for financial support.</div>
+        <input class="govuk-input govuk-input--width-10" id="dependants" value="{{ data['dependants']}}" name="dependants" type="text" spellcheck="false" aria-describedby="dependants-hint">
+      </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <label class="govuk-label govuk-label--m" for="employment-status">What is your client's employment status?</label>
+            </legend>
+            <!--<div id="employment-hint" class="govuk-hint">
+              This includes the self-employed and members of the armed forces.
+            </div>-->
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="employment-status-employed" name="employment-status" type="radio" value="Employed" {{ checked("employment-status", "Employed") }}>
+                <label class="govuk-label govuk-radios__label" for="employment-status-employed">
+                  Employed
+                </label>
+                <div id="employment-hint" class="govuk-hint govuk-radios__hint">
+                  This includes the self-employed and members of the armed forces.
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="employment-status-unemployed" name="employment-status" type="radio" value="Unemployed" {{ checked("employment-status", "Unemployed") }}>
+                <label class="govuk-label govuk-radios__label" for="employment-status-unemployed">
+                  Unemployed
+                </label>
+              </div>
+          <!--  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="employment-status-employed" name="employment-status" type="checkbox" value="Employed" {{ checked("employment-status", "Employed") }}>
+                <label class="govuk-label govuk-checkboxes__label" for="employment-status-employed">
+                  Employed
+                </label>
+              </div>
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="employment-status-self-employed" name="employment-status" type="checkbox" value="Self-employed" {{ checked("employment-status", "Self-employed") }}>
+                <label class="govuk-label govuk-checkboxes__label" for="employment-status-self-employed">
+                  Unemployed
+                </label>
+              </div>-->
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <label class="govuk-label govuk-label--m" for="passport-benefits">Is your client receiving any benefits?</label>
+            </legend>
+            <div id="partner-hint" class="govuk-hint">
+              Benefits are Income  Support (IS), Income-based  Jobseeker’s Allowance (JSA), Universal  Credit (UC), Guarantee  Credit element of Pension Credit (GC), Income-related Employment and Support Allowance (ESA)
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="passport-benefits-yes" name="passport-benefits" type="radio" value="Yes" {{ checked("passport-benefits", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="passport-benefits-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="passport-benefits-no" name="passport-benefits" type="radio" value="No" {{ checked("passport-benefits", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="passport-benefits-no">
+                  No
+                </label>
+              </div>
+
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <label class="govuk-label govuk-label--m" for="asylum-support">Is your client receiving asylum support?</label>
+            </legend>
+            <div id="partner-hint" class="govuk-hint">
+              If a person is waiting to find out if they'll be given asylum, they may receive housing and money to support them and their family.
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="asylum-support-yes" name="asylum-support" type="radio" value="Yes" {{ checked("asylum-support", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="asylum-support-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="asylum-support-no" name="asylum-support" type="radio" value="No" {{ checked("asylum-support", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="asylum-support-no">
+                  No
+                </label>
+              </div>
+
+          </fieldset>
+        </div>
+
+        <!-- marking task complete start -->
+      <!--<div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Have you completed this section?</legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="completed-client-details-yes" required name="completed-client-details" type="radio" value="Yes" {{ checked("completed-client-details", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="completed-client-details-yes">Yes, I’ve completed this section</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="completed-client-details-no" required name="completed-client-details" type="radio" value="No" {{ checked("completed-client-details", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="completed-client-details-no">No, I’ll come back to it later</label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>-->
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+        <!--<div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Save and come back later</button>
+        </div>-->
+        <!-- marking task complete end -->
+
+
+      </form>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="https://www.gov.uk/legal-aid">
+              Legal aid guidance
+            </a>
+            </li>
+
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+
+
+  </div>
+  <!-- -->
+
 {% endblock %}
