@@ -4,6 +4,8 @@
 Check answers – {{ serviceName }}
 {% endblock %}
 
+{% set currency = "£" %}
+
 {% block beforeContent %}
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
@@ -137,42 +139,42 @@ Check answers – {{ serviceName }}
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Property they live in<span class="govuk-visually-hidden"> Property they own and live in</span></dt>
-        {% if data['capital-1-value'] %}<dd class="govuk-summary-list__value">£{{ data['capital-1-value']}}</dd>
+        {% if data['capital-1-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-1-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Any other property<span class="govuk-visually-hidden"> Any other property</span></dt>
-        {% if data['capital-2-value'] %}<dd class="govuk-summary-list__value">£{{ data['capital-2-value']}}</dd>
+        {% if data['capital-2-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-2-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Savings<span class="govuk-visually-hidden"> National insurance<</span></dt>
-        {% if data['capital-3-value'] %}<dd class="govuk-summary-list__value">£{{ data['capital-3-value']}}</dd>
+        {% if data['capital-3-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-3-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Investments<span class="govuk-visually-hidden"> Childcare payments</span></dt>
-        {% if data['capital-4-value'] %}<dd class="govuk-summary-list__value">£{{ data['capital-4-value']}}</dd>
+        {% if data['capital-4-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-4-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Vehicles<span class="govuk-visually-hidden"> Payments towards legal aid in a criminal or civil case</span></dt>
-        {% if data['capital-6-value'] %}<dd class="govuk-summary-list__value">£{{ data['capital-6-value']}}</dd>
+        {% if data['capital-6-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-6-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Valuable items worth £500 or more<span class="govuk-visually-hidden"> Dependants allowance</span></dt>
-        {% if data['capital-7-value'] %}<dd class="govuk-summary-list__value">£{{ data['capital-7-value']}}</dd>
+        {% if data['capital-7-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-7-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
@@ -312,56 +314,56 @@ Check answers – {{ serviceName }}
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Employment income after tax<span class="govuk-visually-hidden"> Employment income after tax</span></dt>
-        {% if data['income-sources-1-value'] %}<dd class="govuk-summary-list__value">£{{ data['income-sources-1-value']}}</dd>
+        {% if data['income-sources-1-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['income-sources-1-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Benefits received<span class="govuk-visually-hidden"> Benefits received</span></dt>
-        {% if data['income-sources-2-value'] %}<dd class="govuk-summary-list__value">£{{ data['income-sources-2-value']}}</dd>
+        {% if data['income-sources-2-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['income-sources-2-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Financial help<span class="govuk-visually-hidden"> Financial help</span></dt>
-        {% if data['income-sources-3-value'] %}<dd class="govuk-summary-list__value">£{{ data['income-sources-3-value']}}</dd>
+        {% if data['income-sources-3-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['income-sources-3-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Maintenance payments from a former partner<span class="govuk-visually-hidden"> Maintenance payments from a former partner</span></dt>
-        {% if data['income-sources-4-value'] %}<dd class="govuk-summary-list__value">£{{ data['income-sources-4-value']}}</dd>
+        {% if data['income-sources-4-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['income-sources-4-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Income from a property or lodger<span class="govuk-visually-hidden"> Income from a property or lodger</span></dt>
-        {% if data['income-sources-5-value'] %}<dd class="govuk-summary-list__value">£{{ data['income-sources-5-value']}}</dd>
+        {% if data['income-sources-5-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['income-sources-5-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Pension<span class="govuk-visually-hidden"> Pension</span></dt>
-        {% if data['income-sources-6-value'] %}<dd class="govuk-summary-list__value">£{{ data['income-sources-6-value']}}</dd>
+        {% if data['income-sources-6-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['income-sources-6-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Student finance<span class="govuk-visually-hidden"> Student finance</span></dt>
-        {% if data['income-sources-7-value'] %}<dd class="govuk-summary-list__value">£{{ data['income-sources-7-value']}}</dd>
+        {% if data['income-sources-7-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['income-sources-7-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Other sources<span class="govuk-visually-hidden"> Other sources</span></dt>
-        {% if data['income-sources-8-value'] %}<dd class="govuk-summary-list__value">£{{ data['income-sources-8-value']}}</dd>
+        {% if data['income-sources-8-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['income-sources-8-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
@@ -377,42 +379,42 @@ Check answers – {{ serviceName }}
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Housing payments<span class="govuk-visually-hidden"> Housing payments</span></dt>
-        {% if data['outgoing-1-value'] %}<dd class="govuk-summary-list__value">£{{ data['outgoing-1-value']}}</dd>
+        {% if data['outgoing-1-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['outgoing-1-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Childcare payments<span class="govuk-visually-hidden"> Childcare payments</span></dt>
-        {% if data['outgoing-4-value'] %}<dd class="govuk-summary-list__value">£{{ data['outgoing-4-value']}}</dd>
+        {% if data['outgoing-4-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['outgoing-4-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Maintenance payments to a former partner<span class="govuk-visually-hidden"> Maintenance payments to a former partner</span></dt>
-        {% if data['outgoing-5-value'] %}<dd class="govuk-summary-list__value">£{{ data['outgoing-5-value']}}</dd>
+        {% if data['outgoing-5-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['outgoing-5-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Payments towards legal aid in a criminal case<span class="govuk-visually-hidden"> Payments towards legal aid in a criminal case</span></dt>
-        {% if data['outgoing-6-value'] %}<dd class="govuk-summary-list__value">£{{ data['outgoing-6-value']}}</dd>
+        {% if data['outgoing-6-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['outgoing-6-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Income tax<span class="govuk-visually-hidden"> Tax</span></dt>
-        {% if data['outgoing-2-value'] %}<dd class="govuk-summary-list__value">£{{ data['outgoing-2-value']}}</dd>
+        {% if data['outgoing-2-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['outgoing-2-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">National Insurance<span class="govuk-visually-hidden"> National insurance<</span></dt>
-        {% if data['outgoing-3-value'] %}<dd class="govuk-summary-list__value">£{{ data['outgoing-3-value']}}</dd>
+        {% if data['outgoing-3-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['outgoing-3-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
@@ -429,42 +431,42 @@ Check answers – {{ serviceName }}
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Property they live in<span class="govuk-visually-hidden"> Property they own and live in</span></dt>
-            {% if data['capital-1-value'] %}<dd class="govuk-summary-list__value">£{{ data['capital-1-value']}}</dd>
+            {% if data['capital-1-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-1-value']}}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not provided</dd>
              {% endif %}
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Any other property<span class="govuk-visually-hidden"> Any other property</span></dt>
-            {% if data['capital-2-value'] %}<dd class="govuk-summary-list__value">£{{ data['capital-2-value']}}</dd>
+            {% if data['capital-2-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-2-value']}}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not provided</dd>
              {% endif %}
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Savings<span class="govuk-visually-hidden"> National insurance<</span></dt>
-            {% if data['capital-3-value'] %}<dd class="govuk-summary-list__value">£{{ data['capital-3-value']}}</dd>
+            {% if data['capital-3-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-3-value']}}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not provided</dd>
              {% endif %}
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Investments<span class="govuk-visually-hidden"> Childcare payments</span></dt>
-            {% if data['capital-4-value'] %}<dd class="govuk-summary-list__value">£{{ data['capital-4-value']}}</dd>
+            {% if data['capital-4-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-4-value']}}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not provided</dd>
              {% endif %}
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Vehicles<span class="govuk-visually-hidden"> Payments towards legal aid in a criminal or civil case</span></dt>
-            {% if data['capital-4-value'] %}<dd class="govuk-summary-list__value">£{{ data['capital-4-value']}}</dd>
+            {% if data['capital-4-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-4-value']}}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not provided</dd>
              {% endif %}
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Valuable items worth £500 or more<span class="govuk-visually-hidden"> Dependants allowance</span></dt>
-            {% if data['capital-7-value'] %}<dd class="govuk-summary-list__value">£{{ data['capital-7-value']}}</dd>
+            {% if data['capital-7-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-7-value']}}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not provided</dd>
              {% endif %}
