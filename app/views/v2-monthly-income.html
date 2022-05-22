@@ -1,9 +1,9 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{% if data['passport-benefits'] == 'Yes' %}Eligibility for legal aid - Assets
+{% if data['passport-benefits'] == 'Yes' %}Assets – {{ serviceName }}
   {% else %}
-    Eligibility for legal aid - Monthly income
+Income – {{ serviceName }}
      {% endif %}
 {% endblock %}
 
