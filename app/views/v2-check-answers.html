@@ -22,117 +22,176 @@
 
 {% if data['passport-benefits'] == 'Yes' %}
 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
-    <h1 class="govuk-heading-l">Check your answers</h1>
-
-    <form action="/v2-results" method="post">
+    <h1 class="govuk-heading-l">Check your answers before submitting your eligibility check</h1>
 
 <!-- case details start -->
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Case details</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v2-case-details-1">Change</a></p></div>
-    </div>
-
+<h2 class="govuk-heading-m">Case details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Required representation</dt>
+            {% if data['represenation'] %}<dd class="govuk-summary-list__value">{{ data['represenation']}}</dd>
+             {% else %}
+                 <dd class="govuk-summary-list__value">Not provided</dd>
+             {% endif %}
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/v2-case-details-1">Change<span class="govuk-visually-hidden"> Required representation</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Upper Tribunal case</dt>
+            {% if data['upper-tribunal'] %}<dd class="govuk-summary-list__value">{{ data['upper-tribunal']}}</dd>
+             {% else %}
+                 <dd class="govuk-summary-list__value">Not provided</dd>
+             {% endif %}
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/v2-case-details-2">Change<span class="govuk-visually-hidden"> Upper Tribunal case</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Domestic Abuse case</dt>
+            {% if data['domestic-abuse'] %}<dd class="govuk-summary-list__value">{{ data['domestic-abuse']}}</dd>
+             {% else %}
+                 <dd class="govuk-summary-list__value">Not provided</dd>
+             {% endif %}
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/v2-case-details-3">Change<span class="govuk-visually-hidden"> Domestic Abuse case</span></a>
+            </dd>
+          </div>
+        </dl>
+<!-- case details end-->
+<!-- client details start -->
+<h2 class="govuk-heading-m">Client details</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Required representation<span class="govuk-visually-hidden"> Required representation</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['represenation']}}</dd>
+        <dt class="govuk-summary-list__key">Over 60</dt>
+        {% if data['ro-60'] %}<dd class="govuk-summary-list__value">{{ data['o-60']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+         <dd class="govuk-summary-list__actions">
+           <a class="govuk-link" href="/v2-client-details-1">Change<span class="govuk-visually-hidden"> Over 60</span></a>
+         </dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Upper Tribunal case<span class="govuk-visually-hidden"> Upper Tribunal case</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['upper-tribunal']}}</dd>
+        <dt class="govuk-summary-list__key">Have a partner</dt>
+        {% if data['partner'] %}<dd class="govuk-summary-list__value">{{ data['partner']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+         <dd class="govuk-summary-list__actions">
+           <a class="govuk-link" href="/v2-client-details-1">Change<span class="govuk-visually-hidden"> Have a partner</span></a>
+         </dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Domestic Abuse case<span class="govuk-visually-hidden"> Domestic Abuse case</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['domestic-abuse']}}</dd>
+        <dt class="govuk-summary-list__key">Number of dependants</dt>
+        {% if data['dependants'] %}<dd class="govuk-summary-list__value">{{ data['dependants']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+         <dd class="govuk-summary-list__actions">
+           <a class="govuk-link" href="/v2-client-details-1">Change<span class="govuk-visually-hidden">Number of dependants</span></a>
+         </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Receiving benefits</dt>
+        {% if data['passport-benefits'] %}<dd class="govuk-summary-list__value">{{ data['passport-benefits']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+         <dd class="govuk-summary-list__actions">
+           <a class="govuk-link" href="/v2-client-details-2">Change<span class="govuk-visually-hidden"> Receiving benefits</span></a>
+         </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Recieving asylum support</dt>
+        {% if data['passport-benefits'] %}<dd class="govuk-summary-list__value">{{ data['asylum-support']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+         <dd class="govuk-summary-list__actions">
+           <a class="govuk-link" href="/v2-client-details-2">Change<span class="govuk-visually-hidden"> Recieving asylum support</span></a>
+         </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Employment status</dt>
+        {% if data['employment-status'] %}<dd class="govuk-summary-list__value">{{ data['employment-status']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+         <dd class="govuk-summary-list__actions">
+           <a class="govuk-link" href="/v2-client-details-2">Change<span class="govuk-visually-hidden"> Employment status</span></a>
+         </dd>
       </div>
     </dl>
-    <!-- case details end-->
-
+<!-- client details end -->
+<!-- capital start -->
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's details</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v2-client-details-1">Change</a></p></div>
-    </div>
-
-
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Over 60<span class="govuk-visually-hidden"> Over 60</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['o-60']}}</dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Have a partner<span class="govuk-visually-hidden"> Have a partner</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['partner']}}</dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Number of dependants<span class="govuk-visually-hidden">Number of dependants</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['dependants']}}</dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Employment status<span class="govuk-visually-hidden"> Employment status</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['employment-status']}}</dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Receiving benefits<span class="govuk-visually-hidden"> Receiving benefits</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['passport-benefits']}}</dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Recieving asylum support<span class="govuk-visually-hidden"> Recieving asylum support</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['asylum-support']}}</dd>
-      </div>
-    </dl>
-
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's capital</h2></div>
+      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Capital</h2></div>
       <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v2-capital">Change</a></p></div>
     </div>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Property they live in<span class="govuk-visually-hidden"> Property they own and live in</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['capital-1-value']}}</dd>
+        {% if data['capital-1-value'] %}<dd class="govuk-summary-list__value">£{{ data['capital-1-value']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Any other property<span class="govuk-visually-hidden"> Any other property</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['capital-2-value']}}</dd>
+        {% if data['capital-2-value'] %}<dd class="govuk-summary-list__value">£{{ data['capital-2-value']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Savings<span class="govuk-visually-hidden"> National insurance<</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['capital-3-value']}}</dd>
+        {% if data['capital-3-value'] %}<dd class="govuk-summary-list__value">£{{ data['capital-3-value']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Investments<span class="govuk-visually-hidden"> Childcare payments</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['capital-4-value']}}</dd>
+        {% if data['capital-4-value'] %}<dd class="govuk-summary-list__value">£{{ data['capital-4-value']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
       </div>
-
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Vehicles<span class="govuk-visually-hidden"> Payments towards legal aid in a criminal or civil case</span>
-        </dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['capital-6-value']}}</dd>
+        <dt class="govuk-summary-list__key">Vehicles<span class="govuk-visually-hidden"> Payments towards legal aid in a criminal or civil case</span></dt>
+        {% if data['capital-6-value'] %}<dd class="govuk-summary-list__value">£{{ data['capital-6-value']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Valuable items worth £500 or more<span class="govuk-visually-hidden"> Dependants allowance</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['capital-7-value']}}</dd>
+        {% if data['capital-7-value'] %}<dd class="govuk-summary-list__value">£{{ data['capital-7-value']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
       </div>
     </dl>
-
+<!-- capital end -->
         <!-- send start -->
         <h2 class="govuk-heading-m">Now send your eligibility check</h2>
         <p>We'll use your answers to give you an estimated result on your client's financial eligibility for legal aid.</p>
         <p>By submitting this eligibility check you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
 
-
-
         <!-- marking task complete end -->
-
+        <form action="/v2-results" method="post">
         <div class="govuk-button-group">
         <button type="submit" class="govuk-button" data-module="govuk-button">Submit</button>
         <!--<button class="govuk-button govuk-button--secondary" data-module="govuk-button">Save as come back later</button>-->
-      </div>
-      </form>
-      <!-- send end -->
+        </div>
+        </form>
+        <!-- send end -->
 
     </div>
   </div>
@@ -141,175 +200,277 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
-    <h1 class="govuk-heading-l">Check your answers</h1>
+    <h1 class="govuk-heading-l">Check your answers before submitting your eligibility check</h1>
 
-    <form action="/v2-results" method="post">
-
-<!-- case details start -->
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Case details</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v2-case-details-1">Change</a></p></div>
-    </div>
-
-
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Required representation<span class="govuk-visually-hidden"> Required representation</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['represenation']}}</dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Upper Tribunal case<span class="govuk-visually-hidden"> Upper Tribunal case</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['upper-tribunal']}}</dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Domestic Abuse case<span class="govuk-visually-hidden"> Domestic Abuse case</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['domestic-abuse']}}</dd>
-      </div>
-    </dl>
+    <!-- case details start -->
+    <h2 class="govuk-heading-m">Case details</h2>
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Required representation</dt>
+                {% if data['represenation'] %}<dd class="govuk-summary-list__value">{{ data['represenation']}}</dd>
+                 {% else %}
+                     <dd class="govuk-summary-list__value">Not provided</dd>
+                 {% endif %}
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/v2-case-details-1">Change<span class="govuk-visually-hidden"> Required representation</span></a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Upper Tribunal case</dt>
+                {% if data['upper-tribunal'] %}<dd class="govuk-summary-list__value">{{ data['upper-tribunal']}}</dd>
+                 {% else %}
+                     <dd class="govuk-summary-list__value">Not provided</dd>
+                 {% endif %}
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/v2-case-details-2">Change<span class="govuk-visually-hidden"> Upper Tribunal case</span></a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Domestic Abuse case</dt>
+                {% if data['domestic-abuse'] %}<dd class="govuk-summary-list__value">{{ data['domestic-abuse']}}</dd>
+                 {% else %}
+                     <dd class="govuk-summary-list__value">Not provided</dd>
+                 {% endif %}
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/v2-case-details-3">Change<span class="govuk-visually-hidden"> Domestic Abuse case</span></a>
+                </dd>
+              </div>
+            </dl>
     <!-- case details end-->
+    <!-- client details start -->
+    <h2 class="govuk-heading-m">Client details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Over 60</dt>
+            {% if data['ro-60'] %}<dd class="govuk-summary-list__value">{{ data['o-60']}}</dd>
+             {% else %}
+                 <dd class="govuk-summary-list__value">Not provided</dd>
+             {% endif %}
+             <dd class="govuk-summary-list__actions">
+               <a class="govuk-link" href="/v2-client-details-1">Change<span class="govuk-visually-hidden"> Over 60</span></a>
+             </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Have a partner</dt>
+            {% if data['partner'] %}<dd class="govuk-summary-list__value">{{ data['partner']}}</dd>
+             {% else %}
+                 <dd class="govuk-summary-list__value">Not provided</dd>
+             {% endif %}
+             <dd class="govuk-summary-list__actions">
+               <a class="govuk-link" href="/v2-client-details-1">Change<span class="govuk-visually-hidden"> Have a partner</span></a>
+             </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Number of dependants</dt>
+            {% if data['dependants'] %}<dd class="govuk-summary-list__value">{{ data['dependants']}}</dd>
+             {% else %}
+                 <dd class="govuk-summary-list__value">Not provided</dd>
+             {% endif %}
+             <dd class="govuk-summary-list__actions">
+               <a class="govuk-link" href="/v2-client-details-1">Change<span class="govuk-visually-hidden">Number of dependants</span></a>
+             </dd>
+          </div>
 
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Receiving benefits</dt>
+            {% if data['passport-benefits'] %}<dd class="govuk-summary-list__value">{{ data['passport-benefits']}}</dd>
+             {% else %}
+                 <dd class="govuk-summary-list__value">Not provided</dd>
+             {% endif %}
+             <dd class="govuk-summary-list__actions">
+               <a class="govuk-link" href="/v2-client-details-2">Change<span class="govuk-visually-hidden"> Receiving benefits</span></a>
+             </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Recieving asylum support</dt>
+            {% if data['passport-benefits'] %}<dd class="govuk-summary-list__value">{{ data['asylum-support']}}</dd>
+             {% else %}
+                 <dd class="govuk-summary-list__value">Not provided</dd>
+             {% endif %}
+             <dd class="govuk-summary-list__actions">
+               <a class="govuk-link" href="/v2-client-details-2">Change<span class="govuk-visually-hidden"> Recieving asylum support</span></a>
+             </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Employment status</dt>
+            {% if data['employment-status'] %}<dd class="govuk-summary-list__value">{{ data['employment-status']}}</dd>
+             {% else %}
+                 <dd class="govuk-summary-list__value">Not provided</dd>
+             {% endif %}
+             <dd class="govuk-summary-list__actions">
+               <a class="govuk-link" href="/v2-client-details-2">Change<span class="govuk-visually-hidden"> Employment status</span></a>
+             </dd>
+          </div>
+        </dl>
+    <!-- client details end -->
+    <!-- income start -->
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's details</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v2-client-details-1">Change</a></p></div>
-    </div>
-
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Over 60<span class="govuk-visually-hidden"> Over 60</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['o-60']}}</dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Have a partner<span class="govuk-visually-hidden"> Have a partner</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['partner']}}</dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Number of dependants<span class="govuk-visually-hidden">Number of dependants</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['dependants']}}</dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Receiving a passporting benefit<span class="govuk-visually-hidden"> Receiving benefits</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['passport-benefits']}}</dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Recieving asylum support<span class="govuk-visually-hidden"> Recieving asylum support</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['asylum-support']}}</dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Employment status<span class="govuk-visually-hidden"> Employment status</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">{{ data['employment-status']}}</dd>
-      </div>
-    </dl>
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's income</h2></div>
+      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Income</h2></div>
       <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v2-monthly-income">Change</a></p></div>
     </div>
-
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Employment income after tax<span class="govuk-visually-hidden"> Employment income after tax</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-1-value']}}</dd>
+        {% if data['income-sources-1-value'] %}<dd class="govuk-summary-list__value">£{{ data['income-sources-1-value']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Benefits received<span class="govuk-visually-hidden"> Benefits received</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-2-value']}}</dd>
+        {% if data['income-sources-2-value'] %}<dd class="govuk-summary-list__value">£{{ data['income-sources-2-value']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Financial help<span class="govuk-visually-hidden"> Financial help</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-3-value']}}</dd>
+        {% if data['income-sources-3-value'] %}<dd class="govuk-summary-list__value">£{{ data['income-sources-3-value']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Maintenance payments from a former partner<span class="govuk-visually-hidden"> Maintenance payments from a former partner</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-4-value']}}</dd>
+        {% if data['income-sources-4-value'] %}<dd class="govuk-summary-list__value">£{{ data['income-sources-4-value']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Income from a property or lodger<span class="govuk-visually-hidden"> Income from a property or lodger</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-5-value']}}</dd>
+        {% if data['income-sources-5-value'] %}<dd class="govuk-summary-list__value">£{{ data['income-sources-5-value']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Pension<span class="govuk-visually-hidden"> Pension</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-6-value']}}</dd>
+        {% if data['income-sources-6-value'] %}<dd class="govuk-summary-list__value">£{{ data['income-sources-6-value']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Student finance<span class="govuk-visually-hidden"> Student finance</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-7-value']}}</dd>
+        {% if data['income-sources-7-value'] %}<dd class="govuk-summary-list__value">£{{ data['income-sources-7-value']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Other sources<span class="govuk-visually-hidden"> Other sources</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['income-sources-8-value']}}</dd>
+        {% if data['income-sources-8-value'] %}<dd class="govuk-summary-list__value">£{{ data['income-sources-8-value']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
       </div>
     </dl>
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's outgoings</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v2-monthly-outgoings">Change</a></p></div>
-    </div>
-
+    <!-- income end -->
+    <!-- outgoings start -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Outgoings</h2></div>
+  <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v2-monthly-outgoings">Change</a></p></div>
+</div>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Housing payments<span class="govuk-visually-hidden"> Housing payments</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['outgoing-1-value']}}</dd>
+        {% if data['outgoing-1-value'] %}<dd class="govuk-summary-list__value">£{{ data['outgoing-1-value']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
       </div>
-
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Childcare payments<span class="govuk-visually-hidden"> Childcare payments</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['outgoing-4-value']}}</dd>
+        {% if data['outgoing-4-value'] %}<dd class="govuk-summary-list__value">£{{ data['outgoing-4-value']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Maintenance payments to a former partner<span class="govuk-visually-hidden"> Maintenance payments to a former partner</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['outgoing-5-value']}}</dd>
+        {% if data['outgoing-5-value'] %}<dd class="govuk-summary-list__value">£{{ data['outgoing-5-value']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Payments towards legal aid in a criminal case
-          <span class="govuk-visually-hidden"> Payments towards legal aid in a criminal case</span>
-        </dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['outgoing-6-value']}}</dd>
+        <dt class="govuk-summary-list__key">Payments towards legal aid in a criminal case<span class="govuk-visually-hidden"> Payments towards legal aid in a criminal case</span></dt>
+        {% if data['outgoing-6-value'] %}<dd class="govuk-summary-list__value">£{{ data['outgoing-6-value']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Income tax<span class="govuk-visually-hidden"> Tax</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['outgoing-2-value']}}</dd>
+        {% if data['outgoing-2-value'] %}<dd class="govuk-summary-list__value">£{{ data['outgoing-2-value']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">National Insurance<span class="govuk-visually-hidden"> National insurance<</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['outgoing-3-value']}}</dd>
+        {% if data['outgoing-3-value'] %}<dd class="govuk-summary-list__value">£{{ data['outgoing-3-value']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
       </div>
     </dl>
+    <!-- outgoings end -->
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's capital</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v2-capital">Change</a></p></div>
-    </div>
+    <!-- capital start -->
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Capital</h2></div>
+          <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v2-capital">Change</a></p></div>
+        </div>
 
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Property they own and live in<span class="govuk-visually-hidden"> Property they live in</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['capital-1-value']}}</dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Any other property<span class="govuk-visually-hidden"> Any other property</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['capital-2-value']}}</dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Savings<span class="govuk-visually-hidden"> National insurance<</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['capital-3-value']}}</dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Investments<span class="govuk-visually-hidden"> Childcare payments</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['capital-4-value']}}</dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Vehicles<span class="govuk-visually-hidden"> Payments towards legal aid in a criminal or civil case</span>
-        </dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['capital-6-value']}}</dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Valuable items worth £500 or more<span class="govuk-visually-hidden"> Dependants allowance</span></dt>
-        <dd style="text-align:right; padding-right:0;" class="govuk-summary-list__value">£{{ data['capital-7-value']}}</dd>
-      </div>
-    </dl>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Property they live in<span class="govuk-visually-hidden"> Property they own and live in</span></dt>
+            {% if data['partner'] %}<dd class="govuk-summary-list__value">£{{ data['capital-1-value']}}</dd>
+             {% else %}
+                 <dd class="govuk-summary-list__value">Not provided</dd>
+             {% endif %}
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Any other property<span class="govuk-visually-hidden"> Any other property</span></dt>
+            {% if data['partner'] %}<dd class="govuk-summary-list__value">£{{ data['capital-2-value']}}</dd>
+             {% else %}
+                 <dd class="govuk-summary-list__value">Not provided</dd>
+             {% endif %}
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Savings<span class="govuk-visually-hidden"> National insurance<</span></dt>
+            {% if data['partner'] %}<dd class="govuk-summary-list__value">£{{ data['capital-3-value']}}</dd>
+             {% else %}
+                 <dd class="govuk-summary-list__value">Not provided</dd>
+             {% endif %}
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Investments<span class="govuk-visually-hidden"> Childcare payments</span></dt>
+            {% if data['partner'] %}<dd class="govuk-summary-list__value">£{{ data['capital-4-value']}}</dd>
+             {% else %}
+                 <dd class="govuk-summary-list__value">Not provided</dd>
+             {% endif %}
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Vehicles<span class="govuk-visually-hidden"> Payments towards legal aid in a criminal or civil case</span></dt>
+            {% if data['partner'] %}<dd class="govuk-summary-list__value">£{{ data['capital-6-value']}}</dd>
+             {% else %}
+                 <dd class="govuk-summary-list__value">Not provided</dd>
+             {% endif %}
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Valuable items worth £500 or more<span class="govuk-visually-hidden"> Dependants allowance</span></dt>
+            {% if data['partner'] %}<dd class="govuk-summary-list__value">£{{ data['capital-7-value']}}</dd>
+             {% else %}
+                 <dd class="govuk-summary-list__value">Not provided</dd>
+             {% endif %}
+          </div>
+        </dl>
+    <!-- capital end -->
 
         <!-- send start -->
         <h2 class="govuk-heading-m">Now send your eligibility check</h2>
@@ -317,6 +478,7 @@
         <p>By submitting this eligibility check you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
 
         <!-- marking task complete end -->
+        <form action="/v2-results" method="post">
         <div class="govuk-button-group">
         <button type="submit" class="govuk-button" data-module="govuk-button">Submit</button>
         <!--<button class="govuk-button govuk-button--secondary" data-module="govuk-button">Save as come back later</button>-->
