@@ -189,11 +189,14 @@ Check answers – {{ serviceName }}
         <!-- marking task complete end -->
         <form action="/v2-results" method="post">
         <div class="govuk-button-group">
-        <button type="submit" class="govuk-button" data-module="govuk-button">Submit</button>
-        <!--<button class="govuk-button govuk-button--secondary" data-module="govuk-button">Save as come back later</button>-->
+        <button type="submit" class="govuk-button" data-module="govuk-button" ata-prevent-double-click="true">Submit</button>
+        <a class="govuk-link" href="/v2-start">Cancel</a>
         </div>
         </form>
         <!-- send end -->
+
+        
+      </div>
 
     </div>
   </div>

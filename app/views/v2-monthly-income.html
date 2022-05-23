@@ -143,7 +143,10 @@ Income – {{ serviceName }}
       </fieldset>
       </div>
 
-      <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
+      <a class="govuk-link" href="/v2-start">Cancel</a>
+    </div>
       <!-- marking task complete end -->
 
     </form>
@@ -324,8 +327,11 @@ Income – {{ serviceName }}
 </div>
 
 
-<button class="govuk-button" data-module="govuk-button">Save and continue</button>
-<!-- marking task complete end -->
+    <div class="govuk-button-group">
+    <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
+    <a class="govuk-link" href="/v2-start">Cancel</a>
+    </div>
+
 
      </form>
 
