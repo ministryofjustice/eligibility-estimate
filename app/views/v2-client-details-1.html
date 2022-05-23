@@ -64,25 +64,44 @@ Client details – {{ serviceName }}
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="partner-yes" name="partner" type="radio" value="Yes" {{ checked("partner", "Yes") }}>
-              <label class="govuk-label govuk-radios__label" for="partner-yes">
-                Yes
-              </label>
+              <label class="govuk-label govuk-radios__label" for="partner-yes">Yes</label>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="partner-no" name="partner" type="radio" value="No" {{ checked("partner", "No") }}>
-              <label class="govuk-label govuk-radios__label" for="partner-no">
-                No
-              </label>
+              <label class="govuk-label govuk-radios__label" for="partner-no">No</label>
             </div>
 
         </fieldset>
       </div>
 
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="dependants">How many dependants does your client have?</label>
-        <div id="national-insurance-number-hint" class="govuk-hint">By dependant we mean a child or adult who lives with your client and depends on them for financial support.</div>
-        <input class="govuk-input govuk-input--width-10" id="dependants" value="{{ data['dependants']}}" name="dependants" type="text" spellcheck="false" aria-describedby="dependants-hint">
-      </div>
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <label class="govuk-label govuk-label--m" for="partner">Does your client have any dependants?</label>
+          </legend>
+          <div id="contact-hint" class="govuk-hint">By dependant we mean a child or adult who lives with your client and depends on them for financial support. Do not include your client's partner (if they have one).</div>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+
+              <input class="govuk-radios__input" id="dependants-yes" name="dependants" type="radio" value="Yes" {{ checked("dependants","Yes") }} data-aria-controls="conditional-yes">
+              <label class="govuk-label govuk-radios__label" for="dependants-yes">Yes</label>
+            </div>
+
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes"> <!-- id needs to match data-aria-controls -->
+              <div class="govuk-form-group">
+                  <label class="govuk-label" for="numberOfDependants">Enter the number of dependants</label>
+                <input class="govuk-input govuk-!-width-three-quarters" id="numberOfDependants" name="numberOfDependants" type="text" value="{{ data['numberOfDependants'] }}">
+              </div>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="dependants-no" name="dependants" type="radio" value="No" {{ checked("dependants","No") }}>
+              <label class="govuk-label govuk-radios__label" for="dependants-no">No</label>
+            </div>
+
+        </fieldset>
+</div>
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
