@@ -41,7 +41,8 @@ Case details – {{ serviceName }}
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="represenation-civil-certificated" name="represenation" type="radio" value="Civil licensed/certificated work" {{ checked("represenation", "Civil licensed/certificated work") }}>
                     <label class="govuk-label govuk-radios__label" for="represenation-civil-certificated">Civil licensed/certificated work</label>
-                    <div id="employment-hint" class="govuk-hint govuk-radios__hint">This includes legal help, help at court, family help (lower), family mediation, and legal representation for proceedings in the immigration and asylum tribunal of the first-tier tribunal or where transitional arrangements apply
+                    <div id="employment-hint" class="govuk-hint govuk-radios__hint">
+                      This includes family help (higher), legal representation (other than controlled legal representation), and other legal services (exceptional cases).
                     </div>
                   </div>
 
@@ -49,7 +50,7 @@ Case details – {{ serviceName }}
                     <input class="govuk-radios__input" id="represenation-controlled" name="represenation" type="radio" value="Controlled work" {{ checked("represenation", "Controlled work") }}>
                     <label class="govuk-label govuk-radios__label" for="represenation-controlled">Controlled work</label>
                     <div id="employment-hint" class="govuk-hint govuk-radios__hint">
-                      This includes family help (higher), legal representation (other than controlled legal representation), and other legal services (exceptional cases).
+                        This includes legal help, help at court, family help (lower), family mediation, and legal representation for proceedings in the immigration and asylum tribunal of the first-tier tribunal or where transitional arrangements apply.
                     </div>
                   </div>
                 </div>
