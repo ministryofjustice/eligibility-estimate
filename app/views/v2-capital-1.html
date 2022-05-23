@@ -1,8 +1,10 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Case details – {{ serviceName }}
+Outgoings – {{ serviceName }}
 {% endblock %}
+
+{% set currency = "£" %}
 
 
 {% block beforeContent %}
@@ -26,42 +28,47 @@ Case details – {{ serviceName }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      <span class="govuk-caption-l">Question 3 of 3</span>
-      <h1 class="govuk-heading-l">Case details</h1>
-
-      <form class="form" action="/v2-client-details-1" method="post">
+      <form class="form" action="/v2-check-answers" method="post">
 
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <label class="govuk-label govuk-label--m" for="domestic-abuse">Is it a domestic abuse matter?</label>
+              <h1 class="govuk-fieldset__heading">Are any of your client's assets the subject matter of dispute (SMOD)?</h1>
             </legend>
-            <div id="employment-hint" class="govuk-hint">
-              Proceedings relating to domestic violence where an injunction or other order for protection from harm to the person is sought.
-            </div>
+
+            <div id="contact-hint" class="govuk-hint">Some 'capital' held by a client might be the subject of a claim from the opponent (usually in Divorce cases). This capital is known as 'SMOD'.</div>
+
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="domestic-abuse-yes" name="domestic-abuse" type="radio" value="Yes" {{ checked("domestic-abuse", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="domestic-abuse-yes">
-                  Yes
-                </label>
+
+                <input class="govuk-radios__input" id="smod-yes" name="smod" type="radio" value="Yes" {{ checked("smod","Yes") }} data-aria-controls="conditional-yes">
+                <label class="govuk-label govuk-radios__label" for="smod-yes">Yes</label>
               </div>
+
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes"> <!-- id needs to match data-aria-controls -->
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="numberOfDependants">Enter the value of all assets</label>
+                  <input class="govuk-input govuk-input--width-5" id="smodAmount" name="smodAmount" type="text" value="{{ data['smodAmount'] }}">
+                </div>
+              </div>
+
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="domestic-abuse-no" name="domestic-abuse" type="radio" value="No" {{ checked("domestic-abuse", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="domestic-abuse-no">
-                  No
-                </label>
+                <input class="govuk-radios__input" id="smod-no" name="smod" type="radio" value="No" {{ checked("smod","No") }}>
+                <label class="govuk-label govuk-radios__label" for="smod-no">No</label>
               </div>
           </fieldset>
         </div>
+
 
         <div class="govuk-button-group">
         <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
         <a class="govuk-link" href="/v2-start">Cancel</a>
       </div>
-
       </form>
+
+
+
+
 
     </div>
 
@@ -72,7 +79,6 @@ Case details – {{ serviceName }}
         <nav role="navigation" aria-labelledby="subsection-title">
           <ul class="govuk-list govuk-!-font-size-16">
             <li><a href="https://www.gov.uk/legal-aid">Legal aid overview</a></li>
-            <li><a href="#">Domestic abuse guidance</a></li>
           </ul>
         </nav>
       </aside>

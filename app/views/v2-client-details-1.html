@@ -26,7 +26,7 @@ Client details – {{ serviceName }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Client details</h1>
+      <h1 class="govuk-heading-l">Client details</h1>
 
       <form class="form" action="/v2-client-details-2" method="post">
 
@@ -91,7 +91,7 @@ Client details – {{ serviceName }}
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes"> <!-- id needs to match data-aria-controls -->
               <div class="govuk-form-group">
                   <label class="govuk-label" for="numberOfDependants">Enter the number of dependants</label>
-                <input class="govuk-input govuk-!-width-three-quarters" id="numberOfDependants" name="numberOfDependants" type="text" value="{{ data['numberOfDependants'] }}">
+                <input class="govuk-input govuk-input--width-5" id="numberOfDependants" name="numberOfDependants" type="text" value="{{ data['numberOfDependants'] }}">
               </div>
             </div>
 
@@ -99,9 +99,8 @@ Client details – {{ serviceName }}
               <input class="govuk-radios__input" id="dependants-no" name="dependants" type="radio" value="No" {{ checked("dependants","No") }}>
               <label class="govuk-label govuk-radios__label" for="dependants-no">No</label>
             </div>
-
         </fieldset>
-</div>
+      </div>
 
       <div class="govuk-button-group">
       <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>

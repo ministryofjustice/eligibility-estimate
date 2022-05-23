@@ -138,7 +138,7 @@ Check answers – {{ serviceName }}
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Property they live in<span class="govuk-visually-hidden"> Property they own and live in</span></dt>
+        <dt class="govuk-summary-list__key">Property they live in<span class="govuk-visually-hidden"> Property they live in</span></dt>
         {% if data['capital-1-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-1-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
@@ -152,28 +152,28 @@ Check answers – {{ serviceName }}
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Savings<span class="govuk-visually-hidden"> National insurance<</span></dt>
+        <dt class="govuk-summary-list__key">Savings<span class="govuk-visually-hidden"> Savings</span></dt>
         {% if data['capital-3-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-3-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Investments<span class="govuk-visually-hidden"> Childcare payments</span></dt>
+        <dt class="govuk-summary-list__key">Investments<span class="govuk-visually-hidden"> Investments</span></dt>
         {% if data['capital-4-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-4-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Vehicles<span class="govuk-visually-hidden"> Payments towards legal aid in a criminal or civil case</span></dt>
+        <dt class="govuk-summary-list__key">Vehicles worth over £15,000 and not in regular use<span class="govuk-visually-hidden"> Vehicles worth over £15,000 and not in regular use</span></dt>
         {% if data['capital-6-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-6-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Valuable items worth £500 or more<span class="govuk-visually-hidden"> Dependants allowance</span></dt>
+        <dt class="govuk-summary-list__key">Valuable items worth £500 or more<span class="govuk-visually-hidden"> aluable items worth £500 or more</span></dt>
         {% if data['capital-7-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-7-value']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
@@ -181,6 +181,21 @@ Check answers – {{ serviceName }}
       </div>
     </dl>
 <!-- capital end -->
+<!-- smod start -->
+<h2 class="govuk-heading-m">Subject matter dispute</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Assets the subject matter of dispute<span class="govuk-visually-hidden"> Client's assets the subject matter of dispute</span></dt>
+            {% if data['smod'] %}<dd class="govuk-summary-list__value">{{ data['smod']}}</br>{{ currency }}{{ data['smodAmount']}}</dd>
+             {% else %}
+                 <dd class="govuk-summary-list__value">Not provided</dd>
+             {% endif %}
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/v2-capital-1">Change<span class="govuk-visually-hidden"> Required representation</span></a>
+            </dd>
+          </div>
+        </dl>
+<!-- csmodend-->
         <!-- send start -->
         <h2 class="govuk-heading-m">Now send your eligibility check</h2>
         <p>We'll use your answers to give you an estimated result on your client's financial eligibility for legal aid.</p>
@@ -195,7 +210,7 @@ Check answers – {{ serviceName }}
         </form>
         <!-- send end -->
 
-        
+
       </div>
 
     </div>
@@ -433,7 +448,7 @@ Check answers – {{ serviceName }}
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Property they live in<span class="govuk-visually-hidden"> Property they own and live in</span></dt>
+            <dt class="govuk-summary-list__key">Property they live in<span class="govuk-visually-hidden"> Property they live in</span></dt>
             {% if data['capital-1-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-1-value']}}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not provided</dd>
@@ -447,7 +462,7 @@ Check answers – {{ serviceName }}
              {% endif %}
           </div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Savings<span class="govuk-visually-hidden"> National insurance<</span></dt>
+            <dt class="govuk-summary-list__key">Savings<span class="govuk-visually-hidden"> Savings</span></dt>
             {% if data['capital-3-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-3-value']}}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not provided</dd>
@@ -461,14 +476,14 @@ Check answers – {{ serviceName }}
              {% endif %}
           </div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Vehicles<span class="govuk-visually-hidden"> Payments towards legal aid in a criminal or civil case</span></dt>
+            <dt class="govuk-summary-list__key">Vehicles worth over £15,000 and not in regular use<span class="govuk-visually-hidden"> Vehicles worth over £15,000 and not in regular use</span></dt>
             {% if data['capital-4-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-4-value']}}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not provided</dd>
              {% endif %}
           </div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Valuable items worth £500 or more<span class="govuk-visually-hidden"> Dependants allowance</span></dt>
+            <dt class="govuk-summary-list__key">Valuable items worth £500 or more<span class="govuk-visually-hidden"> Valuable items worth £500 or more</span></dt>
             {% if data['capital-7-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-7-value']}}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not provided</dd>
@@ -476,6 +491,21 @@ Check answers – {{ serviceName }}
           </div>
         </dl>
     <!-- capital end -->
+    <!-- smod start -->
+    <h2 class="govuk-heading-m">Subject matter dispute</h2>
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Assets the subject matter of dispute<span class="govuk-visually-hidden"> Client's assets the subject matter of dispute</span></dt>
+                {% if data['smod'] %}<dd class="govuk-summary-list__value">{{ data['smod']}}</br>{{ currency }}{{ data['smodAmount']}}</dd>
+                 {% else %}
+                     <dd class="govuk-summary-list__value">Not provided</dd>
+                 {% endif %}
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/v2-capital-1">Change<span class="govuk-visually-hidden"> Required representation</span></a>
+                </dd>
+              </div>
+            </dl>
+    <!-- csmodend-->
 
         <!-- send start -->
         <h2 class="govuk-heading-m">Now send your eligibility check</h2>
