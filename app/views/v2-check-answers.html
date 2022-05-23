@@ -89,14 +89,15 @@ Check answers – {{ serviceName }}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Has dependants</dt>
-        {% if data['dependants'] %}<dd class="govuk-summary-list__value">{{ data['dependants']}}</br>{{ data['numberOfDependants']}}</dd>
-           {% else %}
-               <dd class="govuk-summary-list__value">Not provided</dd>
-           {% endif %}
+           {% if data['dependants'] == 'Yes' %}<dd class="govuk-summary-list__value">{{ data['numberOfDependants']}}</dd>
+            {% elseif data['dependants'] == 'No' %}<dd class="govuk-summary-list__value">{{ data['dependants']}}</dd>
+            {% else %}<dd class="govuk-summary-list__value">Not provided</dd>{% endif %}
          <dd class="govuk-summary-list__actions">
            <a class="govuk-link" href="/v2-client-details-1">Change<span class="govuk-visually-hidden">Number of dependants</span></a>
          </dd>
       </div>
+
+
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Receiving benefits</dt>
@@ -281,10 +282,9 @@ Check answers – {{ serviceName }}
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Has dependants</dt>
-            {% if data['dependants'] %}<dd class="govuk-summary-list__value">{{ data['dependants']}}</br>{{ data['numberOfDependants']}}</dd>
-               {% else %}
-                   <dd class="govuk-summary-list__value">Not provided</dd>
-               {% endif %}
+            {% if data['dependants'] == 'Yes' %}<dd class="govuk-summary-list__value">{{ data['numberOfDependants']}}</dd>
+             {% elseif data['dependants'] == 'No' %}<dd class="govuk-summary-list__value">{{ data['dependants']}}</dd>
+             {% else %}<dd class="govuk-summary-list__value">Not provided</dd>{% endif %}
              <dd class="govuk-summary-list__actions">
                <a class="govuk-link" href="/v2-client-details-1">Change<span class="govuk-visually-hidden">Number of dependants</span></a>
              </dd>
