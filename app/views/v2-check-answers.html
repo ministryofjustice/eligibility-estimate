@@ -43,7 +43,7 @@ Check answers – {{ serviceName }}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Upper Tribunal case</dt>
+            <dt class="govuk-summary-list__key">Upper Tribunal matter</dt>
             {% if data['upper-tribunal'] %}<dd class="govuk-summary-list__value">{{ data['upper-tribunal']}}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not provided</dd>
@@ -53,7 +53,7 @@ Check answers – {{ serviceName }}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Domestic Abuse case</dt>
+            <dt class="govuk-summary-list__key">Domestic Abuse matter</dt>
             {% if data['domestic-abuse'] %}<dd class="govuk-summary-list__value">{{ data['domestic-abuse']}}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not provided</dd>
@@ -74,7 +74,7 @@ Check answers – {{ serviceName }}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
          <dd class="govuk-summary-list__actions">
-           <a class="govuk-link" href="/v2-client-details-1">Change<span class="govuk-visually-hidden"> Over 60</span></a>
+           <a class="govuk-link" href="/client-details-1">Change<span class="govuk-visually-hidden"> Over 60</span></a>
          </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -84,7 +84,7 @@ Check answers – {{ serviceName }}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
          <dd class="govuk-summary-list__actions">
-           <a class="govuk-link" href="/v2-client-details-1">Change<span class="govuk-visually-hidden"> Have a partner</span></a>
+           <a class="govuk-link" href="/client-details-2">Change<span class="govuk-visually-hidden"> Have a partner</span></a>
          </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -93,7 +93,7 @@ Check answers – {{ serviceName }}
             {% elseif data['dependants'] == 'No' %}<dd class="govuk-summary-list__value">{{ data['dependants']}}</dd>
             {% else %}<dd class="govuk-summary-list__value">Not provided</dd>{% endif %}
          <dd class="govuk-summary-list__actions">
-           <a class="govuk-link" href="/v2-client-details-1">Change<span class="govuk-visually-hidden">Number of dependants</span></a>
+           <a class="govuk-link" href="/client-details-3">Change<span class="govuk-visually-hidden">Number of dependants</span></a>
          </dd>
       </div>
 
@@ -106,7 +106,7 @@ Check answers – {{ serviceName }}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
          <dd class="govuk-summary-list__actions">
-           <a class="govuk-link" href="/v2-client-details-2">Change<span class="govuk-visually-hidden"> Receiving benefits</span></a>
+           <a class="govuk-link" href="/client-details-4">Change<span class="govuk-visually-hidden"> Receiving benefits</span></a>
          </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -116,7 +116,7 @@ Check answers – {{ serviceName }}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
          <dd class="govuk-summary-list__actions">
-           <a class="govuk-link" href="/v2-client-details-2">Change<span class="govuk-visually-hidden"> Recieving asylum support</span></a>
+           <a class="govuk-link" href="/client-details-5">Change<span class="govuk-visually-hidden"> Recieving asylum support</span></a>
          </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -126,7 +126,7 @@ Check answers – {{ serviceName }}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
          <dd class="govuk-summary-list__actions">
-           <a class="govuk-link" href="/v2-client-details-2">Change<span class="govuk-visually-hidden"> Employment status</span></a>
+           <a class="govuk-link" href="/client-details-6">Change<span class="govuk-visually-hidden"> Employment status</span></a>
          </dd>
       </div>
     </dl>
@@ -236,7 +236,7 @@ Check answers – {{ serviceName }}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Upper Tribunal case</dt>
+                <dt class="govuk-summary-list__key">Upper Tribunal matter</dt>
                 {% if data['upper-tribunal'] %}<dd class="govuk-summary-list__value">{{ data['upper-tribunal']}}</dd>
                  {% else %}
                      <dd class="govuk-summary-list__value">Not provided</dd>
@@ -246,7 +246,7 @@ Check answers – {{ serviceName }}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Domestic Abuse case</dt>
+                <dt class="govuk-summary-list__key">Domestic Abuse matter</dt>
                 {% if data['domestic-abuse'] %}<dd class="govuk-summary-list__value">{{ data['domestic-abuse']}}</dd>
                  {% else %}
                      <dd class="govuk-summary-list__value">Not provided</dd>
@@ -267,7 +267,7 @@ Check answers – {{ serviceName }}
                  <dd class="govuk-summary-list__value">Not provided</dd>
              {% endif %}
              <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="/v2-client-details-1">Change<span class="govuk-visually-hidden"> Over 60</span></a>
+               <a class="govuk-link" href="/client-details-1">Change<span class="govuk-visually-hidden"> Over 60</span></a>
              </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -277,7 +277,7 @@ Check answers – {{ serviceName }}
                  <dd class="govuk-summary-list__value">Not provided</dd>
              {% endif %}
              <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="/v2-client-details-1">Change<span class="govuk-visually-hidden"> Have a partner</span></a>
+               <a class="govuk-link" href="/client-details-2">Change<span class="govuk-visually-hidden"> Have a partner</span></a>
              </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -286,7 +286,7 @@ Check answers – {{ serviceName }}
              {% elseif data['dependants'] == 'No' %}<dd class="govuk-summary-list__value">{{ data['dependants']}}</dd>
              {% else %}<dd class="govuk-summary-list__value">Not provided</dd>{% endif %}
              <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="/v2-client-details-1">Change<span class="govuk-visually-hidden">Number of dependants</span></a>
+               <a class="govuk-link" href="/client-details-3">Change<span class="govuk-visually-hidden">Number of dependants</span></a>
              </dd>
           </div>
 
@@ -297,7 +297,7 @@ Check answers – {{ serviceName }}
                  <dd class="govuk-summary-list__value">Not provided</dd>
              {% endif %}
              <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="/v2-client-details-2">Change<span class="govuk-visually-hidden"> Receiving benefits</span></a>
+               <a class="govuk-link" href="/client-details-4">Change<span class="govuk-visually-hidden"> Receiving benefits</span></a>
              </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -307,7 +307,7 @@ Check answers – {{ serviceName }}
                  <dd class="govuk-summary-list__value">Not provided</dd>
              {% endif %}
              <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="/v2-client-details-2">Change<span class="govuk-visually-hidden"> Recieving asylum support</span></a>
+               <a class="govuk-link" href="/client-details-5">Change<span class="govuk-visually-hidden"> Recieving asylum support</span></a>
              </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -317,7 +317,7 @@ Check answers – {{ serviceName }}
                  <dd class="govuk-summary-list__value">Not provided</dd>
              {% endif %}
              <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="/v2-client-details-2">Change<span class="govuk-visually-hidden"> Employment status</span></a>
+               <a class="govuk-link" href="/client-details-6">Change<span class="govuk-visually-hidden"> Employment status</span></a>
              </dd>
           </div>
         </dl>
@@ -513,10 +513,11 @@ Check answers – {{ serviceName }}
         <!-- marking task complete end -->
         <form action="/v2-results" method="post">
         <div class="govuk-button-group">
-        <button type="submit" class="govuk-button" data-module="govuk-button">Submit</button>
-      </div>
-      </form>
-      <!-- send end -->
+        <button type="submit" class="govuk-button" data-module="govuk-button" ata-prevent-double-click="true">Submit</button>
+        <a class="govuk-link" href="/v2-start">Cancel</a>
+        </div>
+        </form>
+        <!-- send end -->
 
     </div>
   </div>

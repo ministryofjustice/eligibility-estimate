@@ -26,29 +26,36 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">Question 1 of 6</span>
+      <span class="govuk-caption-l">Question 3 of 6</span>
       <h1 class="govuk-heading-l">Client details</h1>
 
-      <form class="form" action="/client-details-2" method="post">
+      <form class="form" action="/client-details-4" method="post">
 
       <!-- question start -->
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <label class="govuk-label govuk-label--m" for="o-60">Is your client over 60?</label>
+            <label class="govuk-label govuk-label--m" for="partner">Does your client have any dependants?</label>
           </legend>
+          <div id="contact-hint" class="govuk-hint">By dependant we mean a child or adult who lives with your client and depends on them for financial support. Do not include your client's partner (if they have one).</div>
+
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="o-60-yes" name="o-60" type="radio" value="Yes" {{ checked("o-60", "Yes") }}>
-              <label class="govuk-label govuk-radios__label" for="o-60-yes">
-                Yes
-              </label>
+
+              <input class="govuk-radios__input" id="dependants-yes" name="dependants" type="radio" value="Yes" {{ checked("dependants","Yes") }} data-aria-controls="conditional-yes">
+              <label class="govuk-label govuk-radios__label" for="dependants-yes">Yes</label>
             </div>
+
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes"> <!-- id needs to match data-aria-controls -->
+              <div class="govuk-form-group">
+                  <label class="govuk-label" for="numberOfDependants">Enter the number of dependants</label>
+                <input class="govuk-input govuk-input--width-5" id="numberOfDependants" name="numberOfDependants" type="text" value="{{ data['numberOfDependants'] }}">
+              </div>
+            </div>
+
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="o-60-no" name="o-60" type="radio" value="No" {{ checked("o-60", "No") }}>
-              <label class="govuk-label govuk-radios__label" for="o-60-no">
-                No
-              </label>
+              <input class="govuk-radios__input" id="dependants-no" name="dependants" type="radio" value="No" {{ checked("dependants","No") }}>
+              <label class="govuk-label govuk-radios__label" for="dependants-no">No</label>
             </div>
         </fieldset>
       </div>
@@ -63,25 +70,6 @@
 
     </div>
 
-    <div class="govuk-grid-column-one-third">
-
-      <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-          Related content
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a href="https://www.gov.uk/legal-aid">
-              Legal aid guidance
-            </a>
-            </li>
-
-          </ul>
-        </nav>
-      </aside>
-
-    </div>
 
 </div>
 

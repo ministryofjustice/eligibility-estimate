@@ -26,27 +26,30 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">Question 1 of 6</span>
+      <span class="govuk-caption-l">Question 5 of 6</span>
       <h1 class="govuk-heading-l">Client details</h1>
 
-      <form class="form" action="/client-details-2" method="post">
+      <form class="form" action="/client-details-6" method="post">
 
       <!-- question start -->
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <label class="govuk-label govuk-label--m" for="o-60">Is your client over 60?</label>
+            <label class="govuk-label govuk-label--m" for="asylum-support">Is your client receiving asylum support?</label>
           </legend>
+          <div id="partner-hint" class="govuk-hint">
+            If a person is waiting to find out if they'll be given asylum, they may receive housing and money to support them and their family.
+          </div>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="o-60-yes" name="o-60" type="radio" value="Yes" {{ checked("o-60", "Yes") }}>
-              <label class="govuk-label govuk-radios__label" for="o-60-yes">
+              <input class="govuk-radios__input" id="asylum-support-yes" name="asylum-support" type="radio" value="Yes" {{ checked("asylum-support", "Yes") }}>
+              <label class="govuk-label govuk-radios__label" for="asylum-support-yes">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="o-60-no" name="o-60" type="radio" value="No" {{ checked("o-60", "No") }}>
-              <label class="govuk-label govuk-radios__label" for="o-60-no">
+              <input class="govuk-radios__input" id="asylum-support-no" name="asylum-support" type="radio" value="No" {{ checked("asylum-support", "No") }}>
+              <label class="govuk-label govuk-radios__label" for="asylum-support-no">
                 No
               </label>
             </div>
@@ -63,25 +66,6 @@
 
     </div>
 
-    <div class="govuk-grid-column-one-third">
-
-      <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-          Related content
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a href="https://www.gov.uk/legal-aid">
-              Legal aid guidance
-            </a>
-            </li>
-
-          </ul>
-        </nav>
-      </aside>
-
-    </div>
 
 </div>
 
