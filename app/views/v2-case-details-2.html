@@ -30,7 +30,7 @@ Case details – {{ serviceName }}
       <span class="govuk-caption-l">Question 2 of 3</span>
       <h1 class="govuk-heading-l">Case details</h1>
 
-      <form class="form" action="/v2-case-details-3" method="post">
+      <form class="form" action="{% if data['checking'] %}/v2-check-answers{% else %}/v2-case-details-3{% endif %}" method="post">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="countries-hint">

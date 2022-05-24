@@ -39,7 +39,7 @@ Check answers – {{ serviceName }}
                  <dd class="govuk-summary-list__value">Not provided</dd>
              {% endif %}
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/v2-case-details-1">Change<span class="govuk-visually-hidden"> Required representation</span></a>
+              <a class="govuk-link" href="/v2-case-details-1?checking=true">Change<span class="govuk-visually-hidden"> Required representation</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -49,7 +49,7 @@ Check answers – {{ serviceName }}
                  <dd class="govuk-summary-list__value">Not provided</dd>
              {% endif %}
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/v2-case-details-2">Change<span class="govuk-visually-hidden"> Upper Tribunal case</span></a>
+              <a class="govuk-link" href="/v2-case-details-2?checking=true">Change<span class="govuk-visually-hidden"> Upper Tribunal case</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -59,7 +59,7 @@ Check answers – {{ serviceName }}
                  <dd class="govuk-summary-list__value">Not provided</dd>
              {% endif %}
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/v2-case-details-3">Change<span class="govuk-visually-hidden"> Domestic Abuse case</span></a>
+              <a class="govuk-link" href="/v2-case-details-3?checking=true">Change<span class="govuk-visually-hidden"> Domestic Abuse case</span></a>
             </dd>
           </div>
         </dl>
@@ -191,7 +191,7 @@ Check answers – {{ serviceName }}
              {% elseif data['smod'] == 'No' %}<dd class="govuk-summary-list__value">{{ data['smod']}}</dd>
              {% else %}<dd class="govuk-summary-list__value">Not provided</dd>{% endif %}
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/v2-capital-1">Change<span class="govuk-visually-hidden"> Required representation</span></a>
+              <a class="govuk-link" href="/v2-capital-1?checking=true">Change<span class="govuk-visually-hidden"> Required representation</span></a>
             </dd>
           </div>
         </dl>
