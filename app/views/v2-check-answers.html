@@ -331,7 +331,7 @@ Check answers – {{ serviceName }}
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Employment income after tax<span class="govuk-visually-hidden"> Employment income after tax</span></dt>
-        {% if data['income-sources-1-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['income-sources-1-value']}}</dd>
+        {% if data['income-sources-1-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['income-sources-1-value'] | fixed }}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
