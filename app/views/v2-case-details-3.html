@@ -27,19 +27,15 @@ Case details – {{ serviceName }}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Question 3 of 3</span>
-      <h1 class="govuk-heading-l">Case details</h1>
-
       <form class="form" action="/client-details-1" method="post">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <label class="govuk-label govuk-label--m" for="domestic-abuse">Is it a domestic abuse matter?</label>
-            </legend>
-            <div id="employment-hint" class="govuk-hint">
-              Proceedings relating to domestic violence where an injunction or other order for protection from harm to the person is sought.
-            </div>
+              <span class="govuk-caption-l">Case details</span>
+               <h1 class="govuk-fieldset__heading">Is it a domestic abuse matter?</h1>
+             </legend>
+
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="domestic-abuse-yes" name="domestic-abuse" type="radio" value="Yes" {{ checked("domestic-abuse", "Yes") }}>

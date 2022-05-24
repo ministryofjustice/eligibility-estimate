@@ -27,8 +27,6 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">Question 1 of 6</span>
-      <h1 class="govuk-heading-l">Client details</h1>
 
       <form class="form" action="/client-details-2" method="post">
 
@@ -36,8 +34,12 @@
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <label class="govuk-label govuk-label--m" for="o-60">Is your client over 60?</label>
-          </legend>
+            <span class="govuk-caption-l">Client details</span>
+             <h1 class="govuk-fieldset__heading">Is your client over 60 years old?</h1>
+           </legend>
+          <div id="o-60-hint" class="govuk-hint">
+            Some of your capital may be excluded from a means eligibility assessment if over 60.
+          </div>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="o-60-yes" name="o-60" type="radio" value="Yes" {{ checked("o-60", "Yes") }}>
