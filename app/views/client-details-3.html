@@ -27,7 +27,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/client-details-4" method="post">
+        <form class="form" action="{% if data['checking'] %}/v2-check-answers{% else %}/client-details-4{% endif %}" method="post">
 
       <!-- question start -->
       <div class="govuk-form-group">

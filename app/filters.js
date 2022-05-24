@@ -41,5 +41,9 @@ module.exports = function (env) {
   /* ------------------------------------------------------------------
     keep the following line to return your filters to the app
   ------------------------------------------------------------------ */
+  filters.fixed = function fixed(num, length) {
+   return Number(num).toFixed(length || 2)
+ }
+ 
   return filters
 }

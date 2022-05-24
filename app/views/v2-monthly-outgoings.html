@@ -29,7 +29,7 @@ Outgoings – {{ serviceName }}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v2-capital" method="post">
+        <form class="form" action="{% if data['checking'] %}/v2-check-answers{% else %}/v2-capital{% endif %}" method="post">
 
         <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
