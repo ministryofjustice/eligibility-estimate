@@ -45,18 +45,17 @@ Result – {{ serviceName }}
   <div class="govuk-accordion__section ">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-          Capital calculation
-        </span>
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">Capital calculation</span>
       </h2>
     </div>
     <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
       <span class="govuk-hint">We calculated these figures using the information you and your client provided.</span>
 
+      <!-- clients capital start -->
     <table class="govuk-table">
     <tbody>
       <tr class="govuk-table__row">
-      <h2 class="govuk-heading-m">Capital</h2>
+      <h2 class="govuk-heading-m">Client's capital</h2>
         <th scope="row" class="govuk-table__header">Property they own and live in</th>
         <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-1-value']}}</td>
       </tr>
@@ -92,13 +91,62 @@ Result – {{ serviceName }}
       </tr>
     </tbody>
     </table>
+    <!-- clients capital end -->
+
+    <!-- has partner -->
+    {% if data['partner'] == 'Yes' %}
+    <!-- partners capital start -->
+    <table class="govuk-table">
+    <tbody>
+      <tr class="govuk-table__row">
+      <h2 class="govuk-heading-m">Client's partner's capital</h2>
+        <th scope="row" class="govuk-table__header">Property they own and live in</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-1-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Any other property</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-2-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Savings</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-3-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Investments</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-4-value']}}</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Vehicles worth over £15,000 and not in regular use</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-6-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Valuable items worth £500 or more</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-7-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Assets the subject matter of dispute</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-smodAmount']}}</td>
+      </tr>
+
+      <tr class="govuk-table__row" style="border-top: 2px solid #000">
+        <th scope="row" class="govuk-table__header">Totals</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-1-value']  | float + data['partner-capital-2-value']  | float + data['partner-capital-3-value']  | float + data['partner-capital-4-value']  | float +  data['partner-capital-6-value']  | float +  data['partner-capital-7-value']  | float +  data['partner-smodAmount']  | float }}</td>
+      </tr>
+    </tbody>
+    </table>
+    <!-- partners capital end -->
+    {% else %}
+    {% endif %}
+    <!-- has partner -->
+
     </div>
   </div>
 
 </div>
 
 <!-- send start -->
-<form action="/v2-confirmation" method="post" novalidate>
+<form action="/confirmation" method="post" novalidate>
   <input type="hidden" name="answers-checked" value="true">
 
   <div class="govuk-button-group">
@@ -135,18 +183,17 @@ Result – {{ serviceName }}
   <div class="govuk-accordion__section ">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-          Income calculation
-        </span>
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">Income calculation</span>
       </h2>
     </div>
     <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
       <span class="govuk-hint">We calculated these figures using the information you and your client provided.</span>
 
+      <!-- clients income start -->
     <table class="govuk-table">
     <tbody>
       <tr class="govuk-table__row">
-      <h2 class="govuk-heading-m">Income</h2>
+      <h2 class="govuk-heading-m">Client's income</h2>
         <th scope="row" class="govuk-table__header">Employment income after tax</th>
         <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['income-sources-1-value']}}</td>
       </tr>
@@ -154,7 +201,6 @@ Result – {{ serviceName }}
         <th scope="row" class="govuk-table__header">Benefits received</th>
         <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['income-sources-2-value']}}</td>
       </tr>
-
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Financial help from friends or family</th>
         <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['income-sources-3-value']}}</td>
@@ -185,23 +231,72 @@ Result – {{ serviceName }}
       </tr>
     </tbody>
     </table>
+    <!-- clients income end -->
+    <!-- has partner -->
+    {% if data['partner'] == 'Yes' %}
+    <!-- partners income start -->
+    <table class="govuk-table">
+    <tbody>
+      <tr class="govuk-table__row">
+      <h2 class="govuk-heading-m">Partner's income</h2>
+        <th scope="row" class="govuk-table__header">Employment income after tax</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-1-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Benefits received</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-2-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Financial help from friends or family</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-3-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Maintenance payments from a former partner</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-4-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Income from a property or lodger</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-5-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Pension</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-6-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Student finance</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-7-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Other sources</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-8-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row" style="border-top: 2px solid #000">
+        <th scope="row" class="govuk-table__header">Total</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-1-value'] | float + data['partner-income-sources-2-value'] | float + data['partner-income-sources-3-value'] | float + data['partner-income-sources-4-value'] | float + data['partner-income-sources-5-value'] | float + data['partner-income-sources-6-value'] | float + data['partner-income-sources-7-value'] | float + data['partner-income-sources-8-value'] | float }}</td>
+      </tr>
+    </tbody>
+    </table>
+    <!-- partners income end -->
+    {% else %}
+    {% endif %}
+    <!-- has partner -->
+
     </div>
   </div>
   <div class="govuk-accordion__section ">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
-          Outgoings calculation
-        </span>
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">Outgoings calculation</span>
       </h2>
     </div>
     <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
       <span class="govuk-hint">We calculated these figures using the information you and your client provided.</span>
 
+      <!-- clients outgoings start -->
     <table class="govuk-table">
     <tbody>
       <tr class="govuk-table__row">
-      <h2 class="govuk-heading-m">Outgoings</h2>
+      <h2 class="govuk-heading-m">Client's outgoings</h2>
         <th scope="row" class="govuk-table__header">Housing payments</th>
         <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['outgoing-1-value']}}</td>
       </tr>
@@ -231,23 +326,63 @@ Result – {{ serviceName }}
       </tr>
     </tbody>
     </table>
+    <!-- clients outgoings end -->
+    <!-- has partner -->
+    {% if data['partner'] == 'Yes' %}
+    <!-- partners outgoings start -->
+    <table class="govuk-table">
+    <tbody>
+      <tr class="govuk-table__row">
+      <h2 class="govuk-heading-m">Partner's outgoings</h2>
+        <th scope="row" class="govuk-table__header">Housing payments</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-outgoing-1-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Childcare payments</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-outgoing-4-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Maintenance payments to a former partner</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-outgoing-5-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Payments towards legal aid in a criminal case</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-outgoing-6-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Income tax</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-outgoing-2-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">National Insurance</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-outgoing-3-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row" style="border-top: 2px solid #000">
+        <th scope="row" class="govuk-table__header">Total</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-outgoing-1-value']  | float + data['partner-outgoing-4-value']  | float + data['partner-outgoing-5-value']  | float + data['partner-outgoing-6-value']  | float +  data['partner-outgoing-3-value']  | float +  data['partner-outgoing-3-value']  | float }}</td>
+      </tr>
+    </tbody>
+    </table>
+    <!-- partners outgoings end -->
+    {% else %}
+    {% endif %}
+    <!-- has partner -->
     </div>
   </div>
   <div class="govuk-accordion__section ">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-          Capital calculation
-        </span>
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">Capital calculation</span>
       </h2>
     </div>
     <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
       <span class="govuk-hint">We calculated these figures using the information you and your client provided.</span>
 
+      <!-- clients capital start -->
     <table class="govuk-table">
     <tbody>
       <tr class="govuk-table__row">
-      <h2 class="govuk-heading-m">Capital</h2>
+      <h2 class="govuk-heading-m">Client's capital</h2>
         <th scope="row" class="govuk-table__header">Property they own and live in</th>
         <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-1-value']}}</td>
       </tr>
@@ -282,13 +417,60 @@ Result – {{ serviceName }}
       </tr>
     </tbody>
     </table>
+    <!-- clients capital ends -->
+    <!-- has partner -->
+    {% if data['partner'] == 'Yes' %}
+    <!-- partners capital start -->
+    <table class="govuk-table">
+    <tbody>
+      <tr class="govuk-table__row">
+      <h2 class="govuk-heading-m">Partner's capital</h2>
+        <th scope="row" class="govuk-table__header">Property they own and live in</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-1-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Any other property</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-2-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Savings</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-3-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Investments</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-4-value']}}</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Vehicles worth over £15,000 and not in regular use</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-6-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Valuable items worth £500 or more</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-7-value']}}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Assets the subject matter of dispute</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-smodAmount']}}</td>
+      </tr>
+      <tr class="govuk-table__row" style="border-top: 2px solid #000">
+        <th scope="row" class="govuk-table__header">Total</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-1-value']  | float + data['partner-capital-2-value']  | float + data['partner-capital-3-value']  | float + data['partner-capital-4-value']  | float +  data['partner-capital-6-value']  | float +  data['partner-capital-7-value']  | float +  data['partner-smodAmount']  | float }}</td>
+      </tr>
+    </tbody>
+    </table>
+    <!-- partners capital ends -->
+    {% else %}
+    {% endif %}
+    <!-- has partner -->
+
     </div>
   </div>
 
 </div>
 
 <!-- send start -->
-<form action="/v2-confirmation" method="post" novalidate>
+<form action="/confirmation" method="post" novalidate>
   <input type="hidden" name="answers-checked" value="true">
 
   <div class="govuk-button-group">

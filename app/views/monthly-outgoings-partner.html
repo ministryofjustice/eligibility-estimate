@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Partner's outgoings – {{ serviceName }}
+{% endblock %}
+
+{% set currency = "£" %}
+{% set capital1value = "0" %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" action="{% if data['checking'] %}/check-answers{% else %}/assets-partner{% endif %}" method="post">
+
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">Your client's partner's finances</span>
+             <h1 class="govuk-fieldset__heading">What are your client's partner's monthly outgoings and deductions?</h1>
+           </legend>
+
+          <div id="contact-hint" class="govuk-hint">Select all that apply.</div>
+
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="partner-outgoing-1" name="partner-outgoing-housing-payments" type="checkbox" value="partner-outgoing-housing-payments" data-aria-controls="partner-outgoing-housing-payments-yes" {{ checked("partner-outgoing-housing-payments","yes") }} >
+              <label class="govuk-label govuk-checkboxes__label" for="partner-outgoing-1">Housing payments</label>
+              <span id="partner-income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, rent, mortgage or board and lodging.</span>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="partner-outgoing-housing-payments-yes">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="partner-outgoing-1">Enter monthly amount</label>
+                <!-- wrapper starts -->
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-5" id="partner-outgoing-1-value" name="partner-outgoing-1-value" type="text" value="{{ data['partner-outgoing-1-value']}}">
+                </div>
+                <!-- wrapper ends -->
+              </div>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="partner-outgoing-4" name="partner-outgoing-childcare" type="checkbox" value="partner-outgoing-childcare" data-aria-controls="partner-outgoing-childcare-yes" {{ checked("partner-outgoing-childcare","yes") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="partner-outgoing-4">Childcare payments</label>
+              <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, to a childminder, nanny or nursery.</span>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="partner-outgoing-childcare-yes">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="partner-outgoing-4">Enter monthly amount</label>
+                <!-- wrapper starts -->
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-5" id="partner-outgoing-4-value" name="partner-outgoing-4-value" type="text" value="{{ data['partner-outgoing-4-value']}}">
+                </div>
+                <!-- wrapper ends -->
+              </div>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="partner-outgoing-5" name="partner-outgoing-maintenance" type="checkbox" value="partner-outgoing-maintenance" data-aria-controls="partner-outgoing-maintenance-yes" {{ checked("partner-outgoing-maintenance","yes") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="partner-outgoing-5">Maintenance payments to a former partner</label>
+              <span id="outgoing-5-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">This includes child maintenance.</span>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="partner-outgoing-maintenance-yes">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="partner-income-sources-5">Enter monthly amount</label>
+                <!-- wrapper starts -->
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-5" id="partner-outgoing-5-value" name="partner-outgoing-5-value" type="text" value="{{ data['partner-outgoing-5-value']}}">
+                </div>
+                <!-- wrapper ends -->
+              </div>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="partner-outgoing-6" name="partner-outgoing-legal-aid" type="checkbox" value="partner-outgoing-legal-aid" data-aria-controls="partner-outgoing-legal-aid-yes" {{ checked("partner-outgoing-legal-aid","yes") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="outgoing-6">Payments towards legal aid in a criminal case</label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="partner-outgoing-legal-aid-yes">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="partner-income-sources-6">Enter monthly amount</label>
+                <!-- wrapper starts -->
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-5" id="partner-outgoing-6-value" name="partner-outgoing-6-value" type="text" value="{{ data['partner-outgoing-6-value']}}">
+                </div>
+                <!-- wrapper ends -->
+              </div>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="partner-outgoing-2" name="partner-outgoing-tax" type="checkbox" value="partner-outgoing-tax" data-aria-controls="partner-outgoing-tax-yes" {{ checked("partner-outgoing-tax","yes") }} >
+              <label class="govuk-label govuk-checkboxes__label" for="partner-outgoing-2">Income tax</label>
+              <span id="outgoing-2-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">You can find this on your client's payslips.</span>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="partner-outgoing-tax-yes">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="partner-outgoing-2">Enter monthly amount</label>
+                <!-- wrapper starts -->
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-5" id="partner-outgoing-2-value" name="partner-outgoing-2-value" type="text" value="{{ data['partner-outgoing-2-value']}}">
+                </div>
+                <!-- wrapper ends -->
+              </div>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="partner-outgoing-3" name="partner-outgoing-nat-ins" type="checkbox" value="partner-outgoing-nat-ins" data-aria-controls="partner-outgoing-nat-ins-yes" {{ checked("partner-outgoing-nat-ins","yes") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="partner-outgoing-3">National Insurance</label>
+              <span id="outgoing-3-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">You can find this on your client's payslips.</span>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="partner-outgoing-nat-ins-yes">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="partner-outgoing-3">Enter monthly amount</label>
+                <!-- wrapper starts -->
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-5" id="partner-outgoing-3-value" name="partner-outgoing-3-value" type="text" value="{{ data['partner-outgoing-3-value']}}">
+                </div>
+                <!-- wrapper ends -->
+              </div>
+            </div>
+
+          </div>
+
+        </fieldset>
+        </div>
+
+        <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
+        <a class="govuk-link" href="/v2-start">Cancel</a>
+      </div>
+
+
+      </form>
+
+    </div>
+
+
+  </div>
+
+{% endblock %}

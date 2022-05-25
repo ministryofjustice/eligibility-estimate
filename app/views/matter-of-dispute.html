@@ -28,7 +28,12 @@ Outgoings – {{ serviceName }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/v2-check-answers" method="post">
+
+      {% if data['passport-benefits'] == 'Yes' %}
+              <form class="form" action="{% if data['checking'] %}/check-answers{% elif data['partner'] == 'Yes'  %}/assets-partner{% else %}/check-answers{% endif %}" method="post">
+          {% else %}
+              <form class="form" action="{% if data['checking'] %}/check-answers{% elif data['partner'] == 'Yes'  %}/monthly-income-partner{% else %}/check-answers{% endif %}" method="post">
+          {% endif %}
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
@@ -37,7 +42,7 @@ Outgoings – {{ serviceName }}
                <h1 class="govuk-fieldset__heading">Are any of your client's assets the subject matter of dispute (SMOD)?</h1>
              </legend>
 
-            <div id="contact-hint" class="govuk-hint">For example, your client's property is disputed in divorce proceedings.</div>
+            <div id="contact-hint" class="govuk-hint">For example, their property is disputed in divorce proceedings.</div>
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
