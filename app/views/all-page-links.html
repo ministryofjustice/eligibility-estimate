@@ -1,0 +1,210 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Check eligibility for legal aid<span class="govuk-caption-xl">Prototype</span></h1>{{releaseVersion | log }}
+
+      <p>A list of all pages in the prototype in the order they appear if a user goes thropugh the whole flow - includes client and partner financial question.</p>
+
+      <h2 class="govuk-heading-m">Intro</h2>
+
+      <p class="govuk-body">Prototype intro page</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk" class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk</a>
+        </li>
+      </ul>
+
+      <p class="govuk-body">Start page</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/start" class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/start</a>
+        </li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Case details</h2>
+
+      <p class="govuk-body">What level of help does your client need?</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/case-details-1" class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/case-details-1</a>
+        </li>
+      </ul>
+
+      <p class="govuk-body">Is this a matter for the Upper Tribunal Immigration and Asylum Chamber?</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/case-details-2" class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/case-details-2</a>
+        </li>
+      </ul>
+
+      <p class="govuk-body">Is it a domestic abuse matter?</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/case-details-3"class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/case-details-3</a>
+        </li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Client details</h2>
+
+      <p class="govuk-body">Is your client over 60 years old?</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/client-details-1" class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/client-details-1</a>
+        </li>
+      </ul>
+
+      <p class="govuk-body">Does your client have a partner?</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/client-details-2" class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/client-details-2</a>
+        </li>
+      </ul>
+
+      <p class="govuk-body">Does your client have any dependants?</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/client-details-3" class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/client-details-3</a>
+        </li>
+      </ul>
+
+      <p class="govuk-body">Does your client receive a passporting benefit?</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/client-details-4" class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/client-details-4</a>
+        </li>
+      </ul>
+
+      <p class="govuk-body">Is your client receiving asylum support?</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/client-details-5" class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/client-details-5</a>
+        </li>
+      </ul>
+
+      <p class="govuk-body">What is your client's employment status?</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/client-details-6" class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/client-details-6</a>
+        </li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Your client's finances</h2>
+
+      <p class="govuk-body">What monthly income does your client receive?</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/monthly-income" class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/monthly-income</a>
+        </li>
+      </ul>
+
+      <p class="govuk-body">What are your client's monthly outgoings and deductions?</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/monthly-outgoings" class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/monthly-outgoings</a>
+        </li>
+      </ul>
+
+      <p class="govuk-body">Which of the following assets does your client have?</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/assets" class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/assets</a>
+        </li>
+      </ul>
+
+      <p class="govuk-body">Are any of your client's assets the subject matter of dispute (SMOD)?</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/matter-of-dispute" class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/matter-of-dispute</a>
+        </li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Your client’s partner's finances</h2>
+
+      <p class="govuk-body">What monthly income does your client's partner receive?</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/monthly-income-partner" class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/monthly-income-partner</a>
+        </li>
+      </ul>
+
+      <p class="govuk-body">What are your client's partner's monthly outgoings and deductions?</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/monthly-outgoings-partner" class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/monthly-outgoings-partner</a>
+        </li>
+      </ul>
+
+      <p class="govuk-body">Which of the following assets does your client's partner have?</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/assets-partner" class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/assets-partner</a>
+        </li>
+      </ul>
+
+      <p class="govuk-body">Are any of your client's partner's assets the subject matter of dispute (SMOD)?</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/matter-of-dispute-partner" class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/matter-of-dispute-partner</a>
+        </li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+      <h2 class="govuk-heading-m">Check your answers</h2>
+
+      <p class="govuk-body">Check your answers before submitting your eligibility check</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/results" class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/results</a>
+        </li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Result / estimated contribution</h2>
+
+      <p class="govuk-body">How we calculated your client's financial eligibility estimate</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/results" class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/results</a>
+        </li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Confirmation</h2>
+
+      <p class="govuk-body">You've provided your client's information</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/confirmation" class="govuk-link" rel="noreferrer noopener" target="_blank">https://eligibility-estimate.apps.live.cloud-platform.service.justice.gov.uk/confirmation</a>
+        </li>
+      </ul>
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
