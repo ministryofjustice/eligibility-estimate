@@ -35,14 +35,13 @@ Case details – {{ serviceName }}
               <span class="govuk-caption-l">Case details</span>
                <h1 class="govuk-fieldset__heading">What level of help does your client need?</h1>
              </legend>
-            <div id="employment-hint" class="govuk-hint">The estimation process depends on the level of help that your check covers. The rules differ for controlled work and licensed work.</div>
 
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="represenation-civil-certificated" name="represenation" type="radio" value="Civil licensed/certificated work" {{ checked("represenation", "Civil licensed/certificated work") }}>
-                  <label class="govuk-label govuk-radios__label" for="represenation-civil-certificated">Civil licensed/certificated work</label>
+                  <label class="govuk-label govuk-radios__label" for="represenation-civil-certificated">Licensed (certificated) work</label>
                   <div id="employment-hint" class="govuk-hint govuk-radios__hint">
-                    This includes family help (higher), legal representation (other than controlled legal representation), and other legal services (exceptional cases).
+                    Includes legal representation, family help (higher), and other legal services (exceptional cases).
                   </div>
                 </div>
 
@@ -50,7 +49,7 @@ Case details – {{ serviceName }}
                   <input class="govuk-radios__input" id="represenation-controlled" name="represenation" type="radio" value="Controlled work" {{ checked("represenation", "Controlled work") }}>
                   <label class="govuk-label govuk-radios__label" for="represenation-controlled">Controlled work</label>
                   <div id="employment-hint" class="govuk-hint govuk-radios__hint">
-                      This includes legal help, help at court, family help (lower), family mediation, and legal representation for proceedings in the immigration and asylum tribunal of the first-tier tribunal or where transitional arrangements apply.
+                      Includes legal help, help at court, family help (lower), family mediation, and legal representation for proceedings in the First-tier Tribunal (Immigration and Asylum).
                   </div>
                 </div>
               </div>
