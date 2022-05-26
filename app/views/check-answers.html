@@ -392,7 +392,7 @@ Check answers – {{ serviceName }}
     <!-- income start -->
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Client's income</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v2-monthly-income?checking=true">Change</a></p></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="monthly-income?checking=true">Change</a></p></div>
     </div>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -457,7 +457,7 @@ Check answers – {{ serviceName }}
     <!-- outgoings start -->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Client's outgoings</h2></div>
-  <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="v2-monthly-outgoings?checking=true">Change</a></p></div>
+  <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="monthly-outgoings?checking=true">Change</a></p></div>
 </div>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -509,7 +509,7 @@ Check answers – {{ serviceName }}
     <!-- capital start -->
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Clients capital</h2></div>
-          <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/v2-capital?checking=true">Change</a></p></div>
+          <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/assets?checking=true">Change</a></p></div>
         </div>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -566,7 +566,7 @@ Check answers – {{ serviceName }}
                  {% elseif data['smod'] == 'No' %}<dd class="govuk-summary-list__value">{{ data['smod']}}</dd>
                  {% else %}<dd class="govuk-summary-list__value">Not provided</dd>{% endif %}
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="/v2-capital-1?checking=true">Change<span class="govuk-visually-hidden"> Employment status</span></a>
+                  <a class="govuk-link" href="/matter-of-dispute?checking=true">Change<span class="govuk-visually-hidden"> Employment status</span></a>
                 </dd>
               </div>
             </dl>
