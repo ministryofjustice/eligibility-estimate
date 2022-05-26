@@ -27,7 +27,6 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <!--<form class="form" action="{% if data['checking'] %}/v2-check-answers{% else %}/v2-monthly-income{% endif %}" method="post">-->
           <form class="form" action="{% if data['checking'] %}/check-answers{% elif data['passport-benefits'] == 'Yes' %}/assets{% else %}/monthly-income{% endif %}" method="post">
 
       <!-- question start -->
@@ -60,7 +59,7 @@
 
       <div class="govuk-button-group">
       <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
-      <a class="govuk-link" href="/v2-start">Cancel</a>
+      <a class="govuk-link" href="/start">Cancel</a>
       </div>
 
       </form>
