@@ -18,12 +18,24 @@ Outgoings – {{ serviceName }}
 {% endblock %}
 
 {% block content %}
+
+{% if data['monthly-income'] == 'none' %}
+  {% set ['capital-1-value'] | fixed = "0" %}
+  {{ data['capital-1-value'] | fixed }}
+  {% end set %}
+{% elif data['capital-1-value']%}{{ currency }} {{ data['capital-1-value'] | fixed }}
+  {% else %}Not provided
+{% endif %}
+
+
 {% if data['checking'] %}/check-answers
 {% elif data['passport-benefits'] == 'Yes' %}/assets
 {% else %}/monthly-income{% endif %}
 
+{% if data['monthly-income'] == 'none' %}{% set ['capital-1-value'] | fixed = "0" %}{{ data['capital-1-value'] | fixed }}{% elif data['capital-1-value']%}{{ currency }} {{ data['capital-1-value'] | fixed }}{% else %}Not provided{% endif %}
+
 <!-- check answers row if none selected for financial questions -->
-<dd class="govuk-summary-list__value">{% if data['client-assets'] == 'none' %}No capital{% elif data['capital-1-value']%}{{ currency }} {{ data['capital-1-value'] | fixed }}{% else %}Not provided{% endif %}</dd>
+<dd class="govuk-summary-list__value">{% if data['monthly-income'] == 'none' %}No capital{% elif data['capital-1-value']%}{{ currency }} {{ data['capital-1-value'] | fixed }}{% else %}Not provided{% endif %}</dd>
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
   <div class="govuk-summary-list__row">
