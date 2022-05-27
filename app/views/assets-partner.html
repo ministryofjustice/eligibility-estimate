@@ -41,7 +41,8 @@
         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
 
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="capital-1" name="partner-outgoing-housing-payments" type="checkbox" value="partner-outgoing-housing-payments" data-aria-controls="partner-outgoing-housing-payments-yes" {{ checked("partner-outgoing-housing-payments","yes") }} >
+            <!--<input class="govuk-checkboxes__input" id="capital-1" name="partner-outgoing-housing-payments" type="checkbox" value="partner-outgoing-housing-payments" data-aria-controls="partner-outgoing-housing-payments-yes" {{ checked("partner-outgoing-housing-payments","yes") }} >-->
+            <input class="govuk-checkboxes__input" id="capital-1" name="partner-assets" type="checkbox" value="yes" data-aria-controls="partner-outgoing-housing-payments-yes" {{ checked("partner-assets","yes") }} >
             <label class="govuk-label govuk-checkboxes__label" for="partner-capital-1">Property they own and live in</label>
             <span id="outgoing-housing-payments-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, value of client's partner share of the equity in their main property if they own or part own it.</span>
           </div>
@@ -58,7 +59,7 @@
           </div>
 
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="capital-2" name="partner-outgoing-tax" type="checkbox" value="partner-outgoing-tax" data-aria-controls="partner-outgoing-tax-yes" {{ checked("partner-outgoing-tax","yes") }} >
+            <input class="govuk-checkboxes__input" id="capital-2" name="partner-assets" type="checkbox" value="yes" data-aria-controls="partner-outgoing-tax-yes" {{ checked("partner-assets","yes") }} >
             <label class="govuk-label govuk-checkboxes__label" for="partner-capital-2">Any other property</label>
           </div>
           <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="partner-outgoing-tax-yes">
@@ -74,7 +75,7 @@
           </div>
 
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="partner-capital-3" name="partner-capital-3" type="checkbox" value="partner-capital-3" data-aria-controls="partner-capital-3-yes" {{ checked("partner-capital-3","yes") }}>
+            <input class="govuk-checkboxes__input" id="partner-capital-3" name="partner-assets" type="checkbox" value="yes" data-aria-controls="partner-capital-3-yes" {{ checked("partner-assets","yes") }}>
             <label class="govuk-label govuk-checkboxes__label" for="partner-capital-3">Savings</label>
             <span id="outgoing-nat-ins-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, money in current or savings accounts, ISAs, or child accounts your client's partner is a signatory on.</span>
           </div>
@@ -91,7 +92,7 @@
           </div>
 
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="capital-4" name="partner-outgoing-childcare" type="checkbox" value="partner-outgoing-childcare" data-aria-controls="partner-outgoing-childcare-yes" {{ checked("partner-outgoing-childcare","yes") }}>
+            <input class="govuk-checkboxes__input" id="capital-4" name="partner-assets" type="checkbox" value="yes" data-aria-controls="partner-outgoing-childcare-yes" {{ checked("partner-assets","yes") }}>
             <label class="govuk-label govuk-checkboxes__label" for="partner-capital-4">Investments</label>
             <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, shares in a public limited company, unit trusts or capital bonds.</span>
           </div>
@@ -108,7 +109,7 @@
           </div>
 
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="capital-6" name="partner-outgoing-legal-aid" type="checkbox" value="partner-outgoing-legal-aid" data-aria-controls="partner-outgoing-legal-aid-yes" {{ checked("partner-outgoing-legal-aid","yes") }}>
+            <input class="govuk-checkboxes__input" id="capital-6" name="partner-assets" type="checkbox" value="yes" data-aria-controls="partner-outgoing-legal-aid-yes" {{ checked("partner-assets","yes") }}>
             <label class="govuk-label govuk-checkboxes__label" for="partner-capital-6">Vehicles worth over £15,000 and not in regular use</label>
             <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, a classic car bought as an investment.</span>
 
@@ -126,7 +127,7 @@
           </div>
 
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="partner-capital-7" name="partner-outgoing-dependants" type="checkbox" value="partner-outgoing-dependants" data-aria-controls="partner-outgoing-dependants-yes" {{ checked("partner-outgoing-dependants","yes") }}>
+            <input class="govuk-checkboxes__input" id="partner-capital-7" name="partner-assets" type="checkbox" value="yes" data-aria-controls="partner-outgoing-dependants-yes" {{ checked("partner-assets","yes") }}>
             <label class="govuk-label govuk-checkboxes__label" for="partner-capital-7">Valuable items worth £500 or more</label>
             <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, jewellery, art or antiques. Do not include wedding or engagement rings, furniture, clothing or tools used for work.</span>
           </div>
@@ -141,6 +142,17 @@
               <!-- wrapper ends -->
             </div>
           </div>
+
+          <!-- none -->
+          <div class="govuk-checkboxes__divider">or</div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="capital-8" name="partner-assets" type="checkbox" value="none" data-behaviour="exclusive" {{ checked("partner-assets","none") }}>
+            <label class="govuk-label govuk-checkboxes__label" for="capital-8">
+              No, my client's partner doesn't have any of these assets
+            </label>
+          </div>
+        </div>
+          <!-- none -->
 
         </div>
 

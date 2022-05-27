@@ -18,6 +18,36 @@ Outgoings – {{ serviceName }}
 {% endblock %}
 
 {% block content %}
+{% if data['checking'] %}/check-answers
+{% elif data['passport-benefits'] == 'Yes' %}/assets
+{% else %}/monthly-income{% endif %}
+
+<!-- check answers row if none selected for financial questions -->
+<dd class="govuk-summary-list__value">{% if data['client-assets'] == 'none' %}No capital{% elif data['capital-1-value']%}{{ currency }} {{ data['capital-1-value'] | fixed }}{% else %}Not provided{% endif %}</dd>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Property they live in<span class="govuk-visually-hidden"> Property they live in</span></dt>
+    <dd class="govuk-summary-list__value">{% if data['client-assets'] == 'none' %}Client doesn't have{% elif data['capital-1-value']%}{{ currency }} {{ data['capital-1-value'] | fixed }}{% else %}Not provided{% endif %}</dd>
+  </div>
+  <dd class="govuk-summary-list__value">Not provided</dd>
+  <!-- {{ currency }} {{ data['capital-1-value'] | fixed }} -->
+
+<!-- check for the 'none' checkbox being checked start -->
+{% if data['client-assets'] == 'none' %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Client's capital</h2></div>
+  <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/assets?checking=true">Change</a></p></div>
+</div>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">No, my client doesn't have any of these assets<span class="govuk-visually-hidden"> Property they live in</span></dt>
+    <dd class="govuk-summary-list__value">{{ data['capital-1-value'] | fixed }}</dd>
+  </div>
+</dl>
+{% else %}
+{% endif %}
+<!-- check for the 'none' checkbox being checked end -->
 
 <!-- item -->
   <div class="govuk-checkboxes__item">

@@ -34,7 +34,7 @@ Partner's income – {{ serviceName }}
  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
 
    <div class="govuk-checkboxes__item">
-     <input class="govuk-checkboxes__input" id="partner-income-sources-1" name="partner-gross-monthly-income" type="checkbox" value="partner-gross-monthly-income" data-aria-controls="partner-gross-monthly-income-yes" {{ checked("partner-gross-monthly-income","yes") }} >
+     <input class="govuk-checkboxes__input" id="partner-income-sources-1" name="partner-monthly-income" type="checkbox" value="yes" data-aria-controls="partner-gross-monthly-income-yes" {{ checked("partner-monthly-income","yes") }} >
      <label class="govuk-label govuk-checkboxes__label" for="income-sources-1">Employment income</label>
    </div>
    <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="partner-gross-monthly-income-yes">
@@ -52,7 +52,7 @@ Partner's income – {{ serviceName }}
    </div>
 
    <div class="govuk-checkboxes__item">
-     <input class="govuk-checkboxes__input" id="partner-income-sources-2" name="partner-benefits" type="checkbox" value="partner-benefits" data-aria-controls="partner-benefits-yes" {{ checked("partner-benefits","yes") }} >
+     <input class="govuk-checkboxes__input" id="partner-income-sources-2" name="partner-monthly-incomes" type="checkbox" value="yes" data-aria-controls="partner-benefits-yes" {{ checked("partner-monthly-income","yes") }} >
      <label class="govuk-label govuk-checkboxes__label" for="partner-income-sources-2">Benefits</label>
      <span id="income-sources-2-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, Child Benefit or tax credits.</span>
    </div>
@@ -69,7 +69,7 @@ Partner's income – {{ serviceName }}
    </div>
 
    <div class="govuk-checkboxes__item">
-     <input class="govuk-checkboxes__input" id="partner-income-sources-3" name="partner-financial-help" type="checkbox" value="partner-financial-help" data-aria-controls="partner-financial-help-yes" {{ checked("partner-financial-help","yes") }}>
+     <input class="govuk-checkboxes__input" id="partner-income-sources-3" name="partner-monthly-income" type="checkbox" value="yes" data-aria-controls="partner-financial-help-yes" {{ checked("partner-monthly-income","yes") }}>
      <label class="govuk-label govuk-checkboxes__label" for="income-sources-3">Financial help from friends or family</label>
      <span id="income-sources-3-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, money from a family member for rent or bills.</span>
    </div>
@@ -86,7 +86,7 @@ Partner's income – {{ serviceName }}
    </div>
 
    <div class="govuk-checkboxes__item">
-     <input class="govuk-checkboxes__input" id="partner-income-sources-4" name="partner-maintenance" type="checkbox" value="partner-maintenance" data-aria-controls="partner-maintenance-yes" {{ checked("partner-maintenance","yes") }}>
+     <input class="govuk-checkboxes__input" id="partner-income-sources-4" name="ppartner-monthly-income" type="checkbox" value="yes" data-aria-controls="partner-maintenance-yes" {{ checked("partner-monthly-income","yes") }}>
      <label class="govuk-label govuk-checkboxes__label" for="partner-income-sources-4">Maintenance payments from a former partner</label>
      <span id="income-sources-4-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">This includes child maintenance.</span>
    </div>
@@ -103,7 +103,7 @@ Partner's income – {{ serviceName }}
    </div>
 
    <div class="govuk-checkboxes__item">
-     <input class="govuk-checkboxes__input" id="partner-income-sources-5" name="partner-rent" type="checkbox" value="partner-rent" data-aria-controls="partner-rent-yes" {{ checked("partner-rent","yes") }}>
+     <input class="govuk-checkboxes__input" id="partner-income-sources-5" name="partner-monthly-income" type="checkbox" value="yes" data-aria-controls="partner-rent-yes" {{ checked("partner-monthly-income","yes") }}>
      <label class="govuk-label govuk-checkboxes__label" for="partner-income-sources-5">Income from a property or lodger</label>
    </div>
    <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="partner-rent-yes">
@@ -119,7 +119,7 @@ Partner's income – {{ serviceName }}
    </div>
 
    <div class="govuk-checkboxes__item">
-     <input class="govuk-checkboxes__input" id="partner-income-sources-6" name="partner-pension" type="checkbox" value="partner-rent" data-aria-controls="partner-pension-yes" {{ checked("partner-pension","yes") }}>
+     <input class="govuk-checkboxes__input" id="partner-income-sources-6" name="partner-monthly-income" type="checkbox" value="yes" data-aria-controls="partner-pension-yes" {{ checked("partner-monthly-income","yes") }}>
      <label class="govuk-label govuk-checkboxes__label" for="partner-income-sources-6">Pension</label>
      <span id="income-sources-6-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">Include State, workplace and personal pensions.</span>
    </div>
@@ -136,7 +136,7 @@ Partner's income – {{ serviceName }}
    </div>
 
    <div class="govuk-checkboxes__item">
-     <input class="govuk-checkboxes__input" id="income-sources-7" name="partner-student-loan-grant" type="checkbox" value="partner-student-loan-grant" data-aria-controls="partner-student-loan-grant-yes" {{ checked("partner-student-loan-grant","yes") }}>
+     <input class="govuk-checkboxes__input" id="income-sources-7" name="partner-monthly-income" type="checkbox" value="yes" data-aria-controls="partner-student-loan-grant-yes" {{ checked("partner-monthly-income","yes") }}>
      <label class="govuk-label govuk-checkboxes__label" for="partner-income-sources-7">Student finance</label>
      <span id="income-sources-7-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">This includes any type of student loan, grant or bursary.</span>
    </div>
@@ -153,7 +153,7 @@ Partner's income – {{ serviceName }}
    </div>
 
    <div class="govuk-checkboxes__item">
-     <input class="govuk-checkboxes__input" id="partner-income-sources-8" name="partner-other-sources" type="checkbox" value="partner-other-sources" data-aria-controls="partner-other-sources-yes" {{ checked("partner-other-sources","yes") }}>
+     <input class="govuk-checkboxes__input" id="partner-income-sources-8" name="partner-monthly-income" type="checkbox" value="yes" data-aria-controls="partner-other-sources-yes" {{ checked("partner-monthly-income","yes") }}>
      <label class="govuk-label govuk-checkboxes__label" for="partner-income-sources-8">Income from other sources</label>
      <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">Include any other income your client's partner received in the last 3 months.</span>
 
@@ -169,6 +169,17 @@ Partner's income – {{ serviceName }}
        <!-- wrapper ends -->
      </div>
    </div>
+
+   <!-- none -->
+   <div class="govuk-checkboxes__divider">or</div>
+   <div class="govuk-checkboxes__item">
+     <input class="govuk-checkboxes__input" id="capital-8" name="partner-monthly-income" type="checkbox" value="none" data-behaviour="exclusive" {{ checked("partner-monthly-income","none") }}>
+     <label class="govuk-label govuk-checkboxes__label" for="capital-8">
+       No, my client's partner doesn't receive any monthly income
+     </label>
+   </div>
+ </div>
+   <!-- none -->
 
  </div>
 

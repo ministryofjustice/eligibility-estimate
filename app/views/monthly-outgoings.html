@@ -43,7 +43,7 @@ Outgoings – {{ serviceName }}
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="outgoing-1" name="outgoing-housing-payments" type="checkbox" value="outgoing-housing-payments" data-aria-controls="outgoing-housing-payments-yes" {{ checked("outgoing-housing-payments","yes") }} >
+              <input class="govuk-checkboxes__input" id="outgoing-1" name="outgoing-payments" type="checkbox" value="yes" data-aria-controls="outgoing-housing-payments-yes" {{ checked("outgoing-payments","yes") }} >
               <label class="govuk-label govuk-checkboxes__label" for="outgoing-1">Housing payments</label>
               <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, rent, mortgage or board and lodging.</span>
             </div>
@@ -60,7 +60,7 @@ Outgoings – {{ serviceName }}
             </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="outgoing-4" name="outgoing-childcare" type="checkbox" value="outgoing-childcare" data-aria-controls="outgoing-childcare-yes" {{ checked("outgoing-childcare","yes") }}>
+              <input class="govuk-checkboxes__input" id="outgoing-4" name="outgoing-payments" type="checkbox" value="yes" data-aria-controls="outgoing-childcare-yes" {{ checked("outgoing-payments","yes") }}>
               <label class="govuk-label govuk-checkboxes__label" for="outgoing-4">Childcare payments</label>
               <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, to a childminder, nanny or nursery.</span>
             </div>
@@ -77,7 +77,7 @@ Outgoings – {{ serviceName }}
             </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="outgoing-5" name="outgoing-maintenance" type="checkbox" value="outgoing-maintenance" data-aria-controls="outgoing-maintenance-yes" {{ checked("outgoing-maintenance","yes") }}>
+              <input class="govuk-checkboxes__input" id="outgoing-5" name="outgoing-payments" type="checkbox" value="yes" data-aria-controls="outgoing-maintenance-yes" {{ checked("outgoing-payments","yes") }}>
               <label class="govuk-label govuk-checkboxes__label" for="outgoing-5">Maintenance payments to a former partner</label>
               <span id="outgoing-5-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">This includes child maintenance.</span>
             </div>
@@ -94,7 +94,7 @@ Outgoings – {{ serviceName }}
             </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="outgoing-6" name="outgoing-legal-aid" type="checkbox" value="outgoing-legal-aid" data-aria-controls="outgoing-legal-aid-yes" {{ checked("outgoing-legal-aid","yes") }}>
+              <input class="govuk-checkboxes__input" id="outgoing-6" name="outgoing-payments" type="checkbox" value="yes" data-aria-controls="outgoing-legal-aid-yes" {{ checked("outgoing-payments","yes") }}>
               <label class="govuk-label govuk-checkboxes__label" for="outgoing-6">Payments towards legal aid in a criminal case</label>
             </div>
             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="outgoing-legal-aid-yes">
@@ -110,7 +110,7 @@ Outgoings – {{ serviceName }}
             </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="outgoing-2" name="outgoing-tax" type="checkbox" value="outgoing-tax" data-aria-controls="outgoing-tax-yes" {{ checked("outgoing-tax","yes") }} >
+              <input class="govuk-checkboxes__input" id="outgoing-2" name="outgoing-payments" type="checkbox" value="yes" data-aria-controls="outgoing-tax-yes" {{ checked("outgoing-payments","yes") }} >
               <label class="govuk-label govuk-checkboxes__label" for="outgoing-2">Income tax</label>
               <span id="outgoing-2-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">You can find this on your client's payslips.</span>
             </div>
@@ -127,7 +127,7 @@ Outgoings – {{ serviceName }}
             </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="outgoing-3" name="outgoing-nat-ins" type="checkbox" value="outgoing-nat-ins" data-aria-controls="outgoing-nat-ins-yes" {{ checked("outgoing-nat-ins","yes") }}>
+              <input class="govuk-checkboxes__input" id="outgoing-3" name="outgoing-payments" type="checkbox" value="yes" data-aria-controls="outgoing-nat-ins-yes" {{ checked("outgoing-payments","yes") }}>
               <label class="govuk-label govuk-checkboxes__label" for="outgoing-3">National Insurance</label>
               <span id="outgoing-3-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">You can find this on your client's payslips.</span>
             </div>
@@ -142,6 +142,17 @@ Outgoings – {{ serviceName }}
                 <!-- wrapper ends -->
               </div>
             </div>
+
+            <!-- none -->
+            <div class="govuk-checkboxes__divider">or</div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="capital-8" name="outgoing-payments" type="checkbox" value="none" data-behaviour="exclusive" {{ checked("outgoing-payments","none") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="capital-8">
+                No, my client doesn't have any monthly outgoings and deductions
+              </label>
+            </div>
+          </div>
+            <!-- none -->
 
           </div>
 
