@@ -22,7 +22,7 @@ Result – {{ serviceName }}
 
 <div class="flash-card">
   <header>
-    <h1 class="govuk-heading-l">Based on what you've told us, your client may need to pay towards {{ data['represenation']}} legal aid.</h1></header>
+    <h1 class="govuk-heading-l">Based on what you've told us, your client may need to pay towards {{ data['represenation'] | lower }} legal aid</h1></header>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds"><p>We calculated that your client should pay:</p>
             <ul class="govuk-list govuk-list--bullet">
@@ -160,7 +160,7 @@ Result – {{ serviceName }}
 
 <div class="flash-card">
   <header>
-    <h1 class="govuk-heading-l">Based on what you've told us, your client may need to pay towards {{ data['represenation']}} legal aid.</h1></header>
+    <h1 class="govuk-heading-l">Based on what you've told us, your client may need to pay towards {{ data['represenation'] | lower }} legal aid</h1></header>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds"><p>We calculated that your client should pay:</p>
