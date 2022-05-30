@@ -44,6 +44,7 @@ module.exports = function (env) {
   filters.fixed = function fixed(num, length) {
    return Number(num).toFixed(length || 2)
  }
- 
+
+
   return filters
 }
