@@ -31,7 +31,7 @@ Check answers – {{ serviceName }}
 <h2 class="govuk-heading-m">Case details</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Required representation</dt>
+            <dt class="govuk-summary-list__key">Level of help</dt>
             {% if data['represenation'] %}<dd class="govuk-summary-list__value">{{ data['represenation']}}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not provided</dd>
@@ -51,7 +51,7 @@ Check answers – {{ serviceName }}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Domestic Abuse matter</dt>
+            <dt class="govuk-summary-list__key">Domestic abuse matter</dt>
             {% if data['domestic-abuse'] %}<dd class="govuk-summary-list__value">{{ data['domestic-abuse']}}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not provided</dd>
@@ -66,7 +66,7 @@ Check answers – {{ serviceName }}
 <h2 class="govuk-heading-m">Client details</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Over 60</dt>
+        <dt class="govuk-summary-list__key">Over 60 years old</dt>
         {% if data['o-60'] %}<dd class="govuk-summary-list__value">{{ data['o-60']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
@@ -76,7 +76,7 @@ Check answers – {{ serviceName }}
          </dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Have a partner</dt>
+        <dt class="govuk-summary-list__key">Has a partner</dt>
         {% if data['partner'] %}<dd class="govuk-summary-list__value">{{ data['partner']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
@@ -95,7 +95,7 @@ Check answers – {{ serviceName }}
          </dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Receiving benefits</dt>
+        <dt class="govuk-summary-list__key">Receives a passporting benefit</dt>
         {% if data['passport-benefits'] %}<dd class="govuk-summary-list__value">{{ data['passport-benefits']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
@@ -105,7 +105,7 @@ Check answers – {{ serviceName }}
          </dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Recieving asylum support</dt>
+        <dt class="govuk-summary-list__key">Receives asylum support</dt>
         {% if data['passport-benefits'] %}<dd class="govuk-summary-list__value">{{ data['asylum-support']}}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
@@ -138,7 +138,7 @@ Check answers – {{ serviceName }}
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Property they live in<span class="govuk-visually-hidden"> Property they live in</span></dt>
+            <dt class="govuk-summary-list__key">Property they own and live in<span class="govuk-visually-hidden"> Property they live in</span></dt>
             {% if data['capital-1-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-1-value'] | fixed }}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not provided</dd>
@@ -183,7 +183,7 @@ Check answers – {{ serviceName }}
     <!-- capital end -->
 
     <!-- smod start -->
-    <h2 class="govuk-heading-m">Client's assets the subject matter of dispute</h2>
+    <h2 class="govuk-heading-m">Client's disputed assets</h2>
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Assets in dispute<span class="govuk-visually-hidden"> Client's assets the subject matter of dispute</span></dt>
@@ -201,13 +201,13 @@ Check answers – {{ serviceName }}
     {% if data['partner'] == 'Yes' %}
     <!-- capital start -->
         <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Partner's capital</h2></div>
+          <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Partner's assets</h2></div>
           <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/assets-partner?checking=true">Change</a></p></div>
         </div>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Property they live in<span class="govuk-visually-hidden"> Property they live in</span></dt>
+            <dt class="govuk-summary-list__key">Property they own and live in<span class="govuk-visually-hidden">Property they own and live in</span></dt>
             {% if data['partner-capital-1-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-capital-1-value'] | fixed }}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not provided</dd>
@@ -251,7 +251,7 @@ Check answers – {{ serviceName }}
         </dl>
     <!-- capital end -->
     <!-- smod start -->
-    <h2 class="govuk-heading-m">Partner's assets the subject matter of dispute</h2>
+    <h2 class="govuk-heading-m">Partner's disputed assets</h2>
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Assets in dispute<span class="govuk-visually-hidden"> Client's partner's assets the subject matter of dispute</span></dt>
@@ -389,13 +389,13 @@ Check answers – {{ serviceName }}
 
 <!-- capital start -->
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Clients capital</h2></div>
+      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Client's capital</h2></div>
       <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/assets?checking=true">Change</a></p></div>
     </div>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Property they live in<span class="govuk-visually-hidden"> Property they live in</span></dt>
+        <dt class="govuk-summary-list__key">Property they own and live in<span class="govuk-visually-hidden"> Property they live in</span></dt>
         {% if data['capital-1-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-1-value'] | fixed }}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
@@ -439,7 +439,7 @@ Check answers – {{ serviceName }}
     </dl>
 <!-- capital end -->
 <!-- smod start -->
-<h2 class="govuk-heading-m">Client's assets the subject matter of dispute</h2>
+<h2 class="govuk-heading-m">Client's disputed assets</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Assets in dispute<span class="govuk-visually-hidden"> Client's assets the subject matter of dispute</span></dt>
@@ -600,7 +600,7 @@ Check answers – {{ serviceName }}
              {% endif %}
           </div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Investments<span class="govuk-visually-hidden"> Investments</span></dt>
+            <dt class="govuk-summary-list__key">Investments<span class="govuk-visually-hidden">Investments</span></dt>
             {% if data['partner-capital-4-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-capital-4-value'] | fixed }}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not provided</dd>
@@ -623,7 +623,7 @@ Check answers – {{ serviceName }}
         </dl>
     <!-- capital end -->
     <!-- smod start -->
-    <h2 class="govuk-heading-m">Partner's assets the subject matter of dispute</h2>
+    <h2 class="govuk-heading-m">Partner's disputed assets</h2>
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Assets in dispute<span class="govuk-visually-hidden"> Client's partner's assets the subject matter of dispute</span></dt>
