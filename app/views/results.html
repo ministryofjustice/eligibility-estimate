@@ -88,7 +88,7 @@ Estimated result – {{ serviceName }}
 
       <tr class="govuk-table__row" style="border-top: 2px solid #000">
         <th scope="row" class="govuk-table__header">Totals</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-1-value']  | float + data['capital-2-value']  | float + data['capital-3-value']  | float + data['capital-4-value']  | float +  data['capital-6-value']  | float +  data['capital-7-value']  | float +  data['smodAmount']  | float}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-1-value'] or 0 | float + data['capital-2-value'] or 0 | float + data['capital-3-value'] or 0 | float + data['capital-4-value'] or 0 | float +  data['capital-6-value'] or 0 | float +  data['capital-7-value'] or 0 | float +  data['smodAmount'] or 0 | float }}</td>
       </tr>
     </tbody>
     </table>
@@ -132,7 +132,7 @@ Estimated result – {{ serviceName }}
 
       <tr class="govuk-table__row" style="border-top: 2px solid #000">
         <th scope="row" class="govuk-table__header">Totals</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-1-value']  | float + data['partner-capital-2-value']  | float + data['partner-capital-3-value']  | float + data['partner-capital-4-value']  | float +  data['partner-capital-6-value']  | float +  data['partner-capital-7-value']  | float +  data['partner-smodAmount']  | float }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-1-value'] or 0 | float + data['capital-2-value'] or 0 | float + data['capital-3-value'] or 0 | float + data['capital-4-value'] or 0 | float +  data['capital-6-value'] or 0 | float +  data['capital-7-value'] or 0 | float +  data['smodAmount'] or 0 | float }}</td>
       </tr>
     </tbody>
     </table>
@@ -412,7 +412,7 @@ Estimated result – {{ serviceName }}
       </tr>
       <tr class="govuk-table__row" style="border-top: 2px solid #000">
         <th scope="row" class="govuk-table__header">Total</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-1-value']  | float + data['capital-2-value']  | float + data['capital-3-value']  | float + data['capital-4-value']  | float +  data['capital-6-value']  | float +  data['capital-7-value']  | float +  data['smodAmount']  | float }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-1-value'] or 0 | float + data['capital-2-value'] or 0 | float + data['capital-3-value'] or 0 | float + data['capital-4-value'] or 0 | float +  data['capital-6-value'] or 0 | float +  data['capital-7-value'] or 0 | float +  data['smodAmount'] or 0 | float }}</td>
       </tr>
     </tbody>
     </table>
