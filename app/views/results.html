@@ -58,37 +58,37 @@ Estimated result – {{ serviceName }}
       <tr class="govuk-table__row">
       <h2 class="govuk-heading-m">Client's capital</h2>
         <th scope="row" class="govuk-table__header">Property they own and live in</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-1-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-1-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Any other property</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-2-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-2-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Savings</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-3-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-3-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Investments</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-4-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-4-value'] or 0 | fixed }}</td>
       </tr>
 
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Vehicles worth over £15,000 and not in regular use</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-6-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-6-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Valuable items worth £500 or more</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-7-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-7-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Disputed assets</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['smodAmount'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['smodAmount'] or 0 | fixed }}</td>
       </tr>
 
       <tr class="govuk-table__row" style="border-top: 2px solid #000">
         <th scope="row" class="govuk-table__header">Totals</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-1-value']  | float + data['capital-2-value']  | float + data['capital-3-value']  | float + data['capital-4-value']  | float +  data['capital-6-value']  | float +  data['capital-7-value']  | float +  data['smodAmount']  | float}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-1-value'] or 0  | float + data['capital-2-value'] or 0  | float + data['capital-3-value'] or 0 | float + data['capital-4-value'] or 0 | float +  data['capital-6-value'] or 0 | float +  data['capital-7-value'] or 0 | float +  data['smodAmount'] or 0 | float}}</td>
       </tr>
     </tbody>
     </table>
@@ -102,37 +102,37 @@ Estimated result – {{ serviceName }}
       <tr class="govuk-table__row">
       <h2 class="govuk-heading-m">Partner's capital</h2>
         <th scope="row" class="govuk-table__header">Property they own and live in</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-1-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-1-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Any other property</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-2-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-2-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Savings</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-3-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-3-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Investments</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-4-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-4-value'] or 0 | fixed }}</td>
       </tr>
 
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Vehicles worth over £15,000 and not in regular use</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-6-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-6-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Valuable items worth £500 or more</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-7-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-7-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Disputed assets</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-smodAmount'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-smodAmount'] or 0 | fixed }}</td>
       </tr>
 
       <tr class="govuk-table__row" style="border-top: 2px solid #000">
         <th scope="row" class="govuk-table__header">Totals</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-1-value']  | float + data['partner-capital-2-value']  | float + data['partner-capital-3-value']  | float + data['partner-capital-4-value']  | float +  data['partner-capital-6-value']  | float +  data['partner-capital-7-value']  | float +  data['partner-smodAmount']  | float }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-1-value'] or 0 | float + data['partner-capital-2-value'] or 0 | float + data['partner-capital-3-value'] or 0 | float + data['partner-capital-4-value'] or 0 | float +  data['partner-capital-6-value'] or 0 | float +  data['partner-capital-7-value'] or 0 | float +  data['partner-smodAmount'] or 0 | float }}</td>
       </tr>
     </tbody>
     </table>
@@ -196,39 +196,39 @@ Estimated result – {{ serviceName }}
       <tr class="govuk-table__row">
       <h2 class="govuk-heading-m">Client's income</h2>
         <th scope="row" class="govuk-table__header">Employment income after tax</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['income-sources-1-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['income-sources-1-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Benefits received</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['income-sources-2-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['income-sources-2-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Financial help from friends or family</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['income-sources-3-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['income-sources-3-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Maintenance payments from a former partner</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['income-sources-4-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['income-sources-4-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Income from a property or lodger</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['income-sources-5-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['income-sources-5-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Pension</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['income-sources-6-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['income-sources-6-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Student finance</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['income-sources-7-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['income-sources-7-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Other sources</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['income-sources-8-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['income-sources-8-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row" style="border-top: 2px solid #000">
         <th scope="row" class="govuk-table__header">Total</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['income-sources-1-value'] | float + data['income-sources-2-value'] | float + data['income-sources-3-value'] | float + data['income-sources-4-value'] | float + data['income-sources-5-value'] | float + data['income-sources-6-value'] | float + data['income-sources-7-value'] | float + data['income-sources-8-value'] | float }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['income-sources-1-value'] or 0 | float + data['income-sources-2-value'] or 0 | float + data['income-sources-3-value'] or 0 | float + data['income-sources-4-value'] or 0 | float + data['income-sources-5-value'] or 0 | float + data['income-sources-6-value'] or 0 | float + data['income-sources-7-value'] or 0 | float + data['income-sources-8-value'] or 0 | float }}</td>
       </tr>
     </tbody>
     </table>
@@ -241,39 +241,39 @@ Estimated result – {{ serviceName }}
       <tr class="govuk-table__row">
       <h2 class="govuk-heading-m">Partner's income</h2>
         <th scope="row" class="govuk-table__header">Employment income after tax</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-1-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-1-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Benefits received</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-2-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-2-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Financial help from friends or family</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-3-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-3-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Maintenance payments from a former partner</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-4-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-4-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Income from a property or lodger</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-5-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-5-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Pension</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-6-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-6-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Student finance</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-7-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-7-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Other sources</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-8-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-8-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row" style="border-top: 2px solid #000">
         <th scope="row" class="govuk-table__header">Total</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-1-value'] | float + data['partner-income-sources-2-value'] | float + data['partner-income-sources-3-value'] | float + data['partner-income-sources-4-value'] | float + data['partner-income-sources-5-value'] | float + data['partner-income-sources-6-value'] | float + data['partner-income-sources-7-value'] | float + data['partner-income-sources-8-value'] | float }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-income-sources-1-value'] or 0 | float + data['partner-income-sources-2-value'] or 0 | float + data['partner-income-sources-3-value'] or 0 | float + data['partner-income-sources-4-value'] or 0 | float + data['partner-income-sources-5-value'] or 0 | float + data['partner-income-sources-6-value'] or 0 | float + data['partner-income-sources-7-value'] or 0 | float + data['partner-income-sources-8-value'] | float }}</td>
       </tr>
     </tbody>
     </table>
@@ -297,31 +297,31 @@ Estimated result – {{ serviceName }}
       <tr class="govuk-table__row">
       <h2 class="govuk-heading-m">Client's outgoings</h2>
         <th scope="row" class="govuk-table__header">Housing payments</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['outgoing-1-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['outgoing-1-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Childcare payments</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['outgoing-4-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['outgoing-4-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Maintenance payments to a former partner</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['outgoing-5-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['outgoing-5-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Payments towards legal aid in a criminal case</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['outgoing-6-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['outgoing-6-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Income tax</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['outgoing-2-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['outgoing-2-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">National Insurance</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['outgoing-3-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['outgoing-3-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row" style="border-top: 2px solid #000">
         <th scope="row" class="govuk-table__header">Total</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['outgoing-1-value']  | float + data['outgoing-4-value']  | float + data['outgoing-5-value']  | float + data['outgoing-6-value']  | float +  data['outgoing-3-value']  | float +  data['outgoing-3-value']  | float }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['outgoing-1-value'] or 0 | float + data['outgoing-4-value'] or 0 | float + data['outgoing-5-value'] or 0 | float + data['outgoing-6-value'] or 0 | float +  data['outgoing-3-value'] or 0 | float +  data['outgoing-3-value'] or 0 | float }}</td>
       </tr>
     </tbody>
     </table>
@@ -334,31 +334,31 @@ Estimated result – {{ serviceName }}
       <tr class="govuk-table__row">
       <h2 class="govuk-heading-m">Partner's outgoings</h2>
         <th scope="row" class="govuk-table__header">Housing payments</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-outgoing-1-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-outgoing-1-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Childcare payments</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-outgoing-4-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-outgoing-4-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Maintenance payments to a former partner</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-outgoing-5-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-outgoing-5-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Payments towards legal aid in a criminal case</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-outgoing-6-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-outgoing-6-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Income tax</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-outgoing-2-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-outgoing-2-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">National Insurance</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-outgoing-3-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-outgoing-3-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row" style="border-top: 2px solid #000">
         <th scope="row" class="govuk-table__header">Total</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-outgoing-1-value']  | float + data['partner-outgoing-4-value']  | float + data['partner-outgoing-5-value']  | float + data['partner-outgoing-6-value']  | float +  data['partner-outgoing-3-value']  | float +  data['partner-outgoing-3-value']  | float }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-outgoing-1-value'] or 0 | float + data['partner-outgoing-4-value'] or 0 | float + data['partner-outgoing-5-value'] or 0 | float + data['partner-outgoing-6-value'] or 0 | float +  data['partner-outgoing-3-value'] or 0 | float +  data['partner-outgoing-3-value'] or 0 | float }}</td>
       </tr>
     </tbody>
     </table>
@@ -383,36 +383,36 @@ Estimated result – {{ serviceName }}
       <tr class="govuk-table__row">
       <h2 class="govuk-heading-m">Client's capital</h2>
         <th scope="row" class="govuk-table__header">Property they own and live in</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-1-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-1-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Any other property</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-2-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-2-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Savings</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-3-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-3-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Investments</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-4-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-4-value'] or 0 | fixed }}</td>
       </tr>
 
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Vehicles worth over £15,000 and not in regular use</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-6-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-6-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Valuable items worth £500 or more</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-7-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-7-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Disputed assets</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['smodAmount'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['smodAmount'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row" style="border-top: 2px solid #000">
         <th scope="row" class="govuk-table__header">Total</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-1-value']  | float + data['capital-2-value']  | float + data['capital-3-value']  | float + data['capital-4-value']  | float +  data['capital-6-value']  | float +  data['capital-7-value']  | float +  data['smodAmount']  | float }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['capital-1-value'] or 0 | float + data['capital-2-value'] or 0 | float + data['capital-3-value'] or 0 | float + data['capital-4-value'] or 0 | float +  data['capital-6-value'] or 0 | float +  data['capital-7-value'] or 0 | float +  data['smodAmount'] or 0 | float }}</td>
       </tr>
     </tbody>
     </table>
@@ -425,36 +425,36 @@ Estimated result – {{ serviceName }}
       <tr class="govuk-table__row">
       <h2 class="govuk-heading-m">Partner's capital</h2>
         <th scope="row" class="govuk-table__header">Property they own and live in</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-1-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-1-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Any other property</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-2-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-2-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Savings</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-3-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-3-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Investments</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-4-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-4-value'] or 0 | fixed }}</td>
       </tr>
 
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Vehicles worth over £15,000 and not in regular use</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-6-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-6-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Valuable items worth £500 or more</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-7-value'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-7-value'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Disputed assets</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-smodAmount'] | fixed }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-smodAmount'] or 0 | fixed }}</td>
       </tr>
       <tr class="govuk-table__row" style="border-top: 2px solid #000">
         <th scope="row" class="govuk-table__header">Total</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-1-value']  | float + data['partner-capital-2-value']  | float + data['partner-capital-3-value']  | float + data['partner-capital-4-value']  | float +  data['partner-capital-6-value']  | float +  data['partner-capital-7-value']  | float +  data['partner-smodAmount']  | float }}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-capital-1-value'] or 0 | float + data['partner-capital-2-value'] or 0 | float + data['partner-capital-3-value'] or 0 | float + data['partner-capital-4-value'] or 0 | float +  data['partner-capital-6-value'] or 0 | float +  data['partner-capital-7-value'] or 0 | float +  data['partner-smodAmount'] or 0 | float }}</td>
       </tr>
     </tbody>
     </table>
