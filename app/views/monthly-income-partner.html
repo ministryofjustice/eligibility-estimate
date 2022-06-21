@@ -64,6 +64,47 @@ Partner's income – {{ serviceName }}
          <div class="govuk-input__prefix" aria-hidden="true">£</div>
          <input class="govuk-input govuk-input--width-5" id="partner-income-sources-2-value" name="partner-income-sources-2-value" type="text" value="{{ data['partner-income-sources-2-value']}}">
        </div>
+
+       <div class="govuk-!-padding-bottom-4"></div>
+
+       <fieldset class="govuk-fieldset">
+         <label class="govuk-label" for="">
+           Enter frequency
+         </label>
+         <div class="govuk-radios" data-module="govuk-radios">
+           <div class="govuk-radios__item">
+             <input class="govuk-radios__input" id="partner-income-sources-2-every-week" name="partner-benefits-frequency" type="radio" value="Every week" {{ checked("partner-benefits-frequency", "Every week") }}>
+             <label class="govuk-label govuk-radios__label" for="income-sources-2-every-week">
+               Every week
+             </label>
+           </div>
+           <div class="govuk-radios__item">
+             <input class="govuk-radios__input" id="partner-income-sources-2-every-two-weeks" name="partner-benefits-frequency" type="radio" value="Every two weeks" {{ checked("partner-benefits-frequency", "Every two weeks") }}>
+             <label class="govuk-label govuk-radios__label" for="income-sources-2-every-two-weeks">
+               Every two weeks
+             </label>
+           </div>
+           <div class="govuk-radios__item">
+             <input class="govuk-radios__input" id="partner-income-sources-2-every-four-weeks" name="partner-benefits-frequency" type="radio" value="Every four weeks" {{ checked("partner-benefits-frequency", "Every four weeks") }}>
+             <label class="govuk-label govuk-radios__label" for="income-sources-2-every-four-weeks">
+               Every four weeks
+             </label>
+           </div>
+           <div class="govuk-radios__item">
+             <input class="govuk-radios__input" id="partner-income-sources-2-monthly" name="partner-benefits-frequency" type="radio" value="Monthly" {{ checked("partner-benefits-frequency", "Monthly") }}>
+             <label class="govuk-label govuk-radios__label" for="income-sources-2-monthly">
+               Monthly
+             </label>
+           </div>
+           <div class="govuk-radios__item">
+             <input class="govuk-radios__input" id="partner-income-sources-2-annually" name="partner-benefits-frequency" type="radio" value="Annually" {{ checked("partner-benefits-frequency", "Annually") }}>
+             <label class="govuk-label govuk-radios__label" for="income-sources-2-annually">
+               Annually
+             </label>
+           </div>
+         </div>
+       </fieldset>
+
        <!-- wrapper ends -->
      </div>
    </div>
