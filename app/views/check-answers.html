@@ -5,6 +5,7 @@ Check answers – {{ serviceName }}
 {% endblock %}
 
 {% set currency = "£" %}
+{% set ownership = "%" %}
 
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -25,10 +26,10 @@ Check answers – {{ serviceName }}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
-    <h1 class="govuk-heading-l">Check your answers before submitting your eligibility check</h1>
+    <h1 class="govuk-heading-xl">Check your eligibility answers</h1>
 
 <!-- case details start -->
-<h2 class="govuk-heading-m">Case details</h2>
+<h2 class="govuk-heading-l">Your client's case details</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Level of help</dt>
@@ -63,7 +64,7 @@ Check answers – {{ serviceName }}
         </dl>
 <!-- case details end-->
 <!-- client details start -->
-<h2 class="govuk-heading-m">Client details</h2>
+<h2 class="govuk-heading-l">Your client's details</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Over 60 years old</dt>
@@ -130,57 +131,146 @@ Check answers – {{ serviceName }}
 <!-- has benefits start -->
 {% if data['passport-benefits'] == 'Yes' %}
 
-    <!-- capital start -->
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Client's assets</h2></div>
-          <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/assets?checking=true">Change</a></p></div>
-        </div>
+<!-- capital start -->
+<h2 class="govuk-heading-l">Your client's assets</h2>
 
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Property they own and live in<span class="govuk-visually-hidden"> Property they live in</span></dt>
-            {% if data['capital-1-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-1-value'] | fixed }}</dd>
-             {% else %}
-                 <dd class="govuk-summary-list__value">Not provided</dd>
-             {% endif %}
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Any other property<span class="govuk-visually-hidden"> Any other property</span></dt>
-            {% if data['capital-2-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-2-value'] | fixed }}</dd>
-             {% else %}
-                 <dd class="govuk-summary-list__value">Not provided</dd>
-             {% endif %}
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Savings<span class="govuk-visually-hidden"> Savings</span></dt>
-            {% if data['capital-3-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-3-value'] | fixed }}</dd>
-             {% else %}
-                 <dd class="govuk-summary-list__value">Not provided</dd>
-             {% endif %}
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Investments<span class="govuk-visually-hidden"> Investments</span></dt>
-            {% if data['capital-4-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-4-value'] | fixed }}</dd>
-             {% else %}
-                 <dd class="govuk-summary-list__value">Not provided</dd>
-             {% endif %}
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Vehicles worth over £15,000 and not in regular use<span class="govuk-visually-hidden"> Vehicles worth over £15,000 and not in regular use</span></dt>
-            {% if data['capital-6-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-6-value'] | fixed }}</dd>
-             {% else %}
-                 <dd class="govuk-summary-list__value">Not provided</dd>
-             {% endif %}
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Valuable items worth £500 or more<span class="govuk-visually-hidden"> aluable items worth £500 or more</span></dt>
-            {% if data['capital-7-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-7-value'] | fixed }}</dd>
-             {% else %}
-                 <dd class="govuk-summary-list__value">Not provided</dd>
-             {% endif %}
-          </div>
-        </dl>
-    <!-- capital end -->
+<!-- property start -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Property</h2></div>
+  <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/client-property">Change</a></p></div>
+</div>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Owns the home they live in<span class="govuk-visually-hidden">Owns the home they live in</span></dt>
+    {% if data['homeowner'] %}<dd class="govuk-summary-list__value">{{ data['homeowner'] }}</dd>
+     {% else %}
+         <dd class="govuk-summary-list__value">Not provided</dd>
+     {% endif %}
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Estimated value<span class="govuk-visually-hidden">Estimated value</span></dt>
+    {% if data['client-home-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['client-home-value'] | fixed }}</dd>
+     {% else %}
+         <dd class="govuk-summary-list__value">Not provided</dd>
+     {% endif %}
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Outstanding mortgage<span class="govuk-visually-hidden">Outstanding mortgage</span></dt>
+    {% if data['client-home-mortgage'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['client-home-mortgage'] | fixed }}</dd>
+     {% else %}
+         <dd class="govuk-summary-list__value">Not provided</dd>
+     {% endif %}
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Percentage share owned<span class="govuk-visually-hidden">Percentage share owned</span></dt>
+    {% if data['client-home-own'] %}<dd class="govuk-summary-list__value">{{ data['client-home-own'] }}{{ ownership }}</dd>
+     {% else %}
+         <dd class="govuk-summary-list__value">Not provided</dd>
+     {% endif %}
+  </div>
+</dl>
+<!-- property end -->
+
+<!-- vehicles start -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Vehicles</h2></div>
+  <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/client-vehicle-1">Change</a></p></div>
+</div>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Owns a vehicle<span class="govuk-visually-hidden">Owns a vehicle</span></dt>
+    {% if data['client-vehicle-own'] %}<dd class="govuk-summary-list__value">{{ data['client-vehicle-own'] }}</dd>
+     {% else %}
+         <dd class="govuk-summary-list__value">Not provided</dd>
+     {% endif %}
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Estimated value<span class="govuk-visually-hidden">Estimated value</span></dt>
+    {% if data['client-vehicle-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['client-vehicle-value'] | fixed }}</dd>
+     {% else %}
+         <dd class="govuk-summary-list__value">Not provided</dd>
+     {% endif %}
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Is the vehicle in regular use<span class="govuk-visually-hidden">Is the vehicle in regular use</span></dt>
+    {% if data['client-vehicle-use'] %}<dd class="govuk-summary-list__value">{{ data['client-vehicle-use'] }}</dd>
+     {% else %}
+         <dd class="govuk-summary-list__value">Not provided</dd>
+     {% endif %}
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Vehicle bought over 3 years ago<span class="govuk-visually-hidden">Vehicle bought over 3 years ago</span></dt>
+    {% if data['client-vehicle-three'] %}<dd class="govuk-summary-list__value">{{ data['client-vehicle-three'] }}</dd>
+     {% else %}
+         <dd class="govuk-summary-list__value">Not provided</dd>
+     {% endif %}
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Payments left on vehicle<span class="govuk-visually-hidden">Payments left on vehicle</span></dt>
+    {% if data['client-vehicle-payments'] == 'Yes' %}<dd class="govuk-summary-list__value">{{ currency }}{{ data['paymentLeft'] | fixed }}</dd>
+     {% elseif data['client-vehicle-payments'] == 'No' %}<dd class="govuk-summary-list__value">{{ data['client-vehicle-payments']}}</dd>
+     {% else %}<dd class="govuk-summary-list__value">Not provided</dd>{% endif %}
+  <!--  {% if data['capital-3-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-3-value'] | fixed }}</dd>
+     {% else %}
+         <dd class="govuk-summary-list__value">Not provided</dd>
+     {% endif %}-->
+  </div>
+</dl>
+<!-- vehicles end -->
+
+<!--other assets start -->
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Other assets</h2></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/assets?checking=true">Change</a></p></div>
+    </div>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Second property or holiday home: value<span class="govuk-visually-hidden">Second property or holiday home value</span></dt>
+        {% if data['capital-2-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-2-value'] | fixed }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Second property or holiday home: outstanding mortgage<span class="govuk-visually-hidden">Second property or holiday home outstanding mortgage</span></dt>
+        {% if data['capital-2a-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-2a-value'] | fixed }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Second property or holiday home: % owned<span class="govuk-visually-hidden">Second property or holiday home % owned</span></dt>
+        {% if data['capital-2b-value'] %}<dd class="govuk-summary-list__value">{{ data['capital-2b-value'] }}{{ ownership }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Savings<span class="govuk-visually-hidden"> Savings</span></dt>
+        {% if data['capital-3-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-3-value'] | fixed }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Investments<span class="govuk-visually-hidden"> Investments</span></dt>
+        {% if data['capital-4-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-4-value'] | fixed }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Valuable items worth £500 or more<span class="govuk-visually-hidden"> aluable items worth £500 or more</span></dt>
+        {% if data['capital-7-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-7-value'] | fixed }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+    </dl>
+    <!--other assets end -->
+<!-- capital end -->
 
     <!-- smod start -->
     <h2 class="govuk-heading-m">Client's disputed assets</h2>
@@ -200,26 +290,121 @@ Check answers – {{ serviceName }}
     <!-- has partner start -->
     {% if data['partner'] == 'Yes' %}
     <!-- capital start -->
+    <h2 class="govuk-heading-l">Your client's partner's assets</h2>
+
+    <!-- property start -->
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Property</h2></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/partner-property">Change</a></p></div>
+    </div>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Owns the home they live in<span class="govuk-visually-hidden">Owns the home they live in</span></dt>
+        {% if data['partnerhomeowner'] %}<dd class="govuk-summary-list__value">{{ data['partnerhomeowner'] }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Estimated value<span class="govuk-visually-hidden">Estimated value</span></dt>
+        {% if data['partner-home-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-home-value'] | fixed }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Outstanding mortgage<span class="govuk-visually-hidden">Outstanding mortgage</span></dt>
+        {% if data['partner-home-mortgage'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-home-mortgage'] | fixed }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Percentage share owned<span class="govuk-visually-hidden">Percentage share owned</span></dt>
+        {% if data['partner-home-own'] %}<dd class="govuk-summary-list__value">{{ data['partner-home-own'] }}{{ ownership }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+    </dl>
+    <!-- property end -->
+
+    <!-- vehicles start -->
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Vehicles</h2></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/partner-vehicle-1">Change</a></p></div>
+    </div>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Owns a vehicle<span class="govuk-visually-hidden">Owns a vehicle</span></dt>
+        {% if data['partner-vehicle-own'] %}<dd class="govuk-summary-list__value">{{ data['partner-vehicle-own'] }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Estimated value<span class="govuk-visually-hidden">Estimated value</span></dt>
+        {% if data['partner-vehicle-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-vehicle-value'] | fixed }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Is the vehicle in regular use<span class="govuk-visually-hidden">Is the vehicle in regular use</span></dt>
+        {% if data['partner-vehicle-use'] %}<dd class="govuk-summary-list__value">{{ data['partner-vehicle-use'] }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Vehicle bought over 3 years ago<span class="govuk-visually-hidden">Vehicle bought over 3 years ago</span></dt>
+        {% if data['partner-vehicle-three'] %}<dd class="govuk-summary-list__value">{{ data['partner-vehicle-three'] }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Payments left on vehicle<span class="govuk-visually-hidden">Payments left on vehicle</span></dt>
+        {% if data['partner-vehicle-payments'] == 'Yes' %}<dd class="govuk-summary-list__value">{{ currency }}{{ data['partnerpaymentLeft'] | fixed }}</dd>
+         {% elseif data['partner-vehicle-payments'] == 'No' %}<dd class="govuk-summary-list__value">{{ data['partner-vehicle-payments']}}</dd>
+         {% else %}<dd class="govuk-summary-list__value">Not provided</dd>{% endif %}
+      <!--  {% if data['capital-3-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-3-value'] | fixed }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}-->
+      </div>
+    </dl>
+    <!-- vehicles end -->
+
+    <!-- other assets start -->
         <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Partner's assets</h2></div>
+          <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Other assets</h2></div>
           <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/assets-partner?checking=true">Change</a></p></div>
         </div>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Property they own and live in<span class="govuk-visually-hidden">Property they own and live in</span></dt>
-            {% if data['partner-capital-1-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-capital-1-value'] | fixed }}</dd>
-             {% else %}
-                 <dd class="govuk-summary-list__value">Not provided</dd>
-             {% endif %}
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Any other property<span class="govuk-visually-hidden"> Any other property</span></dt>
-            {% if data['partner-capital-2-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-capital-2-value'] | fixed }}</dd>
-             {% else %}
-                 <dd class="govuk-summary-list__value">Not provided</dd>
-             {% endif %}
-          </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Second property or holiday home: value<span class="govuk-visually-hidden">Second property or holiday home value</span></dt>
+              {% if data['partner-capital-2-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-capital-2-value'] | fixed }}</dd>
+               {% else %}
+                   <dd class="govuk-summary-list__value">Not provided</dd>
+               {% endif %}
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Second property or holiday home: outstanding mortgage<span class="govuk-visually-hidden">Second property or holiday home outstanding mortgage</span></dt>
+              {% if data['partner-capital-2a-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-capital-2a-value'] | fixed }}</dd>
+               {% else %}
+                   <dd class="govuk-summary-list__value">Not provided</dd>
+               {% endif %}
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Second property or holiday home: % owned<span class="govuk-visually-hidden">Second property or holiday home % owned</span></dt>
+              {% if data['partner-capital-2b-value'] %}<dd class="govuk-summary-list__value">{{ data['partner-capital-2b-value'] }}{{ ownership }}</dd>
+               {% else %}
+                   <dd class="govuk-summary-list__value">Not provided</dd>
+               {% endif %}
+            </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Savings<span class="govuk-visually-hidden"> Savings</span></dt>
             {% if data['partner-capital-3-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-capital-3-value'] | fixed }}</dd>
@@ -235,13 +420,6 @@ Check answers – {{ serviceName }}
              {% endif %}
           </div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Vehicles worth over £15,000 and not in regular use<span class="govuk-visually-hidden"> Vehicles worth over £15,000 and not in regular use</span></dt>
-            {% if data['partner-capital-6-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-capital-6-value'] | fixed }}</dd>
-             {% else %}
-                 <dd class="govuk-summary-list__value">Not provided</dd>
-             {% endif %}
-          </div>
-          <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Valuable items worth £500 or more<span class="govuk-visually-hidden"> aluable items worth £500 or more</span></dt>
             {% if data['partner-capital-7-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-capital-7-value'] | fixed }}</dd>
              {% else %}
@@ -249,8 +427,9 @@ Check answers – {{ serviceName }}
              {% endif %}
           </div>
         </dl>
+        <!-- other assets end -->
     <!-- capital end -->
-    <!-- smod start -->
+    <!--
     <h2 class="govuk-heading-m">Partner's disputed assets</h2>
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
               <div class="govuk-summary-list__row">
@@ -263,7 +442,7 @@ Check answers – {{ serviceName }}
                 </dd>
               </div>
             </dl>
-    <!-- csmodend-->
+    -->
     {% else %}
     {% endif %}
     <!-- has partner end -->
@@ -272,7 +451,7 @@ Check answers – {{ serviceName }}
 
 <!-- income start -->
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Client's income</h2></div>
+  <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's income</h2></div>
   <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="monthly-income?checking=true">Change</a></p></div>
 </div>
 
@@ -341,7 +520,7 @@ Check answers – {{ serviceName }}
 <!-- income end -->
 <!-- outgoings start -->
 <div class="govuk-grid-row">
-<div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Client's outgoings</h2></div>
+<div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's outgoings</h2></div>
 <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="monthly-outgoings?checking=true">Change</a></p></div>
 </div>
 
@@ -392,22 +571,116 @@ Check answers – {{ serviceName }}
 <!-- outgoings end -->
 
 <!-- capital start -->
+<h2 class="govuk-heading-l">Your client's assets</h2>
+
+<!-- property start -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Property</h2></div>
+  <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/client-property">Change</a></p></div>
+</div>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Owns the home they live in<span class="govuk-visually-hidden">Owns the home they live in</span></dt>
+    {% if data['homeowner'] %}<dd class="govuk-summary-list__value">{{ data['homeowner'] }}</dd>
+     {% else %}
+         <dd class="govuk-summary-list__value">Not provided</dd>
+     {% endif %}
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Estimated value<span class="govuk-visually-hidden">Estimated value</span></dt>
+    {% if data['client-home-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['client-home-value'] | fixed }}</dd>
+     {% else %}
+         <dd class="govuk-summary-list__value">Not provided</dd>
+     {% endif %}
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Outstanding mortgage<span class="govuk-visually-hidden">Outstanding mortgage</span></dt>
+    {% if data['client-home-mortgage'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['client-home-mortgage'] | fixed }}</dd>
+     {% else %}
+         <dd class="govuk-summary-list__value">Not provided</dd>
+     {% endif %}
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Percentage share owned<span class="govuk-visually-hidden">Percentage share owned</span></dt>
+    {% if data['client-home-own'] %}<dd class="govuk-summary-list__value">{{ data['client-home-own'] }}{{ ownership }}</dd>
+     {% else %}
+         <dd class="govuk-summary-list__value">Not provided</dd>
+     {% endif %}
+  </div>
+</dl>
+<!-- property end -->
+
+<!-- vehicles start -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Vehicles</h2></div>
+  <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/client-vehicle-1">Change</a></p></div>
+</div>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Owns a vehicle<span class="govuk-visually-hidden">Owns a vehicle</span></dt>
+    {% if data['client-vehicle-own'] %}<dd class="govuk-summary-list__value">{{ data['client-vehicle-own'] }}</dd>
+     {% else %}
+         <dd class="govuk-summary-list__value">Not provided</dd>
+     {% endif %}
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Estimated value<span class="govuk-visually-hidden">Estimated value</span></dt>
+    {% if data['client-vehicle-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['client-vehicle-value'] | fixed }}</dd>
+     {% else %}
+         <dd class="govuk-summary-list__value">Not provided</dd>
+     {% endif %}
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Is the vehicle in regular use<span class="govuk-visually-hidden">Is the vehicle in regular use</span></dt>
+    {% if data['client-vehicle-use'] %}<dd class="govuk-summary-list__value">{{ data['client-vehicle-use'] }}</dd>
+     {% else %}
+         <dd class="govuk-summary-list__value">Not provided</dd>
+     {% endif %}
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Vehicle bought over 3 years ago<span class="govuk-visually-hidden">Vehicle bought over 3 years ago</span></dt>
+    {% if data['client-vehicle-three'] %}<dd class="govuk-summary-list__value">{{ data['client-vehicle-three'] }}</dd>
+     {% else %}
+         <dd class="govuk-summary-list__value">Not provided</dd>
+     {% endif %}
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Payments left on vehicle<span class="govuk-visually-hidden">Payments left on vehicle</span></dt>
+    {% if data['client-vehicle-payments'] == 'Yes' %}<dd class="govuk-summary-list__value">{{ currency }}{{ data['paymentLeft'] | fixed }}</dd>
+     {% elseif data['client-vehicle-payments'] == 'No' %}<dd class="govuk-summary-list__value">{{ data['client-vehicle-payments']}}</dd>
+     {% else %}<dd class="govuk-summary-list__value">Not provided</dd>{% endif %}
+  <!--  {% if data['capital-3-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-3-value'] | fixed }}</dd>
+     {% else %}
+         <dd class="govuk-summary-list__value">Not provided</dd>
+     {% endif %}-->
+  </div>
+</dl>
+<!-- vehicles end -->
+
+<!--other assets start -->
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Client's assets</h2></div>
+      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Other assets</h2></div>
       <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/assets?checking=true">Change</a></p></div>
     </div>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Property they own and live in<span class="govuk-visually-hidden"> Property they live in</span></dt>
-        {% if data['capital-1-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-1-value'] | fixed }}</dd>
+        <dt class="govuk-summary-list__key">Second property or holiday home: value<span class="govuk-visually-hidden">Second property or holiday home value</span></dt>
+        {% if data['capital-2-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-2-value'] | fixed }}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Any other property<span class="govuk-visually-hidden"> Any other property</span></dt>
-        {% if data['capital-2-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-2-value'] | fixed }}</dd>
+        <dt class="govuk-summary-list__key">Second property or holiday home: outstanding mortgage<span class="govuk-visually-hidden">Second property or holiday home outstanding mortgage</span></dt>
+        {% if data['capital-2a-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-2a-value'] | fixed }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Second property or holiday home: % owned<span class="govuk-visually-hidden">Second property or holiday home % owned</span></dt>
+        {% if data['capital-2b-value'] %}<dd class="govuk-summary-list__value">{{ data['capital-2b-value'] }}{{ ownership }}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
@@ -426,13 +699,13 @@ Check answers – {{ serviceName }}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
       </div>
-      <div class="govuk-summary-list__row">
+    <!--  <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Vehicles worth over £15,000 and not in regular use<span class="govuk-visually-hidden"> Vehicles worth over £15,000 and not in regular use</span></dt>
         {% if data['capital-6-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-6-value'] | fixed }}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
-      </div>
+      </div>-->
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Valuable items worth £500 or more<span class="govuk-visually-hidden"> aluable items worth £500 or more</span></dt>
         {% if data['capital-7-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-7-value'] | fixed }}</dd>
@@ -441,6 +714,7 @@ Check answers – {{ serviceName }}
          {% endif %}
       </div>
     </dl>
+    <!--other assets end -->
 <!-- capital end -->
 <!-- smod start -->
 <h2 class="govuk-heading-m">Client's disputed assets</h2>
@@ -461,7 +735,7 @@ Check answers – {{ serviceName }}
     {% if data['partner'] == 'Yes' %}
     <!-- income start -->
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Partner's income</h2></div>
+      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's partner's income</h2></div>
       <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/monthly-income-partner?checking=true">Change</a></p></div>
     </div>
 
@@ -530,7 +804,7 @@ Check answers – {{ serviceName }}
     <!-- income end -->
     <!-- outgoings start -->
     <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Partners's outgoings</h2></div>
+    <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's partner's outgoings</h2></div>
     <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/monthly-outgoings-partner?checking=true">Change</a></p></div>
     </div>
 
@@ -579,27 +853,124 @@ Check answers – {{ serviceName }}
       </div>
     </dl>
     <!-- outgoings end -->
+
+
     <!-- capital start -->
+    <h2 class="govuk-heading-l">Your client's partner's assets</h2>
+
+    <!-- property start -->
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Property</h2></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/partner-property">Change</a></p></div>
+    </div>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Owns the home they live in<span class="govuk-visually-hidden">Owns the home they live in</span></dt>
+        {% if data['partnerhomeowner'] %}<dd class="govuk-summary-list__value">{{ data['partnerhomeowner'] }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Estimated value<span class="govuk-visually-hidden">Estimated value</span></dt>
+        {% if data['partner-home-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-home-value'] | fixed }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Outstanding mortgage<span class="govuk-visually-hidden">Outstanding mortgage</span></dt>
+        {% if data['partner-home-mortgage'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-home-mortgage'] | fixed }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Percentage share owned<span class="govuk-visually-hidden">Percentage share owned</span></dt>
+        {% if data['partner-home-own'] %}<dd class="govuk-summary-list__value">{{ data['partner-home-own'] }}{{ ownership }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+    </dl>
+    <!-- property end -->
+
+    <!-- vehicles start -->
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Vehicles</h2></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/partner-vehicle-1">Change</a></p></div>
+    </div>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Owns a vehicle<span class="govuk-visually-hidden">Owns a vehicle</span></dt>
+        {% if data['partner-vehicle-own'] %}<dd class="govuk-summary-list__value">{{ data['partner-vehicle-own'] }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Estimated value<span class="govuk-visually-hidden">Estimated value</span></dt>
+        {% if data['partner-vehicle-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-vehicle-value'] | fixed }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Is the vehicle in regular use<span class="govuk-visually-hidden">Is the vehicle in regular use</span></dt>
+        {% if data['partner-vehicle-use'] %}<dd class="govuk-summary-list__value">{{ data['partner-vehicle-use'] }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Vehicle bought over 3 years ago<span class="govuk-visually-hidden">Vehicle bought over 3 years ago</span></dt>
+        {% if data['partner-vehicle-three'] %}<dd class="govuk-summary-list__value">{{ data['partner-vehicle-three'] }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Payments left on vehicle<span class="govuk-visually-hidden">Payments left on vehicle</span></dt>
+        {% if data['partner-vehicle-payments'] == 'Yes' %}<dd class="govuk-summary-list__value">{{ currency }}{{ data['partnerpaymentLeft'] | fixed }}</dd>
+         {% elseif data['partner-vehicle-payments'] == 'No' %}<dd class="govuk-summary-list__value">{{ data['partner-vehicle-payments']}}</dd>
+         {% else %}<dd class="govuk-summary-list__value">Not provided</dd>{% endif %}
+      <!--  {% if data['capital-3-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-3-value'] | fixed }}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not provided</dd>
+         {% endif %}-->
+      </div>
+    </dl>
+    <!-- vehicles end -->
+
+    <!-- other assets start -->
         <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Partner's assets</h2></div>
+          <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Other assets</h2></div>
           <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/assets-partner?checking=true">Change</a></p></div>
         </div>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Property they live in<span class="govuk-visually-hidden"> Property they live in</span></dt>
-            {% if data['partner-capital-1-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-capital-1-value'] | fixed }}</dd>
-             {% else %}
-                 <dd class="govuk-summary-list__value">Not provided</dd>
-             {% endif %}
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Any other property<span class="govuk-visually-hidden"> Any other property</span></dt>
-            {% if data['partner-capital-2-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-capital-2-value'] | fixed }}</dd>
-             {% else %}
-                 <dd class="govuk-summary-list__value">Not provided</dd>
-             {% endif %}
-          </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Second property or holiday home: value<span class="govuk-visually-hidden">Second property or holiday home value</span></dt>
+              {% if data['partner-capital-2-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-capital-2-value'] | fixed }}</dd>
+               {% else %}
+                   <dd class="govuk-summary-list__value">Not provided</dd>
+               {% endif %}
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Second property or holiday home: outstanding mortgage<span class="govuk-visually-hidden">Second property or holiday home outstanding mortgage</span></dt>
+              {% if data['partner-capital-2a-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-capital-2a-value'] | fixed }}</dd>
+               {% else %}
+                   <dd class="govuk-summary-list__value">Not provided</dd>
+               {% endif %}
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Second property or holiday home: % owned<span class="govuk-visually-hidden">Second property or holiday home % owned</span></dt>
+              {% if data['partner-capital-2b-value'] %}<dd class="govuk-summary-list__value">{{ data['partner-capital-2b-value'] }}{{ ownership }}</dd>
+               {% else %}
+                   <dd class="govuk-summary-list__value">Not provided</dd>
+               {% endif %}
+            </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Savings<span class="govuk-visually-hidden"> Savings</span></dt>
             {% if data['partner-capital-3-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-capital-3-value'] | fixed }}</dd>
@@ -608,42 +979,22 @@ Check answers – {{ serviceName }}
              {% endif %}
           </div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Investments<span class="govuk-visually-hidden">Investments</span></dt>
+            <dt class="govuk-summary-list__key">Investments<span class="govuk-visually-hidden"> Investments</span></dt>
             {% if data['partner-capital-4-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-capital-4-value'] | fixed }}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not provided</dd>
              {% endif %}
           </div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Vehicles worth over £15,000 and not in regular use<span class="govuk-visually-hidden"> Vehicles worth over £15,000 and not in regular use</span></dt>
-            {% if data['partner-capital-6-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-capital-6-value'] | fixed }}</dd>
-             {% else %}
-                 <dd class="govuk-summary-list__value">Not provided</dd>
-             {% endif %}
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Valuable items worth £500 or more<span class="govuk-visually-hidden">Valuable items worth £500 or more</span></dt>
+            <dt class="govuk-summary-list__key">Valuable items worth £500 or more<span class="govuk-visually-hidden"> aluable items worth £500 or more</span></dt>
             {% if data['partner-capital-7-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-capital-7-value'] | fixed }}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not provided</dd>
              {% endif %}
           </div>
         </dl>
-    <!-- capital end -->
-    <!-- smod start -->
-    <h2 class="govuk-heading-m">Partner's disputed assets</h2>
-            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Assets in dispute<span class="govuk-visually-hidden"> Client's partner's assets the subject matter of dispute</span></dt>
-                {% if data['partner-smod'] == 'Yes' %}<dd class="govuk-summary-list__value">{{ currency }}{{ data['partner-smodAmount'] | fixed }}</dd>
-                 {% elseif data['partner-smod'] == 'No' %}<dd class="govuk-summary-list__value">{{ data['partner-smod']}}</dd>
-                 {% else %}<dd class="govuk-summary-list__value">Not provided</dd>{% endif %}
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="/matter-of-dispute-partner?checking=true">Change<span class="govuk-visually-hidden"> Employment status</span></a>
-                </dd>
-              </div>
-            </dl>
-    <!-- csmodend-->
+        <!-- other assets end -->
+
 
     {% else %}
     {% endif %}

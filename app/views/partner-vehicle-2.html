@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Vehicle – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Your client's partner's finances</span>
+      <h1 class="govuk-heading-l">Your client's partner's vehicle</h1>
+
+        <!--<form class="form" action="{% if data['checking'] %}/check-answers{% else %}/partner-vehicle-3{% endif %}" method="post">-->
+          <form class="form" action="/partner-vehicle-3" method="post">
+
+          <div class="govuk-form-group">
+           <label class="govuk-label govuk-label--m" for="partner-vehicle-value">What is the estimated value of the vehicle?</label>
+           <div id="client-vehicle-value-hint" class="govuk-hint">You can use car valuation websites to find this out.</div>
+           <!-- wrapper starts -->
+           <div class="govuk-input__wrapper">
+             <div class="govuk-input__prefix" aria-hidden="true">£</div>
+             <input class="govuk-input govuk-input--width-5" id="partner-vehicle-value" name="partner-vehicle-value" type="text" value="{{ data['partner-vehicle-value']}}">
+           </div>
+           <!-- wrapper ends -->
+         </div>
+
+
+
+         <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="partner-home-mortgage">Is the vehicle in regular use?</label>
+          <div id="client-home-value-hint" class="govuk-hint">This means the vehicle is used at least once every 2 weeks for things like work, shopping or driving children to school.</div>
+          <!-- wrapper starts -->
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="partner-vehicle-use-yes" name="partner-vehicle-use" type="radio" value="Yes" {{ checked("partner-vehicle-use", "Yes") }}>
+              <label class="govuk-label govuk-radios__label" for="partner-vehicle-use-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="partner-vehicle-use-no" name="partner-vehicle-use" type="radio" value="No" {{ checked("partner-vehicle-use", "No") }}>
+              <label class="govuk-label govuk-radios__label" for="partner-vehicle-use-no">
+                No
+              </label>
+            </div>
+          </div>
+          <!-- wrapper ends -->
+          </div>
+
+
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
+      <a class="govuk-link" href="/start">Cancel</a>
+      </div>
+
+      </form>
+
+    </div>
+
+    <div class="right-sidebar-menu">
+      <div class="govuk-grid-column-one-third">
+        <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-body-s" id="subsection-title">
+          <strong>Reference number</strong>
+          <p class="govuk-body-s">HDJ-212-3F</p>
+          </h2>
+        </aside>
+      </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+{% endblock %}

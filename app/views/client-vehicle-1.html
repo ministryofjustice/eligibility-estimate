@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Case details – {{ serviceName }}
+Vehicle – {{ serviceName }}
 {% endblock %}
 
 
@@ -27,25 +27,27 @@ Case details – {{ serviceName }}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-         <form class="form" action="{% if data['checking'] %}/check-answers{% else %}/client-details-1{% endif %}" method="post">
+
+        <!--<form class="form" action="{% if data['checking'] %}/check-answers{% else %}/client-vehicle-2{% endif %}" method="post">-->
+          <form class="form" action="/client-vehicle-2" method="post">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <span class="govuk-caption-l">Case details</span>
-               <h1 class="govuk-fieldset__heading">Is it a domestic abuse matter?</h1>
+              <span class="govuk-caption-l">Your client's finances</span>
+               <h1 class="govuk-fieldset__heading">Does your client own a vehicle?</h1>
              </legend>
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="domestic-abuse-yes" name="domestic-abuse" type="radio" value="Yes" {{ checked("domestic-abuse", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="domestic-abuse-yes">
+                <input class="govuk-radios__input" id="client-vehicle-own-yes" name="client-vehicle-own" type="radio" value="Yes" {{ checked("client-vehicle-own", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="client-vehicle-own-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="domestic-abuse-no" name="domestic-abuse" type="radio" value="No" {{ checked("domestic-abuse", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="domestic-abuse-no">
+                <input class="govuk-radios__input" id="client-vehicle-own-no" name="client-vehicle-own" type="radio" value="No" {{ checked("client-vehicle-own", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="client-vehicle-own-no">
                   No
                 </label>
               </div>
@@ -56,6 +58,7 @@ Case details – {{ serviceName }}
         <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
         <a class="govuk-link" href="/start">Cancel</a>
       </div>
+
 
       </form>
 

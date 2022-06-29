@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Client details – {{ serviceName }} – GOV.UK Prototype Kit
+  Property – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 
@@ -27,35 +27,35 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <form class="form" action="{% if data['checking'] %}/check-answers{% else %}/client-details-4{% endif %}" method="post">
+
+        <form class="form" action="{% if data['checking'] %}/check-answers{% else %}/client-property-entry{% endif %}" method="post">
 
       <!-- question start -->
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <span class="govuk-caption-l">Client details</span>
-             <h1 class="govuk-fieldset__heading">Does your client have any dependants?</h1>
+            <span class="govuk-caption-l">Your client's finances</span>
+             <h1 class="govuk-fieldset__heading">Does your client own the home that they live in?</h1>
            </legend>
-
-          <div id="contact-hint" class="govuk-hint">By dependant we mean a child or adult who lives with your client and depends on them for financial support. Do not include your client's partner (if they have one).</div>
 
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-
-              <input class="govuk-radios__input" id="dependants-yes" name="dependants" type="radio" value="Yes" {{ checked("dependants","Yes") }} data-aria-controls="conditional-yes">
-              <label class="govuk-label govuk-radios__label" for="dependants-yes">Yes</label>
+              <input class="govuk-radios__input" id="homeowner-mortgage" name="homeowner" type="radio" value="Yes, with a mortgage or loan" {{ checked("homeowner", "Yes, with a mortgage or loan") }}>
+              <label class="govuk-label govuk-radios__label" for="homeowner-mortgage">
+                Yes, with a mortgage or loan
+              </label>
             </div>
-
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes"> <!-- id needs to match data-aria-controls -->
-              <div class="govuk-form-group">
-                  <label class="govuk-label" for="numberOfDependants">Enter the number of dependants</label>
-                <input class="govuk-input govuk-input--width-5" id="numberOfDependants" name="numberOfDependants" type="text" value="{{ data['numberOfDependants'] }}">
-              </div>
-            </div>
-
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="dependants-no" name="dependants" type="radio" value="No" {{ checked("dependants","No") }}>
-              <label class="govuk-label govuk-radios__label" for="dependants-no">No</label>
+              <input class="govuk-radios__input" id="homeowner-outright" name="homeowner" type="radio" value="Yes, owned outright" {{ checked("homeowner", "Yes, owned outright") }}>
+              <label class="govuk-label govuk-radios__label" for="homeowner-outright">
+                Yes, owned outright
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="homeowner-no" name="homeowner" type="radio" value="No" {{ checked("homeowner", "No") }}>
+              <label class="govuk-label govuk-radios__label" for="homeowner-no">
+                No
+              </label>
             </div>
         </fieldset>
       </div>
