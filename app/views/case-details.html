@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case details – {{ serviceName }}
+{% endblock %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Case detials</span>
+      <h1 class="govuk-heading-l">Your client's case details</h1>
+
+        <form class="form" action="{% if data['checking'] %}/check-answers{% else %}/case-details-2{% endif %}" method="post">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
+            <label class="govuk-label govuk-label--m" for="client-home-value">What level of help does your client need?</label>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="represenation-civil-certificated" name="represenation" type="radio" value="Licensed (certificated) work" {{ checked("represenation", "Licensed (certificated) work") }}>
+                    <label class="govuk-label govuk-radios__label" for="represenation-civil-certificated">Licensed (certificated) work</label>
+                    <div id="employment-hint" class="govuk-hint govuk-radios__hint">
+                      Includes legal representation, family help (higher), and other legal services (exceptional cases).
+                    </div>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="represenation-controlled" name="represenation" type="radio" value="Controlled work" {{ checked("represenation", "Controlled work") }}>
+                    <label class="govuk-label govuk-radios__label" for="represenation-controlled">Controlled work</label>
+                    <div id="employment-hint" class="govuk-hint govuk-radios__hint">
+                        Includes legal help, help at court, family help (lower), family mediation, and legal representation for proceedings in the First-tier Tribunal (Immigration and Asylum).
+                    </div>
+                  </div>
+                </div>
+                </fieldset>
+              </div>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
+                  <label class="govuk-label govuk-label--m" for="client-home-value">Is this a matter for the Upper Tribunal? (Immigration and Asylum Chamber)</label>
+
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="upper-tribunal-yes" name="upper-tribunal" type="radio" value="Yes" {{ checked("upper-tribunal", "Yes") }}>
+                      <label class="govuk-label govuk-radios__label" for="upper-tribunal-yes">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="upper-tribunal-no" name="upper-tribunal" type="radio" value="No" {{ checked("upper-tribunal", "No") }}>
+                      <label class="govuk-label govuk-radios__label" for="upper-tribunal-no">
+                        No
+                      </label>
+                    </div>
+                </fieldset>
+              </div>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
+                  <label class="govuk-label govuk-label--m" for="client-home-value">Is it a domestic abuse matter?</label>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="domestic-abuse-yes" name="domestic-abuse" type="radio" value="Yes" {{ checked("domestic-abuse", "Yes") }}>
+                      <label class="govuk-label govuk-radios__label" for="domestic-abuse-yes">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="domestic-abuse-no" name="domestic-abuse" type="radio" value="No" {{ checked("domestic-abuse", "No") }}>
+                      <label class="govuk-label govuk-radios__label" for="domestic-abuse-no">
+                        No
+                      </label>
+                    </div>
+                </fieldset>
+              </div>
+
+
+        <!-- send start -->
+        <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
+        <a class="govuk-link" href="/start">Cancel</a>
+      </div>
+
+      </form>
+
+
+
+    </div>
+
+    <div class="right-sidebar-menu">
+      <div class="govuk-grid-column-one-third">
+        <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-body-s" id="subsection-title">
+          <strong>Reference number</strong>
+          <p class="govuk-body-s">HDJ-212-3F</p>
+          </h2>
+        </aside>
+      </div>
+    </div>
+
+</div>
+
+
+{% endblock %}
