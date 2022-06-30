@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case details – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Client details</span>
+      <h1 class="govuk-heading-l">Your client's details</h1>
+
+        <form class="form" action="{% if data['checking'] %}/check-answers{% else %}/intro-4{% endif %}" method="post">
+
+          <!-- question start -->
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+            <label class="govuk-label govuk-label--m" for="o-60">Is your client over 60 years old?</label>
+              <div id="o-60-hint" class="govuk-hint">
+                Clients over 60 may have some of their capital excluded from a financial eligibility assessment.
+              </div>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="o-60-yes" name="o-60" type="radio" value="Yes" {{ checked("o-60", "Yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="o-60-yes">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="o-60-no" name="o-60" type="radio" value="No" {{ checked("o-60", "No") }}>
+                  <label class="govuk-label govuk-radios__label" for="o-60-no">
+                    No
+                  </label>
+                </div>
+            </fieldset>
+          </div>
+          <!-- question end -->
+
+          <!-- question start -->
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+              <label class="govuk-label govuk-label--m" for="dependants">Does your client have any dependants?</label>
+
+              <div id="contact-hint" class="govuk-hint">By dependant we mean a child or adult who lives with your client and depends on them for financial support. Do not include your client's partner (if they have one).</div>
+
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+
+                  <input class="govuk-radios__input" id="dependants-yes" name="dependants" type="radio" value="Yes" {{ checked("dependants","Yes") }} data-aria-controls="conditional-yes">
+                  <label class="govuk-label govuk-radios__label" for="dependants-yes">Yes</label>
+                </div>
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes"> <!-- id needs to match data-aria-controls -->
+                  <div class="govuk-form-group">
+                      <label class="govuk-label" for="numberOfDependants">Enter the number of dependants</label>
+                    <input class="govuk-input govuk-input--width-5" id="numberOfDependants" name="numberOfDependants" type="text" value="{{ data['numberOfDependants'] }}">
+                  </div>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="dependants-no" name="dependants" type="radio" value="No" {{ checked("dependants","No") }}>
+                  <label class="govuk-label govuk-radios__label" for="dependants-no">No</label>
+                </div>
+            </fieldset>
+          </div>
+          <!-- question end -->
+
+          <!-- question start -->
+          {% if data['upper-tribunal'] == 'Yes' %}
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <label class="govuk-label govuk-label--m" for="dependants">Is your client receiving asylum support?</label>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="asylum-support-yes" name="asylum-support" type="radio" value="Yes" {{ checked("asylum-support", "Yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="asylum-support-yes">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="asylum-support-no" name="asylum-support" type="radio" value="No" {{ checked("asylum-support", "No") }}>
+                  <label class="govuk-label govuk-radios__label" for="asylum-support-no">
+                    No
+                  </label>
+                </div>
+            </fieldset>
+          </div>
+          {% else %}
+          {% endif %}
+          <!-- question end -->
+
+          <!-- question start -->
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
+              <label class="govuk-label govuk-label--m" for="dependants">What is your client's employment status?</label>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="employment-status-employed" name="employment-status" type="radio" value="Employed" {{ checked("employment-status", "Employed") }}>
+                  <label class="govuk-label govuk-radios__label" for="employment-status-employed">
+                    Employed
+                  </label>
+                  <div id="employment-hint" class="govuk-hint govuk-radios__hint">
+                    This includes the self-employed and members of the armed forces.
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="employment-status-unemployed" name="employment-status" type="radio" value="Unemployed" {{ checked("employment-status", "Unemployed") }}>
+                  <label class="govuk-label govuk-radios__label" for="employment-status-unemployed">
+                    Unemployed
+                  </label>
+                </div>
+            </fieldset>
+          </div>
+          <!-- question end -->
+
+        <!-- send start -->
+        <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
+        <a class="govuk-link" href="/start">Cancel</a>
+      </div>
+
+      </form>
+
+    </div>
+
+    <div class="right-sidebar-menu">
+      <div class="govuk-grid-column-one-third">
+        <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-body-m" id="subsection-title">
+          <strong>Reference number</strong>
+          <p class="govuk-body-m">HDJ-212-3F</p>
+          </h2>
+          <h2 class="govuk-body-m" id="subsection-title">
+          <strong>Date stamp</strong>
+          <p class="govuk-body-m">16/08/2022</p>
+          </h2>
+
+        </aside>
+      </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

@@ -26,15 +26,14 @@ Case details – {{ serviceName }}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Case details</span>
+      <h1 class="govuk-heading-l">Your client's case details</h1>
 
-        <form class="form" action="{% if data['checking'] %}/check-answers{% else %}/case-details-2{% endif %}" method="post">
+          <form class="form" action="{% if data['checking'] %}/check-answers{% else %}/intro-2{% endif %}" method="post">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <span class="govuk-caption-l">Case details</span>
-               <h1 class="govuk-fieldset__heading">What level of help does your client need?</h1>
-             </legend>
+            <label class="govuk-label govuk-label--m" for="client-home-value">What level of help does your client need?</label>
 
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
@@ -64,8 +63,6 @@ Case details – {{ serviceName }}
       </div>
 
       </form>
-
-
 
     </div>
 

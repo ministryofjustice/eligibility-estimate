@@ -24,32 +24,30 @@
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
-
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Client details</span>
+      <h1 class="govuk-heading-l">Your client's details</h1>
 
-        <form class="form" action="{% if data['checking'] %}/check-answers{% else %}/client-details-2{% endif %}" method="post">
+        <form class="form" action="{% if data['checking'] %}/check-answers{% elif data['passport-benefits'] == 'Yes' %}/client-property{% else %}/monthly-income{% endif %}" method="post">
 
       <!-- question start -->
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <span class="govuk-caption-l">Client details</span>
-             <h1 class="govuk-fieldset__heading">Is your client over 60 years old?</h1>
-           </legend>
-          <div id="o-60-hint" class="govuk-hint">
-            Clients over 60 may have some of their capital excluded from a financial eligibility assessment.
-          </div>
+          <label class="govuk-label govuk-label--m" for="client-home-value">Does your client receive a passporting benefit?</label>
+
+          <div id="partner-hint" class="govuk-hint">Includes Universal Credit, Income Support, income-based Jobseeker's Allowance (JSA), income-related Employment and Support Allowance (ESA), and Guarantee Credit element of Pension Credit.
+        </div>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="o-60-yes" name="o-60" type="radio" value="Yes" {{ checked("o-60", "Yes") }}>
-              <label class="govuk-label govuk-radios__label" for="o-60-yes">
+              <input class="govuk-radios__input" id="passport-benefits-yes" name="passport-benefits" type="radio" value="Yes" {{ checked("passport-benefits", "Yes") }}>
+              <label class="govuk-label govuk-radios__label" for="passport-benefits-yes">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="o-60-no" name="o-60" type="radio" value="No" {{ checked("o-60", "No") }}>
-              <label class="govuk-label govuk-radios__label" for="o-60-no">
+              <input class="govuk-radios__input" id="passport-benefits-no" name="passport-benefits" type="radio" value="No" {{ checked("passport-benefits", "No") }}>
+              <label class="govuk-label govuk-radios__label" for="passport-benefits-no">
                 No
               </label>
             </div>
@@ -77,6 +75,19 @@
           <strong>Date stamp</strong>
           <p class="govuk-body-m">16/08/2022</p>
           </h2>
+          <!--{% if data['represenation'] == 'Licensed (certificated) work' %}
+          <h2 class="govuk-body-m" id="subsection-title">
+          <strong>Type of legal help</strong>
+          <p class="govuk-body-m">Licensed (certificated) legal aid work</p>
+          </h2>
+          {% elseif data['represenation'] == 'Controlled work' %}
+          <h2 class="govuk-body-m" id="subsection-title">
+          <strong>Type of legal help</strong>
+          <p class="govuk-body-m">Controlled legal aid work</p>
+          </h2>
+          {% else %}
+
+          {% endif %}-->
         </aside>
       </div>
     </div>

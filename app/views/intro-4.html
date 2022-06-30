@@ -24,34 +24,29 @@
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
-
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Client details</span>
+      <h1 class="govuk-heading-l">Your client's details</h1>
 
-        <form class="form" action="{% if data['checking'] %}/check-answers{% else %}/client-details-2{% endif %}" method="post">
+        <form class="form" action="{% if data['checking'] %}/check-answers{% else %}/intro-5{% endif %}" method="post">
 
       <!-- question start -->
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <span class="govuk-caption-l">Client details</span>
-             <h1 class="govuk-fieldset__heading">Is your client over 60 years old?</h1>
-           </legend>
-          <div id="o-60-hint" class="govuk-hint">
-            Clients over 60 may have some of their capital excluded from a financial eligibility assessment.
+          <label class="govuk-label govuk-label--m" for="client-home-value">Does your client have a partner?</label>
+
+          <div id="partner-hint" class="govuk-hint">
+            By partner we mean someone your client is married to, in a civil relationship with, cohabits with or otherwise shares finances with. They cannot be the opponent in any legal proceedings.
           </div>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="o-60-yes" name="o-60" type="radio" value="Yes" {{ checked("o-60", "Yes") }}>
-              <label class="govuk-label govuk-radios__label" for="o-60-yes">
-                Yes
-              </label>
+              <input class="govuk-radios__input" id="partner-yes" name="partner" type="radio" value="Yes" {{ checked("partner", "Yes") }}>
+              <label class="govuk-label govuk-radios__label" for="partner-yes">Yes</label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="o-60-no" name="o-60" type="radio" value="No" {{ checked("o-60", "No") }}>
-              <label class="govuk-label govuk-radios__label" for="o-60-no">
-                No
-              </label>
+              <input class="govuk-radios__input" id="partner-no" name="partner" type="radio" value="No" {{ checked("partner", "No") }}>
+              <label class="govuk-label govuk-radios__label" for="partner-no">No</label>
             </div>
         </fieldset>
       </div>
@@ -77,6 +72,7 @@
           <strong>Date stamp</strong>
           <p class="govuk-body-m">16/08/2022</p>
           </h2>
+
         </aside>
       </div>
     </div>
