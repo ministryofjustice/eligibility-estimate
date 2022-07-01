@@ -31,30 +31,32 @@ Case details – {{ serviceName }}
 
           <form class="form" action="{% if data['checking'] %}/check-answers{% else %}/intro-2{% endif %}" method="post">
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
-            <label class="govuk-label govuk-label--m" for="client-home-value">What level of help does your client need?</label>
+            <!-- question start -->
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
+                <label class="govuk-label govuk-label--m" for="client-home-value">What level of help does your client need?</label>
 
-              <div class="govuk-radios" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="represenation-civil-certificated" name="represenation" type="radio" value="Licensed (certificated) work" {{ checked("represenation", "Licensed (certificated) work") }}>
-                  <label class="govuk-label govuk-radios__label" for="represenation-civil-certificated">Licensed (certificated) work</label>
-                  <div id="employment-hint" class="govuk-hint govuk-radios__hint">
-                    Includes legal representation, family help (higher), and other legal services (exceptional cases).
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="represenation-civil-certificated" name="represenation" type="radio" value="Licensed (certificated) work" {{ checked("represenation", "Licensed (certificated) work") }}>
+                      <label class="govuk-label govuk-radios__label" for="represenation-civil-certificated">Licensed (certificated) work</label>
+                      <div id="employment-hint" class="govuk-hint govuk-radios__hint">
+                        Includes legal representation, family help (higher), and other legal services (exceptional cases).
+                      </div>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="represenation-controlled" name="represenation" type="radio" value="Controlled work" {{ checked("represenation", "Controlled work") }}>
+                      <label class="govuk-label govuk-radios__label" for="represenation-controlled">Controlled work</label>
+                      <div id="employment-hint" class="govuk-hint govuk-radios__hint">
+                          Includes legal help, help at court, family help (lower), family mediation, and legal representation for proceedings in the First-tier Tribunal (Immigration and Asylum).
+                      </div>
+                    </div>
                   </div>
-                </div>
 
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="represenation-controlled" name="represenation" type="radio" value="Controlled work" {{ checked("represenation", "Controlled work") }}>
-                  <label class="govuk-label govuk-radios__label" for="represenation-controlled">Controlled work</label>
-                  <div id="employment-hint" class="govuk-hint govuk-radios__hint">
-                      Includes legal help, help at court, family help (lower), family mediation, and legal representation for proceedings in the First-tier Tribunal (Immigration and Asylum).
-                  </div>
-                </div>
-              </div>
-
-          </fieldset>
-        </div>
+              </fieldset>
+            </div>
+            <!-- question end -->
 
         <!-- send start -->
         <div class="govuk-button-group">

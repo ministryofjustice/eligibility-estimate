@@ -29,7 +29,7 @@ Client details – {{ serviceName }}
       <span class="govuk-caption-l">Client details</span>
       <h1 class="govuk-heading-l">Your client's details</h1>
 
-        <form class="form" action="{% if data['checking'] %}/check-answers{% else %}/intro-4{% endif %}" method="post">
+        <form class="form" action="{% if data['checking'] %}/check-answers{% elif data['passport-benefits'] == 'Yes' %}/client-property{% else %}/monthly-income{% endif %}" method="post">
 
           <!-- question start -->
           <div class="govuk-form-group">
@@ -126,6 +126,51 @@ Client details – {{ serviceName }}
                   <input class="govuk-radios__input" id="employment-status-unemployed" name="employment-status" type="radio" value="Unemployed" {{ checked("employment-status", "Unemployed") }}>
                   <label class="govuk-label govuk-radios__label" for="employment-status-unemployed">
                     Unemployed
+                  </label>
+                </div>
+            </fieldset>
+          </div>
+          <!-- question end -->
+
+          <!-- question start -->
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <label class="govuk-label govuk-label--m" for="client-home-value">Does your client have a partner?</label>
+
+              <div id="partner-hint" class="govuk-hint">
+                By partner we mean someone your client is married to, in a civil relationship with, cohabits with or otherwise shares finances with. They cannot be the opponent in any legal proceedings.
+              </div>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="partner-yes" name="partner" type="radio" value="Yes" {{ checked("partner", "Yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="partner-yes">Yes</label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="partner-no" name="partner" type="radio" value="No" {{ checked("partner", "No") }}>
+                  <label class="govuk-label govuk-radios__label" for="partner-no">No</label>
+                </div>
+            </fieldset>
+          </div>
+          <!-- question end -->
+
+          <!-- question start -->
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <label class="govuk-label govuk-label--m" for="client-home-value">Does your client receive a passporting benefit?</label>
+
+              <div id="partner-hint" class="govuk-hint">Includes Universal Credit, Income Support, income-based Jobseeker's Allowance (JSA), income-related Employment and Support Allowance (ESA), and Guarantee Credit element of Pension Credit.
+            </div>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="passport-benefits-yes" name="passport-benefits" type="radio" value="Yes" {{ checked("passport-benefits", "Yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="passport-benefits-yes">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="passport-benefits-no" name="passport-benefits" type="radio" value="No" {{ checked("passport-benefits", "No") }}>
+                  <label class="govuk-label govuk-radios__label" for="passport-benefits-no">
+                    No
                   </label>
                 </div>
             </fieldset>

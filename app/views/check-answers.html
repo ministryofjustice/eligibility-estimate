@@ -63,8 +63,12 @@ Check answers – {{ serviceName }}
           </div>
         </dl>
 <!-- case details end-->
+
 <!-- client details start -->
-<h2 class="govuk-heading-l">Your client's details</h2>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's details</h2></div>
+  <div class="govuk-grid-column-one-third"><p><a class="govuk-summary-list__actions" href="/intro-3?checking=true">Change</a></p></div>
+</div>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Over 60 years old</dt>
@@ -72,18 +76,12 @@ Check answers – {{ serviceName }}
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
-         <dd class="govuk-summary-list__actions">
-           <a class="govuk-link" href="/intro-3?checking=true">Change<span class="govuk-visually-hidden"> Over 60</span></a>
-         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Has dependants</dt>
            {% if data['dependants'] == 'Yes' %}<dd class="govuk-summary-list__value">{{ data['numberOfDependants']}}</dd>
             {% elseif data['dependants'] == 'No' %}<dd class="govuk-summary-list__value">{{ data['dependants']}}</dd>
             {% else %}<dd class="govuk-summary-list__value">Not provided</dd>{% endif %}
-         <dd class="govuk-summary-list__actions">
-           <a class="govuk-link" href="/intro-3?checking=true">Change<span class="govuk-visually-hidden"> Number of dependants</span></a>
-         </dd>
       </div>
       {% if data['upper-tribunal'] == 'Yes' %}
       <div class="govuk-summary-list__row">
@@ -92,9 +90,6 @@ Check answers – {{ serviceName }}
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
-         <dd class="govuk-summary-list__actions">
-           <a class="govuk-link" href="/intro-3?checking=true">Change<span class="govuk-visually-hidden"> Recieving asylum support</span></a>
-         </dd>
       </div>
       {% else %}
       {% endif %}
@@ -104,9 +99,6 @@ Check answers – {{ serviceName }}
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
-         <dd class="govuk-summary-list__actions">
-           <a class="govuk-link" href="/intro-3?checking=true">Change<span class="govuk-visually-hidden"> Employment status</span></a>
-         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Has a partner</dt>
@@ -114,9 +106,6 @@ Check answers – {{ serviceName }}
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
-         <dd class="govuk-summary-list__actions">
-           <a class="govuk-link" href="/intro-4?checking=true">Change<span class="govuk-visually-hidden"> Have a partner</span></a>
-         </dd>
       </div>
 
       <div class="govuk-summary-list__row">
@@ -125,9 +114,6 @@ Check answers – {{ serviceName }}
          {% else %}
              <dd class="govuk-summary-list__value">Not provided</dd>
          {% endif %}
-         <dd class="govuk-summary-list__actions">
-           <a class="govuk-link" href="/intro-5?checking=true">Change<span class="govuk-visually-hidden"> Receiving benefits</span></a>
-         </dd>
       </div>
 
     </dl>
@@ -142,7 +128,7 @@ Check answers – {{ serviceName }}
 <!-- property start -->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Property</h2></div>
-  <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/client-property">Change</a></p></div>
+  <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="govuk-summary-list__actions" href="/client-property">Change</a></p></div>
 </div>
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
   <div class="govuk-summary-list__row">
@@ -179,7 +165,7 @@ Check answers – {{ serviceName }}
 <!-- vehicles start -->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Vehicles</h2></div>
-  <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/client-vehicle-1">Change</a></p></div>
+  <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="govuk-summary-list__actions" href="/client-vehicle-1">Change</a></p></div>
 </div>
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
   <div class="govuk-summary-list__row">
@@ -226,7 +212,7 @@ Check answers – {{ serviceName }}
 <!--other assets start -->
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Other assets</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/assets?checking=true">Change</a></p></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="govuk-summary-list__actions" href="/assets?checking=true">Change</a></p></div>
     </div>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -300,7 +286,7 @@ Check answers – {{ serviceName }}
     <!-- property start -->
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Property</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/partner-property">Change</a></p></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="govuk-summary-list__actions" href="/partner-property">Change</a></p></div>
     </div>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
@@ -337,7 +323,7 @@ Check answers – {{ serviceName }}
     <!-- vehicles start -->
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Vehicles</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/partner-vehicle-1">Change</a></p></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="govuk-summary-list__actions" href="/partner-vehicle-1">Change</a></p></div>
     </div>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
@@ -384,7 +370,7 @@ Check answers – {{ serviceName }}
     <!-- other assets start -->
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Other assets</h2></div>
-          <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/assets-partner?checking=true">Change</a></p></div>
+          <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="govuk-summary-list__actions" href="/assets-partner?checking=true">Change</a></p></div>
         </div>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -434,20 +420,6 @@ Check answers – {{ serviceName }}
         </dl>
         <!-- other assets end -->
     <!-- capital end -->
-    <!--
-    <h2 class="govuk-heading-m">Partner's disputed assets</h2>
-            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Assets in dispute<span class="govuk-visually-hidden"> Client's partner's assets the subject matter of dispute</span></dt>
-                {% if data['partner-smod'] == 'Yes' %}<dd class="govuk-summary-list__value">{{ currency }}{{ data['partner-smodAmount'] | fixed }}</dd>
-                 {% elseif data['partner-smod'] == 'No' %}<dd class="govuk-summary-list__value">{{ data['partner-smod']}}</dd>
-                 {% else %}<dd class="govuk-summary-list__value">Not provided</dd>{% endif %}
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="/matter-of-dispute-partner?checking=true">Change<span class="govuk-visually-hidden"> Employment status</span></a>
-                </dd>
-              </div>
-            </dl>
-    -->
     {% else %}
     {% endif %}
     <!-- has partner end -->
@@ -457,10 +429,14 @@ Check answers – {{ serviceName }}
 <!-- income start -->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's income</h2></div>
-  <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="monthly-income?checking=true">Change</a></p></div>
+  <div class="govuk-grid-column-one-third"><p><a class="govuk-link govuk-summary-list__actions" href="monthly-income?checking=true">Change</a></p></div>
 </div>
 
+
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">Employment income after tax<span class="govuk-visually-hidden"> Employment income after tax</span></dt>
     {% if data['income-sources-1-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['income-sources-1-value'] | fixed }}</dd>
@@ -526,7 +502,7 @@ Check answers – {{ serviceName }}
 <!-- outgoings start -->
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's outgoings</h2></div>
-<div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="monthly-outgoings?checking=true">Change</a></p></div>
+<div class="govuk-grid-column-one-third"><p><a class="govuk-link govuk-summary-list__actions" href="monthly-outgoings?checking=true">Change</a></p></div>
 </div>
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -581,7 +557,7 @@ Check answers – {{ serviceName }}
 <!-- property start -->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Property</h2></div>
-  <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/client-property">Change</a></p></div>
+  <div class="govuk-grid-column-one-third"><p><a class="govuk-link govuk-summary-list__actions" href="/client-property">Change</a></p></div>
 </div>
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
   <div class="govuk-summary-list__row">
@@ -618,7 +594,7 @@ Check answers – {{ serviceName }}
 <!-- vehicles start -->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Vehicles</h2></div>
-  <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/client-vehicle-1">Change</a></p></div>
+  <div class="govuk-grid-column-one-third"><p><a class="govuk-link govuk-summary-list__actions" href="/client-vehicle-1">Change</a></p></div>
 </div>
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
   <div class="govuk-summary-list__row">
@@ -665,7 +641,7 @@ Check answers – {{ serviceName }}
 <!--other assets start -->
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Other assets</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/assets?checking=true">Change</a></p></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link govuk-summary-list__actions" href="/assets?checking=true">Change</a></p></div>
     </div>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -741,7 +717,7 @@ Check answers – {{ serviceName }}
     <!-- income start -->
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's partner's income</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/monthly-income-partner?checking=true">Change</a></p></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link govuk-summary-list__actions"href="/monthly-income-partner?checking=true">Change</a></p></div>
     </div>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -810,7 +786,7 @@ Check answers – {{ serviceName }}
     <!-- outgoings start -->
     <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's partner's outgoings</h2></div>
-    <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/monthly-outgoings-partner?checking=true">Change</a></p></div>
+    <div class="govuk-grid-column-one-third"><p><a class="govuk-link govuk-summary-list__actions" href="/monthly-outgoings-partner?checking=true">Change</a></p></div>
     </div>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -866,7 +842,7 @@ Check answers – {{ serviceName }}
     <!-- property start -->
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Property</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/partner-property">Change</a></p></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link govuk-summary-list__actions" href="/partner-property">Change</a></p></div>
     </div>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
@@ -903,7 +879,7 @@ Check answers – {{ serviceName }}
     <!-- vehicles start -->
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Vehicles</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/partner-vehicle-1">Change</a></p></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link govuk-summary-list__actions" href="/partner-vehicle-1">Change</a></p></div>
     </div>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
@@ -950,7 +926,7 @@ Check answers – {{ serviceName }}
     <!-- other assets start -->
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m">Other assets</h2></div>
-          <div class="govuk-grid-column-one-third"><p><a class="govuk-link" style="float:right; padding-top: 10px;" href="/assets-partner?checking=true">Change</a></p></div>
+          <div class="govuk-grid-column-one-third"><p><a class="govuk-link govuk-summary-list__actions" href="/assets-partner?checking=true">Change</a></p></div>
         </div>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
