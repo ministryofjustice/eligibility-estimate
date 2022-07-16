@@ -29,7 +29,7 @@ Vehicle – {{ serviceName }}
 
 
         <!--<form class="form" action="{% if data['checking'] %}/check-answers{% else %}/partner-vehicle-2{% endif %}" method="post">-->
-          <form class="form" action="/partner-vehicle-2" method="post">
+          <form class="form" action="{% if data['checking'] %}/check-answers{% else %}/ownsVehiclePartner{% endif %}" method="post">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
