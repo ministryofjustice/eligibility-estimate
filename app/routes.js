@@ -73,7 +73,7 @@ router.post('/ownsHome', function (req, res) {
     // Run this code when a form is submitted to 'ownsVehiclePartner'
     router.post('/ownsVehiclePartner', function (req, res) {
 
-      // Make a variable and give it the value from 'client-vehicle-own'
+      // Make a variable and give it the value from 'partner-vehicle-own'
       var ownsVehiclePartner = req.session.data['partner-vehicle-own']
 
       // Check whether the variable matches a condition
