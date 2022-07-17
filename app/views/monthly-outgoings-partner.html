@@ -29,7 +29,7 @@ Partner's outgoings – {{ serviceName }}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <form class="form" action="{% if data['checking'] %}/check-answers{% else %}/partner-property{% endif %}" method="post">
+        <form class="form" action="{% if data['checking'] %}/check-answers#partner-outgoings{% else %}/partner-property{% endif %}" method="post">
 
         <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">

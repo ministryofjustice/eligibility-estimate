@@ -30,8 +30,8 @@
       <span class="govuk-caption-l">Your client's finances</span>
       <h1 class="govuk-heading-l">Your client's vehicle</h1>
 
-        <!--<form class="form" action="{% if data['checking'] %}/check-answers{% else %}/client-vehicle-3{% endif %}" method="post">-->
-          <form class="form" action="/client-vehicle-3" method="post">
+        <form class="form" action="{% if data['checking'] %}/check-answers#client-vehicles{% else %}/regularUseVehicle{% endif %}" method="post">
+          <!--<form class="form" action="/client-vehicle-3" method="post">-->
 
           <div class="govuk-form-group">
            <label class="govuk-label govuk-label--m" for="client-vehicle-value">What is the estimated value of the vehicle?</label>
@@ -47,7 +47,7 @@
 
 
          <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--m" for="client-home-mortgage">Is the vehicle in regular use?</label>
+          <label class="govuk-label govuk-label--m" for="client-vehicle-use">Is the vehicle in regular use?</label>
           <div id="client-home-value-hint" class="govuk-hint">This means the vehicle is used at least once every 2 weeks for things like work, shopping or driving children to school.</div>
           <!-- wrapper starts -->
           <div class="govuk-radios" data-module="govuk-radios">

@@ -28,8 +28,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-      <!--<form class="form" action="{% if data['checking'] %}/check-answers{% else %}/matter-of-dispute-partner{% endif %}" method="post">-->
-        <form class="form" action="/check-answers" method="post">
+      <form class="form" action="{% if data['checking'] %}/check-answers#partner-assets{% else %}/check-answers{% endif %}" method="post">
 
       <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="contact-hint">

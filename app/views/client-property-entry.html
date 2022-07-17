@@ -30,7 +30,7 @@
       <span class="govuk-caption-l">Your client's finances</span>
       <h1 class="govuk-heading-l">Your client's property</h1>
 
-      <form class="form" action="{% if data['checking'] %}/check-answers{% else %}/client-vehicle-1{% endif %}" method="post">
+      <form class="form" action="{% if data['checking'] %}/check-answers#client-property{% else %}/client-vehicle-1{% endif %}" method="post">
 
           <div class="govuk-form-group">
            <label class="govuk-label govuk-label--m" for="client-home-value">How much is your client's home worth?</label>

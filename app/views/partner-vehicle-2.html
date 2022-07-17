@@ -30,8 +30,8 @@
       <span class="govuk-caption-l">Your client's partner's finances</span>
       <h1 class="govuk-heading-l">Your client's partner's vehicle</h1>
 
-        <!--<form class="form" action="{% if data['checking'] %}/check-answers{% else %}/partner-vehicle-3{% endif %}" method="post">-->
-          <form class="form" action="/partner-vehicle-3" method="post">
+        <form class="form" action="{% if data['checking'] %}/check-answers#partner-vehicle{% else %}/partnerRegularUseVehicle{% endif %}" method="post">
+          <!--<form class="form" action="/partner-vehicle-3" method="post">-->
 
           <div class="govuk-form-group">
            <label class="govuk-label govuk-label--m" for="partner-vehicle-value">What is the estimated value of the vehicle?</label>
