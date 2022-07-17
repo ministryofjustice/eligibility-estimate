@@ -107,7 +107,7 @@ router.post('/regularUseVehicle', function (req, res) {
 // Run this code when a form is submitted to 'partnerRegularUseVehicle'
 router.post('/partnerRegularUseVehicle', function (req, res) {
 
-  // Make a variable and give it the value from 'client-vehicle-use'
+  // Make a variable and give it the value from 'partner-vehicle-use'
   var partnerRegularUseVehicle = req.session.data['partner-vehicle-use']
 
   // Check whether the variable matches a condition
@@ -116,9 +116,27 @@ router.post('/partnerRegularUseVehicle', function (req, res) {
     res.redirect('/assets-partner')
   } else {
     // Send user to next vehicle q to answer all financial q's
+    res.redirect('/partner-vehicle-3')
   }
 
   })
+
+  // Run this code when a form is submitted to 'buyVehicleThree'
+  router.post('/buyVehicleThree', function (req, res) {
+
+    // Make a variable and give it the value from 'client-vehicle-three'
+    var buyVehicleThree = req.session.data['client-vehicle-three']
+
+    // Check whether the variable matches a condition
+    if (buyVehicleThree == "Yes"){
+      // Skip vehicle q's and go to assets q's
+      res.redirect('/assets')
+    } else {
+      // Send user to next vehicle q to answer all financial q's
+      res.redirect('/client-vehicle-4')
+    }
+
+    })
 
 // Run this code when a form is submitted to 'partnerBuyVehicleThree'
 router.post('/partnerBuyVehicleThree', function (req, res) {
