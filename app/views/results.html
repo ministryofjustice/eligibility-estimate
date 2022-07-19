@@ -244,18 +244,13 @@ Estimated result – {{ serviceName }}
         </div>
       </div>
 
-
-
-    <!-- send start -->
-    <form action="/confirmation" method="post" novalidate>
-      <input type="hidden" name="answers-checked" value="true">
-
-      <div class="govuk-button-group">
-      <button type="submit" class="govuk-button" data-module="govuk-button">Confirm and continue</button>
-      <button type="" class="govuk-button govuk-button--secondary" data-module="govuk-button">Print calculation</button>
-    </div>
-    </form>
-    <!-- send end -->
+      <!-- send start -->
+        <div class="govuk-button-group">
+      <!--<button type="submit" class="govuk-button" data-module="govuk-button">Confirm and continue</button>-->
+        <button type="submit" class="govuk-button" data-module="govuk-button" onclick="document.location='/start'">Start another eligibility check</button>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick=window.open("/print-view","_blank")>Print this page</button>
+        </div>
+      <!-- send end -->
 
     {% else %}
 
@@ -666,15 +661,11 @@ Estimated result – {{ serviceName }}
       </div>
 
     <!-- send start -->
-    <form action="" method="post" novalidate>
-      <input type="hidden" name="answers-checked" value="true">
-
       <div class="govuk-button-group">
-    <!--<button type="submit" class="govuk-button" data-module="govuk-button">Confirm and continue</button>-->
-      <button type="submit" class="govuk-button" data-module="govuk-button" onclick="document.location='/start'">Start another eligibility check</button>
-      <button type="" class="govuk-button govuk-button--secondary" data-module="govuk-button">Print this page</button>
+      <button class="govuk-button" data-module="govuk-button" onclick="document.location='/start'">Start another eligibility check</button>
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick=window.open("/print-view","_blank")>Print this page</button>
     </div>
-    </form>
+
     <!-- send end -->
 
     {% endif %}
