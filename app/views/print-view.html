@@ -84,22 +84,62 @@ th:first-child {
 .header-info > p {
   font-size: 16px;
 }
+/* stacked logo styles */
+.gem-c-organisation-logo{
+  font-size: 18px;
+font-weight: 400;
+line-height: 1.35;
+margin: 0 0 30px 0;
+}
+
+.gem-c-organisation-logo__container{
+  text-transform: none;
+text-decoration: none;
+display: block;
+color: #0b0c0c;
+height: auto;
+width: auto;
+direction: ltr;
+}
+
+.gem-c-organisation-logo__crest--single-identity, .gem-c-organisation-logo__crest--eo, .gem-c-organisation-logo__crest--org{
+  background: url(/public/images/crest.svg) no-repeat 6px 0;
+  background-size: auto 26px;
+}
+
+.gem-c-organisation-logo__name{
+  position: relative;
+  top: 3px;
+  font-family: HelveticaNeue, "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.gem-c-organisation-logo__crest{
+  padding-top: 25px;
+  padding-left: 7px;
+  border-left: 2px solid #0b0c0c;
+}
+
+
 </style>
-
-
-
 
     <div class="print-header">
       <div class="header-info">
         <p>LAA reference: <strong>HDJ-212-3F</strong> &nbsp; Date: <strong>16 August 2022</strong><span class="pagination"></span></p>
       </div>
     </div>
-      <div class="logo-line"></div>
+
+      <!--<div class="logo-line"></div>
       <img src="/public/images/crest.svg" alt="" height="30px"</>
       <h1 class="logo-type">Legal Aid Agency</h1>
-      <div class="govuk-!-padding-bottom-4"></div>
+      <div class="govuk-!-padding-bottom-4"></div>-->
 
-    <h1 class="govuk-heading-xl">Financial eligibility estimate for legal aid</h1>
+        <div class="gem-c-organisation-logo">
+            <div class="gem-c-organisation-logo__container gem-c-organisation-logo__crest gem-c-organisation-logo__crest--single-identity ">
+              <span class="gem-c-organisation-logo__name">Legal Aid <br>Agency</span>
+            </div>
+        </div>
+
+    <h1 class="govuk-heading-xl">Check eligibility for legal aid</h1>
 
     <!-- results master -->
     {% if data['passport-benefits'] == 'Yes' %}
