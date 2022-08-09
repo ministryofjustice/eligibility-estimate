@@ -153,6 +153,7 @@ Check answers – {{ serviceName }}
        <a class="govuk-link" href="/client-property-entry?checking=true">Change<span class="govuk-visually-hidden">Estimated value</span></a>
      </dd>
   </div>
+
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">Outstanding mortgage<span class="govuk-visually-hidden">Outstanding mortgage</span></dt>
     {% if data['client-home-mortgage'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['client-home-mortgage'] | fixed }}</dd>
@@ -163,6 +164,7 @@ Check answers – {{ serviceName }}
        <a class="govuk-link" href="/client-property-entry?checking=true">Change<span class="govuk-visually-hidden">Outstanding mortgage</span></a>
      </dd>
   </div>
+ 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">Percentage share owned<span class="govuk-visually-hidden">Percentage share owned</span></dt>
     {% if data['client-home-own'] %}<dd class="govuk-summary-list__value">{{ data['client-home-own'] }}{{ ownership }}</dd>
@@ -173,6 +175,9 @@ Check answers – {{ serviceName }}
        <a class="govuk-link" href="/client-property-entry?checking=true">Change<span class="govuk-visually-hidden">Percentage share owned<</span></a>
      </dd>
   </div>
+
+
+  
 </dl>
 <!-- property end -->
 
