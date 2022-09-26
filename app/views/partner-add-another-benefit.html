@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Benefit details – {{ serviceName }}
+{% endblock %}
+
+{% set currency = "£" %}
+{% set ownership = "%" %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" action="{% if data['checking'] %}/check-answers-2#partner-benefits{% else %}/partner-income{% endif %}" method="post">
+
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset">
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <span class="govuk-caption-l">Your client's partner finances</span>
+                 <h1 class="govuk-fieldset__heading">You have added 1 benefit</h1>
+               </legend>
+
+               <div class="govuk-!-padding-bottom-6"></div>
+
+
+              <div class="govuk-summary-list">
+
+                <div class="govuk-summary-list__row">
+
+                  <dd class="govuk-summary-list__key">{{ data['partner-benefit-type']}}</dd>
+                  <dd class="govuk-summary-list__value">{{ currency }}{{ data['partner-benefit-amount'] | fixed }}</dd>
+                  <dd class="govuk-summary-list__value">{{ data['partner-benefits-frequency']}}</dd>
+                  <dd class="govuk-summary-list__value"><a class="govuk-link" href="partner-benefits-entry">Change<span class="govuk-visually-hidden"></span></a></dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link" href="remove_1">Remove<span class="govuk-visually-hidden"></span></a></dd>
+
+                </div>
+
+              </div>
+
+              <div class="govuk-!-padding-bottom-2"></div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">Does your client's partner receive any other benefits?</h1>
+          </legend>
+          <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+            <div class="govuk-radios__item">
+
+              <input class="govuk-radios__input" id="partner-other-benefits-true" name="partner-has_other_benefits" type="radio" value="Yes" {{ checked("partner-has_other_benefits", "Yes") }}>
+              <label class="govuk-label govuk-radios__label" for="other-benefits-true">Yes</label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="partner-other_benefits-false" name="partner-has_other_benefits" type="radio" value="No" {{ checked("partner-has_other_benefits", "No") }}>
+              <label class="govuk-label govuk-radios__label" for="partner-other_benefits-false">No</label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+            </fieldset>
+
+          </div>
+
+        <!-- send start -->
+        <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
+        </div>
+
+        </form>
+
+      </div>
+
+      <div class="right-sidebar-menu">
+        <div class="govuk-grid-column-one-third">
+          <aside class="app-related-items" role="complementary">
+            <h2 class="govuk-body-m" id="subsection-title">
+            <strong>Date</strong>
+            <p class="govuk-body-m">16 August 2022</p>
+            </h2>
+
+          </aside>
+        </div>
+      </div>
+
+  </div>
+
+
+{% endblock %}

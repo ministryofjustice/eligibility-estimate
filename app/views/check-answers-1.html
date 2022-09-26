@@ -1,0 +1,151 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check answers – {{ serviceName }}
+{% endblock %}
+
+{% set currency = "£" %}
+{% set ownership = "%" %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<style media="screen">
+.govuk-summary-list__key{width: 50%;}
+</style>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <h1 class="govuk-heading-xl">Check your case and client details before proceeding to your client's financial section</h1>
+
+<!-- case details start -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's case details</h2></div>
+  <div class="govuk-grid-column-one-third"><p><a class="govuk-summary-list__actions" href="/case-details?checking=true">Change</a></p></div>
+</div>
+
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Immigration - Upper Tribunal matter</dt>
+            {% if data['upper-tribunal-immigration'] %}<dd class="govuk-summary-list__value">{{ data['upper-tribunal-immigration']}}</dd>
+             {% else %}
+                 <dd class="govuk-summary-list__value">Not applicable</dd>
+             {% endif %}
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Asylum - Upper Tribunal matter</dt>
+            {% if data['upper-tribunal-asylum'] %}<dd class="govuk-summary-list__value">{{ data['upper-tribunal-asylum']}}</dd>
+             {% else %}
+                 <dd class="govuk-summary-list__value">Not applicable</dd>
+             {% endif %}
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Defendant in a domestic abuse case</dt>
+            {% if data['domestic-abuse'] %}<dd class="govuk-summary-list__value">{{ data['domestic-abuse']}}</dd>
+             {% else %}
+                 <dd class="govuk-summary-list__value">Not applicable</dd>
+             {% endif %}
+
+          </div>
+        </dl>
+<!-- case details end-->
+
+<!-- client details start -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's details</h2></div>
+  <div class="govuk-grid-column-one-third"><p><a class="govuk-summary-list__actions" href="/client-details?checking=true">Change</a></p></div>
+</div>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Over 60 years old</dt>
+        {% if data['o-60'] %}<dd class="govuk-summary-list__value">{{ data['o-60']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not applicable</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Has a partner</dt>
+        {% if data['partner'] %}<dd class="govuk-summary-list__value">{{ data['partner']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not applicable</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Has dependants</dt>
+           {% if data['dependants'] == 'Yes' %}<dd class="govuk-summary-list__value">{{ data['numberOfDependants']}}</dd>
+            {% elseif data['dependants'] == 'No' %}<dd class="govuk-summary-list__value">{{ data['dependants']}}</dd>
+            {% else %}<dd class="govuk-summary-list__value">Not applicable</dd>{% endif %}
+      </div>
+      {% if data['upper-tribunal'] == 'Yes' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Receives asylum support</dt>
+        {% if data['passport-benefits'] %}<dd class="govuk-summary-list__value">{{ data['asylum-support']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not applicable</dd>
+         {% endif %}
+      </div>
+      {% else %}
+      {% endif %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Employment status</dt>
+        {% if data['employment-status'] %}<dd class="govuk-summary-list__value">{{ data['employment-status']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not applicable</dd>
+         {% endif %}
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Receives a passporting benefit</dt>
+        {% if data['passport-benefits'] %}<dd class="govuk-summary-list__value">{{ data['passport-benefits']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not applicable</dd>
+         {% endif %}
+      </div>
+
+    </dl>
+<!-- client details end -->
+
+
+
+        <!-- send start -->
+        <h2 class="govuk-heading-m">Now continue to your client's financial section</h2>
+        <p>We'll use your answers to give you an estimated result on your client's financial eligibility for legal aid.</p>
+
+        <!-- marking task complete end -->
+      <form class="form" action="/client-employment" method="post">
+        <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Continue</button>
+        </div>
+        </form>
+        <!-- send end -->
+
+      </div>
+
+      <div class="right-sidebar-menu">
+        <div class="govuk-grid-column-one-third">
+          <aside class="app-related-items" role="complementary">
+            <h2 class="govuk-body-m" id="subsection-title">
+            <strong>Date</strong>
+            <p class="govuk-body-m">16 August 2022</p>
+            </h2>
+          </aside>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}

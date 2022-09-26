@@ -676,7 +676,7 @@ Check answers – {{ serviceName }}
     <dt class="govuk-summary-list__key">Owns a vehicle<span class="govuk-visually-hidden">Owns a vehicle</span></dt>
     {% if data['client-vehicle-own'] %}<dd class="govuk-summary-list__value">{{ data['client-vehicle-own'] }}</dd>
      {% else %}
-         <dd class="govuk-summary-list__value">Not provided</dd>
+         <dd class="govuk-summary-list__value">Not applicable</dd>
      {% endif %}
      <dd class="govuk-summary-list__actions">
        <a class="govuk-link" href="/client-vehicle-1?checking=true">Change<span class="govuk-visually-hidden">Owns a vehicle</span></a>
@@ -686,7 +686,7 @@ Check answers – {{ serviceName }}
     <dt class="govuk-summary-list__key">Estimated value<span class="govuk-visually-hidden">Estimated value</span></dt>
     {% if data['client-vehicle-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['client-vehicle-value'] | fixed }}</dd>
      {% else %}
-         <dd class="govuk-summary-list__value">Not provided</dd>
+         <dd class="govuk-summary-list__value">Not applicable</dd>
      {% endif %}
      <dd class="govuk-summary-list__actions">
        <a class="govuk-link" href="/client-vehicle-2?checking=true">Change<span class="govuk-visually-hidden">Estimated value</span></a>
@@ -696,7 +696,7 @@ Check answers – {{ serviceName }}
     <dt class="govuk-summary-list__key">Is the vehicle in regular use<span class="govuk-visually-hidden">Is the vehicle in regular use</span></dt>
     {% if data['client-vehicle-use'] %}<dd class="govuk-summary-list__value">{{ data['client-vehicle-use'] }}</dd>
      {% else %}
-         <dd class="govuk-summary-list__value">Not provided</dd>
+         <dd class="govuk-summary-list__value">Not applicable</dd>
      {% endif %}
      <dd class="govuk-summary-list__actions">
        <a class="govuk-link" href="/client-vehicle-2?checking=true">Change<span class="govuk-visually-hidden">Is the vehicle in regular use</span></a>

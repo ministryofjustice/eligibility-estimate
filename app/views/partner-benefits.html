@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Partner benefits – {{ serviceName }}
+{% endblock %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" action="{% if data['checking'] %}/check-answers{% else %}/partner-benefits-entry{% endif %}" method="post">
+
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset">
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <span class="govuk-caption-l">Your client's partner finances</span>
+                <h1 class="govuk-fieldset__heading">Does your client's partner receive any benefits?</h1>
+              </legend>
+              <span id="dob-hint" class="govuk-hint">For example, Child Benefit or tax credits.</span>
+
+              <div class="govuk-!-padding-bottom-4"></div>
+
+              <div class="govuk-form-group">
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="partner-benefits-yes" name="partner-benefits" type="radio" value="Yes" {{ checked("partner-benefits", "Yes") }}>
+                      <label class="govuk-label govuk-radios__label" for="partner-benefits-yes">Yes</label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="partner-benefits-no" name="partner-benefits" type="radio" value="No" {{ checked("partner-benefits", "No") }}>
+                      <label class="govuk-label govuk-radios__label" for="partner-benefits-no">No</label>
+                    </div>
+              </div>
+
+
+            </fieldset>
+
+          </div>
+
+        <!-- send start -->
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
+        </div>
+
+        </form>
+
+      </div>
+
+      <div class="right-sidebar-menu">
+        <div class="govuk-grid-column-one-third">
+          <aside class="app-related-items" role="complementary">
+            <h2 class="govuk-body-m" id="subsection-title">
+            <strong>Date</strong>
+            <p class="govuk-body-m">16 August 2022</p>
+            </h2>
+
+          </aside>
+        </div>
+      </div>
+
+  </div>
+
+
+{% endblock %}

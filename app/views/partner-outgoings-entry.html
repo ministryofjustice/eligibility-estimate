@@ -1,0 +1,171 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Outgoings – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="{% if data['checking'] %}/check-answers-2#partner-outgoings{% else %}/partner-property{% endif %}" method="post">
+
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset">
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <span class="govuk-caption-l">Your client's partner finances</span>
+                 <h1 class="govuk-fieldset__heading">Add details for each of the payments your client's partner makes</h1>
+               </legend>
+
+               <div class="govuk-!-padding-bottom-6"></div>
+
+              <div class="govuk-form-group">
+               <h2 class="govuk-heading-m">Housing payments</h2>
+               <label class="govuk-label" for="partner-housing-payments-value">Enter amount</label>
+               <!-- wrapper starts -->
+               <div class="govuk-input__wrapper">
+                 <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                 <input class="govuk-input govuk-input--width-5" id="partner-housing-payments-value" name="partner-housing-payments-value" type="text" value="{{ data['partner-housing-payments-value']}}">
+               </div>
+               <!-- wrapper ends -->
+             </div>
+
+             <div class="govuk-form-group">
+               <label class="govuk-label" for="partner-housing-payments-select-frequency">Select frequency</label>
+                    <select class="govuk-select" id="partner-housing-payments-select-frequency" name="partner-housing-payments-select-frequency">
+                      <option value="">--</option>
+                      <option value="total">Total in the last 3 months</option>
+                      <option value="Every week" selected>Every week</option>
+                      <option value="Every two weeks">Every two weeks</option>
+                      <option value="Every four weeks">Every four weeks</option>
+                      <option value="Monthly">Monthly</option>
+                      <option value="Annually">Annually</option>
+                    </select>
+             </div>
+
+             <div class="govuk-!-padding-bottom-4"></div>
+
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Childcare payments</h2>
+             <label class="govuk-label" for="partner-childcare-payments-value">Enter amount</label>
+             <!-- wrapper starts -->
+             <div class="govuk-input__wrapper">
+               <div class="govuk-input__prefix" aria-hidden="true">£</div>
+               <input class="govuk-input govuk-input--width-5" id="partner-childcare-payments-value" name="partner-childcare-payments-value" type="text" value="{{ data['partner-childcare-payments-value']}}">
+             </div>
+             <!-- wrapper ends -->
+           </div>
+
+           <div class="govuk-form-group">
+             <label class="govuk-label" for="partner-childcare-payments-select-frequency">Select frequency</label>
+                  <select class="govuk-select" id="partner-childcare-payments-select-frequency" name="partner-childcare-payments-select-frequency">
+                    <option value="">--</option>
+                    <option value="total">Total in the last 3 months</option>
+                    <option value="Every week" selected>Every week</option>
+                    <option value="Every two weeks">Every two weeks</option>
+                    <option value="Every four weeks">Every four weeks</option>
+                    <option value="Monthly">Monthly</option>
+                    <option value="Annually">Annually</option>
+                  </select>
+           </div>
+
+           <div class="govuk-!-padding-bottom-4"></div>
+
+           <div class="govuk-form-group">
+             <h2 class="govuk-heading-m">Maintenance payments to a former partner</h2>
+            <label class="govuk-label" for="partner-former-partner-value">Enter amount</label>
+            <!-- wrapper starts -->
+            <div class="govuk-input__wrapper">
+              <div class="govuk-input__prefix" aria-hidden="true">£</div>
+              <input class="govuk-input govuk-input--width-5" id="partner-former-partner-value" name="partner-former-partner-value" type="text" value="{{ data['partner-former-partner-value']}}">
+            </div>
+            <!-- wrapper ends -->
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="partner-former-partner-select-frequency">Select frequency</label>
+                 <select class="govuk-select" id="partner-former-partner-select-frequency" name="partner-former-partner-select-frequency">
+                   <option value="">--</option>
+                   <option value="total">Total in the last 3 months</option>
+                   <option value="Every week" selected>Every week</option>
+                   <option value="Every two weeks">Every two weeks</option>
+                   <option value="Every four weeks">Every four weeks</option>
+                   <option value="Monthly">Monthly</option>
+                   <option value="Annually">Annually</option>
+                 </select>
+          </div>
+
+          <div class="govuk-!-padding-bottom-4"></div>
+
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-m">Payments towards legal aid in a criminal case</h2>
+           <label class="govuk-label" for="partner-legal-aid-crim-case-value">Enter amount</label>
+           <!-- wrapper starts -->
+           <div class="govuk-input__wrapper">
+             <div class="govuk-input__prefix" aria-hidden="true">£</div>
+             <input class="govuk-input govuk-input--width-5" id="partner-legal-aid-crim-case-value" name="partner-legal-aid-crim-case-value" type="text" value="{{ data['partner-legal-aid-crim-case-value']}}">
+           </div>
+           <!-- wrapper ends -->
+         </div>
+
+         <div class="govuk-form-group">
+           <label class="govuk-label" for="partner-legal-aid-crim-case-select-frequency">Select frequency</label>
+                <select class="govuk-select" id="partner-legal-aid-crim-case-select-frequency" name="partner-legal-aid-crim-case-select-frequency">
+                  <option value="">--</option>
+                  <option value="total">Total in the last 3 months</option>
+                  <option value="Every week" selected>Every week</option>
+                  <option value="Every two weeks">Every two weeks</option>
+                  <option value="Every four weeks">Every four weeks</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="Annually">Annually</option>
+                </select>
+         </div>
+
+         <div class="govuk-!-padding-bottom-4"></div>
+
+            </fieldset>
+
+          </div>
+
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
+      </div>
+
+      </form>
+
+    </div>
+
+    <div class="right-sidebar-menu">
+      <div class="govuk-grid-column-one-third">
+        <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-body-m" id="subsection-title">
+          <strong>Related content</strong>
+         <p><a href="#">Guidance on properties</a></p>
+          </h2>
+        </aside>
+      </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+{% endblock %}

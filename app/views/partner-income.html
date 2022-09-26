@@ -1,0 +1,187 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Income – {{ serviceName }}
+
+{% endblock %}
+
+{% set currency = "£" %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+   <div class="govuk-grid-column-two-thirds">
+
+       <form class="form" action="{% if data['checking'] %}/check-answers-2#partner-other-income{% else %}/partner-outgoings{% endif %}" method="post">
+
+         <div class="govuk-form-group">
+
+           <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+             <span class="govuk-caption-l">Your client's partner finances</span>
+             <h1 class="govuk-fieldset__heading">What other income does your client's partner receive?</h1>
+             </legend>
+             <div id="contact-hint" class="govuk-hint">Select all that apply.</div>
+
+             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+             <div class="govuk-checkboxes__item">
+             <input class="govuk-checkboxes__input" id="partner-income-sources-3" name="partner-monthly-income" type="checkbox" value="yes" data-aria-controls="financial-help-yes" {{ checked("partner-monthly-income","yes") }}>
+             <label class="govuk-label govuk-checkboxes__label" for="partner-income-sources-3">Financial help from friends or family</label>
+             <span id="income-sources-3-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, money from a family member for rent or bills.</span>
+             </div>
+             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="financial-help-yes">
+             <div class="govuk-form-group">
+             <label class="govuk-label" for="partner-income-sources-3-value">Enter monthly amount</label>
+             <!-- wrapper starts -->
+             <div class="govuk-input__wrapper">
+               <div class="govuk-input__prefix" aria-hidden="true">£</div>
+               <input class="govuk-input govuk-input--width-5" id="partner-income-sources-3-value" name="partner-income-sources-3-value" type="text" value="{{ data['partner-income-sources-3-value']}}">
+             </div>
+             <!-- wrapper ends -->
+             </div>
+             </div>
+
+             <div class="govuk-checkboxes__item">
+             <input class="govuk-checkboxes__input" id="partner-income-sources-4" name="partner-monthly-income" type="checkbox" value="yes" data-aria-controls="maintenance-yes" {{ checked("partner-monthly-income","yes") }}>
+             <label class="govuk-label govuk-checkboxes__label" for="partner-income-sources-4">Maintenance payments from a former partner</label>
+             <span id="income-sources-4-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">This includes child maintenance.</span>
+             </div>
+             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="maintenance-yes">
+             <div class="govuk-form-group">
+             <label class="govuk-label" for="income-sources-4-value">Enter monthly amount</label>
+             <!-- wrapper starts -->
+             <div class="govuk-input__wrapper">
+               <div class="govuk-input__prefix" aria-hidden="true">£</div>
+               <input class="govuk-input govuk-input--width-5" id="partner-income-sources-4-value" name="partner-income-sources-4-value" type="text" value="{{ data['partner-income-sources-4-value']}}">
+             </div>
+             <!-- wrapper ends -->
+             </div>
+             </div>
+
+             <div class="govuk-checkboxes__item">
+             <input class="govuk-checkboxes__input" id="partner-income-sources-5" name="partner-monthly-income" type="checkbox" value="yes" data-aria-controls="rent-yes" {{ checked("partner-monthly-income","yes") }}>
+             <label class="govuk-label govuk-checkboxes__label" for="partner-income-sources-5">Income from a property or lodger</label>
+             </div>
+             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="rent-yes">
+             <div class="govuk-form-group">
+             <label class="govuk-label" for="partner-income-sources-5-value">Enter monthly amount</label>
+             <!-- wrapper starts -->
+             <div class="govuk-input__wrapper">
+               <div class="govuk-input__prefix" aria-hidden="true">£</div>
+               <input class="govuk-input govuk-input--width-5" id="partner-income-sources-5-value" name="partner-income-sources-5-value" type="text" value="{{ data['partner-income-sources-5-value']}}">
+             </div>
+             <!-- wrapper ends -->
+             </div>
+             </div>
+
+             <div class="govuk-checkboxes__item">
+             <input class="govuk-checkboxes__input" id="partner-income-sources-6" name="partner-monthly-income" type="checkbox" value="yes" data-aria-controls="pension-yes" {{ checked("partner-monthly-income","yes") }}>
+             <label class="govuk-label govuk-checkboxes__label" for="partner-income-sources-6">Pension</label>
+             <span id="income-sources-6-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">Include State, workplace and personal pensions.</span>
+             </div>
+             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="pension-yes">
+             <div class="govuk-form-group">
+             <label class="govuk-label" for="partner-income-sources-6-value">Enter monthly amount</label>
+             <!-- wrapper starts -->
+             <div class="govuk-input__wrapper">
+               <div class="govuk-input__prefix" aria-hidden="true">£</div>
+               <input class="govuk-input govuk-input--width-5" id="partner-income-sources-6-value" name="partner-income-sources-6-value" type="text" value="{{ data['partner-income-sources-6-value']}}">
+             </div>
+             <!-- wrapper ends -->
+             </div>
+             </div>
+
+             <div class="govuk-checkboxes__item">
+             <input class="govuk-checkboxes__input" id="partner-income-sources-7" name="partner-monthly-income" type="checkbox" value="yes" data-aria-controls="student-loan-grant-yes" {{ checked("partner-monthly-income","yes") }}>
+             <label class="govuk-label govuk-checkboxes__label" for="income-sources-7">Student finance</label>
+             <span id="income-sources-7-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">This includes any type of student loan, grant or bursary.</span>
+             </div>
+             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="student-loan-grant-yes">
+             <div class="govuk-form-group">
+             <label class="govuk-label" for="partner-income-sources-7-value">Enter amount received this academic year</label>
+             <!-- wrapper starts -->
+             <div class="govuk-input__wrapper">
+               <div class="govuk-input__prefix" aria-hidden="true">£</div>
+               <input class="govuk-input govuk-input--width-5" id="partner-income-sources-7-value" name="partner-income-sources-7-value" type="text" value="{{ data['partner-income-sources-7-value']}}">
+             </div>
+             <!-- wrapper ends -->
+             </div>
+             </div>
+
+             <div class="govuk-checkboxes__item">
+             <input class="govuk-checkboxes__input" id="partner-income-sources-8" name="partner-monthly-income" type="checkbox" value="yes" data-aria-controls="other-sources-yes" {{ checked("partner-monthly-income","yes") }}>
+             <label class="govuk-label govuk-checkboxes__label" for="income-sources-8">Income from other sources</label>
+             <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">Include any other income your client received in the last 3 months.</span>
+
+             </div>
+             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="other-sources-yes">
+             <div class="govuk-form-group">
+             <label class="govuk-label" for="partner-income-sources-8-value">Enter amount</label>
+             <!-- wrapper starts -->
+             <div class="govuk-input__wrapper">
+               <div class="govuk-input__prefix" aria-hidden="true">£</div>
+               <input class="govuk-input govuk-input--width-5" id="partner-income-sources-8-value" name="partner-income-sources-8-value" type="text" value="{{ data['partner-income-sources-8-value']}}">
+             </div>
+             <!-- wrapper ends -->
+             </div>
+             </div>
+
+             <!-- none -->
+             <div class="govuk-checkboxes__divider">or</div>
+             <div class="govuk-checkboxes__item">
+             <input class="govuk-checkboxes__input" id="partner-capital-8" name="partner-monthly-income" type="checkbox" value="none" data-behaviour="exclusive" {{ checked("partner-monthly-income","none") }}>
+             <label class="govuk-label govuk-checkboxes__label" for="partner-capital-8">
+             My client's partner has no monthly income
+             </label>
+             </div>
+             </div>
+             <!-- none -->
+
+             </div>
+
+           </fieldset>
+
+           <div class="govuk-button-group">
+           <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
+           </div>
+
+         </div>
+
+       </form>
+
+       <div class="right-sidebar-menu">
+         <div class="govuk-grid-column-one-third">
+           <aside class="app-related-items" role="complementary">
+             <h2 class="govuk-body-m" id="subsection-title">
+             <strong>Date</strong>
+             <p class="govuk-body-m">16 August 2022</p>
+             </h2>
+             <h2 class="govuk-body-m" id="subsection-title">
+             <strong>Related content</strong>
+            <p><a href="#">Guidance on benefits payments</a></p>
+             </h2>
+           </aside>
+
+
+         </div>
+       </div>
+
+   </div>
+
+
+ </div>
+
+{% endblock %}

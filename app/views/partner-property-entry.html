@@ -16,63 +16,66 @@
 {% endblock %}
 
 {% block content %}
-{% from "govuk/components/input/macro.njk" import govukInput %}
-{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
-{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
-{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Your client's partner's finances</span>
-      <h1 class="govuk-heading-l">Your client's partner's property</h1>
+      <form class="form" action="{% if data['checking'] %}/check-answers-2#partner-property{% else %}/partner-vehicle-1{% endif %}" method="post">
 
-      <form class="form" action="{% if data['checking'] %}/check-answers#partner-property{% else %}/partner-vehicle-1{% endif %}" method="post">
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <span class="govuk-caption-l">Your client's partner finances</span>
+               <h1 class="govuk-fieldset__heading">Add details about your client's partner property</h1>
+             </legend>
+
+             <div class="govuk-!-padding-bottom-6"></div>
+
+            <div class="govuk-form-group">
+             <label class="govuk-label govuk-label--m" for="partner-home-value">How much is your client's partner home worth?</label>
+             <div id="client-home-value-hint" class="govuk-hint">You can use property websites to find the estimated value.</div>
+             <!-- wrapper starts -->
+             <div class="govuk-input__wrapper">
+               <div class="govuk-input__prefix" aria-hidden="true">£</div>
+               <input class="govuk-input govuk-input--width-5" id="partner-home-value" name="partner-home-value" type="text" value="{{ data['partner-home-value']}}">
+             </div>
+             <!-- wrapper ends -->
+           </div>
+
+           {% if data['partner-homeowner'] == 'Yes, with a mortgage or loan' %}
+
+           <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="partner-home-mortgage">What is the outstanding mortgage on your client's partner home?</label>
+            <div id="client-home-value-hint" class="govuk-hint">Check the statement from your client's partner mortgage provider or lender.</div>
+            <!-- wrapper starts -->
+            <div class="govuk-input__wrapper">
+              <div class="govuk-input__prefix" aria-hidden="true">£</div>
+              <input class="govuk-input govuk-input--width-5" id="partner-home-mortgage" name="partner-home-mortgage" type="text" value="{{ data['partner-home-mortgage']}}">
+            </div>
+            <!-- wrapper ends -->
+          </div>
+          {% else %}
+          {% endif %}
 
           <div class="govuk-form-group">
-           <label class="govuk-label govuk-label--m" for="partner-home-value">How much is your client's partner's home worth?</label>
-           <div id="client-home-value-hint" class="govuk-hint">You can use property websites to find the estimated value.</div>
+           <label class="govuk-label govuk-label--m" for="partner-home-own">What % share of their home does your client's partner legally own?</label>
+           <div id="client-home-value-hint" class="govuk-hint">Your client's partner name must be on the property deeds, lease or freehold.</div>
            <!-- wrapper starts -->
            <div class="govuk-input__wrapper">
-             <div class="govuk-input__prefix" aria-hidden="true">£</div>
-             <input class="govuk-input govuk-input--width-5" id="partner-home-value" name="partner-home-value" type="text" value="{{ data['partner-home-value']}}">
+             <input class="govuk-input govuk-input--width-5" id="partner-home-own" name="partner-home-own" type="text" value="{{ data['partner-home-own']}}">
+             <div class="govuk-input__suffix" aria-hidden="true">%</div>
            </div>
            <!-- wrapper ends -->
          </div>
 
-         {% if data['partnerhomeowner'] == 'Yes, with a mortgage or loan' %}
+          </fieldset>
 
-         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--m" for="partner-home-mortgage">What is the outstanding mortgage on your client's partner's home?</label>
-          <div id="client-home-value-hint" class="govuk-hint">Check the statement from your client's partner's mortgage provider or lender.</div>
-          <!-- wrapper starts -->
-          <div class="govuk-input__wrapper">
-            <div class="govuk-input__prefix" aria-hidden="true">£</div>
-            <input class="govuk-input govuk-input--width-5" id="partner-home-mortgage" name="partnerhome-mortgage" type="text" value="{{ data['partner-home-mortgage']}}">
-          </div>
-          <!-- wrapper ends -->
         </div>
-        {% else %}
-        {% endif %}
-
-        <div class="govuk-form-group">
-         <label class="govuk-label govuk-label--m" for="partner-home-own">What % share of their home does your client's partner legally own?</label>
-         <div id="client-home-value-hint" class="govuk-hint">Your client's partner's name must be on the property deeds, lease or freehold.</div>
-         <!-- wrapper starts -->
-         <div class="govuk-input__wrapper">
-           <input class="govuk-input govuk-input--width-5" id="partner-home-own" name="partner-home-own" type="text" value="{{ data['partner-home-own']}}">
-           <div class="govuk-input__suffix" aria-hidden="true">%</div>
-         </div>
-         <!-- wrapper ends -->
-       </div>
-
 
       <div class="govuk-button-group">
-      <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
-      <a class="govuk-link" href="/start">Cancel</a>
+        <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
       </div>
 
       </form>
@@ -82,10 +85,6 @@
     <div class="right-sidebar-menu">
       <div class="govuk-grid-column-one-third">
         <aside class="app-related-items" role="complementary">
-          <h2 class="govuk-body-m" id="subsection-title">
-          <strong>Reference number</strong>
-          <p class="govuk-body-m">HDJ-212-3F</p>
-          </h2>
           <h2 class="govuk-body-m" id="subsection-title">
           <strong>Date</strong>
           <p class="govuk-body-m">16 August 2022</p>

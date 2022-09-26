@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Outgoings – {{ serviceName }}
+{% endblock %}
+
+{% set currency = "£" %}
+{% set capital1value = "0" %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" action="/partner-outgoings-entry" method="post">
+
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <span class="govuk-caption-l">Your client's partner finances</span>
+             <h1 class="govuk-fieldset__heading">What are your client's partner monthly outgoings and deductions?</h1>
+           </legend>
+
+
+          <div id="contact-hint" class="govuk-hint">Select all that apply.</div>
+
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="partner-outgoing-1" name="partner-outgoing-payments" type="checkbox" value="Housing payments" {{ checked("partner-outgoing-payments","Housing payments") }} >
+              <label class="govuk-label govuk-checkboxes__label" for="partner-outgoing-1">Housing payments</label>
+              <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, rent, mortgage or board and lodging.</span>
+            </div>
+
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="partner-outgoing-4" name="partner-outgoing-payments" type="checkbox" value="Childcare payments" {{ checked("partner-outgoing-payments","Childcare payments") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="partner-outgoing-4">Childcare payments</label>
+              <span id="income-sources-1-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, to a childminder, nanny or nursery.</span>
+            </div>
+
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="partner-outgoing-5" name="partner-outgoing-payments" type="checkbox" value="Maintenance payments to a former partner" {{ checked("partner-outgoing-payments","Maintenance payments to a former partner") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="partner-outgoing-5">Maintenance payments to a former partner</label>
+              <span id="outgoing-5-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">This includes child maintenance.</span>
+            </div>
+
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="partner-outgoing-6" name="partner-outgoing-payments" type="checkbox" value="Payments towards legal aid in a criminal case" {{ checked("partner-outgoing-payments","Payments towards legal aid in a criminal case") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="partner-outgoing-6">Payments towards legal aid in a criminal case</label>
+            </div>
+
+
+
+            <!-- none -->
+            <div class="govuk-checkboxes__divider">or</div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="partner-capital-8" name="partner-outgoing-payments" type="checkbox" value="My client has no monthly outgoings or deductions" data-behaviour="exclusive" {{ checked("partner-outgoing-payments","My client has no monthly outgoings or deductions") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="partner-capital-8">
+                My client's partner has no monthly outgoings or deductions
+              </label>
+            </div>
+          </div>
+            <!-- none -->
+
+          </div>
+
+        </fieldset>
+
+        <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
+      </div>
+        </div>
+
+
+
+
+      </form>
+
+      <div class="right-sidebar-menu">
+        <div class="govuk-grid-column-one-third">
+          <aside class="app-related-items" role="complementary">
+            <h2 class="govuk-body-m" id="subsection-title">
+            <strong>Date</strong>
+            <p class="govuk-body-m">16 August 2022</p>
+            </h2>
+            <h2 class="govuk-body-m" id="subsection-title">
+            <strong>Related content</strong>
+           <p><a href="#">Guidance on housing payments</a></p>
+            </h2>
+          </aside>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+{% endblock %}

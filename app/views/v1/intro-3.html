@@ -30,7 +30,7 @@ Client details – {{ serviceName }}
       <h1 class="govuk-heading-l">Your client's details</h1>
 
         <!--<form class="form" action="{% if data['checking'] %}/check-answers{% elif data['passport-benefits'] == 'Yes' %}/client-property{% else %}/monthly-income{% endif %}" method="post">-->
-        <form class="form" action="{% if data['checking'] %}/check-answers{% else %}/check-for-benefits{% endif %}" method="post">
+        <form class="form" action="{% if data['checking'] %}/v2/check-answers-1{% else %}/check-for-benefits{% endif %}" method="post">
 
           <!-- question start -->
           <div class="govuk-form-group">

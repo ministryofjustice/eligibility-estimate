@@ -16,29 +16,39 @@ Vehicle – {{ serviceName }}
 {% endblock %}
 
 {% block content %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-          <form class="form" action="{% if data['checking'] %}/check-answers-2#partner-vehicles{% else %}/ownsVehiclePartner{% endif %}" method="post">
+
+        <!--<form class="form" action="{% if data['checking'] %}/check-answers{% else %}/client-vehicle-2{% endif %}" method="post">-->
+          <!--<form class="form" action="/client-vehicle-2" method="post">-->
+          <form class="form" action="{% if data['checking'] %}/check-answers#client-vehicles{% else %}/ownsVehicle{% endif %}" method="post">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-              <span class="govuk-caption-l">Your client's partner finances</span>
-               <h1 class="govuk-fieldset__heading">Does your client's partner own a vehicle?</h1>
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">Your client's finances</span>
+               <h1 class="govuk-fieldset__heading">Does your client own a vehicle?</h1>
              </legend>
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner-vehicle-own-yes" name="partner-vehicle-own" type="radio" value="Yes" {{ checked("partner-vehicle-own", "Yes") }}>
+                <input class="govuk-radios__input" id="client-vehicle-own-yes" name="client-vehicle-own" type="radio" value="Yes" {{ checked("client-vehicle-own", "Yes") }}>
                 <label class="govuk-label govuk-radios__label" for="client-vehicle-own-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner-vehicle-own-no" name="partner-vehicle-own" type="radio" value="No" {{ checked("partner-vehicle-own", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="partner-vehicle-own-no">
+                <input class="govuk-radios__input" id="client-vehicle-own-no" name="client-vehicle-own" type="radio" value="No" {{ checked("client-vehicle-own", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="client-vehicle-own-no">
                   No
                 </label>
               </div>
@@ -47,6 +57,7 @@ Vehicle – {{ serviceName }}
 
         <div class="govuk-button-group">
         <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
+        <a class="govuk-link" href="/start">Cancel</a>
       </div>
 
 
@@ -57,7 +68,10 @@ Vehicle – {{ serviceName }}
     <div class="right-sidebar-menu">
       <div class="govuk-grid-column-one-third">
         <aside class="app-related-items" role="complementary">
-
+          <h2 class="govuk-body-m" id="subsection-title">
+          <strong>Reference number</strong>
+          <p class="govuk-body-m">HDJ-212-3F</p>
+          </h2>
           <h2 class="govuk-body-m" id="subsection-title">
           <strong>Date</strong>
           <p class="govuk-body-m">16 August 2022</p>

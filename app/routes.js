@@ -3,6 +3,7 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 // Run this code when a form is submitted to 'check-for-benefits'
+//NOT USING THE CHECK-FOR-BENEFITS ROUTE IN ITERATION 4
 router.post('/check-for-benefits', function (req, res) {
 
   // Make a variable and give it the value from 'passport-benefits'
@@ -40,7 +41,7 @@ router.post('/ownsHome', function (req, res) {
 router.post('/ownsHomePartner', function (req, res) {
 
   // Make a variable and give it the value from 'homeowner'
-  var ownsHomePartner = req.session.data['partnerhomeowner']
+  var ownsHomePartner = req.session.data['partner-homeowner']
 
   // Check whether the variable matches a condition
   if (ownsHomePartner == "No"){
@@ -62,7 +63,7 @@ router.post('/ownsVehicle', function (req, res) {
   // Check whether the variable matches a condition
   if (ownsVehicle == "No"){
     // Skip vehicle q's and go to assets q's
-    res.redirect('/assets')
+    res.redirect('/client-assets')
   } else {
     // Send user to vehicle q's to answer all financial q's
     res.redirect('/client-vehicle-2')
@@ -79,7 +80,7 @@ router.post('/ownsVehiclePartner', function (req, res) {
   // Check whether the variable matches a condition
   if (ownsVehiclePartner == "No"){
     // Skip vehicle q's and go to assets q's
-    res.redirect('/assets-partner')
+    res.redirect('/partner-assets')
   } else {
     // Send user to vehicle q's to answer all financial q's
     res.redirect('/partner-vehicle-2')
@@ -96,7 +97,7 @@ router.post('/regularUseVehicle', function (req, res) {
   // Check whether the variable matches a condition
   if (regularUseVehicle == "No"){
     // Skip vehicle q's and go to assets q's
-    res.redirect('/assets')
+    res.redirect('/client-assets')
   } else {
     // Send user to next vehicle q to answer all financial q's
     res.redirect('/client-vehicle-3')
@@ -113,7 +114,7 @@ router.post('/partnerRegularUseVehicle', function (req, res) {
   // Check whether the variable matches a condition
   if (partnerRegularUseVehicle == "No"){
     // Skip vehicle q's and go to assets q's
-    res.redirect('/assets-partner')
+    res.redirect('/partner-assets')
   } else {
     // Send user to next vehicle q to answer all financial q's
     res.redirect('/partner-vehicle-3')
@@ -130,7 +131,7 @@ router.post('/partnerRegularUseVehicle', function (req, res) {
     // Check whether the variable matches a condition
     if (buyVehicleThree == "Yes"){
       // Skip vehicle q's and go to assets q's
-      res.redirect('/assets')
+      res.redirect('/client-assets')
     } else {
       // Send user to next vehicle q to answer all financial q's
       res.redirect('/client-vehicle-4')
@@ -147,13 +148,16 @@ router.post('/partnerBuyVehicleThree', function (req, res) {
   // Check whether the variable matches a condition
   if (partnerBuyVehicleThree == "Yes"){
     // Skip vehicle q's and go to assets q's
-    res.redirect('/assets-partner')
+    res.redirect('/partner-assets')
   } else {
     // Send user to next vehicle q to answer all financial q's
     res.redirect('/partner-vehicle-4')
   }
 
   })
+
+  ///////////////////////////////////
+  // V2 routes here
 
 
 module.exports = router

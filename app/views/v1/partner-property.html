@@ -16,37 +16,44 @@
 {% endblock %}
 
 {% block content %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
 
-        <form class="form" action="{% if data['checking'] %}/check-answers-2#partner-property{% else %}/ownsHomePartner{% endif %}" method="post">
+        <form class="form" action="{% if data['checking'] %}/check-answers#partner-property{% else %}/ownsHomePartner{% endif %}" method="post">
 
       <!-- question start -->
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-            <span class="govuk-caption-l">Your client's partner finances</span>
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">Your client's partner's finances</span>
              <h1 class="govuk-fieldset__heading">Does your client's partner own the home that they live in?</h1>
            </legend>
 
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="partner-homeowner-mortgage" name="partner-homeowner" type="radio" value="Yes, with a mortgage or loan" {{ checked("partner-homeowner", "Yes, with a mortgage or loan") }}>
-              <label class="govuk-label govuk-radios__label" for="partner-homeowner-mortgage">
+              <input class="govuk-radios__input" id="partnerhomeowner-mortgage" name="partnerhomeowner" type="radio" value="Yes, with a mortgage or loan" {{ checked("partnerhomeowner", "Yes, with a mortgage or loan") }}>
+              <label class="govuk-label govuk-radios__label" for="partnerhomeowner-mortgage">
                 Yes, with a mortgage or loan
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="partner-homeowner-outright" name="partner-homeowner" type="radio" value="Yes, owned outright" {{ checked("partner-homeowner", "Yes, owned outright") }}>
-              <label class="govuk-label govuk-radios__label" for="partner-homeowner-outright">
+              <input class="govuk-radios__input" id="partnerhomeowner-outright" name="partnerhomeowner" type="radio" value="Yes, owned outright" {{ checked("partnerhomeowner", "Yes, owned outright") }}>
+              <label class="govuk-label govuk-radios__label" for="partnerhomeowner-outright">
                 Yes, owned outright
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="partner-homeowner-no" name="partner-homeowner" type="radio" value="No" {{ checked("partner-homeowner", "No") }}>
-              <label class="govuk-label govuk-radios__label" for="partner-homeowner-no">
+              <input class="govuk-radios__input" id="partnerhomeowner-no" name="partnerhomeowner" type="radio" value="No" {{ checked("partnerhomeowner", "No") }}>
+              <label class="govuk-label govuk-radios__label" for="partnerhomeowner-no">
                 No
               </label>
             </div>
@@ -56,6 +63,7 @@
 
       <div class="govuk-button-group">
       <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
+      <a class="govuk-link" href="/start">Cancel</a>
       </div>
 
       </form>
@@ -65,6 +73,10 @@
     <div class="right-sidebar-menu">
       <div class="govuk-grid-column-one-third">
         <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-body-m" id="subsection-title">
+          <strong>Reference number</strong>
+          <p class="govuk-body-m">HDJ-212-3F</p>
+          </h2>
           <h2 class="govuk-body-m" id="subsection-title">
           <strong>Date</strong>
           <p class="govuk-body-m">16 August 2022</p>
