@@ -23,7 +23,7 @@ Add another benefit – {{ serviceName }}
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <form class="form" action="{% if data['checking'] %}/check-answers-2#client-benefits{% else %}/client-income{% endif %}" method="post">
+        <form class="form" action="{% if data['returnto'] %} {{ data['returnto']}} {% else %}/client-income{% endif %}" method="post">
 
           <div class="govuk-form-group">
 

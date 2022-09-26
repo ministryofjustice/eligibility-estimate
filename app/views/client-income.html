@@ -23,7 +23,7 @@ Income – {{ serviceName }}
  <div class="govuk-grid-row">
    <div class="govuk-grid-column-two-thirds">
 
-       <form class="form" action="{% if data['checking'] %}/check-answers-2#client-other-income{% else %}/client-outgoings{% endif %}" method="post">
+       <form class="form" action="{% if data['returnto'] %} {{ data['returnto']}}{% else %}/client-outgoings{% endif %}" method="post">
 
          <div class="govuk-form-group">
 

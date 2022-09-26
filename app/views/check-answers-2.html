@@ -32,7 +32,7 @@ Check answers – {{ serviceName }}
     <!-- income start -->
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l" id="client-employment">Your client's employment payments</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-link govuk-summary-list__actions" href="/client-employment?checking=true">Change</a></p></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-link govuk-summary-list__actions" href="/client-employment-entry?returnto=check-answers-2#client-employment">Change</a></p></div>
     </div>
 
 
@@ -75,12 +75,12 @@ Check answers – {{ serviceName }}
     <!-- client employment payments end -->
 
     <!-- client income start -->
-    <h2 class="govuk-heading-l">Your client's income</h2>
+    <h2 class="govuk-heading-l" id="client-income">Your client's income</h2>
 
     <!-- benefits start -->
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m" id="client-benefits">Client's benefits</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-summary-list__actions" href="/client-benefits-entry?checking=true">Change</a></p></div>
+      <div class="govuk-grid-column-one-third"><p><a class="govuk-summary-list__actions" href="/client-benefits-entry?returnto=check-answers-2#client-income">Change</a></p></div>
     </div>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -121,7 +121,7 @@ Check answers – {{ serviceName }}
       <!--other assets start -->
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m" id="client-other-income">Client's other income</h2></div>
-            <div class="govuk-grid-column-one-third"><p><a class="govuk-summary-list__actions" href="/client-income?checking=true">Change</a></p></div>
+            <div class="govuk-grid-column-one-third"><p><a class="govuk-summary-list__actions" href="/client-income?returnto=check-answers-2#client-other-income">Change</a></p></div>
           </div>
 
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -173,7 +173,7 @@ Check answers – {{ serviceName }}
         <!-- client outgoings start -->
         <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l" id="client-outgoings">Your client's outgoings</h2></div>
-        <div class="govuk-grid-column-one-third"><p><a class="govuk-link govuk-summary-list__actions" href="/client-outgoings?checking=true">Change</a></p></div>
+        <div class="govuk-grid-column-one-third"><p><a class="govuk-link govuk-summary-list__actions" href="/client-outgoings?returnto=check-answers-2">Change</a></p></div>
         </div>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
@@ -242,7 +242,7 @@ Check answers – {{ serviceName }}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
              <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="/client-property?checking=true">Change<span class="govuk-visually-hidden">Owns the home they live in</span></a>
+               <a class="govuk-link" href="/client-property?returnto=check-answers-2">Change<span class="govuk-visually-hidden">Owns the home they live in</span></a>
              </dd>
           </div>
 
@@ -253,7 +253,7 @@ Check answers – {{ serviceName }}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
              <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="/client-property-entry?checking=true">Change<span class="govuk-visually-hidden">Estimated value</span></a>
+               <a class="govuk-link" href="/client-property-entry?returnto=check-answers-2">Change<span class="govuk-visually-hidden">Estimated value</span></a>
              </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -263,7 +263,7 @@ Check answers – {{ serviceName }}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
              <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="/client-property-entry?checking=true">Change<span class="govuk-visually-hidden">Outstanding mortgage</span></a>
+               <a class="govuk-link" href="/client-property-entry?returnto=check-answers-2">Change<span class="govuk-visually-hidden">Outstanding mortgage</span></a>
              </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -273,7 +273,7 @@ Check answers – {{ serviceName }}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
              <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="/client-property-entry?checking=true">Change<span class="govuk-visually-hidden">Percentage share owned<</span></a>
+               <a class="govuk-link" href="/client-property-entry?returnto=check-answers-2">Change<span class="govuk-visually-hidden">Percentage share owned<</span></a>
              </dd>
           </div>
         </dl>
@@ -292,7 +292,7 @@ Check answers – {{ serviceName }}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
              <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="/client-vehicle-1?checking=true">Change<span class="govuk-visually-hidden">Owns a vehicle</span></a>
+               <a class="govuk-link" href="/client-vehicle-1?returnto=check-answers-2">Change<span class="govuk-visually-hidden">Owns a vehicle</span></a>
              </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -302,7 +302,7 @@ Check answers – {{ serviceName }}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
              <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="/client-vehicle-2?checking=true">Change<span class="govuk-visually-hidden">Estimated value</span></a>
+               <a class="govuk-link" href="/client-vehicle-2?returnto=check-answers-2">Change<span class="govuk-visually-hidden">Estimated value</span></a>
              </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -312,7 +312,7 @@ Check answers – {{ serviceName }}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
              <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="/client-vehicle-2?checking=true">Change<span class="govuk-visually-hidden">Is the vehicle in regular use</span></a>
+               <a class="govuk-link" href="/client-vehicle-2?returnto=check-answers-2">Change<span class="govuk-visually-hidden">Is the vehicle in regular use</span></a>
              </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -322,7 +322,7 @@ Check answers – {{ serviceName }}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
              <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="/client-vehicle-3?checking=true">Change<span class="govuk-visually-hidden">Vehicle bought over 3 years ago</span></a>
+               <a class="govuk-link" href="/client-vehicle-3?returnto=check-answers-2">Change<span class="govuk-visually-hidden">Vehicle bought over 3 years ago</span></a>
              </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -331,7 +331,7 @@ Check answers – {{ serviceName }}
              {% elseif data['client-vehicle-payments'] == 'No' %}<dd class="govuk-summary-list__value">{{ data['client-vehicle-payments']}}</dd>
              {% else %}<dd class="govuk-summary-list__value">Not applicable</dd>{% endif %}
              <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="/client-vehicle-4?checking=true">Change<span class="govuk-visually-hidden">Payments left on vehicle</span></a>
+               <a class="govuk-link" href="/client-vehicle-4?returnto=check-answers-2">Change<span class="govuk-visually-hidden">Payments left on vehicle</span></a>
              </dd>
           <!--  {% if data['capital-3-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['capital-3-value'] | fixed }}</dd>
              {% else %}
@@ -344,7 +344,7 @@ Check answers – {{ serviceName }}
         <!--other assets start -->
             <div class="govuk-grid-row">
               <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m" id="client-assets">Client's other assets</h2></div>
-              <div class="govuk-grid-column-one-third"><p><a class="govuk-summary-list__actions" href="/client-assets?checking=true">Change</a></p></div>
+              <div class="govuk-grid-column-one-third"><p><a class="govuk-summary-list__actions" href="/client-assets?returnto=check-answers-2">Change</a></p></div>
             </div>
 
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -404,7 +404,7 @@ Check answers – {{ serviceName }}
                          {% elseif data['smod'] == 'No' %}<dd class="govuk-summary-list__value">{{ data['smod']}}</dd>
                          {% else %}<dd class="govuk-summary-list__value">Not applicable</dd>{% endif %}
                         <dd class="govuk-summary-list__actions">
-                          <a class="govuk-link" href="/client-matter-of-dispute?checking=true">Change<span class="govuk-visually-hidden"> Client's disputed assets</span></a>
+                          <a class="govuk-link" href="/client-matter-of-dispute?returnto=check-answers-2">Change<span class="govuk-visually-hidden"> Client's disputed assets</span></a>
                         </dd>
                       </div>
                     </dl>

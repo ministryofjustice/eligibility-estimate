@@ -21,7 +21,7 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-      <form class="form" action="{% if data['checking'] %}/check-answers-2#client-vehicles{% else %}/regularUseVehicle{% endif %}" method="post">
+      <form class="form" action="{% if data['returnto'] %} /client-vehicle-3 {% else %}/regularUseVehicle{% endif %}" method="post">
 
         <div class="govuk-form-group">
 

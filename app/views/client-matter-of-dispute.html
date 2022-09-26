@@ -22,13 +22,7 @@ Assets in dispute – {{ serviceName }}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-    <!--  {% if data['passport-benefits'] == 'Yes' %}
-              <form class="form" action="{% if data['checking'] %}/check-answers#client-disputed-assets{% elif data['partner'] == 'Yes'  %}/partner-property{% else %}/check-answers{% endif %}" method="post">
-          {% else %}
-              <form class="form" action="{% if data['checking'] %}/check-answers#client-disputed-assets{% elif data['partner'] == 'Yes'  %}/monthly-income-partner{% else %}/check-answers{% endif %}" method="post">
-          {% endif %}-->
-
-          <form class="form" action="{% if data['checking'] %}/check-answers-2#client-disputed-assets{% else %}/check-answers-2{% endif %}" method="post">
+          <form class="form" action="{% if data['returnto'] %} {{ data['returnto']}} {% else %}/check-answers-2{% endif %}" method="post">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="contact-hint">

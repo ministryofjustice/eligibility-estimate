@@ -20,10 +20,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <!--<span class="govuk-caption-l">Your client's finances</span>
-      <h1 class="govuk-heading-l">Your client's vehicle</h1>-->
-
-      <form class="form" action="{% if data['checking'] %}/check-answers-2#client-vehicles{% else %}/buyVehicleThree{% endif %}" method="post">
+      <form class="form" action="{% if data['returnto'] %} /client-vehicle-4 {% else %}/buyVehicleThree{% endif %}" method="post">
 
         <div class="govuk-form-group">
 
