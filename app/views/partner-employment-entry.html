@@ -20,7 +20,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="{% if data['returnto'] %} {{ data['returnto']}} {% else %}/partner-benefits{% endif %}" method="post">
+      <form class="form" action="{% if data['returnto'] %} {{ data['returnto']}} {% else %} /partner-benefits {% endif %}" method="post">
 
         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
 
