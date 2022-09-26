@@ -23,6 +23,8 @@
 
       <form class="form" action="{% if data['returnto'] %} {{ data['returnto']}} {% else %}/client-matter-of-dispute{% endif %}" method="post">
 
+        <input class="govuk-input govuk-input--width-5" id="" name="returnto" type="hidden" value="">
+
       <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">

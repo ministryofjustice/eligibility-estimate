@@ -25,6 +25,8 @@ Income – {{ serviceName }}
 
        <form class="form" action="{% if data['returnto'] %} {{ data['returnto']}} {% else %}/partner-outgoings{% endif %}" method="post">
 
+         <input class="govuk-input govuk-input--width-5" id="" name="returnto" type="hidden" value="">
+
          <div class="govuk-form-group">
 
            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">

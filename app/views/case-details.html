@@ -24,6 +24,8 @@ Case details – {{ serviceName }}
           <!--<form class="form" action="{% if data['checking'] %}/check-answers-1{% else %}/client-details{% endif %}" method="post">-->
             <form class="form" action="{% if data['returnto'] %} {{ data['returnto']}} {% else %} /client-details {% endif %}" method="post">
 
+              <input class="govuk-input govuk-input--width-5" id="" name="returnto" type="hidden" value="">
+
             <div class="govuk-form-group">
 
               <fieldset class="govuk-fieldset">
