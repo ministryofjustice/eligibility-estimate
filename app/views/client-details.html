@@ -102,7 +102,8 @@ Client details – {{ serviceName }}
             <!-- question end -->
 
             <!-- question start -->
-            {% if data['upper-tribunal'] == 'Yes' %}
+
+            {% if data['upper-tribunal-immigration'] == 'Yes' or data['upper-tribunal-asylum'] == 'Yes' %}
             <h2 class="govuk-heading-m">Is your client receiving asylum support?</h2>
             <div class="govuk-form-group">
                 <div class="govuk-radios" data-module="govuk-radios">

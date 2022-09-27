@@ -88,7 +88,7 @@ Check answers – {{ serviceName }}
             {% elseif data['dependants'] == 'No' %}<dd class="govuk-summary-list__value">{{ data['dependants']}}</dd>
             {% else %}<dd class="govuk-summary-list__value">Not applicable</dd>{% endif %}
       </div>
-      {% if data['upper-tribunal'] == 'Yes' %}
+      {% if data['upper-tribunal-immigration'] == 'Yes' or data['upper-tribunal-asylum'] == 'Yes' %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Receives asylum support</dt>
         {% if data['passport-benefits'] %}<dd class="govuk-summary-list__value">{{ data['asylum-support']}}</dd>
