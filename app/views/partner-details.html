@@ -20,7 +20,7 @@ Partner details – {{ serviceName }}
     <div class="govuk-grid-column-two-thirds">
 
 
-        <form class="form" action="/partner-employment" method="post">
+        <form class="form" action="/partner-employment-entry" method="post">
 
           <div class="govuk-form-group">
 
@@ -28,15 +28,13 @@ Partner details – {{ serviceName }}
 
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <span class="govuk-caption-l">About your client's partner</span>
-                 <h1 class="govuk-fieldset__heading">You told us your client has a partner</h1>
+                 <h1 class="govuk-fieldset__heading"> Is your client's partner working?</h1>
                </legend>
-
-               <div class="govuk-!-padding-bottom-6"></div>
 
               <!-- question start -->
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
-                  <label class="govuk-label govuk-label--m" for="dependants">What is your client's partner employment status?</label>
+                  <!--<label class="govuk-label govuk-label--m" for="dependants">What is your client's partner employment status?</label>-->
                   <div class="govuk-radios" data-module="govuk-radios">
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="partner-employment-status-employed" name="partner-employment-status" type="radio" value="Employed" {{ checked("partner-employment-status", "Employed") }}>

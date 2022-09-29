@@ -28,7 +28,7 @@
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <span class="govuk-caption-l">Your client's finances</span>
-          <h1 class="govuk-fieldset__heading">Add details for each of your client's employment payments</h1>
+          <h1 class="govuk-fieldset__heading">Add your client's salary breakdown</h1>
           </legend>
           <div id="contact-hint" class="govuk-hint">You can find this on your client's payslips.</div>
 
@@ -67,12 +67,12 @@
         <label class="govuk-label" for="employment-select-frequency">Select frequency</label>
              <select class="govuk-select" id="employment-select-frequency" name="employment-select-frequency">
                <option value="">--</option>
-               <option value="total">Total in the last 3 months</option>
-               <option value="Every week" selected>Every week</option>
-               <option value="Every two weeks">Every two weeks</option>
-               <option value="Every four weeks">Every four weeks</option>
-               <option value="Monthly">Monthly</option>
-               <option value="Annually">Annually</option>
+               <option value="total" {{"selected" if data['employment-select-frequency'] == "total"}}>Total in the last 3 months</option>
+               <option value="Every week" {{"selected" if data['employment-select-frequency'] == "Every week"}}>Every week</option>
+               <option value="Every two weeks" {{"selected" if data['employment-select-frequency'] == "Every two weeks"}}>Every two weeks</option>
+               <option value="Every four weeks" {{"selected" if data['employment-select-frequency'] == "Every four weeks"}}>Every four weeks</option>
+               <option value="Monthly" {{"selected" if data['employment-select-frequency'] == "Monthly"}}>Monthly</option>
+               <option value="Annually" {{"selected" if data['employment-select-frequency'] == "Annually"}}>Annually</option>
              </select>
       </div>
 

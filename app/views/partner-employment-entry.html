@@ -28,7 +28,7 @@
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <span class="govuk-caption-l">Your client's partner finances</span>
-          <h1 class="govuk-fieldset__heading">Add details for each of your client's partner employment payments</h1>
+          <h1 class="govuk-fieldset__heading">Tell us about your client's partner's salary</h1>
           </legend>
           <div id="contact-hint" class="govuk-hint">You can find this on your client's partner payslips.</div>
 
@@ -68,12 +68,12 @@
         <label class="govuk-label" for="partner-employment-select-frequency">Select frequency</label>
              <select class="govuk-select" id="partner-employment-select-frequency" name="partner-employment-select-frequency">
                <option value="">--</option>
-               <option value="total">Total in the last 3 months</option>
-               <option value="Every week" selected>Every week</option>
-               <option value="Every two weeks">Every two weeks</option>
-               <option value="Every four weeks">Every four weeks</option>
-               <option value="Monthly">Monthly</option>
-               <option value="Annually">Annually</option>
+               <option value="total" {{"selected" if data['partner-employment-select-frequency'] == "total"}}>Total in the last 3 months</option>
+               <option value="Every week" {{"selected" if data['partner-employment-select-frequency'] == "Every week"}}>Every week</option>
+               <option value="Every two weeks" {{"selected" if data['partner-employment-select-frequency'] == "Every two weeks"}}>Every two weeks</option>
+               <option value="Every four weeks" {{"selected" if data['partner-employment-select-frequency'] == "Every four weeks"}}>Every four weeks</option>
+               <option value="Monthly" {{"selected" if data['partner-employment-select-frequency'] == "Monthly"}}>Monthly</option>
+               <option value="Annually" {{"selected" if data['partner-employment-select-frequency'] == "Annually"}}>Annually</option>
              </select>
       </div>
 

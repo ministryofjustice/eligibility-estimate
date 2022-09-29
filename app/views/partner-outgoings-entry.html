@@ -30,8 +30,11 @@
 
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <span class="govuk-caption-l">Your client's partner finances</span>
-                 <h1 class="govuk-fieldset__heading">Add details for each of the payments your client's partner makes</h1>
+                 <h1 class="govuk-fieldset__heading">What payments does your client's partner make?</h1>
                </legend>
+
+               <div id="contact-hint" class="govuk-hint">If some don't apply, enter O.</div>
+               
 
                <div class="govuk-!-padding-bottom-6"></div>
 
@@ -50,12 +53,12 @@
                <label class="govuk-label" for="partner-housing-payments-select-frequency">Select frequency</label>
                     <select class="govuk-select" id="partner-housing-payments-select-frequency" name="partner-housing-payments-select-frequency">
                       <option value="">--</option>
-                      <option value="total">Total in the last 3 months</option>
-                      <option value="Every week" selected>Every week</option>
-                      <option value="Every two weeks">Every two weeks</option>
-                      <option value="Every four weeks">Every four weeks</option>
-                      <option value="Monthly">Monthly</option>
-                      <option value="Annually">Annually</option>
+                      <option value="total" {{"selected" if data['partner-housing-payments-select-frequency'] == "total"}}>Total in the last 3 months</option>
+                      <option value="Every week" {{"selected" if data['partner-housing-payments-select-frequency'] == "Every week"}}>Every week</option>
+                      <option value="Every two weeks" {{"selected" if data['partner-housing-payments-select-frequency'] == "Every two weeks"}}>Every two weeks</option>
+                      <option value="Every four weeks" {{"selected" if data['partner-housing-payments-select-frequency'] == "Every four weeks"}}>Every four weeks</option>
+                      <option value="Monthly" {{"selected" if data['partner-housing-payments-select-frequency'] == "Monthly"}}>Monthly</option>
+                      <option value="Annually" {{"selected" if data['partner-housing-payments-select-frequency'] == "Annually"}}>Annually</option>
                     </select>
              </div>
 
@@ -76,12 +79,12 @@
              <label class="govuk-label" for="partner-childcare-payments-select-frequency">Select frequency</label>
                   <select class="govuk-select" id="partner-childcare-payments-select-frequency" name="partner-childcare-payments-select-frequency">
                     <option value="">--</option>
-                    <option value="total">Total in the last 3 months</option>
-                    <option value="Every week" selected>Every week</option>
-                    <option value="Every two weeks">Every two weeks</option>
-                    <option value="Every four weeks">Every four weeks</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Annually">Annually</option>
+                    <option value="total" {{"selected" if data['partner-childcare-payments-select-frequency'] == "total"}}>Total in the last 3 months</option>
+                    <option value="Every week" {{"selected" if data['partner-childcare-payments-select-frequency'] == "Every week"}}>Every week</option>
+                    <option value="Every two weeks" {{"selected" if data['partner-childcare-payments-select-frequency'] == "Every two weeks"}}>Every two weeks</option>
+                    <option value="Every four weeks" {{"selected" if data['partner-childcare-payments-select-frequency'] == "Every four weeks"}}>Every four weeks</option>
+                    <option value="Monthly" {{"selected" if data['partner-childcare-payments-select-frequency'] == "Monthly"}}>Monthly</option>
+                    <option value="Annually" {{"selected" if data['partner-childcare-payments-select-frequency'] == "Annually"}}>Annually</option>
                   </select>
            </div>
 
@@ -102,12 +105,12 @@
             <label class="govuk-label" for="partner-former-partner-select-frequency">Select frequency</label>
                  <select class="govuk-select" id="partner-former-partner-select-frequency" name="partner-former-partner-select-frequency">
                    <option value="">--</option>
-                   <option value="total">Total in the last 3 months</option>
-                   <option value="Every week" selected>Every week</option>
-                   <option value="Every two weeks">Every two weeks</option>
-                   <option value="Every four weeks">Every four weeks</option>
-                   <option value="Monthly">Monthly</option>
-                   <option value="Annually">Annually</option>
+                   <option value="total" {{"selected" if data['partner-former-partner-select-frequency'] == "total"}}>Total in the last 3 months</option>
+                   <option value="Every week" {{"selected" if data['partner-former-partner-select-frequency'] == "Every week"}}>Every week</option>
+                   <option value="Every two weeks" {{"selected" if data['partner-former-partner-select-frequency'] == "Every two weeks"}}>Every two weeks</option>
+                   <option value="Every four weeks" {{"selected" if data['partner-former-partner-select-frequency'] == "Every four weeks"}}>Every four weeks</option>
+                   <option value="Monthly" {{"selected" if data['partner-former-partner-select-frequency'] == "Monthly"}}>Monthly</option>
+                   <option value="Annually" {{"selected" if data['partner-former-partner-select-frequency'] == "Annually"}}>Annually</option>
                  </select>
           </div>
 
@@ -128,12 +131,12 @@
            <label class="govuk-label" for="partner-legal-aid-crim-case-select-frequency">Select frequency</label>
                 <select class="govuk-select" id="partner-legal-aid-crim-case-select-frequency" name="partner-legal-aid-crim-case-select-frequency">
                   <option value="">--</option>
-                  <option value="total">Total in the last 3 months</option>
-                  <option value="Every week" selected>Every week</option>
-                  <option value="Every two weeks">Every two weeks</option>
-                  <option value="Every four weeks">Every four weeks</option>
-                  <option value="Monthly">Monthly</option>
-                  <option value="Annually">Annually</option>
+                  <option value="total" {{"selected" if data['partner-legal-aid-crim-case-select-frequency'] == "total"}}>Total in the last 3 months</option>
+                  <option value="Every week" {{"selected" if data['partner-legal-aid-crim-case-select-frequency'] == "Every week"}}>Every week</option>
+                  <option value="Every two weeks" {{"selected" if data['partner-legal-aid-crim-case-select-frequency'] == "Every two weeks"}}>Every two weeks</option>
+                  <option value="Every four weeks" {{"selected" if data['partner-legal-aid-crim-case-select-frequency'] == "Every four weeks"}}>Every four weeks</option>
+                  <option value="Monthly" {{"selected" if data['partner-legal-aid-crim-case-select-frequency'] == "Monthly"}}>Monthly</option>
+                  <option value="Annually" {{"selected" if data['partner-legal-aid-crim-case-select-frequency'] == "Annually"}}>Annually</option>
                 </select>
          </div>
 
