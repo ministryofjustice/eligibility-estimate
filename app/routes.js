@@ -29,7 +29,7 @@ router.post('/eligibility-branching', function (req, res) {
   // Check whether the variable matches a condition
   if (signpostedUser == "Yes"){
     // Skip income and outgoings and send user to property q's
-    res.redirect('/case-details')
+    res.redirect('/case-choice-details')
   } else {
     // Send user to income to answer all financial q's
     res.redirect('/signpost-eligibility')

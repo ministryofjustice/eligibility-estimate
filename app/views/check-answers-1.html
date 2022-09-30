@@ -31,20 +31,20 @@ Check answers – {{ serviceName }}
 <!-- case details start -->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l">Your client's case details</h2></div>
-  <div class="govuk-grid-column-one-third"><p><a class="govuk-summary-list__actions" href="/case-details?returnto=check-answers-1">Change</a></p></div>
+  <div class="govuk-grid-column-one-third"><p><a class="govuk-summary-list__actions" href="/case-choice-details?returnto=check-answers-1">Change</a></p></div>
 </div>
 
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Immigration - Upper Tribunal matter</dt>
-            {% if data['upper-tribunal-immigration'] %}<dd class="govuk-summary-list__value">{{ data['upper-tribunal-immigration']}}</dd>
+            <dt class="govuk-summary-list__key">Area of law</dt>
+            {% if data['area-of-law'] %}<dd class="govuk-summary-list__value">{{ data['area-of-law']}}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
           </div>
-          <div class="govuk-summary-list__row">
+        <!--  <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Asylum - Upper Tribunal matter</dt>
             {% if data['upper-tribunal-asylum'] %}<dd class="govuk-summary-list__value">{{ data['upper-tribunal-asylum']}}</dd>
              {% else %}
@@ -58,7 +58,7 @@ Check answers – {{ serviceName }}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
 
-          </div>
+          </div>-->
         </dl>
 <!-- case details end-->
 

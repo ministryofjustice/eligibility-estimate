@@ -39,31 +39,31 @@ Check answers – {{ serviceName }}
     </div>
 
 
-            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Immigration - Upper Tribunal matter</dt>
-                {% if data['upper-tribunal-immigration'] %}<dd class="govuk-summary-list__value">{{ data['upper-tribunal-immigration']}}</dd>
-                 {% else %}
-                     <dd class="govuk-summary-list__value">Not applicable</dd>
-                 {% endif %}
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Asylum - Upper Tribunal matter</dt>
-                {% if data['upper-tribunal-asylum'] %}<dd class="govuk-summary-list__value">{{ data['upper-tribunal-asylum']}}</dd>
-                 {% else %}
-                     <dd class="govuk-summary-list__value">Not applicable</dd>
-                 {% endif %}
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Defendant in a domestic abuse case</dt>
-                {% if data['domestic-abuse'] %}<dd class="govuk-summary-list__value">{{ data['domestic-abuse']}}</dd>
-                 {% else %}
-                     <dd class="govuk-summary-list__value">Not applicable</dd>
-                 {% endif %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Area of law</dt>
+        {% if data['area-of-law'] %}<dd class="govuk-summary-list__value">{{ data['area-of-law']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not applicable</dd>
+         {% endif %}
+      </div>
+    <!--  <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Asylum - Upper Tribunal matter</dt>
+        {% if data['upper-tribunal-asylum'] %}<dd class="govuk-summary-list__value">{{ data['upper-tribunal-asylum']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not applicable</dd>
+         {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Defendant in a domestic abuse case</dt>
+        {% if data['domestic-abuse'] %}<dd class="govuk-summary-list__value">{{ data['domestic-abuse']}}</dd>
+         {% else %}
+             <dd class="govuk-summary-list__value">Not applicable</dd>
+         {% endif %}
 
-              </div>
-            </dl>
+      </div>-->
+    </dl>
     <!-- case details end-->
 
     <!-- client details start -->
