@@ -41,7 +41,7 @@ router.post('/eligibility-branching', function (req, res) {
 router.post('/client-benefits-decide', function (req, res) {
 
   // Make a variable and give it the value from 'passport-benefits'
-  var firstBenefit = req.session.data['has_other_benefits']
+  var firstBenefit = req.session.data['client-benefits']
 
   // Check whether the variable matches a condition
   if (firstBenefit == "Yes"){
@@ -75,7 +75,7 @@ router.post('/client-benefits-decide-1', function (req, res) {
 router.post('/partner-benefits-decide', function (req, res) {
 
   // Make a variable and give it the value from 'passport-benefits'
-  var parnerFirstBenefit = req.session.data['partner-has_other_benefits']
+  var parnerFirstBenefit = req.session.data['partner-benefits']
 
   // Check whether the variable matches a condition
   if (parnerFirstBenefit == "Yes"){
