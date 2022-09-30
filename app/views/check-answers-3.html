@@ -22,6 +22,8 @@ Check answers – {{ serviceName }}
 <style media="screen">
 .govuk-summary-list__key{width: 35%; padding-right: 50px;}
 .govuk-summary-list__actions {width: 30%; padding-right: 0;text-align: right;}
+.govuk-list{list-style: none;}
+.govuk-list--bullet{padding-left: 0;}
 </style>
 
 
@@ -170,18 +172,48 @@ Check answers – {{ serviceName }}
     <!-- client benefits start -->
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m" id="client-benefits">Client's benefits</h2></div>
-      <div class="govuk-grid-column-one-third"><p><a class="govuk-summary-list__actions" href="/client-benefits-entry?returnto=check-answers-3">Change</a></p></div>
+      <!--<div class="govuk-grid-column-one-third"><p><a class="govuk-summary-list__actions" href="/client-benefits-entry?returnto=check-answers-3">Change</a></p></div>-->
     </div>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">{{ data['client-benefit-type'] }}<span class="govuk-visually-hidden">Benefits received</span></dt>
+        <ul class="govuk-list govuk-list--bullet">
+        {% if data['client-benefit-amount'] %}
+        <li>{{ currency }} {{ data['client-benefit-amount'] | fixed }}</li>
+        <li>{{ data['client-benefits-frequency']}}</li>
+         {% else %}
+             <li>Not provided</li>
+         {% endif %}
+       </ul>
+       <dd class="govuk-summary-list__actions">
+         <a class="govuk-link" href="/client-benefits-entry?returnto=check-answers-3">Change<span class="govuk-visually-hidden">First benefit</span></a>
+       </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">{{ data['client-benefit-type-2'] }}<span class="govuk-visually-hidden">Benefits received</span></dt>
+        <ul class="govuk-list govuk-list--bullet">
+        {% if data['client-benefit-amount-2'] %}
+        <li>{{ currency }} {{ data['client-benefit-amount-2'] | fixed }}</li>
+        <li>{{ data['client-benefits-frequency-2']}}</li>
+         {% else %}
+             <li>Not provided</li>
+         {% endif %}
+       </ul>
+       <dd class="govuk-summary-list__actions">
+         <a class="govuk-link" href="/client-benefits-entry-2?returnto=check-answers-3">Change<span class="govuk-visually-hidden">Second Benefit</span></a>
+       </dd>
+      </div>
+
+      <!--<div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">{{ data['client-benefit-type'] }}<span class="govuk-visually-hidden">Benefit type</span></dt>
         {% if data['client-benefit-amount'] %}<dd class="govuk-summary-list__value">{{ currency }}{{ data['client-benefit-amount'] | fixed }}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not applicable</dd>
          {% endif %}
          <dd class="govuk-summary-list__actions">{{ data['client-benefits-frequency']}}</dd>
-      </div>
+      </div>-->
 
       <!--<div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Benefit type<span class="govuk-visually-hidden">Benefit type</span></dt>
@@ -568,17 +600,38 @@ Check answers – {{ serviceName }}
             <!-- partner benefits start -->
             <div class="govuk-grid-row">
               <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-m" id="client-benefits">Client's partner benefits</h2></div>
-              <div class="govuk-grid-column-one-third"><p><a class="govuk-summary-list__actions" href="/partner-benefits-entry?returnto=check-answers-3">Change</a></p></div>
+              <!--<div class="govuk-grid-column-one-third"><p><a class="govuk-summary-list__actions" href="/partner-benefits-entry?returnto=check-answers-3">Change</a></p></div>-->
             </div>
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">{{ data['partner-benefit-type'] }}<span class="govuk-visually-hidden">Benefit type</span></dt>
-                {% if data['partner-benefit-amount'] %}<dd class="govuk-summary-list__value">{{ currency }}{{ data['partner-benefit-amount'] | fixed }}</dd>
+                <dt class="govuk-summary-list__key">{{ data['partner-benefit-type'] }}<span class="govuk-visually-hidden">Benefits received</span></dt>
+                <ul class="govuk-list govuk-list--bullet">
+                {% if data['partner-benefit-type'] %}
+                <li>{{ currency }} {{ data['partner-benefit-amount'] | fixed }}</li>
+                <li>{{ data['partner-benefit-type']}}</li>
                  {% else %}
-                     <dd class="govuk-summary-list__value">Not applicable</dd>
+                     <li>Not applicable</li>
                  {% endif %}
-                 <dd class="govuk-summary-list__actions">{{ data['partner-benefits-frequency']}}</dd>
+               </ul>
+               <dd class="govuk-summary-list__actions">
+                 <a class="govuk-link" href="/partner-benefits-entry?returnto=check-answers-3">Change<span class="govuk-visually-hidden">First benefit</span></a>
+               </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">{{ data['partner-benefit-type-2'] }}<span class="govuk-visually-hidden">Benefits received</span></dt>
+                <ul class="govuk-list govuk-list--bullet">
+                {% if data['partner-benefit-amount-2'] %}
+                <li>{{ currency }} {{ data['partner-benefit-amount-2'] | fixed }}</li>
+                <li>{{ data['partner-benefits-frequency-2']}}</li>
+                 {% else %}
+                     <li>Not applicable</li>
+                 {% endif %}
+               </ul>
+               <dd class="govuk-summary-list__actions">
+                 <a class="govuk-link" href="/partner-benefits-entry-2?returnto=check-answers-3">Change<span class="govuk-visually-hidden">Second Benefit</span></a>
+               </dd>
               </div>
 
               <!--<div class="govuk-summary-list__row">
@@ -892,7 +945,7 @@ Check answers – {{ serviceName }}
         <p>We'll use your answers to give you an estimated result on your client's financial eligibility for legal aid.</p>
 
         <!-- marking task complete end -->
-      <form class="form" action="/results" method="post">
+      <form class="form" action="/results-provisional" method="post">
         <div class="govuk-button-group">
         <button type="submit" class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Submit eligibility check</button>
         </div>

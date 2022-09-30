@@ -81,12 +81,12 @@ Estimated result – {{ serviceName }}
           <tr class="govuk-table__row">
           <h2 class="govuk-heading-m">Client's income</h2>
 
-            <th scope="row" class="govuk-table__header">Employment income after tax</th>
+            <th scope="row" class="govuk-table__header">Employment income</th>
             <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['client-employment-income-value'] or 0 | fixed }}</td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Benefits received</th>
-            <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['client-benefit-amount'] or 0 | fixed }}</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{(data['client-benefit-amount'] or 0) | float + (data['client-benefit-amount-2'] or 0) | float}}</td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Financial help from friends or family</th>
@@ -114,7 +114,7 @@ Estimated result – {{ serviceName }}
           </tr>
           <tr class="govuk-table__row" style="border-top: 2px solid #000">
             <th scope="row" class="govuk-table__header">Total</th>
-            <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ (data['client-employment-income-value'] or 0) | float + (data['client-benefit-amount'] or 0) | float + (data['income-sources-3-value'] or 0) | float + (data['income-sources-4-value'] or 0) | float + (data['income-sources-5-value'] or 0) | float + (data['income-sources-6-value'] or 0) | float + (data['income-sources-7-value'] or 0) | float + (data['income-sources-8-value'] or 0) | float }}</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ (data['client-employment-income-value'] or 0) | float + (data['client-benefit-amount'] or 0) | float + (data['client-benefit-amount-2'] or 0) | float + (data['income-sources-3-value'] or 0) | float + (data['income-sources-4-value'] or 0) | float + (data['income-sources-5-value'] or 0) | float + (data['income-sources-6-value'] or 0) | float + (data['income-sources-7-value'] or 0) | float + (data['income-sources-8-value'] or 0) | float }}</td>
           </tr>
         </tbody>
         </table>
@@ -125,12 +125,12 @@ Estimated result – {{ serviceName }}
         <tbody>
           <tr class="govuk-table__row">
           <h2 class="govuk-heading-m">Partner's income</h2>
-            <th scope="row" class="govuk-table__header">Employment income after tax</th>
+            <th scope="row" class="govuk-table__header">Employment income</th>
             <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-employment-income-value'] or 0 | fixed }}</td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Benefits received</th>
-            <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ data['partner-benefit-amount'] or 0 | fixed }}</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{(data['partner-benefit-amount'] or 0) | float + (data['partner-benefit-amount-2'] or 0) | float}}</td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Financial help from friends or family</th>
@@ -158,7 +158,7 @@ Estimated result – {{ serviceName }}
           </tr>
           <tr class="govuk-table__row" style="border-top: 2px solid #000">
             <th scope="row" class="govuk-table__header">Total</th>
-            <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ (data['partner-employment-income-value'] or 0) | float + (data['partner-benefit-amount'] or 0) | float + (data['partner-income-sources-3-value'] or 0) | float + (data['partner-income-sources-4-value'] or 0) | float + (data['partner-income-sources-5-value'] or 0) | float + (data['partner-income-sources-6-value'] or 0) | float + (data['partner-income-sources-7-value'] or 0) | float + (data['partner-income-sources-8-value'] or 0) | float }}</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">{{ currency }}{{ (data['partner-employment-income-value'] or 0) | float + (data['partner-benefit-amount'] or 0) | float + (data['partner-benefit-amount-2'] or 0) | float +  (data['partner-income-sources-3-value'] or 0) | float + (data['partner-income-sources-4-value'] or 0) | float + (data['partner-income-sources-5-value'] or 0) | float + (data['partner-income-sources-6-value'] or 0) | float + (data['partner-income-sources-7-value'] or 0) | float + (data['partner-income-sources-8-value'] or 0) | float }}</td>
           </tr>
         </tbody>
         </table>

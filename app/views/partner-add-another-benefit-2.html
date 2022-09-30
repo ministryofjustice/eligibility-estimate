@@ -1,14 +1,18 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Benefit details – {{ serviceName }}
+Add another benefit – {{ serviceName }}
 {% endblock %}
 
 {% set currency = "£" %}
 {% set ownership = "%" %}
 
-
 {% block beforeContent %}
+
+<style>
+.govuk-summary-list__key{width: 20%;}
+</style>
+
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
     <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
@@ -23,8 +27,8 @@ Benefit details – {{ serviceName }}
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <!--<form class="form" action="{% if data['returnto'] %} {{ data['returnto']}} {% else %}/partner-income{% endif %}" method="post">-->
-          <form class="form" action="{% if data['returnto'] %} {{ data['returnto']}} {% else %}/partner-benefits-decide-1{% endif %}" method="post">
+        <form class="form" action="{% if data['returnto'] %} {{ data['returnto']}} {% else %}/partner-income{% endif %}" method="post">
+        <!--<form class="form" action="{% if data['returnto'] %} {{ data['returnto']}} {% else %}/client-benefits-decide-1{% endif %}" method="post">-->
 
           <input class="govuk-input govuk-input--width-5" id="" name="returnto" type="hidden" value="">
 
@@ -34,7 +38,7 @@ Benefit details – {{ serviceName }}
 
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <span class="govuk-caption-l">Your client's partner finances</span>
-                 <h1 class="govuk-fieldset__heading">You have added 1 benefit</h1>
+                 <h1 class="govuk-fieldset__heading">You have added 2 benefits</h1>
                </legend>
 
                <div class="govuk-!-padding-bottom-6"></div>
@@ -48,7 +52,21 @@ Benefit details – {{ serviceName }}
                   <dd class="govuk-summary-list__value">{{ currency }}{{ data['partner-benefit-amount'] | fixed }}</dd>
                   <dd class="govuk-summary-list__value">{{ data['partner-benefits-frequency']}}</dd>
                   <dd class="govuk-summary-list__value"><a class="govuk-link" href="partner-benefits-entry">Change<span class="govuk-visually-hidden"></span></a></dd>
-                  <dd class="govuk-summary-list__actions"><a class="govuk-link" href="remove_1">Remove<span class="govuk-visually-hidden"></span></a></dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"></span></a></dd>
+
+                </div>
+
+              </div>
+
+              <div class="govuk-summary-list">
+
+                <div class="govuk-summary-list__row">
+
+                  <dd class="govuk-summary-list__key">{{ data['partner-benefit-type-2']}}</dd>
+                  <dd class="govuk-summary-list__value">{{ currency }}{{ data['partner-benefit-amount-2'] | fixed }}</dd>
+                  <dd class="govuk-summary-list__value">{{ data['partner-benefits-frequency-2']}}</dd>
+                  <dd class="govuk-summary-list__value"><a class="govuk-link" href="partner-benefits-entry-2">Change<span class="govuk-visually-hidden"></span></a></dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"></span></a></dd>
 
                 </div>
 
@@ -59,17 +77,17 @@ Benefit details – {{ serviceName }}
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">Does your client's partner receive any other benefits?</h1>
+            <h1 class="govuk-fieldset__heading">Does your client receive any other benefits?</h1>
           </legend>
           <div class="govuk-radios govuk-radios--conditional" data-module="radios">
             <div class="govuk-radios__item">
 
-              <input class="govuk-radios__input" id="partner-other-benefits-true" name="partner-has_other_benefits" type="radio" value="Yes" {{ checked("partner-has_other_benefits", "Yes") }}>
+              <input class="govuk-radios__input" id="other-benefits-true" name="has_other_benefits" type="radio" value="Yes" {{ checked("has_other_benefits", "Yes") }}>
               <label class="govuk-label govuk-radios__label" for="other-benefits-true">Yes</label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="partner-other_benefits-false" name="partner-has_other_benefits" type="radio" value="No" {{ checked("partner-has_other_benefits", "No") }}>
-              <label class="govuk-label govuk-radios__label" for="partner-other_benefits-false">No</label>
+              <input class="govuk-radios__input" id="other_benefits-false" name="has_other_benefits" type="radio" value="No" {{ checked("has_other_benefits", "No") }}>
+              <label class="govuk-label govuk-radios__label" for="other_benefits-false">No</label>
             </div>
           </div>
         </fieldset>

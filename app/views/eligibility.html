@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Are you a legal aid provider? – {{ serviceName }}
+{% endblock %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+          <!--<form class="form" action="{% if data['checking'] %}/check-answers-1{% else %}/client-details{% endif %}" method="post">-->
+            <form class="form" action="/eligibility-branching" method="post">
+
+              <input class="govuk-input govuk-input--width-5" id="" name="returnto" type="hidden" value="">
+
+            <div class="govuk-form-group">
+
+              <fieldset class="govuk-fieldset">
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">Are you a civil or family legal aid provider?</h1>
+                </legend>
+
+                <div id="contact-hint" class="govuk-hint">This includes people who provide civil or family legal aid and advice in England and Wales to help people deal with their legal problems.</div>
+
+                <div class="govuk-!-padding-bottom-6"></div>
+
+              <!-- question -->
+              <div class="govuk-form-group">
+                <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="intended-user-yes" name="intended-user" type="radio" value="Yes" {{ checked("intended-user", "Yes") }}>
+                    <label class="govuk-label govuk-radios__label" for="intended-user-yes">Yes</label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="intended-user-no" name="intended-user" type="radio" value="No" {{ checked("intended-user", "No") }}>
+                    <label class="govuk-label govuk-radios__label" for="intended-user-no">No</label>
+                  </div>
+              </div>
+              <!-- question -->
+
+
+              </fieldset>
+
+            </div>
+
+        <!-- send start -->
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Continue</button>
+        </div>
+
+        </form>
+
+      </div>
+
+
+
+  </div>
+
+
+{% endblock %}

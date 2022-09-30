@@ -20,6 +20,58 @@ router.post('/check-for-benefits', function (req, res) {
 
 })
 
+//Eligibility question at the start
+router.post('/eligibility-branching', function (req, res) {
+
+  // Make a variable and give it the value from 'passport-benefits'
+  var signpostedUser = req.session.data['intended-user']
+
+  // Check whether the variable matches a condition
+  if (signpostedUser == "Yes"){
+    // Skip income and outgoings and send user to property q's
+    res.redirect('/case-details')
+  } else {
+    // Send user to income to answer all financial q's
+    res.redirect('/signpost-eligibility')
+  }
+
+})
+
+//Eligibility question at the start
+router.post('/client-benefits-decide-1', function (req, res) {
+
+  // Make a variable and give it the value from 'passport-benefits'
+  var firstBenefit = req.session.data['has_other_benefits']
+
+  // Check whether the variable matches a condition
+  if (firstBenefit == "Yes"){
+    // Skip income and outgoings and send user to property q's
+    res.redirect('/client-benefits-entry-2')
+  } else {
+    // Send user to income to answer all financial q's
+    res.redirect('/client-income')
+  }
+
+})
+
+//Eligibility question at the start
+router.post('/partner-benefits-decide-1', function (req, res) {
+
+  // Make a variable and give it the value from 'passport-benefits'
+  var parnerFirstBenefit = req.session.data['partner-has_other_benefits']
+
+  // Check whether the variable matches a condition
+  if (parnerFirstBenefit == "Yes"){
+    // Skip income and outgoings and send user to property q's
+    res.redirect('/partner-benefits-entry-2')
+  } else {
+    // Send user to income to answer all financial q's
+    res.redirect('/partner-income')
+  }
+
+})
+
+
 // Run this code when a form is submitted to 'ownsHome'
 router.post('/ownsHome', function (req, res) {
 
@@ -155,6 +207,8 @@ router.post('/partnerBuyVehicleThree', function (req, res) {
   }
 
   })
+
+
 
   ///////////////////////////////////
   // V2 routes here

@@ -7,13 +7,11 @@ Add another benefit – {{ serviceName }}
 {% set currency = "£" %}
 {% set ownership = "%" %}
 
-
 {% block beforeContent %}
 
 <style>
 .govuk-summary-list__key{width: 20%;}
 </style>
-
 
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
@@ -29,8 +27,8 @@ Add another benefit – {{ serviceName }}
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <!--<form class="form" action="{% if data['returnto'] %} {{ data['returnto']}} {% else %}/client-income{% endif %}" method="post">-->
-        <form class="form" action="{% if data['returnto'] %} {{ data['returnto']}} {% else %}/client-benefits-decide-1{% endif %}" method="post">
+        <form class="form" action="{% if data['returnto'] %} {{ data['returnto']}} {% else %}/client-income{% endif %}" method="post">
+        <!--<form class="form" action="{% if data['returnto'] %} {{ data['returnto']}} {% else %}/client-benefits-decide-1{% endif %}" method="post">-->
 
           <input class="govuk-input govuk-input--width-5" id="" name="returnto" type="hidden" value="">
 
@@ -40,7 +38,7 @@ Add another benefit – {{ serviceName }}
 
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <span class="govuk-caption-l">Your client's finances</span>
-                 <h1 class="govuk-fieldset__heading">You have added 1 benefit</h1>
+                 <h1 class="govuk-fieldset__heading">You have added 2 benefits</h1>
                </legend>
 
                <div class="govuk-!-padding-bottom-6"></div>
@@ -54,6 +52,20 @@ Add another benefit – {{ serviceName }}
                   <dd class="govuk-summary-list__value">{{ currency }}{{ data['client-benefit-amount'] | fixed }}</dd>
                   <dd class="govuk-summary-list__value">{{ data['client-benefits-frequency']}}</dd>
                   <dd class="govuk-summary-list__value"><a class="govuk-link" href="client-benefits-entry">Change<span class="govuk-visually-hidden"></span></a></dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"></span></a></dd>
+
+                </div>
+
+              </div>
+
+              <div class="govuk-summary-list">
+
+                <div class="govuk-summary-list__row">
+
+                  <dd class="govuk-summary-list__key">{{ data['client-benefit-type-2']}}</dd>
+                  <dd class="govuk-summary-list__value">{{ currency }}{{ data['client-benefit-amount-2'] | fixed }}</dd>
+                  <dd class="govuk-summary-list__value">{{ data['client-benefits-frequency-2']}}</dd>
+                  <dd class="govuk-summary-list__value"><a class="govuk-link" href="client-benefits-entry-2">Change<span class="govuk-visually-hidden"></span></a></dd>
                   <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"></span></a></dd>
 
                 </div>

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Signpost – {{ serviceName }}
+{% endblock %}
+
+{% set currency = "£" %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation panel-grey">
+         <h1 class="govuk-panel__title">
+           You cannot use this service to get a financial eligibility estimate for legal aid
+         </h1>
+       </div>
+
+       <p class="govuk-body">You are not a civil or family legal aid provider.</p>
+
+       <h2 class="govuk-heading-m">What to do next</h2>
+
+       <ul class="govuk-list govuk-list--bullet">
+      <li>if your licence is lost, stolen, damaged or destroyed you can
+      <a href="https://www.gov.uk/apply-online-to-replace-a-driving-licence" target="_self" rel="noopener noreferrer">replace your driving licence</a>.
+
+      </li><li>if your licence details have changed or your licence is out of date you can
+      <a href="https://www.gov.uk/renew-driving-licence" target="_self" rel="noopener noreferrer">renew your driving licence</a>.
+
+      </li><li>if your licence was revoked under the new Drivers Act, you will need to
+      <a href="https://www.gov.uk/dvlaforms" target="_self" rel="noopener noreferrer">apply by post</a>.
+
+      </li>
+    </ul>
+
+       <p class="govuk-body">
+         <a class="govuk-button" href="">Return to GOV.UK</a>
+       </p>
+     </div>
+
+    </div>
+
+
+</div>
+
+{% endblock %}
