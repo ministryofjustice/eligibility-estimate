@@ -183,7 +183,7 @@ Check answers – {{ serviceName }}
         <li>{{ currency }} {{ data['client-benefit-amount'] | fixed }}</li>
         <li>{{ data['client-benefits-frequency']}}</li>
          {% else %}
-             <li>Not provided</li>
+             <li>Not applicable</li>
          {% endif %}
        </ul>
        <dd class="govuk-summary-list__actions">
@@ -198,7 +198,7 @@ Check answers – {{ serviceName }}
         <li>{{ currency }} {{ data['client-benefit-amount-2'] | fixed }}</li>
         <li>{{ data['client-benefits-frequency-2']}}</li>
          {% else %}
-             <li>Not provided</li>
+             <li>Not applicable</li>
          {% endif %}
        </ul>
        <dd class="govuk-summary-list__actions">
@@ -251,42 +251,42 @@ Check answers – {{ serviceName }}
             <dt class="govuk-summary-list__key">Financial help<span class="govuk-visually-hidden"> Financial help</span></dt>
             {% if data['income-sources-3-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['income-sources-3-value'] | fixed }}</dd>
              {% else %}
-                 <dd class="govuk-summary-list__value">Not aplicable</dd>
+                 <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Maintenance payments from a former partner<span class="govuk-visually-hidden"> Maintenance payments from a former partner</span></dt>
             {% if data['income-sources-4-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['income-sources-4-value'] | fixed }}</dd>
              {% else %}
-                 <dd class="govuk-summary-list__value">Not aplicable</dd>
+                 <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Income from a property or lodger<span class="govuk-visually-hidden"> Income from a property or lodger</span></dt>
             {% if data['income-sources-5-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['income-sources-5-value'] | fixed }}</dd>
              {% else %}
-                 <dd class="govuk-summary-list__value">Not aplicable</dd>
+                 <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Pension<span class="govuk-visually-hidden"> Pension</span></dt>
             {% if data['income-sources-6-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['income-sources-6-value'] | fixed }}</dd>
              {% else %}
-                 <dd class="govuk-summary-list__value">Not aplicable</dd>
+                 <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Student finance<span class="govuk-visually-hidden"> Student finance</span></dt>
             {% if data['income-sources-7-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['income-sources-7-value'] | fixed }}</dd>
              {% else %}
-                 <dd class="govuk-summary-list__value">Not aplicable</dd>
+                 <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Other sources<span class="govuk-visually-hidden"> Other sources</span></dt>
             {% if data['income-sources-8-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['income-sources-8-value'] | fixed }}</dd>
              {% else %}
-                 <dd class="govuk-summary-list__value">Not aplicable</dd>
+                 <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
           </div>
         </dl>
@@ -488,7 +488,7 @@ Check answers – {{ serviceName }}
                 <dt class="govuk-summary-list__key">Second property or holiday home: % owned<span class="govuk-visually-hidden">Second property or holiday home % owned</span></dt>
                 {% if data['capital-2b-value'] %}<dd class="govuk-summary-list__value">{{ data['capital-2b-value'] }}{{ ownership }}</dd>
                  {% else %}
-                     <dd class="govuk-summary-list__value">Not aplicable</dd>
+                     <dd class="govuk-summary-list__value">Not applicable</dd>
                  {% endif %}
               </div>
               <div class="govuk-summary-list__row">
@@ -907,7 +907,7 @@ Check answers – {{ serviceName }}
                         <dt class="govuk-summary-list__key">Second property or holiday home: % owned<span class="govuk-visually-hidden">Second property or holiday home % owned</span></dt>
                         {% if data['partner-capital-2b-value'] %}<dd class="govuk-summary-list__value">{{ data['partner-capital-2b-value'] }}{{ ownership }}</dd>
                          {% else %}
-                             <dd class="govuk-summary-list__value">Not aplicable</dd>
+                             <dd class="govuk-summary-list__value">Not applicable</dd>
                          {% endif %}
                       </div>
                       <div class="govuk-summary-list__row">

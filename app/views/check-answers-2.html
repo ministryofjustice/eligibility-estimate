@@ -93,7 +93,7 @@ Check answers – {{ serviceName }}
         <li>{{ currency }} {{ data['client-benefit-amount'] | fixed }}</li>
         <li>{{ data['client-benefits-frequency']}}</li>
          {% else %}
-             <li>Not provided</li>
+             <li>Not applicable</li>
          {% endif %}
        </ul>
        <dd class="govuk-summary-list__actions">
@@ -108,7 +108,7 @@ Check answers – {{ serviceName }}
         <li>{{ currency }} {{ data['client-benefit-amount-2'] | fixed }}</li>
         <li>{{ data['client-benefits-frequency-2']}}</li>
          {% else %}
-             <li>Not provided</li>
+             <li>Not applicable</li>
          {% endif %}
        </ul>
        <dd class="govuk-summary-list__actions">
@@ -421,7 +421,7 @@ Check answers – {{ serviceName }}
                 <dt class="govuk-summary-list__key">Second property or holiday home: % owned<span class="govuk-visually-hidden">Second property or holiday home % owned</span></dt>
                 {% if data['capital-2b-value'] %}<dd class="govuk-summary-list__value">{{ data['capital-2b-value'] }}{{ ownership }}</dd>
                  {% else %}
-                     <dd class="govuk-summary-list__value">Not aplicable</dd>
+                     <dd class="govuk-summary-list__value">Not applicable</dd>
                  {% endif %}
               </div>
               <div class="govuk-summary-list__row">
