@@ -301,8 +301,6 @@ Check answers – {{ serviceName }}
              </dd>
           </div>
 
-          {% if data['homeowner'] == 'Yes, with a mortgage or loan' or data['homeowner'] == 'Yes, owned outright' %}
-
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Estimated value<span class="govuk-visually-hidden">Estimated value</span></dt>
             {% if data['client-home-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['client-home-value'] | fixed }}</dd>
@@ -333,8 +331,7 @@ Check answers – {{ serviceName }}
                <a class="govuk-link" href="/client-property-entry?returnto=check-answers-2">Change<span class="govuk-visually-hidden">Percentage share owned<</span></a>
              </dd>
           </div>
-          {% else %}
-          {% endif %}
+
         </dl>
         <!-- property end -->
 
@@ -354,8 +351,6 @@ Check answers – {{ serviceName }}
                <a class="govuk-link" href="/client-vehicle-1?returnto=check-answers-2">Change<span class="govuk-visually-hidden">Owns a vehicle</span></a>
              </dd>
           </div>
-
-          {% if data['client-vehicle-own'] == 'Yes' %}
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Estimated value<span class="govuk-visually-hidden">Estimated value</span></dt>
@@ -400,8 +395,7 @@ Check answers – {{ serviceName }}
                  <dd class="govuk-summary-list__value">Not provided</dd>
              {% endif %}-->
           </div>
-          {% else %}
-          {% endif %}
+
         </dl>
         <!-- vehicles end -->
 
