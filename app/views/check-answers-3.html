@@ -368,7 +368,6 @@ Check answers – {{ serviceName }}
              </dd>
           </div>
 
-          {% if data['homeowner'] == 'Yes, with a mortgage or loan' or data['homeowner'] == 'Yes, owned outright' %}
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Estimated value<span class="govuk-visually-hidden">Estimated value</span></dt>
@@ -400,8 +399,7 @@ Check answers – {{ serviceName }}
                <a class="govuk-link" href="/client-property-entry?returnto=check-answers-3">Change<span class="govuk-visually-hidden">Percentage share owned<</span></a>
              </dd>
           </div>
-          {% else %}
-          {% endif %}
+
         </dl>
         <!-- client property end -->
 
@@ -422,7 +420,7 @@ Check answers – {{ serviceName }}
              </dd>
           </div>
 
-          {% if data[client-vehicle-own'] == 'Yes' %}
+
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Estimated value<span class="govuk-visually-hidden">Estimated value</span></dt>
@@ -467,8 +465,7 @@ Check answers – {{ serviceName }}
                  <dd class="govuk-summary-list__value">Not provided</dd>
              {% endif %}-->
           </div>
-          {% else %}
-          {% endif %}
+
         </dl>
         <!-- client vehicles end -->
 
@@ -796,8 +793,6 @@ Check answers – {{ serviceName }}
                      </dd>
                   </div>
 
-                  {% if data['partner-homeowner'] == 'Yes, with a mortgage or loan' or data['partner-homeowner'] == 'Yes, owned outright' %}
-
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">Estimated value<span class="govuk-visually-hidden">Estimated value</span></dt>
                     {% if data['partner-home-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['partner-home-value'] | fixed }}</dd>
@@ -828,8 +823,7 @@ Check answers – {{ serviceName }}
                        <a class="govuk-link" href="/partner-property-entry?returnto=check-answers-3">Change<span class="govuk-visually-hidden">Percentage share owned<</span></a>
                      </dd>
                   </div>
-                  {% else %}
-                  {% endif %}
+
                 </dl>
                 <!-- partner property end -->
 
@@ -849,8 +843,6 @@ Check answers – {{ serviceName }}
                        <a class="govuk-link" href="/partner-vehicle-1?returnto=check-answers-3">Change<span class="govuk-visually-hidden">Owns a vehicle</span></a>
                      </dd>
                   </div>
-
-                  {% if data['partner-vehicle-own'] == 'Yes' %}
 
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">Estimated value<span class="govuk-visually-hidden">Estimated value</span></dt>
@@ -895,8 +887,7 @@ Check answers – {{ serviceName }}
                          <dd class="govuk-summary-list__value">Not provided</dd>
                      {% endif %}-->
                   </div>
-                  {% else %}
-                  {% endif %}
+    
                 </dl>
                 <!-- partner vehicles end -->
 
