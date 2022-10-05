@@ -35,8 +35,7 @@ Start – {{ serviceName }}
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Applying for civil legal aid
-        <!--{% if serviceName %} {{ serviceName }} {% endif %}-->
+        {% if serviceName %} {{ serviceName }} {% endif %}
       </h1>
 
       <div class="govuk-inset-text">You must be a civil or family legal aid provider to use this service. Individuals cannot apply using this service.</div>
