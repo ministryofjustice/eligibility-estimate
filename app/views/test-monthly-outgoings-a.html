@@ -1,0 +1,305 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Outgoings – {{ serviceName }}
+
+{% endblock %}
+
+{% set currency = "£" %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+   <div class="govuk-grid-column-two-thirds">
+
+       <form class="form" action="{% if data['checking'] %}/check-answers#client-income{% else %}/monthly-outgoings{% endif %}" method="post">
+
+         <div class="govuk-form-group">
+
+           <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+             <span class="govuk-caption-l">Your client's finances</span>
+             <h1 class="govuk-fieldset__heading">What are your client's outgoings and deductions?</h1>
+             </legend>
+             <div id="contact-hint" class="govuk-hint">Select all that apply.</div>
+
+             <div class="govuk-!-padding-bottom-6"></div>
+
+             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+             <div class="govuk-checkboxes__item">
+             <input class="govuk-checkboxes__input" id="income-sources-1" name="monthly-income" type="checkbox" value="yes" data-aria-controls="gross-monthly-income-yes" {{ checked("monthly-income","yes") }} >
+             <label class="govuk-label govuk-checkboxes__label" for="income-sources-1">Housing payments</label>
+             <span id="income-sources-2-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, rent, mportgage or board and lodging.</span>
+             </div>
+             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="gross-monthly-income-yes">
+
+             <div class="govuk-form-group">
+             <label class="govuk-label" for="income-sources-1-value">Enter amount</label>
+             <!-- wrapper starts -->
+             <div class="govuk-input__wrapper">
+               <div class="govuk-input__prefix" aria-hidden="true">£</div>
+               <input class="govuk-input govuk-input--width-5" id="income-sources-2-value" name="income-sources-2-value" type="text" value="{{ data['income-sources-2-value']}}">
+             </div>
+
+             <div class="govuk-!-padding-bottom-4"></div>
+
+             <fieldset class="govuk-fieldset">
+               <label class="govuk-label" for="">
+                 Enter frequency
+               </label>
+               <div class="govuk-radios" data-module="govuk-radios">
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="income-sources-2-every-week-a" name="benefits-frequency-a" type="radio" value="Every week" {{ checked("benefits-frequency", "Every week") }}>
+                   <label class="govuk-label govuk-radios__label" for="income-sources-2-every-week-a">
+                     Every week
+                   </label>
+                 </div>
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="income-sources-2-every-two-weeks-a" name="benefits-frequency-a" type="radio" value="Every two weeks" {{ checked("benefits-frequency", "Every two weeks") }}>
+                   <label class="govuk-label govuk-radios__label" for="income-sources-2-every-two-weeks-a">
+                     Every two weeks
+                   </label>
+                 </div>
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="income-sources-2-every-four-weeks-a" name="benefits-frequency-a" type="radio" value="Every four weeks" {{ checked("benefits-frequency", "Every four weeks") }}>
+                   <label class="govuk-label govuk-radios__label" for="income-sources-2-every-four-weeks-a">
+                     Every four weeks
+                   </label>
+                 </div>
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="income-sources-2-monthly-a" name="benefits-frequency-a" type="radio" value="Monthly" {{ checked("benefits-frequency", "Monthly") }}>
+                   <label class="govuk-label govuk-radios__label" for="income-sources-2-monthly-a">
+                     Monthly
+                   </label>
+                 </div>
+
+               </div>
+             </fieldset>
+
+             <!-- wrapper ends -->
+             </div>
+
+             </div>
+
+             <div class="govuk-checkboxes__item">
+             <input class="govuk-checkboxes__input" id="income-sources-2" name="monthly-income" type="checkbox" value="yes" data-aria-controls="benefits-yes" {{ checked("monthly-income","yes") }} >
+             <label class="govuk-label govuk-checkboxes__label" for="income-sources-2">Childcare payments</label>
+             <span id="income-sources-2-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, to a childminder, nanny or nursery.</span>
+             </div>
+             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="benefits-yes">
+             <div class="govuk-form-group">
+             <label class="govuk-label" for="income-sources-2-value">Enter amount</label>
+             <!-- wrapper starts -->
+             <div class="govuk-input__wrapper">
+               <div class="govuk-input__prefix" aria-hidden="true">£</div>
+               <input class="govuk-input govuk-input--width-5" id="income-sources-2-value" name="income-sources-2-value" type="text" value="{{ data['income-sources-2-value']}}">
+             </div>
+
+             <div class="govuk-!-padding-bottom-4"></div>
+
+             <fieldset class="govuk-fieldset">
+               <label class="govuk-label" for="">
+                 Enter frequency
+               </label>
+               <div class="govuk-radios" data-module="govuk-radios">
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="income-sources-2-every-week-b" name="benefits-frequency-b" type="radio" value="Every week" {{ checked("benefits-frequency", "Every week") }}>
+                   <label class="govuk-label govuk-radios__label" for="income-sources-2-every-week-b">
+                     Every week
+                   </label>
+                 </div>
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="income-sources-2-every-two-weeks-b" name="benefits-frequency-b" type="radio" value="Every two weeks" {{ checked("benefits-frequency", "Every two weeks") }}>
+                   <label class="govuk-label govuk-radios__label" for="income-sources-2-every-two-weeks-b">
+                     Every two weeks
+                   </label>
+                 </div>
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="income-sources-2-every-four-weeks-b" name="benefits-frequency-b" type="radio" value="Every four weeks" {{ checked("benefits-frequency", "Every four weeks") }}>
+                   <label class="govuk-label govuk-radios__label" for="income-sources-2-every-four-weeks-b">
+                     Every four weeks
+                   </label>
+                 </div>
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="income-sources-2-monthly-b" name="benefits-frequency-b" type="radio" value="Monthly" {{ checked("benefits-frequency", "Monthly") }}>
+                   <label class="govuk-label govuk-radios__label" for="income-sources-2-monthly-b">
+                     Monthly
+                   </label>
+                 </div>
+
+               </div>
+             </fieldset>
+
+             <!-- wrapper ends -->
+             </div>
+             </div>
+
+             <div class="govuk-checkboxes__item">
+             <input class="govuk-checkboxes__input" id="income-sources-3" name="monthly-income" type="checkbox" value="yes" data-aria-controls="financial-help-yes" {{ checked("monthly-income","yes") }}>
+             <label class="govuk-label govuk-checkboxes__label" for="income-sources-3">Maintenance payments to a former partner</label>
+             <span id="income-sources-3-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">This includes child maintenance.</span>
+             </div>
+             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="financial-help-yes">
+             <div class="govuk-form-group">
+             <label class="govuk-label" for="income-sources-3-value">Enter amount</label>
+             <!-- wrapper starts -->
+             <div class="govuk-input__wrapper">
+               <div class="govuk-input__prefix" aria-hidden="true">£</div>
+               <input class="govuk-input govuk-input--width-5" id="income-sources-2-value" name="income-sources-2-value" type="text" value="{{ data['income-sources-2-value']}}">
+             </div>
+
+             <div class="govuk-!-padding-bottom-4"></div>
+
+             <fieldset class="govuk-fieldset">
+               <label class="govuk-label" for="">
+                 Enter frequency
+               </label>
+               <div class="govuk-radios" data-module="govuk-radios">
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="income-sources-2-every-week-c" name="benefits-frequency-c" type="radio" value="Every week" {{ checked("benefits-frequency", "Every week") }}>
+                   <label class="govuk-label govuk-radios__label" for="income-sources-2-every-week-c">
+                     Every week
+                   </label>
+                 </div>
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="income-sources-2-every-two-weeks-c" name="benefits-frequency-c" type="radio" value="Every two weeks" {{ checked("benefits-frequency", "Every two weeks") }}>
+                   <label class="govuk-label govuk-radios__label" for="income-sources-2-every-two-weeks-c">
+                     Every two weeks
+                   </label>
+                 </div>
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="income-sources-2-every-four-weeks-c" name="benefits-frequency-c" type="radio" value="Every four weeks" {{ checked("benefits-frequency", "Every four weeks") }}>
+                   <label class="govuk-label govuk-radios__label" for="income-sources-2-every-four-weeks-c">
+                     Every four weeks
+                   </label>
+                 </div>
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="income-sources-2-monthly-c" name="benefits-frequency-c" type="radio" value="Monthly" {{ checked("benefits-frequency", "Monthly") }}>
+                   <label class="govuk-label govuk-radios__label" for="income-sources-2-monthly-c">
+                     Monthly
+                   </label>
+                 </div>
+
+               </div>
+             </fieldset>
+
+             <!-- wrapper ends -->
+             </div>
+             </div>
+
+             <div class="govuk-checkboxes__item">
+             <input class="govuk-checkboxes__input" id="income-sources-4" name="monthly-income" type="checkbox" value="yes" data-aria-controls="maintenance-yes" {{ checked("monthly-income","yes") }}>
+             <label class="govuk-label govuk-checkboxes__label" for="income-sources-4">Payment towards legal aid in a criminal case.</label>
+             </div>
+             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="maintenance-yes">
+             <div class="govuk-form-group">
+             <label class="govuk-label" for="income-sources-4-value">Enter amount</label>
+             <!-- wrapper starts -->
+             <div class="govuk-input__wrapper">
+               <div class="govuk-input__prefix" aria-hidden="true">£</div>
+               <input class="govuk-input govuk-input--width-5" id="income-sources-2-value" name="income-sources-2-value" type="text" value="{{ data['income-sources-2-value']}}">
+             </div>
+
+             <div class="govuk-!-padding-bottom-4"></div>
+
+             <fieldset class="govuk-fieldset">
+               <label class="govuk-label" for="">
+                 Enter frequency
+               </label>
+               <div class="govuk-radios" data-module="govuk-radios">
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="income-sources-2-every-week-d" name="benefits-frequency-d" type="radio" value="Every week" {{ checked("benefits-frequency", "Every week") }}>
+                   <label class="govuk-label govuk-radios__label" for="income-sources-2-every-week-b">
+                     Every week
+                   </label>
+                 </div>
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="income-sources-2-every-two-weeks-d" name="benefits-frequency-d" type="radio" value="Every two weeks" {{ checked("benefits-frequency", "Every two weeks") }}>
+                   <label class="govuk-label govuk-radios__label" for="income-sources-2-every-two-weeks-d">
+                     Every two weeks
+                   </label>
+                 </div>
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="income-sources-2-every-four-weeks-d" name="benefits-frequency-d" type="radio" value="Every four weeks" {{ checked("benefits-frequency", "Every four weeks") }}>
+                   <label class="govuk-label govuk-radios__label" for="income-sources-2-every-four-weeks-d">
+                     Every four weeks
+                   </label>
+                 </div>
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="income-sources-2-monthly-d" name="benefits-frequency-d" type="radio" value="Monthly" {{ checked("benefits-frequency", "Monthly") }}>
+                   <label class="govuk-label govuk-radios__label" for="income-sources-2-monthly-d">
+                     Monthly
+                   </label>
+                 </div>
+
+               </div>
+             </fieldset>
+
+             <!-- wrapper ends -->
+             </div>
+           </div>
+
+             <!-- none -->
+             <div class="govuk-checkboxes__divider">or</div>
+             <div class="govuk-checkboxes__item">
+             <input class="govuk-checkboxes__input" id="capital-8" name="monthly-income" type="checkbox" value="none" data-behaviour="exclusive" {{ checked("monthly-income","none") }}>
+             <label class="govuk-label govuk-checkboxes__label" for="capital-8">
+             My client has no monthly income
+             </label>
+             </div>
+             </div>
+             <!-- none -->
+
+             </div>
+
+           </fieldset>
+
+           <div class="govuk-button-group">
+           <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
+           <a class="govuk-link" href="/start">Cancel</a>
+           </div>
+
+         </div>
+
+       </form>
+
+       <!--<div class="right-sidebar-menu">
+         <div class="govuk-grid-column-one-third">
+           <aside class="app-related-items" role="complementary">
+             <h2 class="govuk-body-m" id="subsection-title">
+             <strong>Reference number</strong>
+             <p class="govuk-body-m">HDJ-212-3F</p>
+             </h2>
+             <h2 class="govuk-body-m" id="subsection-title">
+             <strong>Date</strong>
+             <p class="govuk-body-m">16 August 2022</p>
+             </h2>
+             <h2 class="govuk-body-m" id="subsection-title">
+             <strong>Related content</strong>
+            <p><a href="#">Guidance on benefits payments</a></p>
+             </h2>
+           </aside>
+
+
+         </div>
+       </div>-->
+
+   </div>
+
+
+ </div>
+
+{% endblock %}
