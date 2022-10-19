@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Dependant – {{ serviceName }}
+{% endblock %}
+
+{% set currency = "£" %}
+{% set ownership = "%" %}
+
+
+{% block beforeContent %}
+
+<style>
+.govuk-summary-list__key{width: 20%;}
+</style>
+
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <!--<form class="form" action="{% if data['returnto'] %} {{ data['returnto']}} {% else %}/client-income{% endif %}" method="post">-->
+        <form class="form" action="" method="post">
+
+          <input class="govuk-input govuk-input--width-5" id="" name="returnto" type="hidden" value="">
+
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset">
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <span class="govuk-caption-l">About your client</span>
+                 <h1 class="govuk-fieldset__heading">You have added 1 dependant</h1>
+               </legend>
+
+               <div class="govuk-!-padding-bottom-6"></div>
+
+
+              <div class="govuk-summary-list">
+
+                <div class="govuk-summary-list__row">
+
+                  <dd class="govuk-summary-list__value">{{ data['dependant-type']}}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link" href="test-dependants-entry">Change<span class="govuk-visually-hidden"></span></a></dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"></span></a></dd>
+
+                </div>
+
+              </div>
+
+              <div class="govuk-!-padding-bottom-2"></div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">Does your client receive any other dependants?</h1>
+          </legend>
+          <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+            <div class="govuk-radios__item">
+
+              <input class="govuk-radios__input" id="other-dependants-true" name="has-other-dependants" type="radio" value="Yes" {{ checked("has-other-dependants", "Yes") }}>
+              <label class="govuk-label govuk-radios__label" for="other-benefits-true">Yes</label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="other-dependants-false" name="has-other-dependants" type="radio" value="No" {{ checked("has-other-dependants", "No") }}>
+              <label class="govuk-label govuk-radios__label" for="other_benefits-false">No</label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+            </fieldset>
+
+          </div>
+
+        <!-- send start -->
+        <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
+        </div>
+
+        </form>
+
+      </div>
+
+      <div class="right-sidebar-menu">
+        <div class="govuk-grid-column-one-third">
+          <aside class="app-related-items" role="complementary">
+            <h2 class="govuk-body-m" id="subsection-title">
+            <strong>Date</strong>
+            <p class="govuk-body-m">16 August 2022</p>
+            </h2>
+
+          </aside>
+        </div>
+      </div>
+
+  </div>
+
+
+{% endblock %}
