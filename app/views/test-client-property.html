@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Property – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <form class="form" action="/test-client-property-entry" method="post">
+
+
+
+      <!-- question start -->
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <span class="govuk-caption-l">Your client's finances</span>
+             <h1 class="govuk-fieldset__heading">Does your client own the home they live in?</h1>
+           </legend>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="homeowner-mortgage" name="homeowner" type="radio" value="Yes, with a mortgage or loan" {{ checked("homeowner", "Yes, with a mortgage or loan") }}>
+              <label class="govuk-label govuk-radios__label" for="homeowner-mortgage">
+                Yes, with a mortgage or loan
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="homeowner-outright" name="homeowner" type="radio" value="Yes, owned outright" {{ checked("homeowner", "Yes, owned outright") }}>
+              <label class="govuk-label govuk-radios__label" for="homeowner-outright">
+                Yes, owned outright
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="homeowner-no" name="homeowner" type="radio" value="No" {{ checked("homeowner", "No") }}>
+              <label class="govuk-label govuk-radios__label" for="homeowner-no">
+                No
+              </label>
+            </div>
+        </fieldset>
+      </div>
+      <!-- question end -->
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
+      </div>
+
+      </form>
+
+    </div>
+
+    <div class="right-sidebar-menu">
+      <div class="govuk-grid-column-one-third">
+        <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-body-m" id="subsection-title">
+          <strong>Date</strong>
+          <p class="govuk-body-m">16 August 2022</p>
+          </h2>
+          <h2 class="govuk-body-m" id="subsection-title">
+          <strong>Related content</strong>
+         <p><a href="#">Guidance on properties</a></p>
+          </h2>
+        </aside>
+      </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+{% endblock %}
