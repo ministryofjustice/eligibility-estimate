@@ -36,6 +36,7 @@
 
                <div class="govuk-!-padding-bottom-6"></div>
 
+               {% if data['monthly-income'].indexOf('Housing payments') !== -1 %}
 
               <div class="govuk-form-group">
                <label class="govuk-label govuk-label--m" for="">Housing payments</label>
@@ -71,13 +72,14 @@
             </div>
 
             <div class="govuk-!-padding-bottom-6"></div>
+            {% endif %}
 
 
 
              <div class="govuk-!-padding-bottom-4"></div>
 
 
-
+             {% if data['monthly-income'].indexOf('Childcare payments') !== -1 %}
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--m" for="">Childcare payments</label>
              <label class="govuk-label" for="client-childcare-payments-value">Enter amount</label>
@@ -112,11 +114,12 @@
           </div>
 
           <div class="govuk-!-padding-bottom-6"></div>
+          {% endif %}
 
 
            <div class="govuk-!-padding-bottom-4"></div>
 
-
+           {% if data['monthly-income'].indexOf('Maintenance payments') !== -1 %}
            <div class="govuk-form-group">
              <label class="govuk-label govuk-label--m" for="">Maintenance payments to a former partner</label>
             <label class="govuk-label" for="client-former-partner-value">Enter amount</label>
@@ -151,11 +154,11 @@
          </div>
 
          <div class="govuk-!-padding-bottom-6"></div>
-
+         {% endif %}
 
           <div class="govuk-!-padding-bottom-4"></div>
 
-
+          {% if data['monthly-income'].indexOf('Payment towards legal aid') !== -1 %}
           <div class="govuk-form-group">
             <h2 class="govuk-heading-m">Payments towards legal aid in a criminal case</h2>
            <label class="govuk-label" for="client-legal-aid-crim-case-value">Enter amount</label>
@@ -190,7 +193,7 @@
         </div>
 
         <div class="govuk-!-padding-bottom-6"></div>
-
+        {% endif %}
 
          <div class="govuk-!-padding-bottom-4"></div>
 
