@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Property details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="{% if data['returnto'] %} {{ data['returnto']}} {% else %}/client-vehicle-1{% endif %}" method="post">
+
+        <input class="govuk-input govuk-input--width-5" id="" name="returnto" type="hidden" value="">
+
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <span class="govuk-caption-l">Your client's finances</span>
+               <h1 class="govuk-fieldset__heading">Tell us about your client's property</h1>
+             </legend>
+
+             <div class="govuk-!-padding-bottom-6"></div>
+
+            <div class="govuk-form-group">
+             <label class="govuk-label govuk-label--m" for="client-home-value">How much is your client's home worth?</label>
+             <div id="client-home-value-hint" class="govuk-hint">You can use property websites to find the estimated value.</div>
+             <!-- wrapper starts -->
+             <div class="govuk-input__wrapper">
+               <div class="govuk-input__prefix" aria-hidden="true">£</div>
+               <input class="govuk-input govuk-input--width-5" id="client-home-value" name="client-home-value" type="text" value="{{ data['client-home-value']}}">
+             </div>
+             <!-- wrapper ends -->
+           </div>
+
+           {% if data['homeowner'] == 'Yes, with a mortgage or loan' %}
+
+           <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="client-home-mortgage">What is the outstanding mortgage on your client's home?</label>
+            <div id="client-home-value-hint" class="govuk-hint">Check the statement from your client's mortgage provider or lender.</div>
+            <!-- wrapper starts -->
+            <div class="govuk-input__wrapper">
+              <div class="govuk-input__prefix" aria-hidden="true">£</div>
+              <input class="govuk-input govuk-input--width-5" id="client-home-mortgage" name="client-home-mortgage" type="text" value="{{ data['client-home-mortgage']}}">
+            </div>
+            <!-- wrapper ends -->
+          </div>
+          {% else %}
+          {% endif %}
+
+          <div class="govuk-form-group">
+           <label class="govuk-label govuk-label--m" for="client-home-own">What percentage share of their home does your client legally own?</label>
+           <div id="client-home-value-hint" class="govuk-hint">Your client's name must be on the property deeds, lease or freehold.</div>
+           <!-- wrapper starts -->
+           <div class="govuk-input__wrapper">
+             <input class="govuk-input govuk-input--width-5" id="client-home-own" name="client-home-own" type="text" value="{{ data['client-home-own']}}">
+             <div class="govuk-input__suffix" aria-hidden="true">%</div>
+           </div>
+           <!-- wrapper ends -->
+         </div>
+         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="none-d" name="none-d" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="none-d">
+              This asset is a subject matter of dispute
+            </label>
+          </div>
+        </div>
+
+          </fieldset>
+
+        </div>
+
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
+      </div>
+
+      </form>
+
+    </div>
+
+    <div class="right-sidebar-menu">
+      <div class="govuk-grid-column-one-third">
+        <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-body-m" id="subsection-title">
+          <strong>Date</strong>
+          <p class="govuk-body-m">16 August 2022</p>
+          </h2>
+          <h2 class="govuk-body-m" id="subsection-title">
+          <strong>Related content</strong>
+         <p><a href="#">Guidance on properties</a></p>
+          </h2>
+        </aside>
+      </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+{% endblock %}
