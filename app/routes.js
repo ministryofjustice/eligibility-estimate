@@ -243,7 +243,6 @@ router.post('/partnerBuyVehicleThree', function (req, res) {
   })
 
 
-
   ///////////////////////////////////
   // V2 routes here
 

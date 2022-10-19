@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Outgoings – {{ serviceName }}
+
+{% endblock %}
+
+{% set currency = "£" %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+   <div class="govuk-grid-column-two-thirds">
+
+       <form class="form" action="/test-monthly-outgoings-e" method="post">
+
+         <div class="govuk-form-group">
+
+           <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+             <span class="govuk-caption-l">Your client's finances</span>
+             <h1 class="govuk-fieldset__heading">What are your client's outgoings and deductions?</h1>
+             </legend>
+             <div id="contact-hint" class="govuk-hint">Select all that apply.</div>
+
+             <div class="govuk-!-padding-bottom-6"></div>
+
+             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+             <div class="govuk-checkboxes__item">
+             <input class="govuk-checkboxes__input" id="income-sources-1" name="monthly-income" type="checkbox" value="Housing payments" data-aria-controls="gross-monthly-income-yes" {{ checked("monthly-income","Housing payments") }} >
+             <label class="govuk-label govuk-checkboxes__label" for="income-sources-1">Housing payments</label>
+             <span id="income-sources-2-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, rent, mportgage or board and lodging.</span>
+             </div>
+
+
+             <div class="govuk-checkboxes__item">
+             <input class="govuk-checkboxes__input" id="income-sources-2" name="monthly-income" type="checkbox" value="Childcare payments" data-aria-controls="benefits-yes" {{ checked("monthly-income","Childcare payments") }} >
+             <label class="govuk-label govuk-checkboxes__label" for="income-sources-2">Childcare payments</label>
+             <span id="income-sources-2-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, to a childminder, nanny or nursery.</span>
+             </div>
+
+
+             <div class="govuk-checkboxes__item">
+             <input class="govuk-checkboxes__input" id="income-sources-3" name="monthly-income" type="checkbox" value="Maintenance payments" data-aria-controls="financial-help-yes" {{ checked("monthly-income","Maintenance payments") }}>
+             <label class="govuk-label govuk-checkboxes__label" for="income-sources-3">Maintenance payments to a former partner</label>
+             <span id="income-sources-3-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">This includes child maintenance.</span>
+             </div>
+
+
+             <div class="govuk-checkboxes__item">
+             <input class="govuk-checkboxes__input" id="income-sources-4" name="monthly-income" type="checkbox" value="Payment towards legal aid" data-aria-controls="maintenance-yes" {{ checked("monthly-income","Payment towards legal aid") }}>
+             <label class="govuk-label govuk-checkboxes__label" for="income-sources-4">Payment towards legal aid in a criminal case.</label>
+             </div>
+
+
+             <!-- none -->
+             <div class="govuk-checkboxes__divider">or</div>
+             <div class="govuk-checkboxes__item">
+             <input class="govuk-checkboxes__input" id="capital-8" name="monthly-income" type="checkbox" value="none" data-behaviour="exclusive" {{ checked("monthly-income","none") }}>
+             <label class="govuk-label govuk-checkboxes__label" for="capital-8">
+             My client has no monthly income
+             </label>
+             </div>
+             </div>
+             <!-- none -->
+
+             </div>
+
+           </fieldset>
+
+           <div class="govuk-button-group">
+           <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
+           <a class="govuk-link" href="/start">Cancel</a>
+           </div>
+
+         </div>
+
+       </form>
+
+       <!--<div class="right-sidebar-menu">
+         <div class="govuk-grid-column-one-third">
+           <aside class="app-related-items" role="complementary">
+             <h2 class="govuk-body-m" id="subsection-title">
+             <strong>Reference number</strong>
+             <p class="govuk-body-m">HDJ-212-3F</p>
+             </h2>
+             <h2 class="govuk-body-m" id="subsection-title">
+             <strong>Date</strong>
+             <p class="govuk-body-m">16 August 2022</p>
+             </h2>
+             <h2 class="govuk-body-m" id="subsection-title">
+             <strong>Related content</strong>
+            <p><a href="#">Guidance on benefits payments</a></p>
+             </h2>
+           </aside>
+
+
+         </div>
+       </div>-->
+
+   </div>
+
+
+ </div>
+
+{% endblock %}
