@@ -243,6 +243,41 @@ router.post('/partnerBuyVehicleThree', function (req, res) {
   })
 
 
+  // Run this code when a form is submitted to 'testOwnsHomeThree'
+  router.post('/testOwnsHomeThree', function (req, res) {
+
+    // Make a variable and give it the value from 'homeowner'
+    var testOwnsHomeThree = req.session.data['homeowner']
+
+    // Check whether the variable matches a condition
+    if (testOwnsHomeThree == "No"){
+      // Skip property q's and go to check answers
+      res.redirect('/test-check-answers')
+    } else {
+      // Send user to next property entry
+      res.redirect('/test-client-property-entry')
+    }
+
+    })
+
+    // Run this code when a form is submitted to 'testOwnsVehicleThree'
+    router.post('/testOwnsVehicleThree', function (req, res) {
+
+      // Make a variable and give it the value from 'homeowner'
+      var testOwnsVehicleThree = req.session.data['client-vehicle-own']
+
+      // Check whether the variable matches a condition
+      if (testOwnsVehicleThree == "No"){
+        // Skip property q's and go to check answers
+        res.redirect('/test-check-answers')
+      } else {
+        // Send user to next property entry
+        res.redirect('/test-client-vehicle-entry')
+      }
+
+      })
+
+
   ///////////////////////////////////
   // V2 routes here
 

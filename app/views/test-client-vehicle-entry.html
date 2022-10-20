@@ -20,7 +20,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="" method="post">
+      <form class="form" action="{% if data['returnto'] %} {{ data['returnto']}}{% else %}/test-client-assets{% endif %}" method="post">
 
         <div class="govuk-form-group">
 
@@ -129,7 +129,7 @@
 
             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
              <div class="govuk-checkboxes__item">
-               <input class="govuk-checkboxes__input" id="none-g" name="none-g" type="checkbox" value="carcasses">
+               <input class="govuk-checkboxes__input" id="none-g" name="none-g" type="checkbox" value="Yes" {{ checked("none-g","Yes") }}>
                <label class="govuk-label govuk-checkboxes__label" for="none-g">
                  This asset is a subject matter of dispute
                </label>
