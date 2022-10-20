@@ -318,12 +318,21 @@ Check answers – {{ serviceName }}
 
           {% if data['homeowner'] == 'Yes, with a mortgage or loan' or data['homeowner'] == 'Yes, owned outright' %}
 
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Owns the home they live in<span class="govuk-visually-hidden">Owns the home they live in</span></dt>
             {% if data['homeowner'] %}<dd class="govuk-summary-list__value">{{ data['homeowner'] }}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
+
+             <dd class="govuk-summary-list__actions">
+               {% if data['none-d'] %}
+               <strong class="govuk-tag">Disputed asset</strong>
+               {% else %}
+               {% endif %}
+             </dd>
+
           </div>
 
           <div class="govuk-summary-list__row">
@@ -332,6 +341,10 @@ Check answers – {{ serviceName }}
              {% else %}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
+
+             <dd class="govuk-summary-list__actions">
+
+             </dd>
 
           </div>
 
@@ -342,6 +355,9 @@ Check answers – {{ serviceName }}
              {% else %}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
+             <dd class="govuk-summary-list__actions">
+
+             </dd>
           </div>
           {% else %}
           {% endif %}
@@ -352,10 +368,13 @@ Check answers – {{ serviceName }}
              {% else %}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
+             <dd class="govuk-summary-list__actions">
+
+             </dd>
 
           </div>
 
-          {% if data['none-d'] %}
+        <!--  {% if data['none-d'] %}
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Subject matter of dispute<span class="govuk-visually-hidden">Subject matter of dispute</span></dt>
@@ -363,12 +382,15 @@ Check answers – {{ serviceName }}
              {% else %}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
+             <dd class="govuk-summary-list__actions">
+
+             </dd>
           </div>
 
           {% else %}
-          {% endif %}
+          {% endif %}-->
 
-          {% if data['none-d'] %}
+        <!--  {% if data['none-d'] %}
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Dispute status<span class="govuk-visually-hidden">Subject matter of dispute</span></dt>
@@ -377,7 +399,7 @@ Check answers – {{ serviceName }}
           </div>
 
           {% else %}
-          {% endif %}
+          {% endif %}-->
 
         <!--  {% if data['none-d'] %}
           <div class="govuk-summary-list__row">
@@ -415,6 +437,13 @@ Check answers – {{ serviceName }}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
 
+             <dd class="govuk-summary-list__actions">
+               {% if data['none-g'] %}
+               <strong class="govuk-tag">Disputed asset</strong>
+               {% else %}
+               {% endif %}
+             </dd>
+
           </div>
 
 
@@ -425,6 +454,9 @@ Check answers – {{ serviceName }}
              {% else %}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
+             <dd class="govuk-summary-list__actions">
+
+             </dd>
 
           </div>
           <div class="govuk-summary-list__row">
@@ -433,6 +465,9 @@ Check answers – {{ serviceName }}
              {% else %}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
+             <dd class="govuk-summary-list__actions">
+
+             </dd>
 
           </div>
           <div class="govuk-summary-list__row">
@@ -441,6 +476,9 @@ Check answers – {{ serviceName }}
              {% else %}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
+             <dd class="govuk-summary-list__actions">
+
+             </dd>
 
           </div>
           <div class="govuk-summary-list__row">
@@ -448,10 +486,12 @@ Check answers – {{ serviceName }}
             {% if data['client-vehicle-payments'] == 'Yes' %}<dd class="govuk-summary-list__value">{{ currency }}{{ data['paymentLeft'] | fixed }}</dd>
              {% elseif data['client-vehicle-payments'] == 'No' %}<dd class="govuk-summary-list__value">{{ data['client-vehicle-payments']}}</dd>
              {% else %}<dd class="govuk-summary-list__value">Not applicable</dd>{% endif %}
+             <dd class="govuk-summary-list__actions">
 
+             </dd>
           </div>
 
-          {% if data['none-g'] %}
+        <!--  {% if data['none-g'] %}
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Subject matter of dispute<span class="govuk-visually-hidden">Subject matter of dispute</span></dt>
@@ -473,7 +513,7 @@ Check answers – {{ serviceName }}
           </div>
 
           {% else %}
-          {% endif %}
+          {% endif %}-->
 
           {% else %}
           <div class="govuk-summary-list__row">
@@ -503,12 +543,14 @@ Check answers – {{ serviceName }}
                      <dd class="govuk-summary-list__value">Not applicable</dd>
                  {% endif %}
 
-                 {% if data['none-a'] %}
+
                  <dd class="govuk-summary-list__actions">
+                   {% if data['none-a'] %}
                    <strong class="govuk-tag">Disputed asset</strong>
+                   {% else %}
+                   {% endif %}
                  </dd>
-                 {% else %}
-                 {% endif %}
+
 
               </div>
 
@@ -519,12 +561,11 @@ Check answers – {{ serviceName }}
                      <dd class="govuk-summary-list__value">Not applicable</dd>
                  {% endif %}
 
-                 {% if data['none-a'] %}
+
                  <dd class="govuk-summary-list__actions">
-                   <strong class="govuk-tag">Disputed asset</strong>
+
                  </dd>
-                 {% else %}
-                 {% endif %}
+
 
               </div>
 
@@ -535,12 +576,11 @@ Check answers – {{ serviceName }}
                      <dd class="govuk-summary-list__value">Not applicable</dd>
                  {% endif %}
 
-                 {% if data['none-a'] %}
+
                  <dd class="govuk-summary-list__actions">
-                   <strong class="govuk-tag">Disputed asset</strong>
+
                  </dd>
-                 {% else %}
-                 {% endif %}
+
 
               </div>
 
@@ -550,12 +590,14 @@ Check answers – {{ serviceName }}
                  {% else %}
                      <dd class="govuk-summary-list__value">Not applicable</dd>
                  {% endif %}
-                 {% if data['none-c'] %}
+
                  <dd class="govuk-summary-list__actions">
+                   {% if data['none-b'] %}
                    <strong class="govuk-tag">Disputed asset</strong>
+                   {% else %}
+                   {% endif %}
                  </dd>
-                 {% else %}
-                 {% endif %}
+
               </div>
 
               <div class="govuk-summary-list__row">
@@ -565,12 +607,14 @@ Check answers – {{ serviceName }}
                      <dd class="govuk-summary-list__value">Not applicable</dd>
                  {% endif %}
 
-                 {% if data['none-c'] %}
+
                  <dd class="govuk-summary-list__actions">
+                   {% if data['none-c'] %}
                    <strong class="govuk-tag">Disputed asset</strong>
+                   {% else %}
+                   {% endif %}
                  </dd>
-                 {% else %}
-                 {% endif %}
+
               </div>
 
               <div class="govuk-summary-list__row">
@@ -580,12 +624,14 @@ Check answers – {{ serviceName }}
                      <dd class="govuk-summary-list__value">Not applicable</dd>
                  {% endif %}
 
-                 {% if data['none-d'] %}
+
                  <dd class="govuk-summary-list__actions">
+                   {% if data['none-d'] %}
                    <strong class="govuk-tag">Disputed asset</strong>
+                   {% else %}
+                   {% endif %}
                  </dd>
-                 {% else %}
-                 {% endif %}
+
 
               </div>
 
