@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Dependant – {{ serviceName }}
+{% endblock %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" action="/test-dependants-entry" method="post">
+
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset">
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <span class="govuk-caption-l">About your client</span>
+                <h1 class="govuk-fieldset__heading">Does your client have any dependants?</h1>
+              </legend>
+
+              <p class="govuk-body">A dependant is a child or adult who:</p>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>lives with your client</li>
+                <li>depends on your client for financial support</li>
+              </ul>
+
+              <div class="govuk-inset-text">Don't include your client's partner if they have one.</div>
+
+
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+              <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="income-sources-3" name="monthly-income" type="checkbox" value="yes" data-aria-controls="financial-help-yes" {{ checked("monthly-income","yes") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="income-sources-3">Child dependants</label>
+              <span id="income-sources-3-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, your client's child, grandchild, neice or nephew.</span>
+              </div>
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="financial-help-yes">
+              <div class="govuk-form-group">
+              <label class="govuk-label" for="income-sources-3-value">Enter number of child dependants</label>
+              <!-- wrapper starts -->
+              <div class="govuk-input__wrapper">
+                <input class="govuk-input govuk-input--width-5" id="income-sources-3-value" name="income-sources-3-value" type="text" value="{{ data['income-sources-3-value']}}">
+              </div>
+              <!-- wrapper ends -->
+              </div>
+              </div>
+
+              <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="income-sources-4" name="monthly-income" type="checkbox" value="yes" data-aria-controls="maintenance-yes" {{ checked("monthly-income","yes") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="income-sources-4">Adult dependants</label>
+              <span id="income-sources-4-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">For example, a parent, grandparent, aunt or uncle.</span>
+              </div>
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="maintenance-yes">
+              <div class="govuk-form-group">
+              <label class="govuk-label" for="income-sources-4-value">Enter number of adult dependants</label>
+              <!-- wrapper starts -->
+              <div class="govuk-input__wrapper">
+                <input class="govuk-input govuk-input--width-5" id="income-sources-4-value" name="income-sources-4-value" type="text" value="{{ data['income-sources-4-value']}}">
+              </div>
+              <!-- wrapper ends -->
+              </div>
+              </div>
+
+
+
+
+              <!-- none -->
+              <div class="govuk-checkboxes__divider">or</div>
+              <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="capital-8" name="monthly-income" type="checkbox" value="none" data-behaviour="exclusive" {{ checked("monthly-income","none") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="capital-8">
+              My client has no dependants
+              </label>
+              </div>
+              </div>
+              <!-- none -->
+
+
+
+
+
+            </fieldset>
+
+          </div>
+
+        <!-- send start -->
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
+        </div>
+
+        </form>
+
+      </div>
+
+      <div class="right-sidebar-menu">
+        <div class="govuk-grid-column-one-third">
+          <aside class="app-related-items" role="complementary">
+            <h2 class="govuk-body-m" id="subsection-title">
+            <strong>Date</strong>
+            <p class="govuk-body-m">16 August 2022</p>
+            </h2>
+
+          </aside>
+        </div>
+      </div>
+
+  </div>
+
+
+{% endblock %}
