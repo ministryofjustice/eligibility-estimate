@@ -33,7 +33,7 @@ Check answers – {{ serviceName }}
 
     <!-- income start -->
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l" id="client-employment">Your client's employment payments</h2></div>
+      <div class="govuk-grid-column-two-thirds"><h2 class="govuk-heading-l" id="client-employment">Your client's salary breakdown</h2></div>
       <div class="govuk-grid-column-one-third"><p><a class="govuk-link govuk-summary-list__actions" href="/client-employment-entry?returnto=check-answers-2#client-employment">Change</a></p></div>
     </div>
 
@@ -68,7 +68,7 @@ Check answers – {{ serviceName }}
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Frequency<span class="govuk-visually-hidden"> Frequency</span></dt>
-        {% if data['employment-select-frequency'] %}<dd class="govuk-summary-list__value">{{ data['employment-select-frequency'] }}</dd>
+        {% if data['client-salary-frequency'] %}<dd class="govuk-summary-list__value">{{ data['client-salary-frequency'] }}</dd>
          {% else %}
              <dd class="govuk-summary-list__value">Not applicable</dd>
          {% endif %}
@@ -395,7 +395,7 @@ Check answers – {{ serviceName }}
                  <dd class="govuk-summary-list__value">Not provided</dd>
              {% endif %}-->
           </div>
-      
+
         </dl>
         <!-- vehicles end -->
 

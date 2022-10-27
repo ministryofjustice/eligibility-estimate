@@ -64,7 +64,52 @@
       </div>
 
       <div class="govuk-form-group">
-        <label class="govuk-label" for="employment-select-frequency">Select frequency</label>
+
+        <fieldset class="govuk-fieldset">
+          <label class="govuk-label" for="">
+            Enter frequency
+          </label>
+          <div class="govuk-radios" data-module="govuk-radios">
+          <!--  <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="client-salary-three-monthly" name="client-salary-frequency" type="radio" value="Total in last 3 months" {{ checked("client-salary-frequency", "Total in last 3 months") }} >
+              <label class="govuk-label govuk-radios__label" for="client-salary-three-monthly">
+                Total in last 3 months
+              </label>
+            </div>-->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="client-salary-weekly" name="client-salary-frequency" type="radio" value="Every week" {{ checked("client-salary-frequency", "Every week") }} >
+              <label class="govuk-label govuk-radios__label" for="client-salary-weekly">
+                Every week
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="client-salary-twice-weekly" name="client-salary-frequency" type="radio" value="Every two weeks" {{ checked("client-salary-frequency", "Every two weeks") }} >
+              <label class="govuk-label govuk-radios__label" for="client-salary-twice-weekly">
+                Every two weeks
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="client-salary-four-weekly" name="client-salary-frequency" type="radio" value="Every four weeks" {{ checked("client-salary-frequency", "Every four weeks") }} >
+              <label class="govuk-label govuk-radios__label" for="client-salary-four-weekly">
+                Every four weeks
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="client-salary-monthly" name="client-salary-frequency" type="radio" value="Monthly" {{ checked("client-salary-frequency", "Monthly") }} >
+              <label class="govuk-label govuk-radios__label" for="client-salary-monthly">
+                Monthly
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="client-salary-annually" name="client-salary-frequency" type="radio" value="Annually" {{ checked("client-salary-frequency", "Annually") }} >
+              <label class="govuk-label govuk-radios__label" for="client-salary-annually">
+                Annually
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+      <!--  <label class="govuk-label" for="employment-select-frequency">Select frequency</label>
              <select class="govuk-select" id="employment-select-frequency" name="employment-select-frequency">
                <option value="">--</option>
                <option value="total" {{"selected" if data['employment-select-frequency'] == "total"}}>Total in the last 3 months</option>
@@ -73,7 +118,7 @@
                <option value="Every four weeks" {{"selected" if data['employment-select-frequency'] == "Every four weeks"}}>Every four weeks</option>
                <option value="Monthly" {{"selected" if data['employment-select-frequency'] == "Monthly"}}>Monthly</option>
                <option value="Annually" {{"selected" if data['employment-select-frequency'] == "Annually"}}>Annually</option>
-             </select>
+             </select>-->
       </div>
 
       <div class="govuk-button-group">
