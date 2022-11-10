@@ -47,20 +47,15 @@ heroku apps:create [name of your app] --region eu
 ```
 Replace `[name of your app]` with your app name from step 4.
 
-## 6) Set a password
+## 6) Set a username and password
 
-Prototypes made with the kit require a password when published online. This stops members of the public coming across your prototype by accident.
+Prototypes made with the kit require a username and password when published online. This stops members of the public coming across your prototype by accident.
 
-To set a password, run:
-
-```
-heroku config:set PASSWORD=password_here
-```
-
-If you get an error about username, run:
+### To set username and password:
 
 ```
 heroku config:set USERNAME=username_here
+heroku config:set PASSWORD=password_here
 ```
 
 ## 7) Deploy your work
