@@ -97,7 +97,6 @@
 
 <pre class="app-code" tabindex="0"><code>{% raw %}
 {{ govukCheckboxes({
-  idPrefix: "vehicle-features",
   name: "vehicle-features",
   fieldset: {
     legend: {
@@ -111,16 +110,19 @@
     {
       value: "Heated seats",
       text: "Heated seats",
+      id: "vehicle-features-heated-seats",
       checked: checked("vehicle-features", "Heated seats")
     },
     {
       value: "GPS",
       text: "GPS",
+      id: "vehicle-features-gps",
       checked: checked("vehicle-features", "GPS")
     },
     {
       value: "Radio",
       text: "Radio",
+      id: "vehicle-features-radio",
       checked: checked("vehicle-features", "Radio")
     }
   ]
@@ -135,7 +137,6 @@
 
 <pre class="app-code" tabindex="0"><code>{% raw %}
 {{ govukCheckboxes({
-  idPrefix: "vehicle-features",
   name: "vehicle1[vehicle-features]",
   fieldset: {
     legend: {
@@ -149,16 +150,19 @@
     {
       value: "Heated seats",
       text: "Heated seats",
+      id: "vehicle1-vehicle-features-heated-seats",
       checked: checked("['vehicle1']['vehicle-features']", "Heated seats")
     },
     {
       value: "GPS",
       text: "GPS",
+      id: "vehicle1-vehicle-features-gps",
       checked: checked("['vehicle1']['vehicle-features']", "GPS")
     },
     {
       value: "Radio",
       text: "Radio",
+      id: "vehicle1-vehicle-features-radio",
       checked: checked("['vehicle1']['vehicle-features']", "Radio")
     }
   ]
