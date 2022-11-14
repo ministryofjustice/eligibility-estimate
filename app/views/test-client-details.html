@@ -30,9 +30,30 @@ Client details – {{ serviceName }}
 
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
               <span class="govuk-caption-l">About your client</span>
-              <h1 class="govuk-fieldset__heading">What are your client's details?</h1>
+              <h1 class="govuk-fieldset__heading">Tell us about your client</h1>
             </legend>
             <div class="govuk-!-padding-bottom-6"></div>
+
+            <!-- question start -->
+        <h2 class="govuk-heading-m">Does your client have any dependants?</h2>
+            <div class="govuk-form-group">
+
+                <div id="contact-hint" class="govuk-hint">By dependant we mean a child or adult who lives with your client and depends on them for financial support.</div>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+
+                    <input class="govuk-radios__input" id="dependants-yes" name="dependants" type="radio" value="Yes" {{ checked("dependants","Yes") }} data-aria-controls="conditional-yes">
+                    <label class="govuk-label govuk-radios__label" for="dependants-yes">Yes</label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dependants-no" name="dependants" type="radio" value="No" {{ checked("dependants","No") }}>
+                    <label class="govuk-label govuk-radios__label" for="dependants-no">No</label>
+                  </div>
+            </div>
+            <div class="govuk-!-padding-bottom-6"></div>
+            <!-- question end -->
 
             <!-- question start -->
             <h2 class="govuk-heading-m">Is your client 60 or older?</h2>
@@ -53,68 +74,7 @@ Client details – {{ serviceName }}
             <div class="govuk-!-padding-bottom-6"></div>
             <!-- question end -->
 
-            <!-- question start -->
-            <h2 class="govuk-heading-m">Does your client have a partner?</h2>
-            <div class="govuk-form-group">
-
-                <div id="partner-hint" class="govuk-hint">
-                  This is a spouse, someone with whom they are in a civil relationship, a cohabiter or someone they share their finances with. They cannot be the opponent in any legal proiceedings. If 'yes' is answered we'll ask for some partner details next.
-                </div>
-                <div class="govuk-radios" data-module="govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="partner-yes" name="partner" type="radio" value="Yes" {{ checked("partner", "Yes") }}>
-                    <label class="govuk-label govuk-radios__label" for="partner-yes">Yes</label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="partner-no" name="partner" type="radio" value="No" {{ checked("partner", "No") }}>
-                    <label class="govuk-label govuk-radios__label" for="partner-no">No</label>
-                  </div>
-            </div>
-
-            <div class="govuk-!-padding-bottom-6"></div>
-
-            <details class="govuk-details" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  How should I answer this question?
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
-              </div>
-            </details>
-
-            <!-- question end -->
-
-            <!-- question start -->
-          <!--  <h2 class="govuk-heading-m">Does your client have any dependants?</h2>
-            <div class="govuk-form-group">
-
-                <div id="contact-hint" class="govuk-hint">By dependant we mean a child or adult who lives with your client and depends on them for financial support. Do not include your client's partner (if they have one).</div>
-
-                <div class="govuk-radios" data-module="govuk-radios">
-                  <div class="govuk-radios__item">
-
-                    <input class="govuk-radios__input" id="dependants-yes" name="dependants" type="radio" value="Yes" {{ checked("dependants","Yes") }} data-aria-controls="conditional-yes">
-                    <label class="govuk-label govuk-radios__label" for="dependants-yes">Yes</label>
-                  </div>
-
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes"> <!-- id needs to match data-aria-controls -->
-                  <!--  <div class="govuk-form-group">
-                        <label class="govuk-label" for="numberOfDependants">Enter the number of dependants</label>
-                      <input class="govuk-input govuk-input--width-5" id="numberOfDependants" name="numberOfDependants" type="text" value="{{ data['numberOfDependants'] }}">
-                    </div>
-                  </div>
-
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="dependants-no" name="dependants" type="radio" value="No" {{ checked("dependants","No") }}>
-                    <label class="govuk-label govuk-radios__label" for="dependants-no">No</label>
-                  </div>
-            </div>
-            <div class="govuk-!-padding-bottom-6"></div>-->
-            <!-- question end -->
-
-            <!-- question start -->
+            <!--
 
             {% if data['area-of-law'] == 'Immigration' or data['area-of-law'] == 'Asylum' %}
             <h2 class="govuk-heading-m">Is your client receiving asylum support?</h2>
@@ -136,7 +96,7 @@ Client details – {{ serviceName }}
             <div class="govuk-!-padding-bottom-6"></div>
             {% else %}
             {% endif %}
-            <!-- question end -->
+           -->
 
             <!-- question start -->
             <h2 class="govuk-heading-m">What is your client's employment status?</h2>

@@ -277,6 +277,23 @@ router.post('/partnerBuyVehicleThree', function (req, res) {
 
       })
 
+      //does the client have a partner
+      router.post('/client-partner-decide', function (req, res) {
+
+        // Make a variable and give it the value from 'passport-benefits'
+        var hasPartner = req.session.data['client-partner']
+
+        // Check whether the variable matches a condition
+        if (hasPartner == "Yes"){
+          // display page with client and partner q's
+          res.redirect('/test-client-partner-details')
+        } else {
+          // display page with client q's
+          res.redirect('/test-client-details')
+        }
+
+      })
+
 
   ///////////////////////////////////
   // V2 routes here

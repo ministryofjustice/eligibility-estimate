@@ -22,7 +22,7 @@ Case details – {{ serviceName }}
       <div class="govuk-grid-column-two-thirds">
 
           <!--<form class="form" action="{% if data['checking'] %}/check-answers-1{% else %}/client-details{% endif %}" method="post">-->
-            <form class="form" action="{% if data['returnto'] %} {{ data['returnto']}} {% else %} /client-details {% endif %}" method="post">
+            <form class="form" action="{% if data['returnto'] %} {{ data['returnto']}} {% else %} /test-has-partner {% endif %}" method="post">
 
               <input class="govuk-input govuk-input--width-5" id="" name="returnto" type="hidden" value="">
 
@@ -40,33 +40,41 @@ Case details – {{ serviceName }}
               <!-- question -->
               <div class="govuk-form-group">
                 <div class="govuk-radios" data-module="govuk-radios">
-                  <div class="govuk-radios__item">
+                <!--  <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="upper-tribunal-immigration" name="area-of-law" type="radio" value="Immigration" {{ checked("area-of-law", "Immigration") }}>
                     <label class="govuk-label govuk-radios__label" for="upper-tribunal-immigration">Immigration</label>
                     <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
                     An Immigration matter in the Upper Tribunal.
                   </div>
-                  </div>
-                  <div class="govuk-radios__item">
+                </div>-->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="domestic-abuse" name="area-of-law" type="radio" value="Domestic abuse" {{ checked("area-of-law", "Domestic abuse") }}>
+                  <label class="govuk-label govuk-radios__label" for="domestic-abuse">Domestic abuse</label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                  Is your client likely to be an applicant in a domestic abuse matter?
+                </div>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="something-else" name="area-of-law" type="radio" value="Asylum" {{ checked("area-of-law", "Something else") }}>
+                  <label class="govuk-label govuk-radios__label" for="something-else">Something else</label>
+
+                </div>
+
+                <!--  <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="upper-tribunal-asylum" name="area-of-law" type="radio" value="Asylum" {{ checked("area-of-law", "Asylum") }}>
                     <label class="govuk-label govuk-radios__label" for="upper-tribunal-asylum">Asylum</label>
                     <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
                     An Asylum matter in the Upper Tribunal.
                   </div>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="domestic-abuse" name="area-of-law" type="radio" value="Domestic abuse" {{ checked("area-of-law", "Domestic abuse") }}>
-                    <label class="govuk-label govuk-radios__label" for="domestic-abuse">Domestic abuse</label>
-                    <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-                    Is your client likely to be an applicant in a domestic abuse matter?
-                  </div>
-                  </div>
-                  <div class="govuk-radios__divider">or</div>
+                </div>-->
+
+                <!--  <div class="govuk-radios__divider">or</div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="none-of-these" name="area-of-law" type="radio" value="None of the above" {{ checked("area-of-law", "None of the above") }}>
                     <label class="govuk-label govuk-radios__label" for="none-of-these">None of the above</label>
                   </div>
-              </div>
+              </div>-->
               <div class="govuk-!-padding-bottom-4"></div>
               <!-- question -->
 

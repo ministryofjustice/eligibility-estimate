@@ -233,47 +233,88 @@ Check answers – {{ serviceName }}
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Housing payments<span class="govuk-visually-hidden"> Housing payments</span></dt>
-            {% if data['client-housing-payments-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['client-housing-payments-value'] | fixed }}</dd>
+
+            <ul class="govuk-list govuk-list--bullet">
+            {% if data['client-housing-payments-value'] %}
+            <li>{{ currency }} {{ data['client-housing-payments-value'] | fixed }}</li>
+            <li>{{ data['client-housing-payments-select-frequency']}}</li>
+             {% else %}
+                 <li>Not applicable</li>
+             {% endif %}
+           </ul>
+
+            <!--{% if data['client-housing-payments-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['client-housing-payments-value'] | fixed }}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
              {% if data['client-housing-payments-select-frequency'] %}<dd class="govuk-summary-list__actions">{{ data['client-housing-payments-select-frequency'] }}</dd>
               {% else %}
                   <dd class="govuk-summary-list__actions">Not applicable</dd>
-              {% endif %}
+              {% endif %}-->
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Childcare payments<span class="govuk-visually-hidden"> Childcare payments</span></dt>
-            {% if data['client-childcare-payments-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['client-childcare-payments-value'] | fixed }}</dd>
+
+            <ul class="govuk-list govuk-list--bullet">
+            {% if data['client-childcare-payments-value'] %}
+            <li>{{ currency }} {{ data['client-childcare-payments-value'] | fixed }}</li>
+            <li>{{ data['client-childcare-payments-select-frequency']}}</li>
+             {% else %}
+                 <li>Not applicable</li>
+             {% endif %}
+           </ul>
+
+            <!--{% if data['client-childcare-payments-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['client-childcare-payments-value'] | fixed }}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
              {% if data['client-childcare-payments-select-frequency'] %}<dd class="govuk-summary-list__actions">{{ data['client-childcare-payments-select-frequency']}}</dd>
               {% else %}
                   <dd class="govuk-summary-list__actions">Not applicable</dd>
-              {% endif %}
+              {% endif %}-->
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Maintenance payments to a former partner<span class="govuk-visually-hidden"> Maintenance payments to a former partner</span></dt>
-            {% if data['client-former-partner-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['client-former-partner-value'] | fixed }}</dd>
+
+            <ul class="govuk-list govuk-list--bullet">
+            {% if data['client-former-partner-value'] %}
+            <li>{{ currency }} {{ data['client-former-partner-value'] | fixed }}</li>
+            <li>{{ data['client-former-partner-select-frequency']}}</li>
+             {% else %}
+                 <li>Not applicable</li>
+             {% endif %}
+           </ul>
+
+            <!--{% if data['client-former-partner-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['client-former-partner-value'] | fixed }}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
              {% if data['client-former-partner-select-frequency'] %}<dd class="govuk-summary-list__actions">{{ data['client-former-partner-select-frequency']}}</dd>
               {% else %}
                   <dd class="govuk-summary-list__actions">Not applicable</dd>
-              {% endif %}
+              {% endif %}-->
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Payments towards legal aid in a criminal case<span class="govuk-visually-hidden"> Payments towards legal aid in a criminal case</span></dt>
-            {% if data['client-legal-aid-crim-case-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['client-legal-aid-crim-case-value'] | fixed }}</dd>
+
+            <ul class="govuk-list govuk-list--bullet">
+            {% if data['client-legal-aid-crim-case-value'] %}
+            <li>{{ currency }} {{ data['client-legal-aid-crim-case-value'] | fixed }}</li>
+            <li>{{ data['client-legal-aid-crim-case-select-frequency']}}</li>
+             {% else %}
+                 <li>Not applicable</li>
+             {% endif %}
+           </ul>
+
+
+            <!--{% if data['client-legal-aid-crim-case-value'] %}<dd class="govuk-summary-list__value">{{ currency }} {{ data['client-legal-aid-crim-case-value'] | fixed }}</dd>
              {% else %}
                  <dd class="govuk-summary-list__value">Not applicable</dd>
              {% endif %}
              {% if data['client-legal-aid-crim-case-select-frequency'] %}<dd class="govuk-summary-list__actions">{{ data['client-legal-aid-crim-case-select-frequency']}}</dd>
               {% else %}
                   <dd class="govuk-summary-list__actions">Not applicable</dd>
-              {% endif %}
+              {% endif %}-->
           </div>
 
         </dl>
