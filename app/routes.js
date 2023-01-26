@@ -255,7 +255,7 @@ router.post('/partnerBuyVehicleThree', function (req, res) {
       res.redirect('/test-check-answers')
     } else {
       // Send user to next property entry
-      res.redirect('/test-client-property-entry')
+      res.redirect('/test-client-property-entry-joint')
     }
 
     })
@@ -290,6 +290,74 @@ router.post('/partnerBuyVehicleThree', function (req, res) {
         } else {
           // display page with client q's
           res.redirect('/test-client-details')
+        }
+
+      })
+
+      //merits 2
+      router.post('/determine-merits-2', function (req, res) {
+
+        // Make a variable and give it the value from 'home-own'
+        var ownsHome = req.session.data['home-own']
+
+        // Check whether the variable matches a condition
+        if (ownsHome == "No"){
+          // display next merits q
+          res.redirect('/merits-3')
+        } else {
+          // display page with
+          res.redirect('https://checklegalaid.service.gov.uk/legal-aid-available')
+        }
+
+      })
+
+      //merits 3
+      router.post('/determine-merits-3', function (req, res) {
+
+        // Make a variable and give it the value from 'home-own'
+        var rentsHome = req.session.data['rented']
+
+        // Check whether the variable matches a condition
+        if (rentsHome == "No"){
+          // display next merits q
+          res.redirect('/merits-4')
+        } else {
+          // display page with
+          res.redirect('https://checklegalaid.service.gov.uk/legal-aid-available')
+        }
+
+      })
+
+      //merits 4
+      router.post('/determine-merits-4', function (req, res) {
+
+        // Make a variable and give it the value from 'home-own'
+        var isHomeless = req.session.data['homeless']
+
+        // Check whether the variable matches a condition
+        if (isHomeless == "No"){
+          // display next merits q
+          res.redirect('/merits-5')
+        } else {
+          // display page with
+          res.redirect('https://checklegalaid.service.gov.uk/legal-aid-available')
+        }
+
+      })
+
+      //merits 5 YES
+      router.post('/determine-merits-5', function (req, res) {
+
+        // Make a variable and give it the value from 'home-own'
+        var oweMoney = req.session.data['owe-money']
+
+        // Check whether the variable matches a condition
+        if (oweMoney == "No"){
+          // display next merits q
+          res.redirect('https://checklegalaid.service.gov.uk/scope/refer/debt')
+        } else {
+          // display page with
+          res.redirect('https://checklegalaid.service.gov.uk/scope/refer/debt')
         }
 
       })
