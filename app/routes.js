@@ -1,7 +1,13 @@
-const express = require('express')
-const router = express.Router()
+//
+// For guidance on how to create routes see:
+// https://prototype-kit.service.gov.uk/docs/create-routes
+//
 
-// Add your routes here - above the module.exports line
+const govukPrototypeKit = require('govuk-prototype-kit')
+const router = govukPrototypeKit.requests.setupRouter()
+
+// Add your routes here
+
 // Run this code when a form is submitted to 'check-for-benefits'
 //NOT USING THE CHECK-FOR-BENEFITS ROUTE IN ITERATION 4
 router.post('/check-for-benefits', function (req, res) {
@@ -299,4 +305,3 @@ router.post('/partnerBuyVehicleThree', function (req, res) {
   // V2 routes here
 
 
-module.exports = router
