@@ -1,0 +1,175 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Property details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="{% if data['returnto'] %} {{ data['returnto']}} {% else %}/test-client-vehicle{% endif %}" method="post">
+
+
+        <input class="govuk-input govuk-input--width-5" id="" name="returnto" type="hidden" value="">
+
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <span class="govuk-caption-l">Your client's finances</span>
+               <h1 class="govuk-fieldset__heading">Tell us about the property</h1>
+             </legend>
+
+             <div class="govuk-!-padding-bottom-6"></div>
+
+            <div class="govuk-form-group">
+             <label class="govuk-label govuk-label--m" for="client-home-value">How much is the property worth?</label>
+             <div id="client-home-value-hint" class="govuk-hint">You can use property websites to find the estimated value.</div>
+             <label class="govuk-label" for="client-home-value">Enter the total amount</label>
+             <!-- wrapper starts -->
+             <div class="govuk-input__wrapper">
+               <div class="govuk-input__prefix" aria-hidden="true">£</div>
+               <input class="govuk-input govuk-input--width-5" id="client-home-value" name="client-home-value" type="text" value="{{ data['client-home-value']}}">
+             </div>
+             <!-- wrapper ends -->
+           </div>
+
+           <div class="govuk-!-padding-bottom-4"></div>
+
+           {% if data['homeowner'] == 'Yes, with a mortgage or loan' %}
+
+           <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="client-home-mortgage">What is the outstanding mortgage on the property?</label>
+            <div id="client-home-value-hint" class="govuk-hint">Check the statement from your client's mortgage provider or lender.</div>
+            <label class="govuk-label" for="client-home-mortgage">Enter the total amount</label>
+            <!-- wrapper starts -->
+            <div class="govuk-input__wrapper">
+              <div class="govuk-input__prefix" aria-hidden="true">£</div>
+              <input class="govuk-input govuk-input--width-5" id="client-home-mortgage" name="client-home-mortgage" type="text" value="{{ data['client-home-mortgage']}}">
+            </div>
+            <!-- wrapper ends -->
+          </div>
+          <div class="govuk-!-padding-bottom-4"></div>
+          {% else %}
+          {% endif %}
+
+          <div class="govuk-form-group">
+           <label class="govuk-label govuk-label--m" for="client-home-own">What percentage share of the property does your client legally own?</label>
+           <div id="client-home-value-hint" class="govuk-hint">Your client's name must be on the property deeds, lease or freehold.</div>
+           <label class="govuk-label" for="client-home-own">Enter the total percentage</label>
+           <!-- wrapper starts -->
+           <div class="govuk-input__wrapper">
+             <input class="govuk-input govuk-input--width-5" id="client-home-own" name="client-home-own" type="text" value="{{ data['client-home-own']}}">
+             <div class="govuk-input__suffix" aria-hidden="true">%</div>
+           </div>
+           <!-- wrapper ends -->
+         </div>
+         <div class="govuk-!-padding-bottom-4"></div>
+
+         <!-- question start -->
+
+         <div class="govuk-form-group">
+           <h2 class="govuk-heading-m">Is the property joint owned with a partner?</h2>
+
+             <div id="contact-hint" class="govuk-hint">Hint text goes here.</div>
+
+             <div class="govuk-radios" data-module="govuk-radios">
+               <div class="govuk-radios__item">
+
+                 <input class="govuk-radios__input" id="dependants-yes" name="dependants" type="radio" value="Yes" {{ checked("dependants","Yes") }} data-aria-controls="conditional-yes">
+                 <label class="govuk-label govuk-radios__label" for="dependants-yes">Yes</label>
+               </div>
+
+               <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes"> <!-- id needs to match data-aria-controls -->
+                 <label class="govuk-label" for="partner-home-own">Enter the percentage the partner owns</label>
+                 <div class="govuk-input__wrapper">
+
+                   <input class="govuk-input govuk-input--width-5" id="partner-home-own" name="partner-home-own" type="text" value="{{ data['partner-home-own']}}">
+                   <div class="govuk-input__suffix" aria-hidden="true">%</div>
+                 </div>
+
+
+               </div>
+
+               <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="dependants-no" name="dependants" type="radio" value="No" {{ checked("dependants","No") }}>
+                 <label class="govuk-label govuk-radios__label" for="dependants-no">No</label>
+               </div>
+         </div>
+         <div class="govuk-!-padding-bottom-6"></div>
+         <!-- question end -->
+
+
+         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="none-d" name="none-d" type="checkbox" data-aria-controls="none-d" value="Yes" {{ checked("none-d","Yes") }} >
+            <label class="govuk-label govuk-checkboxes__label" for="none-d">
+              This asset is a subject matter of dispute
+            </label>
+          </div>
+        </div>
+
+          </fieldset>
+
+        </div>
+
+        <div class="govuk-!-padding-bottom-4"></div>
+
+        <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help with subject matter of dispute
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Regulation 38 (Civil Legal Aid (Financial Resources and Payment for Services) Regulations 2013) provides for a disregard of the amount or value of assets that are the subject matter of dispute (SMOD); however the total amount disregarded must not exceed £100,000. Please read the related content on subject matter of displute (Regulation 38).
+        </div>
+      </details>
+
+      <div class="govuk-!-padding-bottom-4"></div>
+
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
+      </div>
+
+      </form>
+
+    </div>
+
+    <div class="right-sidebar-menu">
+      <div class="govuk-grid-column-one-third">
+        <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-body-m" id="subsection-title">
+          <strong>Date</strong>
+          <p class="govuk-body-m">16 August 2022</p>
+          </h2>
+          <h2 class="govuk-body-m" id="subsection-title">
+          <strong>Related content</strong>
+         <p><a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1045682/Lord_Chancellor_s_guidance_on.pdf#page=68" class="govuk-link" rel="noreferrer noopener" target="_blank">Subject matter of dispute (opens in new tab)</a></p>
+          </h2>
+        </aside>
+      </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+{% endblock %}

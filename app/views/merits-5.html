@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Area of Help – {{ serviceName }}
+{% endblock %}
+
+{% set serviceName %}
+  Check if you can get legal aid
+{% endset%}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+          <form class="form" action="/determine-merits-5" method="post">
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <span class="govuk-caption-l">Your details</span>
+               <h1 class="govuk-fieldset__heading">Do you owe money or have debt?</h1>
+             </legend>
+             <div id="sign-in-hint" class="govuk-hint">
+               For example, bank loans, credit card debt, but this is not putting your home at risk</a>
+             </div>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="owe-money-yes" name="owe-money" type="radio" value="Yes" {{ checked("owe-money", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="owe-money-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="owe-money-no" name="owe-money" type="radio" value="No" {{ checked("owe-money", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="owe-money-no">
+                  No
+                </label>
+              </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Continue</button>
+      </div>
+
+
+      </form>
+
+    </div>
+
+
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Dependant – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/test-add-another-dependant" method="post">
+
+        <input class="govuk-input govuk-input--width-5" id="" name="returnto" type="hidden" value="">
+
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <span class="govuk-caption-l">About your client's partner</span>
+              <h1 class="govuk-fieldset__heading">Tell us about your client's partner's dependants</h1>
+            </legend>
+            <div id="contact-hint" class="govuk-hint">If some don't apply, enter O.</div>
+            <div class="govuk-!-padding-bottom-6"></div>
+
+            <!-- question start -->
+            <!--<h2 class="govuk-heading-m">How many dependants does your client have?</h2>
+            <div class="govuk-form-group">
+
+              <label class="govuk-label" for="numberOfDependants">Enter the number of dependants</label>
+            <input class="govuk-input govuk-input--width-5" id="numberOfDependants" name="numberOfDependants" type="text" value="{{ data['numberOfDependants'] }}">
+          </div>-->
+            <!-- question end -->
+
+            <div class="govuk-form-group">
+             <label class="govuk-label govuk-label--m" for="">Child dependants</label>
+             <div id="client-home-value-hint" class="govuk-hint">For example, your client's child, grandchild, neice or nephew.</div>
+             <label class="govuk-label" for="child-dependant-value">Enter amount of child dependants</label>
+             <!-- wrapper starts -->
+             <div class="govuk-input__wrapper">
+               <input class="govuk-input govuk-input--width-5" id="child-dependant-value" name="child-dependant-value" type="text" value="{{ data['child-dependant-value']}}">
+             </div>
+             <!-- wrapper ends -->
+           </div>
+
+           <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="">Adult dependants</label>
+            <div id="client-home-value-hint" class="govuk-hint">For example, a parent, grandparent, aunt or uncle.</div>
+            <label class="govuk-label" for="adult-dependant-value">Enter amount of adult dependants</label>
+            <!-- wrapper starts -->
+            <div class="govuk-input__wrapper">
+              <input class="govuk-input govuk-input--width-5" id="adult-dependant-value" name="adult-dependant-value" type="text" value="{{ data['adult-dependant-value']}}">
+            </div>
+            <!-- wrapper ends -->
+          </div>
+
+
+          </fieldset>
+
+        </div>
+
+      <!-- send start -->
+      <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Save and continue</button>
+      </div>
+
+      </form>
+
+    </div>
+
+    <div class="right-sidebar-menu">
+      <div class="govuk-grid-column-one-third">
+        <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-body-m" id="subsection-title">
+          <strong>Date</strong>
+          <p class="govuk-body-m">16 August 2022</p>
+          </h2>
+        </aside>
+      </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

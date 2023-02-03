@@ -1,0 +1,244 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Area of Help – {{ serviceName }}
+{% endblock %}
+
+{% set serviceName %}
+  Check if you can get legal aid
+{% endset%}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">prototype</strong>
+    <span class="govuk-phase-banner__text">This is a prototype. Some things may not work as expected.</span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <!--<form class="form" action="{% if data['checking'] %}/check-answers-1{% else %}/client-details{% endif %}" method="post">-->
+      <!--  <form class="form" action="{% if data['returnto'] %} {{ data['returnto']}} {% else %} /client-details {% endif %}" method="post">-->
+      <form class="form" action="/merits-2" method="post">
+
+        <input class="govuk-input govuk-input--width-5" id="" name="returnto" type="hidden" value="">
+
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <!--<span class="govuk-caption-l">Your client's finances</span>-->
+                <h1 class="govuk-fieldset__heading">
+                  Which area do you most need help with?
+                </h1>
+              </legend>
+              <div id="sign-in-hint" class="govuk-hint">
+                Select the option that applies to you</a>
+              </div>
+
+              <div class="govuk-!-padding-bottom-6"></div>
+
+              <!-- radios start -->
+              <div class="govuk-radios" data-module="govuk-radios">
+
+                <!-- item -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="area-1" name="merits" type="radio" value="clinical-negligence" aria-describedby="merits-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="area-1">
+                    Clinical negligence
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    Problems with your medical care and treatment
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="area-2" name="merits" type="radio" value="Community-care" aria-describedby="merits-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="area-2">
+                    Community care
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    You’re unhappy with the care you or a relative are getting due to disability, age or special educational needs eg in a care home or your own home
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="area-3" name="merits" type="radio" value="debt" aria-describedby="merits-item-hint" {{ checked("merits", "Debt") }}>
+                  <label class="govuk-label govuk-radios__label" for="area-3">
+                    Debt
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    Bankruptcy, repossession, mortgage debt that is putting your home at risk
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="area-4" name="merits" type="radio" value="domestic-abuse" aria-describedby="merits-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="area-4">
+                    Domestic abuse
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    Abuse at home (psychological, physical, financial, sexual or emotional), child abuse, harassment by an ex-partner, forced marriage
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="area-5" name="merits" type="radio" value="discrimination" aria-describedby="merits-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="area-5">
+                    Discrimination
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    Being treated unfairly because of eg your race, gender or sexual orientation
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="area-6" name="merits" type="radio" value="education" aria-describedby="merits-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="area-6">
+                    Education
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    Special educational needs, problems with school places, exclusions, learning difficulties
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="area-7" name="merits" type="radio" value="employment" aria-describedby="merits-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="area-7">
+                    Employment
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    Being treated unfairly at work, unfair dismissal, employment tribunals
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="area-8" name="merits" type="radio" value="family" aria-describedby="merits-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="area-8">
+                    Family
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    Divorce, separation, dissolution, financial arrangements, family mediation, arrangements for your children, children being taken into care, child abduction
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="area-9" name="merits" type="radio" value="housing" aria-describedby="merits-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="area-9">
+                    Housing
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    Eviction, homelessness, losing your rented home, rent arrears, harassment by a landlord or neighbour, health and safety issues with your home
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="area-10" name="merits" type="radio" value="immigration-assylum" aria-describedby="merits-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="area-10">
+                    Immigration and asylum
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    Applying for asylum or permission to stay in the UK, including for victims of human trafficking
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="area-11" name="merits" type="radio" value="mental-health" aria-describedby="merits-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="area-11">
+                    Mental health
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    Help with mental health and mental capacity legal issues
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="area-12" name="merits" type="radio" value="personal-injury" aria-describedby="merits-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="area-12">
+                    Personal injury
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    An accident that was not your fault
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="area-13" name="merits" type="radio" value="public-law" aria-describedby="merits-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="area-13">
+                    Public law
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    Taking legal action against a public body, like your local council
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="area-14" name="merits" type="radio" value="trouble" aria-describedby="merits-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="area-14">
+                    Trouble with the police and other public authorities
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    You’ve been treated wrongly by the police or other authorities with the power to detain, imprison or prosecute you
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="area-15" name="merits" type="radio" value="clinical-negligence" aria-describedby="merits-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="area-15">
+                    Welfare benefits
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    Problems with your benefits, appealing a decision about your benefits
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="area-16" name="merits" type="radio" value="other-problem" aria-describedby="merits-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="area-16">
+                    Any other problem
+                  </label>
+
+                </div>
+                <!-- item -->
+
+
+              </div>
+              <!-- radios end -->
+            </fieldset>
+        </div>
+
+        <!-- send start -->
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Continue</button>
+        </div>
+
+        </form>
+
+      </div>
+
+  </div>
+
+
+{% endblock %}
